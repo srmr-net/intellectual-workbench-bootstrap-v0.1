@@ -33,7 +33,14 @@ mod tests {
     use super::*;
     #[test]
     fn envelope_roundtrip() {
-        let e = Envelope { protocol_version: CONTRACT_VERSION.into(), message_id: "m1".into(), instance_id: "i1".into(), port: "out".into(), revision: 3, payload: serde_json::json!({"x": 1}) };
+        let e = Envelope {
+            protocol_version: CONTRACT_VERSION.into(),
+            message_id: "m1".into(),
+            instance_id: "i1".into(),
+            port: "out".into(),
+            revision: 3,
+            payload: serde_json::json!({"x": 1}),
+        };
         let encoded = serde_json::to_string(&e).unwrap();
         assert_eq!(serde_json::from_str::<Envelope>(&encoded).unwrap(), e);
     }
