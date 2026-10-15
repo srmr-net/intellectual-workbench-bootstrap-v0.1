@@ -1,0 +1,21 @@
+package workbench:component@0.1.0;
+
+/// Stateless, side-effect-free computation interface for Workbench ABI v0.1.
+interface computation {
+    record message {
+        port: string,
+        payload-json: string,
+    }
+
+    record component-error {
+        code: string,
+        message: string,
+    }
+
+    /// Structured JSON schemas and port semantics are enforced by the host.
+    compute: func(input: message) -> result<list<message>, component-error>;
+}
+
+world compute-component {
+    export computation;
+}

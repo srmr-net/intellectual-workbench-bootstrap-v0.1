@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["value"],
+  "additionalProperties": false,
+  "properties": {"value": {"type": "integer", "minimum": -9223372036854775808, "maximum": 9223372036854775807}}
+}

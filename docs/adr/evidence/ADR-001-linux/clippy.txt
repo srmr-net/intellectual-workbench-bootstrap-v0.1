@@ -1,0 +1,2 @@
+    Checking wb-wasm-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-wasm-host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.43s

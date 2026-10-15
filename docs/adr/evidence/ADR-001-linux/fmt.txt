@@ -1,0 +1,222 @@
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-bus/src/lib.rs:2:
+ use wb_contracts::Envelope;
+ pub const CONTRACT_VERSION: &str = "0.1";
+ pub fn validate_envelope(message: &Envelope) -> Result<(), &'static str> {
+-    if message.protocol_version != CONTRACT_VERSION { return Err("UNSUPPORTED_VERSION"); }
+-    if message.instance_id.is_empty() || message.port.is_empty() || message.message_id.is_empty() { return Err("INVALID_ENVELOPE"); }
++    if message.protocol_version != CONTRACT_VERSION {
++        return Err("UNSUPPORTED_VERSION");
++    }
++    if message.instance_id.is_empty() || message.port.is_empty() || message.message_id.is_empty() {
++        return Err("INVALID_ENVELOPE");
++    }
+     Ok(())
+ }
+ #[cfg(test)]
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-bus/src/lib.rs:11:
+     use super::*;
+     #[test]
+     fn wrong_protocol_is_rejected() {
+-        let e = Envelope { protocol_version: "9.0".into(), message_id: "m".into(), instance_id: "i".into(), port: "p".into(), revision: 0, payload: serde_json::Value::Null };
++        let e = Envelope {
++            protocol_version: "9.0".into(),
++            message_id: "m".into(),
++            instance_id: "i".into(),
++            port: "p".into(),
++            revision: 0,
++            payload: serde_json::Value::Null,
++        };
+         assert_eq!(validate_envelope(&e), Err("UNSUPPORTED_VERSION"));
+     }
+ }
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-capabilities/src/lib.rs:1:
+ //! Prototype policy boundary. This only rejects operations; it is not an OS sandbox.
+ pub const CONTRACT_VERSION: &str = "0.1";
+ #[derive(Debug, Clone, PartialEq, Eq)]
+-pub struct Denial { pub operation: String, pub reason: &'static str }
++pub struct Denial {
++    pub operation: String,
++    pub reason: &'static str,
++}
+ pub fn authorize_unimplemented(operation: &str) -> Result<(), Denial> {
+-    Err(Denial { operation: operation.to_owned(), reason: "CAPABILITY_DENIED" })
++    Err(Denial {
++        operation: operation.to_owned(),
++        reason: "CAPABILITY_DENIED",
++    })
+ }
+ #[cfg(test)]
+ mod tests {
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-capabilities/src/lib.rs:10:
+     #[test]
+-    fn deny_by_default() { assert_eq!(super::authorize_unimplemented("filesystem.read").unwrap_err().reason, "CAPABILITY_DENIED"); }
++    fn deny_by_default() {
++        assert_eq!(
++            super::authorize_unimplemented("filesystem.read")
++                .unwrap_err()
++                .reason,
++            "CAPABILITY_DENIED"
++        );
++    }
+ }
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-contracts/src/lib.rs:33:
+     use super::*;
+     #[test]
+     fn envelope_roundtrip() {
+-        let e = Envelope { protocol_version: CONTRACT_VERSION.into(), message_id: "m1".into(), instance_id: "i1".into(), port: "out".into(), revision: 3, payload: serde_json::json!({"x": 1}) };
++        let e = Envelope {
++            protocol_version: CONTRACT_VERSION.into(),
++            message_id: "m1".into(),
++            instance_id: "i1".into(),
++            port: "out".into(),
++            revision: 3,
++            payload: serde_json::json!({"x": 1}),
++        };
+         let encoded = serde_json::to_string(&e).unwrap();
+         assert_eq!(serde_json::from_str::<Envelope>(&encoded).unwrap(), e);
+     }
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-kernel/src/lib.rs:1:
+ //! Kernel facade: no execution permitted until runtime, capabilities and plans are validated.
+ pub const CONTRACT_VERSION: &str = "0.1";
+-pub fn execute_unvalidated_plan() -> Result<(), &'static str> { Err("PLAN_NOT_VALIDATED") }
++pub fn execute_unvalidated_plan() -> Result<(), &'static str> {
++    Err("PLAN_NOT_VALIDATED")
++}
+ #[cfg(test)]
+-mod tests { #[test] fn refuses_unvalidated() { assert!(super::execute_unvalidated_plan().is_err()); } }
++mod tests {
++    #[test]
++    fn refuses_unvalidated() {
++        assert!(super::execute_unvalidated_plan().is_err());
++    }
++}
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-reactive/src/lib.rs:4:
+ pub const CONTRACT_VERSION: &str = "0.1";
+ pub fn validate_acyclic(edges: &[Edge]) -> Result<(), &'static str> {
+     let mut graph: HashMap<&str, Vec<&str>> = HashMap::new();
+-    for e in edges { graph.entry(&e.source).or_default().push(&e.target); graph.entry(&e.target).or_default(); }
+-    fn visit<'a>(n: &'a str, g: &HashMap<&'a str, Vec<&'a str>>, done: &mut HashSet<&'a str>, active: &mut HashSet<&'a str>) -> bool {
+-        if active.contains(n) { return false; }
+-        if done.contains(n) { return true; }
++    for e in edges {
++        graph.entry(&e.source).or_default().push(&e.target);
++        graph.entry(&e.target).or_default();
++    }
++    fn visit<'a>(
++        n: &'a str,
++        g: &HashMap<&'a str, Vec<&'a str>>,
++        done: &mut HashSet<&'a str>,
++        active: &mut HashSet<&'a str>,
++    ) -> bool {
++        if active.contains(n) {
++            return false;
++        }
++        if done.contains(n) {
++            return true;
++        }
+         active.insert(n);
+-        for &next in g.get(n).map(Vec::as_slice).unwrap_or(&[]) { if !visit(next, g, done, active) { return false; } }
+-        active.remove(n); done.insert(n); true
++        for &next in g.get(n).map(Vec::as_slice).unwrap_or(&[]) {
++            if !visit(next, g, done, active) {
++                return false;
++            }
++        }
++        active.remove(n);
++        done.insert(n);
++        true
+     }
+     let (mut done, mut active) = (HashSet::new(), HashSet::new());
+-    for &node in graph.keys() { if !visit(node, &graph, &mut done, &mut active) { return Err("CYCLIC_DEPENDENCY"); } }
++    for &node in graph.keys() {
++        if !visit(node, &graph, &mut done, &mut active) {
++            return Err("CYCLIC_DEPENDENCY");
++        }
++    }
+     Ok(())
+ }
+ pub fn accept_revision(latest: u64, candidate: u64) -> Result<u64, &'static str> {
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-reactive/src/lib.rs:20:
+-    if candidate < latest { Err("STALE_REVISION") } else { Ok(candidate) }
++    if candidate < latest {
++        Err("STALE_REVISION")
++    } else {
++        Ok(candidate)
++    }
+ }
+ #[cfg(test)]
+ mod tests {
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-reactive/src/lib.rs:24:
+     use super::*;
+     #[test]
+-    fn rejects_cycles() { let edges = vec![Edge{source:"a".into(),target:"b".into()}, Edge{source:"b".into(),target:"a".into()}]; assert_eq!(validate_acyclic(&edges), Err("CYCLIC_DEPENDENCY")); }
++    fn rejects_cycles() {
++        let edges = vec![
++            Edge {
++                source: "a".into(),
++                target: "b".into(),
++            },
++            Edge {
++                source: "b".into(),
++                target: "a".into(),
++            },
++        ];
++        assert_eq!(validate_acyclic(&edges), Err("CYCLIC_DEPENDENCY"));
++    }
+     #[test]
+-    fn accepts_dag() { let edges = vec![Edge{source:"a".into(),target:"b".into()}]; assert_eq!(validate_acyclic(&edges), Ok(())); }
++    fn accepts_dag() {
++        let edges = vec![Edge {
++            source: "a".into(),
++            target: "b".into(),
++        }];
++        assert_eq!(validate_acyclic(&edges), Ok(()));
++    }
+     #[test]
+-    fn rejects_stale() { assert_eq!(accept_revision(10, 9), Err("STALE_REVISION")); }
++    fn rejects_stale() {
++        assert_eq!(accept_revision(10, 9), Err("STALE_REVISION"));
++    }
+ }
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-registry/src/lib.rs:3:
+ #[cfg(test)]
+ mod tests {
+     #[test]
+-    fn version_is_declared() { assert_eq!(super::CONTRACT_VERSION, "0.1"); }
++    fn version_is_declared() {
++        assert_eq!(super::CONTRACT_VERSION, "0.1");
++    }
+ }
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-semantic/src/lib.rs:3:
+ #[cfg(test)]
+ mod tests {
+     #[test]
+-    fn version_is_declared() { assert_eq!(super::CONTRACT_VERSION, "0.1"); }
++    fn version_is_declared() {
++        assert_eq!(super::CONTRACT_VERSION, "0.1");
++    }
+ }
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-storage/src/lib.rs:3:
+ #[cfg(test)]
+ mod tests {
+     #[test]
+-    fn version_is_declared() { assert_eq!(super::CONTRACT_VERSION, "0.1"); }
++    fn version_is_declared() {
++        assert_eq!(super::CONTRACT_VERSION, "0.1");
++    }
+ }
+
+Diff in /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-testkit/src/lib.rs:3:
+ #[cfg(test)]
+ mod tests {
+     #[test]
+-    fn version_is_declared() { assert_eq!(super::CONTRACT_VERSION, "0.1"); }
++    fn version_is_declared() {
++        assert_eq!(super::CONTRACT_VERSION, "0.1");
++    }
+ }

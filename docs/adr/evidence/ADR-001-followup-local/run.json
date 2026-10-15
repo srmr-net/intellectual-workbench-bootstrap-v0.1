@@ -1,0 +1,39 @@
+{
+  "headSha": "ed73ec7238f1e21192fcbf0bb5698ed1b6197986",
+  "trackedChanges": false,
+  "platform": "Linux-7.2.5-3-omarchy-x86_64-with-glibc2.44",
+  "architecture": "x86_64",
+  "rustc": "rustc 1.99.1 (58cf8f9c3 2026-10-13)",
+  "cargo": "cargo 1.99.1 (5f94df478 2026-08-27)",
+  "cargoComponent": "cargo-component-component 0.21.1",
+  "wasmtime": "49.0.1",
+  "python": "3.14.7",
+  "jsonschema": "4.26.0",
+  "rdflib": "7.6.0",
+  "github": {
+    "GITHUB_SERVER_URL": null,
+    "GITHUB_REPOSITORY": null,
+    "GITHUB_RUN_ID": null,
+    "GITHUB_RUN_ATTEMPT": null,
+    "GITHUB_SHA": null,
+    "GITHUB_REF": null,
+    "RUNNER_OS": null,
+    "RUNNER_ARCH": null
+  },
+  "checks": {
+    "guest-builds": "passed",
+    "workspace-tests": "passed",
+    "clippy": "passed",
+    "contracts": "passed",
+    "python-tests": "passed",
+    "fmt": "passed"
+  },
+  "sha256": {
+    "native-Cargo.lock": "e3ef3eafaddf6aeffa9e0bf9da0a39bde37b3a005bef55198b68ec88bec93e28",
+    "guest-Cargo.lock": "c2b227060d5352809f056a1e11102211868264c606813992699df684869f4c30",
+    "component.wit": "cf90e5114153e2737accd1fc7535e1e494e699ac68b4e99e8cc36c8270a204c0",
+    "components/echo.wasm": "d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d",
+    "components/integer.wasm": "871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd",
+    "components/denied-wasi.wasm": "03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af"
+  }
+}

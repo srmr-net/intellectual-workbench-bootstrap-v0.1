@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workbench.example/schemas/0.1/room.schema.json",
+  "title": "Workbench room v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "roomFormatVersion",
+    "roomId",
+    "revision",
+    "name",
+    "components",
+    "connections",
+    "state",
+    "ui"
+  ],
+  "properties": {
+    "roomFormatVersion": {
+      "const": "0.1"
+    },
+    "roomId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "components": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "instanceId",
+          "id",
+          "version",
+          "sha256"
+        ],
+        "properties": {
+          "instanceId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+          },
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+          },
+          "version": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+          },
+          "sha256": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "$ref": "composition.schema.json#/$defs/connection"
+      },
+      "uniqueItems": true
+    },
+    "state": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*\\.[a-z][A-Za-z0-9]*(?:\\.[a-z][A-Za-z0-9]*)*$"
+      },
+      "additionalProperties": {}
+    },
+    "ui": {
+      "$ref": "composition.schema.json#/$defs/uiReference"
+    }
+  }
+}
