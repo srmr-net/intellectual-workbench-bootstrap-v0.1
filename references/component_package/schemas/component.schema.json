@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workbench.example/schemas/0.1/component.schema.json",
+  "title": "Workbench component manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifestVersion",
+    "id",
+    "version",
+    "runtime",
+    "metadata",
+    "permissions",
+    "ports"
+  ],
+  "properties": {
+    "manifestVersion": {
+      "const": "0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+(?:-[a-z0-9]+)*$",
+      "maxLength": 200
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "runtime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "interface",
+        "module",
+        "sha256"
+      ],
+      "properties": {
+        "kind": {
+          "const": "wasm-component"
+        },
+        "interface": {
+          "const": "org.workbench.component@0.1"
+        },
+        "module": {
+          "$ref": "#/$defs/path"
+        },
+        "sha256": {
+          "$ref": "#/$defs/digest"
+        }
+      }
+    },
+    "metadata": {
+      "$ref": "#/$defs/path"
+    },
+    "ui": {
+      "$ref": "#/$defs/path"
+    },
+    "permissions": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/permission"
+      }
+    },
+    "ports": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "inputs",
+        "outputs"
+      ],
+      "properties": {
+        "inputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/port"
+          }
+        },
+        "outputs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/port"
+          }
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/path"
+      }
+    }
+  },
+  "$defs": {
+    "path": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 240,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.?/)(?!.*\\\\)(?!.*//)[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"
+    },
+    "digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "port": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "schema",
+        "semanticType"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][A-Za-z0-9]*$",
+          "maxLength": 64
+        },
+        "schema": {
+          "$ref": "#/$defs/path"
+        },
+        "semanticType": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "unit": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "precisionNote": {
+          "type": "string",
+          "maxLength": 512
+        }
+      }
+    },
+    "permission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "scope"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9]*(?:\\.[a-z][a-z0-9]*)+$"
+        },
+        "scope": {
+          "type": "object"
+        },
+        "reason": {
+          "type": "string",
+          "maxLength": 512
+        }
+      }
+    }
+  }
+}

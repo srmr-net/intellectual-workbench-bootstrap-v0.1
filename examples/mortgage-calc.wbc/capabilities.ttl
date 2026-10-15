@@ -1,0 +1,33 @@
+@prefix wb: <https://workbench.example/ns/0.1#> .
+@prefix ex: <https://workbench.example/examples/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+ex:mortgage-calc a wb:Component ;
+  wb:componentId "org.workbench.example.mortgage-calc" ;
+  wb:componentVersion "0.1.0" ;
+  rdfs:label "Mortgage calculator"@en ;
+  wb:tag "finance", "calculator" ;
+  wb:providesCapability wb:CalculateMortgagePayment ;
+  wb:hasInputPort ex:mortgage-loan-input ;
+  wb:hasOutputPort ex:mortgage-payment-output ;
+  wb:hasInterface ex:mortgage-ui ;
+  wb:hasArtifact ex:mortgage-wasm ;
+  wb:hasAssuranceClaim ex:mortgage-test-claim .
+
+ex:mortgage-loan-input a wb:InputPort ;
+  wb:portName "loan" ; wb:semanticType wb:MortgageTerms ;
+  wb:schemaRef "schemas/input.json" ;
+  wb:precisionNote "Rates and principal encoded as decimal strings" .
+
+ex:mortgage-payment-output a wb:OutputPort ;
+  wb:portName "payment" ; wb:semanticType wb:MortgagePayment ;
+  wb:unit wb:GBP ; wb:schemaRef "schemas/output.json" ;
+  wb:precisionNote "Rounded to pennies under component-defined policy" .
+
+ex:mortgage-ui a wb:AbstractInterface ; wb:uiDefinitionRef "ui.json" .
+ex:mortgage-wasm a wb:Artifact ; wb:artifactPath "logic.wasm" ;
+  wb:sha256 "0000000000000000000000000000000000000000000000000000000000000000" .
+ex:mortgage-test-claim a wb:AssuranceClaim ;
+  wb:assuranceLevel "tested" ; wb:evidenceRef "evidence/tests.json" .
+# Above digest is a fixture placeholder; installation must reject it if bytes do not match.
+# No wb:requestsPermission triple: this example requests no host privileges.

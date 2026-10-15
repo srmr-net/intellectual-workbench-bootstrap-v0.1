@@ -1,0 +1,5 @@
+{
+  "status": "fixture-only",
+  "verified": false,
+  "note": "Demonstrative metadata only; no compiled WASM or executed tests supplied."
+}

@@ -1,0 +1,63 @@
+@prefix wb: <https://workbench.example/ns/0.1#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# PROVISIONAL namespace: ADR-005 must choose permanent identifiers before publication.
+<https://workbench.example/ns/0.1> a owl:Ontology ;
+  rdfs:label "Intellectual Workbench minimal component ontology"@en ;
+  owl:versionInfo "0.1.0-draft" ;
+  rdfs:comment "Discovery metadata only. JSON manifests, JSON Schema, runtime plan validation and host permission grants are authoritative in their respective domains."@en .
+
+# Core entities
+wb:Component a rdfs:Class ; rdfs:label "Component"@en .
+wb:Capability a rdfs:Class ; rdfs:label "Capability"@en .
+wb:Port a rdfs:Class ; rdfs:label "Port"@en .
+wb:InputPort a rdfs:Class ; rdfs:subClassOf wb:Port ; rdfs:label "Input port"@en .
+wb:OutputPort a rdfs:Class ; rdfs:subClassOf wb:Port ; rdfs:label "Output port"@en .
+wb:SemanticType a rdfs:Class ; rdfs:label "Semantic type"@en .
+wb:Unit a rdfs:Class ; rdfs:label "Unit"@en .
+wb:PermissionRequest a rdfs:Class ; rdfs:label "Permission request"@en .
+wb:AbstractInterface a rdfs:Class ; rdfs:label "Abstract interface"@en .
+wb:Artifact a rdfs:Class ; rdfs:label "Artifact"@en .
+wb:AssuranceClaim a rdfs:Class ; rdfs:label "Assurance claim"@en .
+
+# Component properties: metadata mirrors but never overrides component.json.
+wb:componentId a rdf:Property ; rdfs:domain wb:Component ; rdfs:range xsd:string .
+wb:componentVersion a rdf:Property ; rdfs:domain wb:Component ; rdfs:range xsd:string .
+wb:providesCapability a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:Capability .
+wb:hasInputPort a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:InputPort .
+wb:hasOutputPort a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:OutputPort .
+wb:requestsPermission a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:PermissionRequest .
+wb:hasInterface a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:AbstractInterface .
+wb:hasArtifact a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:Artifact .
+wb:hasAssuranceClaim a rdf:Property ; rdfs:domain wb:Component ; rdfs:range wb:AssuranceClaim .
+wb:tag a rdf:Property ; rdfs:domain wb:Component ; rdfs:range xsd:string .
+
+# Ports, types and units: matching is not an automatic authorisation to connect.
+wb:portName a rdf:Property ; rdfs:domain wb:Port ; rdfs:range xsd:string .
+wb:semanticType a rdf:Property ; rdfs:domain wb:Port ; rdfs:range wb:SemanticType .
+wb:schemaRef a rdf:Property ; rdfs:domain wb:Port ; rdfs:range xsd:string .
+wb:unit a rdf:Property ; rdfs:domain wb:Port ; rdfs:range wb:Unit .
+wb:precisionNote a rdf:Property ; rdfs:domain wb:Port ; rdfs:range xsd:string .
+
+# References and provenance
+wb:permissionName a rdf:Property ; rdfs:domain wb:PermissionRequest ; rdfs:range xsd:string .
+wb:permissionScopeSchemaRef a rdf:Property ; rdfs:domain wb:PermissionRequest ; rdfs:range xsd:string .
+wb:uiDefinitionRef a rdf:Property ; rdfs:domain wb:AbstractInterface ; rdfs:range xsd:string .
+wb:artifactPath a rdf:Property ; rdfs:domain wb:Artifact ; rdfs:range xsd:string .
+wb:sha256 a rdf:Property ; rdfs:domain wb:Artifact ; rdfs:range xsd:string .
+wb:assuranceLevel a rdf:Property ; rdfs:domain wb:AssuranceClaim ; rdfs:range xsd:string .
+wb:evidenceRef a rdf:Property ; rdfs:domain wb:AssuranceClaim ; rdfs:range xsd:string .
+wb:hasSideEffect a rdf:Property ; rdfs:domain wb:Capability ; rdfs:range xsd:string .
+
+# Reference semantic identifiers. Extend in separate domain ontologies.
+wb:CalculateMortgagePayment a wb:Capability ; rdfs:label "Calculate mortgage payment"@en .
+wb:MortgageTerms a wb:SemanticType ; rdfs:label "Mortgage terms"@en .
+wb:MortgagePayment a wb:SemanticType ; rdfs:label "Mortgage payment"@en .
+wb:GBP a wb:Unit ; rdfs:label "British pound"@en .
+wb:Unreviewed a rdfs:Resource ; rdfs:label "Unreviewed"@en .
+wb:Tested a rdfs:Resource ; rdfs:label "Tested"@en .
+wb:Reviewed a rdfs:Resource ; rdfs:label "Reviewed"@en .
+wb:FormallyVerified a rdfs:Resource ; rdfs:label "Formally verified"@en .

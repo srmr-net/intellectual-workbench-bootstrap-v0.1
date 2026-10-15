@@ -1,0 +1,9 @@
+[package]
+name = "wb-kernel"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+wb-contracts = { path = "../wb-contracts" }
+wb-capabilities = { path = "../wb-capabilities" }
