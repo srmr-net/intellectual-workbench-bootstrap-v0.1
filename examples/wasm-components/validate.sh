@@ -20,5 +20,6 @@ cargo test --locked --workspace -- --nocapture 2>&1 | tee "$report/workspace-tes
 cargo clippy --locked --workspace --all-targets -- -D warnings 2>&1 | tee "$report/clippy.txt"
 python3 tools/check_contracts.py 2>&1 | tee "$report/contracts.txt"
 python3 -m unittest discover -s tools -p 'test_*.py' 2>&1 | tee "$report/python-tests.txt"
-# Existing formatting failures must remain visible but do not hide ABI test evidence.
+# Retain the full formatting check; publish success metadata only after it passes.
 cargo fmt --all -- --check > "$report/fmt.txt" 2>&1
+python3 examples/wasm-components/collect_evidence.py

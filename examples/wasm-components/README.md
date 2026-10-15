@@ -43,7 +43,11 @@ spike. Nothing changes the metadata-only mortgage example.
 the entire Rust workspace/ABI tests, Clippy and Python contract/harness checks,
 then runs the required whole-workspace formatting check. It fails on any failing
 check and preserves logs, including the known baseline formatting failures.
-Linux CI uploads that evidence even on failure. For only the ABI suite after
+Linux CI uploads that evidence even on failure. After every check passes,
+`collect_evidence.py` archives the exact lockfiles, WIT and guest binaries with
+`run.json` recording the tested Git SHA, versions, check outcomes and hashes.
+The same metadata appears in the GitHub job summary; it contains only explicit
+non-secret environment fields. For only the ABI suite after
 building: `cargo test --locked -p wb-wasm-host --test abi -- --nocapture`.
 
 Official CLI/build documentation consulted:
