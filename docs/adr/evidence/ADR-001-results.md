@@ -1,6 +1,7 @@
 # ADR-001 validation results — 2026-10-15
 
-**Decision remains PROPOSED.** Local ABI execution passes. Required hosted Linux CI
+**Historical local snapshot — superseded by [hosted acceptance](ADR-001-hosted-results.md).**
+At this initial stage the decision remained PROPOSED. Local ABI execution passed. Required hosted Linux CI
 has not run: this checkout has no Git remote, so no hosted PR or CI URL can be
 provided. Whole-workspace formatting also fails in unchanged baseline crates.
 A configured workflow or passing local `abi_010` test is not a successful CI run.

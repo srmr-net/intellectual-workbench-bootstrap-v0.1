@@ -13,7 +13,7 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 
 ## ADR-gated or unimplemented
 
-- ADR-001 component ABI / runtime pinned version: **OPEN**, WIT not executable contract.
+- ADR-001 component ABI / runtime pinned version: **Accepted** for the pure stateless WIT ABI and Wasmtime 49.0.1 on hosted Linux; [verified evidence](adr/evidence/ADR-001-hosted-results.md). Production kernel integration remains separate.
 - ADR-002 transport, queue and backpressure: **OPEN**, current bus structures are in-process prototypes.
 - ADR-003 Rust↔Qt FFI/threading: **OPEN**, QML is illustrative only.
 - ADR-004 SQLite/RDF recovery: **OPEN**, persistence crate is an interface placeholder.
@@ -26,4 +26,4 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 
 ## Conformance status
 
-No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests are scaffolding tests only. Python schema fixture checks run locally when requirements are present.
+No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffolding checks; the separate ABI spike passes ABI-001..ABI-010 with independently compiled guests on GitHub-hosted Linux. Python schema fixture checks run locally and in CI when requirements are present.
