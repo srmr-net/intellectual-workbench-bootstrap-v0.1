@@ -1,6 +1,7 @@
 [workspace]
 resolver = "2"
 members = ["crates/*"]
+exclude = ["examples/wasm-components"]
 
 [workspace.package]
 edition = "2021"

@@ -5,4 +5,13 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
+wasmtime = "=49.0.1"
+thiserror.workspace = true
+serde_json.workspace = true
+jsonschema = { version = "=0.33.0", default-features = false }
+sha2 = "=0.10.9"
 
+[dev-dependencies]
+wasmparser = "=0.258.3"
+wat = "=1.262.0"
+wasm-encoder = "=0.258.3"
