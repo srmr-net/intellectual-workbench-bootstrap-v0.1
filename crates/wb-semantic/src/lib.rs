@@ -3,5 +3,7 @@ pub const CONTRACT_VERSION: &str = "0.1";
 #[cfg(test)]
 mod tests {
     #[test]
-    fn version_is_declared() { assert_eq!(super::CONTRACT_VERSION, "0.1"); }
+    fn version_is_declared() {
+        assert_eq!(super::CONTRACT_VERSION, "0.1");
+    }
 }
