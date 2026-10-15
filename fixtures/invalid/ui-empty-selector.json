@@ -1,0 +1,10 @@
+{
+  "uiVersion": "0.1",
+  "root": {
+    "type": "selector",
+    "id": "choice",
+    "label": "Choice",
+    "bind": "mortgage-1.loan.choice",
+    "options": []
+  }
+}

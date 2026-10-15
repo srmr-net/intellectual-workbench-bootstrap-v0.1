@@ -1,0 +1,80 @@
+{
+  "uiVersion": "0.1",
+  "root": {
+    "type": "column",
+    "children": [
+      {
+        "type": "form",
+        "children": []
+      },
+      {
+        "type": "column",
+        "children": []
+      },
+      {
+        "type": "row",
+        "children": []
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "text",
+        "text": "Plain text"
+      },
+      {
+        "type": "decimal-input",
+        "id": "decimal-input",
+        "label": "decimal-input",
+        "bind": "mortgage-1.loan.principal"
+      },
+      {
+        "type": "integer-input",
+        "id": "integer-input",
+        "label": "integer-input",
+        "bind": "mortgage-1.loan.principal"
+      },
+      {
+        "type": "selector",
+        "id": "selector",
+        "label": "selector",
+        "bind": "mortgage-1.loan.principal",
+        "options": [
+          {
+            "label": "One",
+            "value": 1
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "id": "button",
+        "label": "button",
+        "bind": "mortgage-1.loan.principal"
+      },
+      {
+        "type": "readout",
+        "id": "readout",
+        "label": "readout",
+        "bind": "mortgage-1.loan.principal"
+      },
+      {
+        "type": "table",
+        "id": "table",
+        "label": "table",
+        "bind": "mortgage-1.loan.principal",
+        "columns": [
+          {
+            "label": "Principal",
+            "property": "principal"
+          }
+        ]
+      },
+      {
+        "type": "error-display",
+        "id": "error-display",
+        "label": "error-display",
+        "bind": "mortgage-1.loan.principal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "planVersion": "0.1",
+  "roomId": "room-local-001",
+  "expectedRoomRevision": 3,
+  "instances": [
+    {
+      "instanceId": "mortgage-1",
+      "component": {
+        "id": "org.workbench.example.mortgage-calc",
+        "version": "0.1.0",
+        "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    }
+  ],
+  "connections": [],
+  "ui": {
+    "definitionRef": "../ui.json"
+  },
+  "requestedPermissions": []
+}

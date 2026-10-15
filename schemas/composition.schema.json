@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workbench.example/schemas/0.1/composition.schema.json",
+  "title": "Workbench composition v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "planVersion",
+    "roomId",
+    "expectedRoomRevision",
+    "instances",
+    "connections",
+    "ui",
+    "requestedPermissions"
+  ],
+  "properties": {
+    "planVersion": {
+      "const": "0.1"
+    },
+    "roomId": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+    },
+    "expectedRoomRevision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "instances": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "instanceId",
+          "component"
+        ],
+        "properties": {
+          "instanceId": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+          },
+          "component": {
+            "$ref": "#/$defs/component"
+          }
+        }
+      },
+      "uniqueItems": true
+    },
+    "connections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/connection"
+      },
+      "uniqueItems": true
+    },
+    "ui": {
+      "$ref": "#/$defs/uiReference"
+    },
+    "requestedPermissions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/permission"
+      },
+      "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "version",
+        "sha256"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9]*(?:[.-][a-z0-9]+)+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*)(?:\\.(?:0|[1-9][0-9]*|[0-9]*[A-Za-z-][0-9A-Za-z-]*))*)?(?:\\+[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$"
+        },
+        "sha256": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      }
+    },
+    "endpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "instanceId",
+        "port"
+      ],
+      "properties": {
+        "instanceId": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+        },
+        "port": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][A-Za-z0-9]*$"
+        }
+      }
+    },
+    "connection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "to"
+      ],
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/endpoint"
+        },
+        "to": {
+          "$ref": "#/$defs/endpoint"
+        }
+      }
+    },
+    "uiReference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "definitionRef"
+      ],
+      "properties": {
+        "definitionRef": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!.*(?:^|/)\\.\\.?(?:/|$))[A-Za-z0-9_-]+(?:[./][A-Za-z0-9_-]+)*/ui\\.json$"
+        }
+      }
+    },
+    "permission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "componentInstance",
+        "capability",
+        "scope",
+        "duration"
+      ],
+      "properties": {
+        "componentInstance": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+        },
+        "capability": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9]*(?:\\.[a-z][a-z0-9]*)+$"
+        },
+        "scope": {
+          "type": "object"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "duration": {
+          "const": "session"
+        }
+      }
+    }
+  }
+}

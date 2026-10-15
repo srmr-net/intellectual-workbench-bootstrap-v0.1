@@ -1,0 +1,22 @@
+{
+  "roomFormatVersion": "0.1",
+  "roomId": "room-local-001",
+  "revision": 4,
+  "name": "Mortgage scenarios",
+  "components": [
+    {
+      "instanceId": "mortgage-1",
+      "id": "org.workbench.example.mortgage-calc",
+      "version": "latest",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  ],
+  "connections": [],
+  "state": {
+    "mortgage-1.loan.principal": "250000.00",
+    "mortgage-1.loan.termMonths": 300
+  },
+  "ui": {
+    "definitionRef": "org.workbench.example.mortgage-calc/ui.json"
+  }
+}
