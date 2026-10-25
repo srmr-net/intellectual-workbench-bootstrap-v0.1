@@ -14,7 +14,7 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 ## ADR-gated or unimplemented
 
 - ADR-001 component ABI / runtime pinned version: **Accepted** for the pure stateless WIT ABI and Wasmtime 49.0.1 on hosted Linux; [verified evidence](adr/evidence/ADR-001-hosted-results.md). Production kernel integration remains separate.
-- ADR-002 transport, queue and backpressure: **OPEN**, current bus structures are in-process prototypes.
+- ADR-002 lifecycle, process-local IPC and reactive integration: **Proposed**, executable validation profile implemented; hosted IPC-001..015 evidence pending.
 - ADR-003 Rust↔Qt FFI/threading: **OPEN**, QML is illustrative only.
 - ADR-004 SQLite/RDF recovery: **OPEN**, persistence crate is an interface placeholder.
 - ADR-005 permanent namespace, SHACL and compatibility: **OPEN**.

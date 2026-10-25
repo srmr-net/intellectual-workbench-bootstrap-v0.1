@@ -56,3 +56,13 @@ and [Wasmtime 49.0.1 embedding API](https://docs.rs/wasmtime/49.0.1/wasmtime/).
 Results and acceptance limitations are in
 `docs/adr/evidence/ADR-001-results.md`; no hosted CI or other-platform success is
 implied by the local Linux run.
+
+
+ADR-002 adds a separate `ipc-aggregate` guest and `validate-ipc.sh` wrapper. The
+wrapper retains every ABI check and adds native kernel/bus/reactive conformance.
+The fourth guest uses the accepted WIT without imports, computes checked integer
+value+add from one aggregate input, and supplies adversarial error/batch/provenance
+modes for tests. Existing guest sources are unchanged. The collector now archives
+that binary too, records all ten ABI and fifteen IPC case IDs, and writes
+`ipc-report.json`; local declaration checks do not claim hosted success. Hosted
+workflow artifacts are named `ipc-validation-linux` and include original ABI logs.

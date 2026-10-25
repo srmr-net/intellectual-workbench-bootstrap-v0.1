@@ -6,3 +6,11 @@ license.workspace = true
 
 [dependencies]
 
+[dev-dependencies]
+wb-contracts = { path = "../wb-contracts" }
+wb-bus = { path = "../wb-bus" }
+wb-reactive = { path = "../wb-reactive" }
+wb-kernel = { path = "../wb-kernel" }
+wb-wasm-host = { path = "../wb-wasm-host" }
+serde_json.workspace = true
+sha2 = "=0.10.9"

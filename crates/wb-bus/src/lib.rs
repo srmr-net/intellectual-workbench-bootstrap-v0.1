@@ -26,3 +26,5 @@ mod tests {
         assert_eq!(validate_envelope(&e), Err("UNSUPPORTED_VERSION"));
     }
 }
+
+pub mod ipc;

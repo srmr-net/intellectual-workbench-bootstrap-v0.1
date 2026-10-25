@@ -1,0 +1,7 @@
+{
+  "code": "RESOURCE_LIMIT",
+  "message": "compute budget exceeded",
+  "source": "wasm-host",
+  "correlationId": "input-1",
+  "detail": {"budget": "fuel"}
+}

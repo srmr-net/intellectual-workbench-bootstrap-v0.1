@@ -2107,8 +2107,13 @@ dependencies = [
 name = "wb-kernel"
 version = "0.1.0"
 dependencies = [
+ "jsonschema",
+ "serde_json",
+ "wb-bus",
  "wb-capabilities",
  "wb-contracts",
+ "wb-reactive",
+ "wb-wasm-host",
 ]
 
 [[package]]
@@ -2135,6 +2140,15 @@ version = "0.1.0"
 [[package]]
 name = "wb-testkit"
 version = "0.1.0"
+dependencies = [
+ "serde_json",
+ "sha2",
+ "wb-bus",
+ "wb-contracts",
+ "wb-kernel",
+ "wb-reactive",
+ "wb-wasm-host",
+]
 
 [[package]]
 name = "wb-wasm-host"

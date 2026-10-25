@@ -10,3 +10,7 @@ mod tests {
         assert!(super::execute_unvalidated_plan().is_err());
     }
 }
+
+pub mod room;
+pub mod runtime;
+pub use runtime::Kernel;
