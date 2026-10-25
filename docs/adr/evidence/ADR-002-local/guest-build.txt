@@ -1,0 +1,11 @@
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm

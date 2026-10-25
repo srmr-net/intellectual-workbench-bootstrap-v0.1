@@ -1,6 +1,6 @@
 # wb-reactive
 
-Version 0.1, ADR-002 proposed. `scheduler::Graph` validates endpoint instance
+Version 0.1, ADR-002 accepted profile. `scheduler::Graph` validates endpoint instance
 existence and cycles, computes stable topological order with lexical instance-ID
 tie breaks, and returns the affected root/descendant set. There is no Operator,
 filesystem or module execution in this crate.

@@ -2,7 +2,7 @@
 
 Version 0.1, ADR-002 validation integration. The existing rejection facade remains.
 The new `Kernel` and `room::Room` APIs implement a pure computation integration
-spike; ADR-002 stays Proposed until the documented hosted acceptance gates pass.
+profile accepted by ADR-002 after verified hosted IPC-001..015 results.
 
 `Kernel::cache_verified_bundle` consumes bytes/manifest/schema documents resolved
 by a trusted package verifier. It calls the existing ADR-001 Host::register, checking

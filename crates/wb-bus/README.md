@@ -1,6 +1,6 @@
 # wb-bus
 
-Version 0.1, ADR-002 proposed. `ipc::RoomQueue` is a finite process-local room
+Version 0.1, ADR-002 accepted profile. `ipc::RoomQueue` is a finite process-local room
 mailbox; suggested default DEFAULT_ROOM_CAPACITY is 256, with an explicit positive
 capacity required. `publish` rejects whole batches with QUEUE_FULL before changing
 the queue; it bounds payloads at 16 KiB and deduplicates host request identities.

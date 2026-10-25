@@ -1,6 +1,6 @@
 # wb-contracts
 
-Version 0.1 DTOs; ADR-002 remains Proposed pending hosted acceptance.
+Version 0.1 DTOs; ADR-002 accepted profile validated on hosted Linux.
 
 `ipc::EventEnvelope` is the canonical architecture envelope, using camelCase JSON
 and strict unknown-field rejection. Use `EventEnvelope::parse` for validated
