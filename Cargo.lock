@@ -2113,6 +2113,7 @@ dependencies = [
  "wb-capabilities",
  "wb-contracts",
  "wb-reactive",
+ "wb-registry",
  "wb-wasm-host",
 ]
 
@@ -2128,10 +2129,30 @@ dependencies = [
 [[package]]
 name = "wb-registry"
 version = "0.1.0"
+dependencies = [
+ "jsonschema",
+ "libc",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "thiserror 2.0.21",
+ "wasm-encoder 0.258.3",
+ "wat",
+ "wb-kernel",
+ "wb-semantic",
+ "wb-wasm-host",
+]
 
 [[package]]
 name = "wb-semantic"
 version = "0.1.0"
+dependencies = [
+ "libc",
+ "serde",
+ "serde_json",
+ "tempfile",
+]
 
 [[package]]
 name = "wb-storage"

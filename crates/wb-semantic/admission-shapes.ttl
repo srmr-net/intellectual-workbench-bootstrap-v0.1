@@ -1,0 +1,26 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix wb: <https://workbench.example/ns/0.1#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+# Admission-only shapes implementing package v0.1. No inference or ontology changes.
+wb:AdmissionComponent a sh:NodeShape ; sh:targetClass wb:Component ;
+ sh:nodeKind sh:IRI ;
+ sh:property [ sh:path wb:componentId ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path wb:componentVersion ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path wb:hasArtifact ; sh:minCount 1 ; sh:maxCount 1 ; sh:class wb:Artifact ] ;
+ sh:property [ sh:path wb:hasInputPort ; sh:class wb:InputPort ] ;
+ sh:property [ sh:path wb:hasOutputPort ; sh:class wb:OutputPort ] ;
+ sh:property [ sh:path wb:hasInterface ; sh:maxCount 1 ; sh:class wb:AbstractInterface ] ;
+ sh:property [ sh:path wb:hasAssuranceClaim ; sh:class wb:AssuranceClaim ] .
+wb:AdmissionInput a sh:NodeShape ; sh:targetClass wb:InputPort ; sh:node wb:AdmissionPort .
+wb:AdmissionOutput a sh:NodeShape ; sh:targetClass wb:OutputPort ; sh:node wb:AdmissionPort .
+wb:AdmissionPort a sh:NodeShape ;
+ sh:property [ sh:path wb:portName ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path wb:schemaRef ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path wb:semanticType ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] ;
+ sh:property [ sh:path wb:unit ; sh:maxCount 1 ; sh:nodeKind sh:IRI ] .
+wb:AdmissionArtifact a sh:NodeShape ; sh:targetClass wb:Artifact ;
+ sh:property [ sh:path wb:artifactPath ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] ;
+ sh:property [ sh:path wb:sha256 ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[0-9a-f]{64}$" ] .
+wb:AdmissionClaim a sh:NodeShape ; sh:targetClass wb:AssuranceClaim ;
+ sh:property [ sh:path wb:evidenceRef ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .

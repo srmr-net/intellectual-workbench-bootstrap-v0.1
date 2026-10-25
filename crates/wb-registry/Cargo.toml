@@ -5,4 +5,17 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
+wb-semantic = { path = "../wb-semantic" }
+wb-wasm-host = { path = "../wb-wasm-host" }
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+sha2 = "=0.10.9"
+libc = "0.2"
 
+[dev-dependencies]
+jsonschema = { version = "=0.33.0", default-features = false }
+tempfile = "3"
+wat = "=1.262.0"
+wasm-encoder = "=0.258.3"
+wb-kernel = { path = "../wb-kernel" }
