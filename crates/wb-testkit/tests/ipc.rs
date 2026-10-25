@@ -423,7 +423,11 @@ fn ipc_006_ingress_and_entire_output_batch_atomicity() {
     assert_eq!(after.value.as_ref(), Some(&before));
     assert!(!after.valid);
     assert_eq!(after.error, Some(ErrorCode::SchemaViolation));
-    assert!(r.output("first", "extra").is_none());
+    assert!(r.output("first", "extra").unwrap().value.is_none());
+    assert_eq!(
+        r.output("first", "extra").unwrap().error,
+        Some(ErrorCode::SchemaViolation)
+    );
 }
 #[test]
 fn ipc_007_aggregate_two_components_and_descendants_without_operator() {
@@ -745,6 +749,10 @@ fn ipc_013_correlated_error_classes_and_redacted_audit() {
         let errors = r.run_until_idle();
         assert_eq!(errors.len(), 1);
         assert_eq!(errors[0].code, expected);
+        assert_eq!(r.output("a", "result").unwrap().error, Some(expected));
+        if mode == "loop" {
+            assert_eq!(errors[0].detail["budget"], "fuel");
+        }
         if mode == "error" {
             assert_eq!(errors[0].detail["guestCode"], "EXPECTED");
             assert_eq!(
@@ -947,7 +955,7 @@ fn ipc_009_output_fanout_full_rejects_whole_batch() {
     input(&mut r, &a, "a", "fanout", json!({"value":1}));
     let errors = r.run_until_idle();
     assert_eq!(errors[0].code, ErrorCode::QueueFull);
-    assert!(r.output("a", "result").is_none());
+    assert!(r.output("a", "result").unwrap().value.is_none());
     assert!(r.input("b", "input").is_none());
     assert!(r.input("c", "input").is_none());
     assert!(r.pending().is_empty());
@@ -976,8 +984,16 @@ fn ipc_008_stopping_upstream_quarantines_active_descendant() {
     r.stop("a", "user", "stop-root").unwrap();
     code(r.complete(result), ErrorCode::StaleResult);
     assert!(r.run_until_idle().is_empty());
-    assert!(r.output("b", "result").is_none());
-    assert!(r.output("c", "result").is_none());
+    assert!(r.output("b", "result").unwrap().value.is_none());
+    assert_eq!(
+        r.output("b", "result").unwrap().error,
+        Some(ErrorCode::Cancelled)
+    );
+    assert!(r.output("c", "result").unwrap().value.is_none());
+    assert_eq!(
+        r.output("c", "result").unwrap().error,
+        Some(ErrorCode::Cancelled)
+    );
     assert!(r
         .audit()
         .iter()
@@ -997,7 +1013,7 @@ fn ipc_003_approvals_and_adapters_rechecked_at_time_of_use() {
     let completion = r.next_invocation().unwrap().unwrap().run();
     k.revoke_execution("revoked", "a", &p);
     code(r.complete(completion), ErrorCode::CapabilityDenied);
-    assert!(r.output("a", "result").is_none());
+    assert!(r.output("a", "result").unwrap().value.is_none());
     k.approve_execution("revoked", "a", &p).unwrap();
     input(&mut r, &a, "a", "adapter-revoke", json!({"value":2}));
     let rev = r.revision();

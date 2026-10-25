@@ -62,7 +62,9 @@ complete validates the entire candidate output batch and every registered edge,
 destination state/approval/schema and queue capacity before publishing projections
 or deliveries. Duplicate output port entries are rejected as ambiguous batches.
 Failed batches preserve previous values but mark affected projections invalid with
-a structured error; descendants are suppressed. Guests cannot choose envelope
+a structured error; descendants are suppressed. Even a first failure creates typed
+invalid output projections with no value. An existing projection revision identifies
+the provenance of its preserved last value, not a new successful commit. Guests cannot choose envelope
 source, room, destination, IDs or sequences. HostError retains guest code/detail
 for explicit diagnostic access; default audit records no payload or guest detail.
 

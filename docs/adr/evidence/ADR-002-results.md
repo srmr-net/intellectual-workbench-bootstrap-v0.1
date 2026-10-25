@@ -83,7 +83,10 @@ input-only snapshots, separately redacted audit, and descendant-wide quarantine.
 Nine additional regression cases cover those findings, revocation, quota rollback,
 the lifecycle table and actual concurrent rooms. No acceptance criterion was relaxed.
 One reviewer independently executed the descendant-cancellation regression: PASS.
-Final review found no remaining implementation blockers in this spike's scope.
+A final self-audit also added typed first-failure projections and retained static
+budget detail without adding audit content; negative assertions were strengthened
+to require both no committed value and a typed error. Independent re-review found
+no remaining implementation blockers in this spike's scope.
 
 ## Reproduction and remaining limits
 

@@ -427,13 +427,28 @@ impl Room {
     }
     fn invalidate(&mut self, root: &str, code: Option<ErrorCode>) {
         let affected = self.graph.affected(root);
-        for (e, p) in &mut self.outputs {
-            if affected.contains(&e.instance_id) {
-                p.valid = false;
-                p.error = code;
-            }
+        let endpoints: Vec<_> = affected
+            .iter()
+            .filter_map(|id| self.instances.get(id).map(|i| (id, i)))
+            .flat_map(|(id, i)| {
+                i.artifact
+                    .outputs
+                    .keys()
+                    .map(move |port| Endpoint::new(id, port))
+            })
+            .collect();
+        for e in endpoints {
+            let p = self.outputs.entry(e).or_insert(Projection {
+                value: None,
+                valid: false,
+                error: code,
+                revision: self.revision,
+            });
+            p.valid = false;
+            p.error = code;
         }
     }
+
     fn cancel_instance(&mut self, id: &str) -> Result<()> {
         let affected = self.graph.affected(id);
         if self

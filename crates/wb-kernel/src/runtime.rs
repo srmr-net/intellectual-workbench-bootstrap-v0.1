@@ -32,8 +32,12 @@ pub(crate) fn host_failure(f: Failure) -> HostError {
     };
     // Keep guest diagnostics out of audit/user payload logging by default.
     let mut e = error(code);
-    if let Failure::Guest { code, message } = f {
-        e.detail = serde_json::json!({"guestCode":code,"guestMessage":message});
+    match f {
+        Failure::Guest { code, message } => {
+            e.detail = serde_json::json!({"guestCode":code,"guestMessage":message})
+        }
+        Failure::Budget(budget) => e.detail = serde_json::json!({"budget":budget}),
+        _ => {}
     }
     e
 }
