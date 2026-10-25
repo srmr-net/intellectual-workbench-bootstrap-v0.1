@@ -1,0 +1,20 @@
+{
+  "protocolVersion": "0.1",
+  "messageId": "room-1:1:12",
+  "messageId": "duplicate",
+  "roomId": "room-1",
+  "source": {
+    "instanceId": "first",
+    "port": "result"
+  },
+  "destination": {
+    "instanceId": "second",
+    "port": "input"
+  },
+  "correlationId": "input-1",
+  "sequence": 12,
+  "schemaId": "org.workbench.ipc.value@0.1",
+  "payload": {
+    "value": 21
+  }
+}

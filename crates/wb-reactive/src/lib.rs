@@ -75,3 +75,5 @@ mod tests {
         assert_eq!(accept_revision(10, 9), Err("STALE_REVISION"));
     }
 }
+
+pub mod scheduler;

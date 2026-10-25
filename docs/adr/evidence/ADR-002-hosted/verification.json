@@ -1,0 +1,16 @@
+{
+  "runUrl": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40225967487",
+  "headSha": "e19edb2165218de66f64a228fefc75c840ff9cc0",
+  "allHostedJobsPassed": true,
+  "ipcCasesPassed": 15,
+  "ipcTestsPassed": 24,
+  "originalAbiCasesPassed": 10,
+  "rustTestsPassed": 47,
+  "schemaFixturesPassed": 30,
+  "pythonHarnessTestsPassed": 4,
+  "githubHostedLinux": true,
+  "artifactId": 12611218555,
+  "archiveSha256": "402ba530292ca82fc9fd0e7d1db1cb8fae448f0f03a0c6e9839c1820b0ce654e",
+  "artifactFilesRehashed": 9,
+  "acceptedWitAbiTestsHostAndLockfilesMatchCheckout": true
+}

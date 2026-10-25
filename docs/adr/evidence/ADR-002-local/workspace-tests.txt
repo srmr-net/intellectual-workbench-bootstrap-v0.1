@@ -1,0 +1,179 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.11s
+     Running unittests src/lib.rs (target/debug/deps/wb_bus-8c3777a71ffa0a02)
+
+running 1 test
+test tests::wrong_protocol_is_rejected ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_capabilities-ae221739fad678dc)
+
+running 1 test
+test tests::deny_by_default ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_contracts-648645455fca5575)
+
+running 1 test
+test tests::envelope_roundtrip ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_kernel-0e553870c9f7aa38)
+
+running 1 test
+test tests::refuses_unvalidated ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_reactive-bfbc52f7c00dab9c)
+
+running 3 tests
+test tests::rejects_cycles ... ok
+test tests::accepts_dag ... ok
+test tests::rejects_stale ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_registry-8df077bf2610ea44)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_semantic-b44d2ae787dd8cca)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_storage-4e3d894b341915cf)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_testkit-2d2afd464120610f)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ipc.rs (target/debug/deps/ipc-a55d7f910e23aad6)
+
+running 24 tests
+test ipc_005_concurrent_producers_monotonic_sequences_and_lexical_order ... ok
+test ipc_001_lifecycle_happy_path_no_guest_at_install ... ok
+test ipc_006_ingress_and_entire_output_batch_atomicity ... ok
+test ipc_002_invalid_transitions_and_duplicate_identity ... ok
+test ipc_003_approvals_and_adapters_rechecked_at_time_of_use ... ok
+test ipc_004_host_provenance_and_declared_routes ... ok
+test ipc_003_admission_pins_world_and_execution_approval ... ok
+test ipc_001_transition_table_and_resource_release ... ok
+test ipc_008_stale_revision_generation_cancel_and_at_most_once ... ok
+test ipc_009_queue_saturation_preserves_commits_and_stop_liveness ... ok
+test ipc_005_kernel_waves_preserve_ui_fifo_and_all_committed_updates ... ok
+test ipc_008_stopping_upstream_quarantines_active_descendant ... ok
+test ipc_008_new_pending_ui_and_unrelated_stop_do_not_lose_active_work ... ok
+test ipc_011_quota_failure_releases_staged_reservations ... ok
+test ipc_011_atomic_plans_and_reservation_rollback ... ok
+test ipc_014_accepted_wit_and_canonical_dto_regression ... ok
+test ipc_015_ci_declarations_are_not_a_hosted_success_claim ... ok
+test ipc_009_output_fanout_full_rejects_whole_batch ... ok
+test ipc_010_rooms_execute_concurrently_with_isolated_stores ... ok
+test ipc_013_correlated_error_classes_and_redacted_audit ... ok
+test ipc_010_trap_isolation_across_instances_and_rooms ... ok
+test ipc_007_aggregate_two_components_and_descendants_without_operator ... ok
+test ipc_012_shared_direction_port_name_preserves_authoritative_input ... ok
+test ipc_012_restore_pins_host_state_no_queue_or_grant_replay ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 44.65s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_wasm_host-c86c2b3601820422)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/abi.rs (target/debug/deps/abi-dacb43699e1fc99c)
+
+running 12 tests
+test abi_004_world_mismatch_and_core_module_rejected ... ok
+test abi_002_basic_typed_call ... ok
+test abi_010_reproducibility_pins_and_workflow ... ok
+test abi_007_schema_validation_and_registered_ports ... ok
+test abi_001_wit_bindings_and_real_component_encoding ... ok
+test cross_engine_artifact_and_invalid_configuration_are_rejected ... ok
+test abi_005_compiled_wasi_guest_is_denied ... ok
+test abi_006_guest_error_trap_and_isolation ... ok
+test abi_003_independent_integer_guest_same_host ... ok
+test abi_009_manifest_identity_and_digest ... ok
+test abi_008_memory_fuel_epoch_and_oversize_recover ... ok
+test count_caps_are_budget_failures_and_host_recovers ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 14.32s
+
+   Doc-tests wb_bus
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_contracts
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_kernel
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_reactive
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_registry
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_semantic
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_storage
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_testkit
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_wasm_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s

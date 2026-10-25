@@ -1,0 +1,36 @@
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded wit-bindgen-rt v0.41.0
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.154
+   Compiling wit-bindgen-rt v0.41.0
+   Compiling memchr v2.8.3
+   Compiling bitflags v2.13.2
+   Compiling itoa v1.0.18
+   Compiling abi-echo v0.1.0 (/home/runner/work/intellectual-workbench-bootstrap-v0.1/intellectual-workbench-bootstrap-v0.1/examples/wasm-components/echo)
+    Finished `release` profile [optimized] target(s) in 2.76s
+    Creating component target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+   Compiling abi-integer v0.1.0 (/home/runner/work/intellectual-workbench-bootstrap-v0.1/intellectual-workbench-bootstrap-v0.1/examples/wasm-components/integer)
+    Finished `release` profile [optimized] target(s) in 0.48s
+    Creating component target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+   Compiling serde_core v1.0.229
+   Compiling zmij v1.0.23
+   Compiling serde_json v1.0.154
+   Compiling wit-bindgen-rt v0.41.0
+   Compiling memchr v2.8.3
+   Compiling bitflags v2.13.2
+   Compiling itoa v1.0.18
+   Compiling abi-denied-wasi v0.1.0 (/home/runner/work/intellectual-workbench-bootstrap-v0.1/intellectual-workbench-bootstrap-v0.1/examples/wasm-components/denied-wasi)
+    Finished `release` profile [optimized] target(s) in 2.39s
+    Creating component target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+   Compiling ipc-aggregate v0.1.0 (/home/runner/work/intellectual-workbench-bootstrap-v0.1/intellectual-workbench-bootstrap-v0.1/examples/wasm-components/ipc-aggregate)
+    Finished `release` profile [optimized] target(s) in 0.53s
+    Creating component target/abi-guests/wasm32-unknown-unknown/release/ipc_aggregate.wasm
+3957fa6c0b3a7b1d621661e90252a277ffef0120fda18f0e63e9eadd747b2aec  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+b1dda424bf8cc28936ad4e1610d511def78deb3922bfba2047ee8ec33a375494  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm

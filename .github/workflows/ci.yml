@@ -26,6 +26,7 @@ jobs:
       - run: pip install -r tools/requirements.txt
       - run: python tools/check_contracts.py
   abi-validation:
+    name: ipc-validation (includes ABI)
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
@@ -40,9 +41,10 @@ jobs:
           python-version: '3.11'
       - run: pip install -r tools/requirements.txt
       - run: cargo install cargo-component --version 0.21.1 --locked
-      - run: bash examples/wasm-components/validate.sh
+      # The IPC wrapper retains examples/wasm-components/validate.sh and its full ABI suite.
+      - run: bash examples/wasm-components/validate-ipc.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: abi-validation-linux
+          name: ipc-validation-linux
           path: target/abi-evidence/

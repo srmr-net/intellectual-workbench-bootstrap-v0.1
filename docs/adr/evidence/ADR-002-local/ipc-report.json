@@ -1,0 +1,35 @@
+{
+  "headSha": "e19edb2165218de66f64a228fefc75c840ff9cc0",
+  "cases": {
+    "IPC-001": "executable checks passed",
+    "IPC-002": "executable checks passed",
+    "IPC-003": "executable checks passed",
+    "IPC-004": "executable checks passed",
+    "IPC-005": "executable checks passed",
+    "IPC-006": "executable checks passed",
+    "IPC-007": "executable checks passed",
+    "IPC-008": "executable checks passed",
+    "IPC-009": "executable checks passed",
+    "IPC-010": "executable checks passed",
+    "IPC-011": "executable checks passed",
+    "IPC-012": "executable checks passed",
+    "IPC-013": "executable checks passed",
+    "IPC-014": "executable checks passed",
+    "IPC-015": "executable checks passed"
+  },
+  "abiCases": [
+    "ABI-001",
+    "ABI-002",
+    "ABI-003",
+    "ABI-004",
+    "ABI-005",
+    "ABI-006",
+    "ABI-007",
+    "ABI-008",
+    "ABI-009",
+    "ABI-010"
+  ],
+  "witUnchanged": true,
+  "hostedExecution": false,
+  "acceptance": "Pending external confirmation of successful hosted workflow and independent review"
+}

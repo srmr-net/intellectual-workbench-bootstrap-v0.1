@@ -7,3 +7,8 @@ license.workspace = true
 [dependencies]
 wb-contracts = { path = "../wb-contracts" }
 wb-capabilities = { path = "../wb-capabilities" }
+wb-bus = { path = "../wb-bus" }
+wb-reactive = { path = "../wb-reactive" }
+wb-wasm-host = { path = "../wb-wasm-host" }
+serde_json.workspace = true
+jsonschema = { version = "=0.33.0", default-features = false }

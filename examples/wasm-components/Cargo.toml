@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["echo", "integer", "denied-wasi"]
+members = ["echo", "integer", "denied-wasi", "ipc-aggregate"]
 
 [profile.release]
 opt-level = "s"
