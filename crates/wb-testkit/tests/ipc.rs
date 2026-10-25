@@ -35,7 +35,7 @@ fn integer() -> Value {
     .unwrap()
 }
 fn aggregate() -> Value {
-    json!({"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["value"],"additionalProperties":false,"properties":{"value":{"type":"integer","minimum":-9223372036854775808i64,"maximum":9223372036854775807i64},"add":{"type":"integer"},"mode":{"type":"string"}}})
+    json!({"$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","required":["value"],"additionalProperties":false,"properties":{"value":{"type":"integer","minimum":-9223372036854775808i64,"maximum":9223372036854775807i64},"add":{"type":"integer","minimum":-9223372036854775808i64,"maximum":9223372036854775807i64},"mode":{"type":"string"}}})
 }
 fn manifest(id: &str, wasm: &[u8], extra: bool) -> Value {
     let port = |name: &str, schema: &str| json!({"name":name,"schema":schema,"semanticType":"https://workbench.example/ipc#Value"});
@@ -388,6 +388,16 @@ fn ipc_006_ingress_and_entire_output_batch_atomicity() {
     assert!(r.run_until_idle().is_empty());
     let before = value(&r, "first");
     let rev = r.revision();
+    code(
+        r.submit_ui(
+            &a,
+            "bad-add",
+            Endpoint::new("first", "input"),
+            json!({"value":1,"add":u64::MAX}),
+            "bad-add",
+        ),
+        ErrorCode::SchemaViolation,
+    );
     code(
         r.submit_ui(
             &a,
