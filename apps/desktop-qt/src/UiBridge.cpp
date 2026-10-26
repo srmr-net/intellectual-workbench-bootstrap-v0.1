@@ -231,7 +231,20 @@ void UiBridge::send(const QJsonObject &command) {
   QByteArray frame(4, '\0');
   qToBigEndian<quint32>(body.size(), reinterpret_cast<uchar *>(frame.data()));
   frame += body;
-  m_pending[token] = Pending{m_draftVersions, m_clock.elapsed()};
+  // Acknowledgment covers only fields actually carried by this command.
+  // Save/Refresh must never erase unsubmitted edits in another control.
+  QMap<QString, quint64> submitted;
+  if (command.value("type") == "edit") {
+    const QString id = command.value("controlId").toString();
+    if (m_draftVersions.contains(id))
+      submitted.insert(id, m_draftVersions.value(id));
+  } else if (command.value("type") == "apply") {
+    const auto values = command.value("proposedValues").toObject();
+    for (auto it = values.constBegin(); it != values.constEnd(); ++it)
+      if (m_draftVersions.contains(it.key()))
+        submitted.insert(it.key(), m_draftVersions.value(it.key()));
+  }
+  m_pending[token] = Pending{submitted, m_clock.elapsed()};
   if (m_process->write(frame) != frame.size()) {
     m_pending.remove(token);
     fail("UI_TRANSPORT_ERROR");

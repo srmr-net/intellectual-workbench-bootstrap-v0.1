@@ -45,3 +45,11 @@ Approval covers admission/state/restoration source inspection and these independ
 - `schemas/ui-bootstrap.schema.json`: `2d43149da0b6c844504fea681028c9aefab533628bcf5cb9b893a5885d4af11e`
 
 Follow-up test-only review: the wire receive deadline changed from 45 to 120 seconds and stage names were added to timeout diagnostics. All ownership, refresh, shutdown and exit assertions remain intact; production startup limits are unchanged. Author-provided `target/ui-wire-test.txt` records the original 45-second harness passing in 17.94 seconds when isolated. This is corroborating author evidence, distinct from the independent raw-wire probe above. Reviewed test hash refreshed; all other reviewed source hashes remain unchanged.
+
+## Draft acknowledgment follow-up
+
+Independently inspected the Qt bridge ACK correction: pending draft versions now include only the submitted Edit field or explicit Apply fields; Save/Refresh carry none. Existing version comparison still preserves a newer local draft when an older reply arrives. This closes the observed cross-field draft-loss path without altering Rust input/commit semantics. The genuine Qt test retains an unsent term edit through Save and an accepted rate edit, then requires explicit Apply to produce 0.50 and clear that draft. Source inspection approved; focused Qt execution is performed by the other independent reviewer, not counted here as independently run.
+
+Additional reviewed hashes:
+- `apps/desktop-qt/src/UiBridge.cpp`: `64a08b5b67d07160a9a5ab9af382399b870d214cd90296bbcbe6c6e5960f1bc5`
+- `apps/desktop-qt/tests/UiConformance.cpp`: `ff0b0c34dead20d0cd3e6f45252a6a15097c8fd77abb2f9264e98401be5d474b`

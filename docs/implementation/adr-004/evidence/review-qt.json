@@ -17,14 +17,19 @@
       "test": "raw worker rejected wrong-room shutdown, subsequent refresh, authorized saved shutdown/flush/exit",
       "result": "passed",
       "log": "docs/implementation/adr-004/evidence/independent-qt/shutdown.json"
+    },
+    {
+      "test": "fresh qmake rebuild and genuine Qt ui_015_016_017_fences_queue_room_switch_and_teardown after acknowledgment-scoping fix",
+      "result": "3 framework entries passed;0failed;0skipped",
+      "log": "docs/implementation/adr-004/evidence/independent-qt/draft-ack.txt"
     }
   ],
   "sourceSha256": {
     "apps/desktop-qt/src/UiBridge.h": "65a69e896b647cca9b825e3543385960c97b7c00c5937313f01e92ed82d85a15",
-    "apps/desktop-qt/src/UiBridge.cpp": "bed004997b84363ed27144f704bfa1ffe74914a7a65da1faa634e07a3f415299",
+    "apps/desktop-qt/src/UiBridge.cpp": "64a08b5b67d07160a9a5ab9af382399b870d214cd90296bbcbe6c6e5960f1bc5",
     "apps/desktop-qt/src/main.cpp": "8646a182495cf4761a2526f59372a1ea56c0ff38643a2ac086413d341e7ae8e6",
     "apps/desktop-qt/qml/Main.qml": "ed1533ed44081806e598b533a4f5f9777ccd65fa838d462ea4059ca7920ab13f",
-    "apps/desktop-qt/tests/UiConformance.cpp": "0ea9233ba575621e74642ab33c2ac0badbf52423af5763039ca8a9ee93c5c009",
+    "apps/desktop-qt/tests/UiConformance.cpp": "ff0b0c34dead20d0cd3e6f45252a6a15097c8fd77abb2f9264e98401be5d474b",
     "apps/desktop-qt/app.pro": "54fc7e916deddee40637f67591eea3fec146520799110ff50c268df9309d044d",
     "apps/desktop-qt/tests/ui_tests.pro": "71c83a4198ca2d65b7a3fd0f9fd6d5e350e74a97d5151ea1c1e95f9f0f271561",
     "apps/desktop-qt/resources.qrc": "066d6e130b298b1127edfa66d1a7e8f9a9a497292aa0f2b0e6dfb53ac1a3ecc1",
@@ -36,5 +41,5 @@
     "crates/wb-contracts/src/ui.rs": "35ff35758ece0187d94c478376b17abc8e3244b80430f01e859dfb4f6dc910ea",
     "crates/wb-semantic/src/ui.rs": "05afda332babfc5ce36c6d31bd3ce517c27aa4b955f1bc130c483e240329a34e"
   },
-  "followupReview": "Reviewed test-only wire receive timeout 45s to120s plus stage diagnostics; all protocol/assertion checks remain intact. No production startup timeout change. All other source hashes unchanged."
+  "followupReview": "Reviewed test-only wire receive timeout 45s to120s plus stage diagnostics; all protocol/assertion checks remain intact. No production startup timeout change. All other source hashes unchanged. Subsequent draft acknowledgment scoping fix reviewed and focused genuine Qt retest passed; UiBridge.cpp and UiConformance.cpp hashes refreshed."
 }

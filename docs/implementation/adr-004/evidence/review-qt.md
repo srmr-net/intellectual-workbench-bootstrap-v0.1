@@ -87,3 +87,21 @@ remains unchanged. No other source hashes changed. ui.rs hash refreshed in the
 sidecar after source inspection; original independent executions above remain
 the execution evidence, and the parent reported isolated original45s test passed
 in17.94s.
+
+## Follow-up draft acknowledgment review
+
+QT-008 (high, resolved): accepted Save/Refresh or another-field Edit previously
+acknowledged all local draft versions, erasing unrelated unsent text. Pending
+version snapshots now contain only the actual Edit control or Apply proposed
+keys; Save/Refresh capture none. Existing version equality prevents clearing
+text entered after submission. This preserves the separation between local
+drafts and committed state without changing worker/contract semantics.
+
+Independently rebuilt the Qt binary and ran the genuine focused UI015/016/017
+test:3 framework entries passed,0failed/skipped. The added regression establishes
+committed full input, creates an unsent term draft, verifies Save and an accepted
+rate Edit preserve it, then verifies explicit Apply computes0.50 and clears only
+the submitted draft. Existing queue/fence/room-switch/teardown assertions still
+pass. Log: independent-qt/draft-ack.txt. Only UiBridge.cpp and UiConformance.cpp
+changed among covered source hashes; both refreshed in review-qt.json. Approval
+remains scoped to the reviewed source bytes and independent checks.

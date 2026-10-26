@@ -186,6 +186,23 @@ private slots:
     view.bridge.apply(view.bridge.viewEpoch());
     QTRY_COMPARE_WITH_TIMEOUT(view.bridge.committedValue("payment"),
                               QString("1.00"), 15000);
+    // A retained, unsubmitted edit survives Save and an accepted
+    // different-field edit. Only an explicit Apply acknowledges and clears that
+    // draft.
+    view.bridge.setLocalDraft("term", "2", view.bridge.viewEpoch());
+    QSignalSpy draftSaved(&view.bridge, &UiBridge::saved);
+    view.bridge.save();
+    QTRY_COMPARE(draftSaved.count(), 1);
+    QVERIFY(view.bridge.hasDraft("term"));
+    view.bridge.edit("rate", "0", view.bridge.viewEpoch());
+    QTRY_COMPARE(view.bridge.pendingCount(), 0);
+    QCOMPARE(view.bridge.error(), QString());
+    QVERIFY(view.bridge.hasDraft("term"));
+    QCOMPARE(view.bridge.committedValue("payment"), QString("1.00"));
+    view.bridge.apply(view.bridge.viewEpoch());
+    QTRY_COMPARE_WITH_TIMEOUT(view.bridge.committedValue("payment"),
+                              QString("0.50"), 15000);
+    QVERIFY(!view.bridge.hasDraft("term"));
     const auto oldEpoch = view.bridge.viewEpoch();
     view.bridge.start(config(dir.path() + "/registry", "room-b"));
     QTRY_VERIFY_WITH_TIMEOUT(view.bridge.ready(), 60000);

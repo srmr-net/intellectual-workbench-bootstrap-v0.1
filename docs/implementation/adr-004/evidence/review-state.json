@@ -26,6 +26,8 @@
     "tools/registry_validate.py": "077895af41893cd859096daefa92d4552b1806a3400283a2dcb21acb98efb128",
     "tools/ui_contract.py": "dee8d0c43d5e4e5192f50a156420fa6b0616bab7f8f9ade03d2dd3444038d9ef",
     "schemas/ui.schema.json": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
-    "schemas/ui-bootstrap.schema.json": "2d43149da0b6c844504fea681028c9aefab533628bcf5cb9b893a5885d4af11e"
+    "schemas/ui-bootstrap.schema.json": "2d43149da0b6c844504fea681028c9aefab533628bcf5cb9b893a5885d4af11e",
+    "apps/desktop-qt/src/UiBridge.cpp": "64a08b5b67d07160a9a5ab9af382399b870d214cd90296bbcbe6c6e5960f1bc5",
+    "apps/desktop-qt/tests/UiConformance.cpp": "ff0b0c34dead20d0cd3e6f45252a6a15097c8fd77abb2f9264e98401be5d474b"
   }
 }
