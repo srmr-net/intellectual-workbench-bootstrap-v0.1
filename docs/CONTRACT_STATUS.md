@@ -30,4 +30,4 @@ No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffoldin
 
 ## Product vertical slices
 
-- VSLICE-001 headless installable mortgage: **PROPOSED**; implementation and independent review complete, clean full locked and hosted evidence pending. See [task and gates](implementation/vslice-001/README.md). No Qt/Operator or privileged guest profile is introduced.
+- VSLICE-001 headless installable mortgage: **Accepted** for the documented headless profile; all20 gates,99 Rust tests, reviews and [verified hosted evidence](implementation/vslice-001/evidence/RESULTS.md) pass. See [task and gates](implementation/vslice-001/README.md). No Qt/Operator or privileged guest profile is introduced.

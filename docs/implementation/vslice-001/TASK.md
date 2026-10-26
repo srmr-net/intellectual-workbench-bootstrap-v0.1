@@ -20,4 +20,4 @@
 - **Failure cases:** schema/domain errors, output batches, tamper/imports, no grant,
   exact-pin failures, cancelled/stale tickets, queue pressure, room isolation,
   interrupted install, native restore with fresh approvals.
-- **Status:** PROPOSED until every mandatory gate and hosted verification passes.
+- **Status:** Accepted — 2026-10-26; all mandatory gates and verified hosted evidence pass. See evidence/RESULTS.md.

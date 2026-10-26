@@ -1,0 +1,19 @@
+{
+  "runId": 40319945570,
+  "artifactId": 12649585432,
+  "archiveSha256": "90a20e491b55df5d773101b275e650c2138bfe778d9ea254b79a62458ae6ca69",
+  "headSha": "f53dd65a3a5b4fca2f1d0fcac6de058ed91be124",
+  "recordedFileHashesVerified": 75,
+  "rustTests": 99,
+  "numericalCases": 33,
+  "recordAndEveryPayloadVerified": true,
+  "sourceAndAcceptedContractsMatch": true,
+  "bothIndependentReviewsMatch": true,
+  "guestPin": {
+    "id": "org.workbench.example.mortgage-headless",
+    "version": "0.1.0",
+    "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd"
+  },
+  "recordDigest": "3f5c0c1445804db246a0c622479462eabedbae31f5249560a3ec7257cec8b144",
+  "maximumMeasuredMicros": 12405
+}

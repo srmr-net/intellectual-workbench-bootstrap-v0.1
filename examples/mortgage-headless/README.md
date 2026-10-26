@@ -1,4 +1,4 @@
-# Headless mortgage vertical slice — PROPOSED
+# Headless mortgage vertical slice — Accepted
 
 This source/build recipe creates a complete installable local package in
 `target/mortgage-packages/mortgage-headless`. Unlike the original metadata-only
@@ -29,25 +29,25 @@ No Operator, Qt, native grants, remote lookup or guest services are involved.
 Its UI-named accepted ingress APIs work without any GUI. Required room UI metadata
 is an inert host-owned reference and is never resolved or put in the bundle.
 
-Principal is unsigned ASCII decimal, >0 through1000000000, at most two fractional
-digits. Annual percentage is0..100 with at most six fractional digits; term is an
-integer1..600. Integer-equivalent JSON month numbers such as8.0 are accepted by the
+Principal is unsigned ASCII decimal, >0 through 1,000,000,000, at most two fractional
+digits. Annual percentage is 0–100 with at most six fractional digits; term is an
+integer from 1 to 600. Integer-equivalent JSON month numbers such as 8.0 are accepted by the
 schema and guest. No signs, leading zeros, whitespace, exponents or special numeric
-strings. Trailing-zero scales such as5.00 are permitted as the supplied fixtures
+strings. Trailing-zero scales such as 5.00 are permitted as the supplied fixtures
 require. Exact integer rationals avoid small-rate cancellation and intermediate
-rounding. Only the final payment is rounded half-up to two places, including0.00.
+rounding. Only the final payment is rounded half-up to two places, including 0.00.
 Output schema enforces canonical shape, not proof of the financial result.
 GBP is the existing illustrative unit; no exchange-rate, fee, APR, tax or advice
 semantics are supplied. No shared ADR-008 numeric convention is settled here.
 
-The CLI/product tests use a bounded20M-fuel policy through the existing Limits API;
-accepted Host defaults remain2M fuel and all accepted tests remain unchanged.
-Memory stays8MiB, epoch ticks100, message16KiB and result-count8. Exact arithmetic
-at the maximum tiny-rate600-month boundary exceeds the generic spike fuel default;
+The CLI/product tests use a bounded 20M-fuel policy through the existing Limits API;
+accepted Host defaults remain 2M fuel and all accepted tests remain unchanged.
+Memory stays 8 MiB, epoch ticks 100, message 16 KiB and result-count 8. Exact arithmetic
+at the maximum tiny-rate/600-month boundary exceeds the generic spike fuel default;
 calibration, actual results and durations are archived. These are engineering test
 limits, not universal financial workload guarantees.
 
-`reference.py` uses an independent Decimal90 discounted cash-flow sum to verify
+`reference.py` uses an independent Decimal with precision 90 discounted cash-flow sum to verify
 all supplied vectors, nine boundaries and sixteen seeded cases. `rebuild.py`
 builds in a genuinely fresh target directory and compares raw hashes on the SAME
 machine. Local/hosted hashes are recorded separately; no cross-machine identity is
@@ -63,5 +63,6 @@ current registry integrity checks, new approvals/generations and recomputes resu
 No durable room database or physical power-cut guarantee is introduced.
 
 See docs/implementation/vslice-001 for mandatory gates and independent reviews.
-Milestone stays PROPOSED until local checks, reviews, hosted Linux execution and
-archived artifact verification all succeed.
+Milestone accepted on 2026-10-26 after all 99 Rust tests, both reviews, hosted Linux
+execution and archived artifact verification passed. See
+[complete results](../../docs/implementation/vslice-001/evidence/RESULTS.md).

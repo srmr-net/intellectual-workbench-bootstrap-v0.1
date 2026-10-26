@@ -1,6 +1,6 @@
 # VSLICE-001 — Installable Mortgage Calculator (Headless)
 
-**Status:** PROPOSED — product-level acceptance requires all mandatory VSLICE gates, independent reviews, successful hosted Linux CI and archived evidence.  
+**Status:** Accepted — 2026-10-26; all mandatory gates, independent reviews, hosted Linux CI and archived evidence verified. See [results](evidence/RESULTS.md).
 **Version:** 0.1 · 2026-10-26  
 **Depends on:** accepted ADR-001, ADR-002 and ADR-003; Component Package and Manifest Specification v0.1 and ontology v0.1.
 

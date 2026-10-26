@@ -36,7 +36,7 @@ Read `AGENTS.md`, `docs/implementation/BACKLOG.md` and `docs/adr/ADR-001.md`. St
 
 See `docs/CONTRACT_STATUS.md` for binding versus unresolved decisions.
 
-The proposed [headless mortgage vertical slice](examples/mortgage-headless/README.md)
+The accepted [headless mortgage vertical slice](examples/mortgage-headless/README.md)
 builds a real local package and exercises accepted registry/lifecycle/WIT/bus APIs.
 Its [task and acceptance matrix](docs/implementation/vslice-001/README.md) track
 product evidence separately from the original metadata-only mortgage reference.

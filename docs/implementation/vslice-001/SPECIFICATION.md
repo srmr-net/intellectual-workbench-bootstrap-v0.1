@@ -1,6 +1,6 @@
 # VSLICE-001 — Headless Installable Mortgage Calculator
 
-**Status:** PROPOSED (not implemented or validated by this kit)  
+**Status:** Accepted — 2026-10-26; all VSLICE gates, reviews and hosted Linux evidence verified ([results](evidence/RESULTS.md))
 **Version:** 0.1 / 2026-10-26  
 **Classification:** Product vertical slice, **not** a new ADR or public interface revision.  
 **Owners:** `wb-registry`, `wb-semantic`, `wb-wasm-host`, `wb-kernel`, `wb-bus`, `wb-reactive`, `wb-contracts`, verification.
