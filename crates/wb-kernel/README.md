@@ -83,3 +83,8 @@ It retains the full ABI suite and adds named IPC tests and machine-readable evid
 See docs/implementation/ADR-002-VALIDATION.md and docs/adr/evidence/ADR-002-results.md.
 Initial quotas/queue/host ceilings are spike parameters, not production admission
 policy; original compilation/schema/native-lifting limitations remain.
+
+ADR-003 adds `Kernel::cache_registry_release(&Registry, &ValidatedHandle)`: it
+revalidates registry-pinned bytes and metadata before caching through the existing
+ADR-001 host. No lifecycle, IPC, revision or approval semantics change. A registry
+handle never grants execution; explicit ADR-002 policy approval remains required.

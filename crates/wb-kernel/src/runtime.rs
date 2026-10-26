@@ -153,6 +153,19 @@ pub struct Kernel {
     pub(crate) services: Arc<Services>,
 }
 impl Kernel {
+    /// Import an exact registry-issued handle. Admission grants no run authority;
+    /// approve_execution and room policy remain separate and unchanged.
+    pub fn cache_registry_release(
+        &self,
+        registry: &wb_registry::Registry,
+        handle: &wb_registry::ValidatedHandle,
+    ) -> Result<ComponentRef> {
+        let (checked, bytes) = registry
+            .read_verified_bundle(handle)
+            .map_err(|_| error(ErrorCode::ComponentNotFound))?;
+        self.cache_verified_bundle(checked.manifest, bytes, checked.schemas)
+    }
+
     pub fn new(limits: Limits, max_instances: usize, max_invocations: usize) -> Result<Self> {
         if max_instances == 0 || max_invocations == 0 {
             return Err(error(ErrorCode::ResourceLimit));
