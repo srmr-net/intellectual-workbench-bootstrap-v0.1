@@ -88,3 +88,20 @@ ADR-003 adds `Kernel::cache_registry_release(&Registry, &ValidatedHandle)`: it
 revalidates registry-pinned bytes and metadata before caching through the existing
 ADR-001 host. No lifecycle, IPC, revision or approval semantics change. A registry
 handle never grants execution; explicit ADR-002 policy approval remains required.
+
+`headless::HeadlessRoom` wraps the existing native room controller for a CLI/test
+host. `start` requires an already cached, explicitly approved exact pin; it applies
+one instance plan and performs prepare/start before issuing an allowlisted native
+ingress adapter. `attach` issues a fresh adapter for a restored controller and does
+not grant/start an instance. `submit` delegates to accepted submit_ui semantics;
+room()/room_mut() expose the same sole host controller for scheduling/observation.
+The required UI reference is inert host metadata, never a package UI or renderer.
+No lifecycle, queue, revision, grant or error semantics are altered.
+
+`wb-mortgage-headless` is a real native entry point over registry admission and
+these APIs. It grants only an explicit pure-execution approval for the selected
+pin, uses a bounded20M fuel workload policy (original Host defaults unchanged) and
+prints only committed projection plus actual trace metadata. See
+examples/mortgage-headless/README.md and the VSLICE-001 task for reproduction,
+financial bounds, negative tests and evidence. The original metadata-only mortgage
+package is not installed by this path.
