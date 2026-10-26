@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "principal",
+    "annual_rate_percent",
+    "term_months"
+  ],
+  "properties": {
+    "principal": {
+      "type": "string",
+      "maxLength": 13,
+      "pattern": "^(?:(?:0|[1-9][0-9]{0,8})(?:\\.[0-9]{1,2})?|1000000000(?:\\.0{1,2})?)$(?![\\s\\S])",
+      "not": {
+        "pattern": "^0(?:\\.0{1,2})?$"
+      }
+    },
+    "annual_rate_percent": {
+      "type": "string",
+      "maxLength": 10,
+      "pattern": "^(?:(?:0|[1-9][0-9]?)(?:\\.[0-9]{1,6})?|100(?:\\.0{1,6})?)$(?![\\s\\S])"
+    },
+    "term_months": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 600
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[package]
+name = "mortgage-observer"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen-rt = { version = "=0.41.0", features = ["bitflags"] }
+
+[package.metadata.component]
+package = "workbench:component"
+
+[package.metadata.component.target]
+path = "../../../wit"
+world = "compute-component"

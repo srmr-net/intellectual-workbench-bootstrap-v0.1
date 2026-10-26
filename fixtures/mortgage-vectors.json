@@ -1,0 +1,166 @@
+{
+  "description": "Fixed-rate fully amortising monthly payment reference vectors. Outputs calculated separately using Python decimal with precision 70 and ROUND_HALF_UP; verify independently in review.",
+  "units": {
+    "principal": "illustrative currency amount",
+    "annual_rate_percent": "percent, not fraction",
+    "term_months": "months",
+    "monthly_payment": "currency amount, two decimals"
+  },
+  "positive": [
+    {
+      "id": "standard-25y",
+      "input": {
+        "principal": "250000.00",
+        "annual_rate_percent": "5.00",
+        "term_months": 300
+      },
+      "expected": {
+        "monthly_payment": "1461.48"
+      }
+    },
+    {
+      "id": "zero-interest",
+      "input": {
+        "principal": "120000.00",
+        "annual_rate_percent": "0",
+        "term_months": 240
+      },
+      "expected": {
+        "monthly_payment": "500.00"
+      }
+    },
+    {
+      "id": "one-month",
+      "input": {
+        "principal": "1000.00",
+        "annual_rate_percent": "12.0",
+        "term_months": 1
+      },
+      "expected": {
+        "monthly_payment": "1010.00"
+      }
+    },
+    {
+      "id": "small-rate",
+      "input": {
+        "principal": "87500.00",
+        "annual_rate_percent": "0.000001",
+        "term_months": 360
+      },
+      "expected": {
+        "monthly_payment": "243.06"
+      }
+    },
+    {
+      "id": "high-rate-short",
+      "input": {
+        "principal": "500000.00",
+        "annual_rate_percent": "100",
+        "term_months": 12
+      },
+      "expected": {
+        "monthly_payment": "67497.88"
+      }
+    },
+    {
+      "id": "long-term",
+      "input": {
+        "principal": "999999999.99",
+        "annual_rate_percent": "3.75",
+        "term_months": 600
+      },
+      "expected": {
+        "monthly_payment": "3692997.71"
+      }
+    },
+    {
+      "id": "rounding-half",
+      "input": {
+        "principal": "1.00",
+        "annual_rate_percent": "0",
+        "term_months": 8
+      },
+      "expected": {
+        "monthly_payment": "0.13"
+      }
+    },
+    {
+      "id": "single-cent",
+      "input": {
+        "principal": "0.01",
+        "annual_rate_percent": "0",
+        "term_months": 1
+      },
+      "expected": {
+        "monthly_payment": "0.01"
+      }
+    }
+  ],
+  "negative": [
+    {
+      "id": "zero-principal",
+      "input": {
+        "principal": "0",
+        "annual_rate_percent": "5",
+        "term_months": 300
+      }
+    },
+    {
+      "id": "negative-rate",
+      "input": {
+        "principal": "100",
+        "annual_rate_percent": "-1",
+        "term_months": 12
+      }
+    },
+    {
+      "id": "zero-term",
+      "input": {
+        "principal": "100",
+        "annual_rate_percent": "1",
+        "term_months": 0
+      }
+    },
+    {
+      "id": "wrong-type",
+      "input": {
+        "principal": 100,
+        "annual_rate_percent": "5",
+        "term_months": 12
+      }
+    },
+    {
+      "id": "extra-field",
+      "input": {
+        "principal": "100",
+        "annual_rate_percent": "5",
+        "term_months": 12,
+        "foo": 1
+      }
+    },
+    {
+      "id": "rate-above-limit",
+      "input": {
+        "principal": "100",
+        "annual_rate_percent": "101",
+        "term_months": 12
+      }
+    },
+    {
+      "id": "uncanonical-decimal",
+      "input": {
+        "principal": "1e6",
+        "annual_rate_percent": "5",
+        "term_months": 12
+      }
+    },
+    {
+      "id": "oversized-term",
+      "input": {
+        "principal": "100",
+        "annual_rate_percent": "5",
+        "term_months": 601
+      }
+    }
+  ]
+}

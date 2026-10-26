@@ -20,10 +20,14 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 - ADR-005 permanent namespace, SHACL and compatibility: **OPEN**.
 - ADR-006 publication/archive format: **OPEN**; ADR-003 scopes raw-byte SHA-256 and local-directory admission only; existing package schema retained.
 - ADR-007 actual host permission grants: **OPEN**, current capability broker rejects requests.
-- ADR-008 decimal arithmetic: **OPEN**; no mortgage reference numerical result asserted.
+- ADR-008 shared decimal arithmetic conventions: **OPEN**; the VSLICE-001 mortgage domain policy is product-specific and does not settle shared numeric contracts.
 - ADR-009 Operator interface: **OPEN**.
 - ADR-010 development sandbox/merge rights: **OPEN**.
 
 ## Conformance status
 
 No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffolding checks; the separate ABI spike passes ABI-001..ABI-010 with independently compiled guests on GitHub-hosted Linux. Python schema fixture checks run locally and in CI when requirements are present.
+
+## Product vertical slices
+
+- VSLICE-001 headless installable mortgage: **Accepted** for the documented headless profile; all20 gates,99 Rust tests, reviews and [verified hosted evidence](implementation/vslice-001/evidence/RESULTS.md) pass. See [task and gates](implementation/vslice-001/README.md). No Qt/Operator or privileged guest profile is introduced.

@@ -14,3 +14,5 @@ mod tests {
 pub mod room;
 pub mod runtime;
 pub use runtime::Kernel;
+
+pub mod headless;

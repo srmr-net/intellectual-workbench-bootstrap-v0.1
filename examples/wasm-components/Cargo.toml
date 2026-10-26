@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["echo", "integer", "denied-wasi", "ipc-aggregate"]
+members = ["echo", "integer", "denied-wasi", "ipc-aggregate", "mortgage-headless", "mortgage-adversary", "mortgage-observer"]
 
 [profile.release]
 opt-level = "s"

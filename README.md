@@ -35,3 +35,8 @@ Read `AGENTS.md`, `docs/implementation/BACKLOG.md` and `docs/adr/ADR-001.md`. St
 `component.json` is authoritative for identity, ports, permissions, artifacts. RDF assists semantic discovery. Live plans, reactive state and UI data are JSON/typed runtime objects, not executable RDF. The namespace `https://workbench.example/ns/0.1#` is provisional. No arbitrary component-supplied QML is executable.
 
 See `docs/CONTRACT_STATUS.md` for binding versus unresolved decisions.
+
+The accepted [headless mortgage vertical slice](examples/mortgage-headless/README.md)
+builds a real local package and exercises accepted registry/lifecycle/WIT/bus APIs.
+Its [task and acceptance matrix](docs/implementation/vslice-001/README.md) track
+product evidence separately from the original metadata-only mortgage reference.

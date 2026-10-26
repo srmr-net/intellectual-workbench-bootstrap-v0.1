@@ -2108,7 +2108,12 @@ name = "wb-kernel"
 version = "0.1.0"
 dependencies = [
  "jsonschema",
+ "libc",
  "serde_json",
+ "sha2",
+ "tempfile",
+ "wasm-encoder 0.258.3",
+ "wat",
  "wb-bus",
  "wb-capabilities",
  "wb-contracts",

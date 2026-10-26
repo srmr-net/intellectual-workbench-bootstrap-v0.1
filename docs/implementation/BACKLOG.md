@@ -13,6 +13,7 @@ All tasks require changed-code tests, documented interfaces and agent verificati
 | REACTIVE-001 | G3 | BUS-001, SPEC-002, ADR-008 | wb-reactive | DAG, stale revision rejection, deterministic mortgage (CT-07/08/09) |
 | UI-001 | G3 | SPEC-001, ADR-003 | apps/desktop-qt | Unknown/executable UI rejected; native controls (CT-06) |
 | STORAGE-001 | G4 | SPEC-001, ADR-004 | wb-storage | Pinned restore, crash recovery, no stale grants (CT-10/11/12/14) |
+| VSLICE-001 | Headless | accepted ADR-001/002/003 | mortgage guest/package, native headless adapter, tests/evidence | Real exact-pinned registry→kernel→WIT→room calculation; VSLICE-001..020 and all regressions pass; [task](vslice-001/TASK.md) |
 | DEMO-001 | G3–G4 | runtime, graph, reactive, UI, storage | integration only | Mortgage UI updates without Operator, save/reopen |
 | AGENT-001 | G5 | SPEC-002, SEC-001 | wb-kernel | Structured plan validation before mutating room (CT-15) |
 | BOOTSTRAP-001 | B1 | G5, ADR-010 | development components | Generate/test/install new module under approval |
