@@ -1,7 +1,8 @@
 # ADR-003 — Local registry validation evidence
 
-Status: Proposed; independent review complete, final clean local/hosted execution
-and artifact verification pending. This report does not claim hosted acceptance.
+Status: Accepted — 2026-10-26. REG-001..020, independent filesystem/durability
+review, clean hosted Linux execution and downloaded artifact verification passed.
+Acceptance is limited to ADR-003 §11 and the limitations recorded below.
 
 ## Reproduction
 
@@ -39,36 +40,38 @@ original IPC tests remain
 
 Each row maps to nonignored production-path Rust tests named `reg_NNN_*` in
 `crates/wb-registry/tests/registry.rs`. No security-critical validator or storage
-operation is mocked. Actual results and hosted source/run are recorded below
-once the final validations finish.
+operation is mocked. Every listed gate passed both locally and on hosted Linux at the source commit
+recorded below. REG-008 validates the explicitly blocked UI surface; it does not
+claim support for package UI rendering.
 
-| Gate | Executable scenario |
-|---|---|
-| REG-001 | Compiled pure fixture, exact bytes, kernel adapter, cross-store handle rejection |
-| REG-002 | Unknown fields, duplicate keys, malformed versions/ports and unsupported protocol |
-| REG-003 | Traversal/absolute paths, symlink parents/files, hardlinks, FIFO/socket, source policy |
-| REG-004 | Missing artifacts/schema, invalid schema, local refs/cycles, unchanged literal/ref-sibling semantics, dialect/vocabulary rejection |
-| REG-005 | Admission digest mismatch, artifact/record corruption after restart; unavailable, never replaced |
-| REG-006 | Turtle syntax, actual pySHACL violation and unknown semantic vocabulary |
-| REG-007 | Independent identity/version/name/direction/schema/type/unit/path/digest mismatches |
-| REG-008 | UI absent accepted, all UI-bearing packages explicitly blocked including invalid binding/executable UI |
-| REG-009 | Manifest/RDF permission requests denied, never granted |
-| REG-010 | Core/malformed/wrong export/type/import rejection; valid trapping initializer admitted without execution |
-| REG-011 | Identical reinstall, including release-count capacity and restart |
-| REG-012 | Conflicting artifact under same identity/version preserves original |
-| REG-013 | Exact resolution, no version/digest fallback; same bytes with distinct version stay separate |
-| REG-014 | Real SIGKILL at seven checkpoints, restart/read/reinstall; corrupt marker preserves possible pinned object |
-| REG-015 | Independent thread/process installers/readers using actual flock/rename/fsync |
-| REG-016 | Only committed metadata discoverable; no inspection/guest tools needed for discovery |
-| REG-017 | Dependency-shaped declarations, remote/file/traversal schema references rejected |
-| REG-018 | Forged assurance stays unreviewed; missing evidence rejected |
-| REG-019 | File/count/depth/total/store/output/address/time bounds, live symlink swaps and parent-death termination |
-| REG-020 | Frozen WIT/ABI and unchanged complete IPC suite; executed hosted workflow required |
+| Gate | Local | Hosted | Executable scenario |
+|---|---|---|---|
+| REG-001 | PASS | PASS | Compiled pure fixture, exact bytes, kernel adapter, cross-store handle rejection |
+| REG-002 | PASS | PASS | Unknown fields, duplicate keys, malformed versions/ports and unsupported protocol |
+| REG-003 | PASS | PASS | Traversal/absolute paths, symlink parents/files, hardlinks, FIFO/socket, source policy |
+| REG-004 | PASS | PASS | Missing artifacts/schema, invalid schema, local refs/cycles, unchanged literal/ref-sibling semantics, dialect/vocabulary rejection |
+| REG-005 | PASS | PASS | Admission digest mismatch, artifact/record corruption after restart; unavailable, never replaced |
+| REG-006 | PASS | PASS | Turtle syntax, actual pySHACL violation and unknown semantic vocabulary |
+| REG-007 | PASS | PASS | Independent identity/version/name/direction/schema/type/unit/path/digest mismatches |
+| REG-008 | PASS | PASS | UI absent accepted, all UI-bearing packages explicitly blocked including invalid binding/executable UI |
+| REG-009 | PASS | PASS | Manifest/RDF permission requests denied, never granted |
+| REG-010 | PASS | PASS | Core/malformed/wrong export/type/import rejection; valid trapping initializer admitted without execution |
+| REG-011 | PASS | PASS | Identical reinstall, including release-count capacity and restart |
+| REG-012 | PASS | PASS | Conflicting artifact under same identity/version preserves original |
+| REG-013 | PASS | PASS | Exact resolution, no version/digest fallback; same bytes with distinct version stay separate |
+| REG-014 | PASS | PASS | Real SIGKILL at seven checkpoints, restart/read/reinstall; corrupt marker preserves possible pinned object |
+| REG-015 | PASS | PASS | Independent thread/process installers/readers using actual flock/rename/fsync |
+| REG-016 | PASS | PASS | Only committed metadata discoverable; no inspection/guest tools needed for discovery |
+| REG-017 | PASS | PASS | Dependency-shaped declarations, remote/file/traversal schema references rejected |
+| REG-018 | PASS | PASS | Forged assurance stays unreviewed; missing evidence rejected |
+| REG-019 | PASS | PASS | File/count/depth/total/store/output/address/time bounds, live symlink swaps and parent-death termination |
+| REG-020 | PASS | PASS | Frozen WIT/ABI and unchanged complete IPC suite; executed hosted workflow required |
 
 ## Independent review
 
-Two independent reviewers were explicitly requested for filesystem and durability
-review. Both reviewed production traversal, workers, nonexecution, atomicity and
+Independent agents `/root/review_registry_filesystem` and
+`/root/review_registry_durability` performed the requested filesystem and durability
+reviews. Both reviewed production traversal, workers, nonexecution, atomicity and
 concurrency. They found and verified corrections for schema literal/ref-sibling
 semantics, unsupported dialects, root descriptor ownership, worker parent-death,
 metadata reader/writer limits, capacity idempotence, conservative corruption
@@ -105,3 +108,75 @@ security isolation remain outside this slice. Logical byte quotas reserve stagin
 space but do not measure physical filesystem blocks. Worker resource and wall
 limits are distinct from cooperative staging I/O deadlines; a hung kernel I/O
 operation is not hard-time-bounded. Compilation does not execute guest code.
+
+
+## Clean local execution
+
+Source: `f275c2147e5981b124da889bb516d8860a7dcfc9`, trackedChanges=false.
+PR: [#5](https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/pull/5).
+Command: `PATH=/tmp/wb-spec-001-venv/bin:/tmp/wb-abi-tools/bin:$PATH bash examples/wasm-components/validate-registry.sh`;
+exit 0. All 76 Rust tests pass, including 31 registry tests (three child entrypoints
+are exercised by the process tests), all twelve original ABI tests and all 24
+unchanged IPC tests. The previous registry/semantic placeholder version tests are
+replaced by substantive coverage. No ignored or failed tests. All twenty REG IDs,
+Clippy with warnings denied, formatting, 30 schema fixtures/reference JSON/Turtle
+and four Python tests pass.
+
+Local platform: Linux 7.2.5-3-omarchy, x86_64, glibc 2.44. Rust 1.99.1
+(58cf8f9c3), Cargo 1.99.1 (5f94df478), cargo-component 0.21.1, Wasmtime 49.0.1;
+Python 3.14.7, jsonschema 4.26.0, rdflib 7.6.0, pySHACL 0.30.1.
+The first sandboxed filesystem run could not create a Unix socket; the mandatory
+case was rerun outside that sandbox and passed. No prerequisite is skipped.
+
+[Full local logs and inputs](ADR-003-local.zip), SHA-256
+`87a40b74770643af21d7e8db4a56d90ee76dabf17bec2ba3d11d7b45086a97b3`;
+[local versions/hash manifest](ADR-003-local-run.json). All 28 recorded file hashes,
+including actual installed record/fixture bytes, were recomputed from the archived inputs.
+Local pure artifact SHA-256:
+`d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d`.
+
+
+## Hosted Linux execution and acceptance
+
+The complete [push workflow 40246492531](https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40246492531)
+concluded **success**, at exact source
+`f275c2147e5981b124da889bb516d8860a7dcfc9`, with trackedChanges=false. The
+[PR workflow 40246628788](https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40246628788)
+also passed. All jobs (formatting, contracts, registry including full IPC/ABI)
+passed. All 76 Rust tests, all twenty REG IDs, ten named ABI IDs plus both
+additional original ABI tests, fifteen named IPC IDs across all 24 unchanged IPC
+tests, Clippy, format, 30 fixtures/reference JSON/Turtle and four Python tests pass.
+No skipped prerequisites or ignored tests are accepted as passes.
+
+Runner: GitHub-hosted Ubuntu 24.04 x86_64, kernel 6.17.0-1022-azure, glibc 2.39.
+Rust 1.99.1 (58cf8f9c3), Cargo 1.99.1 (5f94df478), cargo-component 0.21.1,
+Wasmtime 49.0.1, Python 3.11.17, jsonschema 4.26.0, rdflib 7.6.0,
+pySHACL 0.30.1. Exact metadata:
+[hosted versions and hashes](ADR-003-hosted-run.json).
+
+GitHub artifact `registry-validation-linux`, ID `12619156024`, was downloaded
+through the GitHub API and archived as [ADR-003-hosted.zip](ADR-003-hosted.zip).
+Its SHA-256 equals the GitHub-reported upload digest:
+`3b0821c4ad530976d62531a7ae1299e5aca4eaf6c90bb853179795ff4442cdca`.
+All 28 recorded file hashes were recomputed from the ZIP, alongside every payload
+hash in the actual installed record. Reviewed source files, canonical manifest,
+ontology, accepted WIT and original ABI/IPC sources match archived bytes exactly.
+The archive includes complete validation logs, actual fixture, receipt, record,
+policy, implementation/test sources and pinned inputs.
+
+Hosted compiled pure fixture pin:
+`org.workbench.registry.echo@0.1.0` /
+`3957fa6c0b3a7b1d621661e90252a277ffef0120fda18f0e63e9eadd747b2aec`.
+Installed record SHA-256:
+`0478012e1c42fba98d2dfcd93f3876c32c37c63e18cc0c2eb1a0bfb09316463f`.
+Native lockfile SHA-256:
+`d494a5049fb91a6a458ee0e294e4aa1fb8d9da0c5df588e54877330f495ebae6`.
+Guest lockfile SHA-256:
+`323be8de5fb3d64e7ffb6470beb00dd04c193e8f5325df00630616c176f266b8`.
+Hosted/local WASM hashes differ, as already allowed by ADR-001: no cross-machine
+bit-identical build claim is made; each installation resolves exact raw bytes.
+
+All ADR-003 acceptance requirements are satisfied within the explicit supported
+surface. Status adoption and evidence are a documentation-only follow-up to the
+hosted tested commit; reviewed implementation hashes are unchanged. This does
+not mark the complete architecture/Qt/persistence demonstration finished.
