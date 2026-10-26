@@ -12,4 +12,4 @@
 - Checks: bash apps/desktop-qt/validate.sh; all original locked suites; new Rust UI
   cases and genuine Qt offscreen tests; two independent reviews; actual hosted Linux
   conclusion/downloaded artifact verification. No skipped mandatory UI gate.
-- Status: PROPOSED until UI-001..020 and every external evidence gate passes.
+- Status: COMPLETE / Accepted — UI-001..020, all regressions, two independent reviews and verified hosted Linux archive pass; see evidence/RESULTS.md.

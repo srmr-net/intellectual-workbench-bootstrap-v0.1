@@ -1,6 +1,8 @@
 # wb-ui-host
 
-ADR-004 trusted native presentation adapter; proposal until hosted gates pass.
+Accepted ADR-004 trusted native presentation adapter, scoped Linux profile.
+See [verified evidence](../../docs/implementation/adr-004/evidence/RESULTS.md) and
+[protocol/errors](../../docs/implementation/adr-004/PROTOCOL.md).
 `Session` consumes only a verified registry UI handle plus an explicitly approved
 exact component pin. It owns a room, sealed native UI ingress, bounded draft map,
 validated binding table and committed projections. It calls accepted kernel APIs;
