@@ -11,6 +11,8 @@ for name in required:assert re.search(r'PASS\s+: UiConformance::'+name,qt),name
 ids=set()
 for match in re.findall(r'test (ui_[0-9_]+)[a-zA-Z]\S* \.\.\. ok',rust):
     ids.update(re.findall(r'\d{3}',match))
+for match in re.findall(r'PASS\s+: UiConformance::(ui_[0-9_]+)[a-zA-Z]',qt):
+    ids.update(re.findall(r'\d{3}',match))
 assert ids=={f'{n:03d}' for n in range(1,21)},ids
 reviews=[]
 for name in ['qt','state']:
