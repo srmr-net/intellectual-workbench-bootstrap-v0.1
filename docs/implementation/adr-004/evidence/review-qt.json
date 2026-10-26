@@ -1,0 +1,40 @@
+{
+  "status": "APPROVED",
+  "reviewer": "independent agent /root/review_ui_qt; no implementation authorship",
+  "scope": "Qt/QML trust, native bridge, threading, accessibility, worker ownership/transport",
+  "independentTests": [
+    {
+      "test": "fresh qmake build and complete genuine offscreen Qt suite",
+      "result": "7 passed;0 failed;0 skipped",
+      "log": "docs/implementation/adr-004/evidence/independent-qt/full-suite.txt"
+    },
+    {
+      "test": "cargo test --locked -p wb-ui-host ui_005_integer_text_and_projection_are_lossless",
+      "result": "passed",
+      "log": "docs/implementation/adr-004/evidence/independent-qt/integer.txt"
+    },
+    {
+      "test": "raw worker rejected wrong-room shutdown, subsequent refresh, authorized saved shutdown/flush/exit",
+      "result": "passed",
+      "log": "docs/implementation/adr-004/evidence/independent-qt/shutdown.json"
+    }
+  ],
+  "sourceSha256": {
+    "apps/desktop-qt/src/UiBridge.h": "65a69e896b647cca9b825e3543385960c97b7c00c5937313f01e92ed82d85a15",
+    "apps/desktop-qt/src/UiBridge.cpp": "bed004997b84363ed27144f704bfa1ffe74914a7a65da1faa634e07a3f415299",
+    "apps/desktop-qt/src/main.cpp": "8646a182495cf4761a2526f59372a1ea56c0ff38643a2ac086413d341e7ae8e6",
+    "apps/desktop-qt/qml/Main.qml": "ed1533ed44081806e598b533a4f5f9777ccd65fa838d462ea4059ca7920ab13f",
+    "apps/desktop-qt/tests/UiConformance.cpp": "0ea9233ba575621e74642ab33c2ac0badbf52423af5763039ca8a9ee93c5c009",
+    "apps/desktop-qt/app.pro": "54fc7e916deddee40637f67591eea3fec146520799110ff50c268df9309d044d",
+    "apps/desktop-qt/tests/ui_tests.pro": "71c83a4198ca2d65b7a3fd0f9fd6d5e350e74a97d5151ea1c1e95f9f0f271561",
+    "apps/desktop-qt/resources.qrc": "066d6e130b298b1127edfa66d1a7e8f9a9a497292aa0f2b0e6dfb53ac1a3ecc1",
+    "apps/desktop-qt/package_fixture.py": "1fd0156cc1edd4bc2c102f5a7d582807bf5e90d7a2788fb62515c0ea9a5fc89e",
+    "crates/wb-ui-host/src/lib.rs": "5e3b48f5315f9d897c4cfdd10b639db3b1541abceba920f35bd779c8f5667d50",
+    "crates/wb-ui-host/src/framing.rs": "b71e1d767bb7a63ab27b15d0621e840c1f3efe469e4bb30fff207cfa9258185b",
+    "crates/wb-ui-host/src/bin/wb-ui-worker.rs": "1de21f4e4be6e518c9576d1e320557e5f1fe351334b61f5d2c3b992dd0538339",
+    "crates/wb-ui-host/tests/ui.rs": "3075e993b2560c53b32e7927f4f61f2d9f9939ac37582cb673230d269e19bb12",
+    "crates/wb-contracts/src/ui.rs": "35ff35758ece0187d94c478376b17abc8e3244b80430f01e859dfb4f6dc910ea",
+    "crates/wb-semantic/src/ui.rs": "05afda332babfc5ce36c6d31bd3ce517c27aa4b955f1bc130c483e240329a34e"
+  },
+  "followupReview": "Reviewed test-only wire receive timeout 45s to120s plus stage diagnostics; all protocol/assertion checks remain intact. No production startup timeout change. All other source hashes unchanged."
+}

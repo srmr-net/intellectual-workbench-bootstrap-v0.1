@@ -1,0 +1,31 @@
+{
+  "status": "APPROVED",
+  "reviewer": "/root/review_ui_state",
+  "independentTests": [
+    {
+      "command": "REGISTRY_PYTHON=/tmp/wb-spec-001-venv/bin/python cargo test --locked -p wb-ui-host --test ui",
+      "result": "16 passed,1 failed at45s harness deadline;138.43s"
+    },
+    {
+      "command": "PYTHONPATH=tools /tmp/wb-spec-001-venv/bin/python -m unittest tools.test_ui_contract",
+      "result": "passed"
+    },
+    {
+      "command": "real wb-ui-worker framed forged-Shutdown / Refresh / valid-Shutdown probe;120s receive deadline",
+      "result": "passed; saved reply;exit0 with stdin open"
+    }
+  ],
+  "sourceSha256": {
+    "crates/wb-contracts/src/ui.rs": "35ff35758ece0187d94c478376b17abc8e3244b80430f01e859dfb4f6dc910ea",
+    "crates/wb-semantic/src/ui.rs": "05afda332babfc5ce36c6d31bd3ce517c27aa4b955f1bc130c483e240329a34e",
+    "crates/wb-registry/src/lib.rs": "4cc72b81102c290c2fa7362833d3dd954d38b2c3b4de5a7539f7ab9d45af3134",
+    "crates/wb-ui-host/src/lib.rs": "5e3b48f5315f9d897c4cfdd10b639db3b1541abceba920f35bd779c8f5667d50",
+    "crates/wb-ui-host/src/framing.rs": "b71e1d767bb7a63ab27b15d0621e840c1f3efe469e4bb30fff207cfa9258185b",
+    "crates/wb-ui-host/src/bin/wb-ui-worker.rs": "1de21f4e4be6e518c9576d1e320557e5f1fe351334b61f5d2c3b992dd0538339",
+    "crates/wb-ui-host/tests/ui.rs": "3075e993b2560c53b32e7927f4f61f2d9f9939ac37582cb673230d269e19bb12",
+    "tools/registry_validate.py": "077895af41893cd859096daefa92d4552b1806a3400283a2dcb21acb98efb128",
+    "tools/ui_contract.py": "dee8d0c43d5e4e5192f50a156420fa6b0616bab7f8f9ade03d2dd3444038d9ef",
+    "schemas/ui.schema.json": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+    "schemas/ui-bootstrap.schema.json": "2d43149da0b6c844504fea681028c9aefab533628bcf5cb9b893a5885d4af11e"
+  }
+}

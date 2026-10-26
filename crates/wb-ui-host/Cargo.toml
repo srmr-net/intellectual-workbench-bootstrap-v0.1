@@ -1,0 +1,20 @@
+[package]
+name = "wb-ui-host"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+wb-contracts = { path = "../wb-contracts" }
+wb-semantic = { path = "../wb-semantic" }
+wb-registry = { path = "../wb-registry" }
+wb-kernel = { path = "../wb-kernel" }
+wb-wasm-host = { path = "../wb-wasm-host" }
+serde.workspace = true
+serde_json.workspace = true
+jsonschema = { version = "=0.33.0", default-features = false }
+sha2 = "=0.10.9"
+libc = "0.2"
+
+[dev-dependencies]
+tempfile = "3"

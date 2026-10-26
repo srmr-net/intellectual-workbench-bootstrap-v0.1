@@ -71,3 +71,12 @@ and Python requirements. Tests use production paths, real symlink swaps, sockets
 FIFOs, hard links, independent installers and SIGKILL at seven commit checkpoints.
 `admit_observed` exposes observational fault-injection checkpoints, not validation
 bypasses. SIGKILL validates process-crash recovery, not actual power loss.
+
+ADR-004 narrowly adds opt-in `Policy.semantic_ui_v01` (default false). New UI
+admission validates canonical UI/manifest/RDF/bindings and requires a ui.json
+basename compatible with existing RoomSnapshot references. Immutable raw bytes,
+file/descriptor/path/schema hashes and typed document must agree on admission and
+all later reads. `read_verified_ui` requires opt-in; internal integrity/recovery/
+quota reads remain profile-neutral so headless and UI packages can share a store.
+`identity` exposes only the held root dev/inode for native adjacent-storage checks.
+No release, WIT, manifest schema, ontology or accepted headless policy is replaced.

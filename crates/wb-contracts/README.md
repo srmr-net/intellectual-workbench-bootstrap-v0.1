@@ -23,3 +23,8 @@ records codes/IDs/timing only, never payloads or guest diagnostic messages.
 `AuditEvent.sequence` is the room's host allocation clock, shared with data events.
 Serialization fixtures are in fixtures/ipc; conformance lives in wb-testkit.
 No DTO conveys runtime authority, native grants or a guest host-service API.
+
+ADR-004 adds the separate `ui` module: strict closed UI document/binding DTOs,
+local commands and immutable projections. It does not alter `ipc` or WIT. All wire
+counters use canonical decimal strings; projected scalar display values are text.
+`strict_json` rejects duplicate keys, invalid JSON and nonfinite numbers.
