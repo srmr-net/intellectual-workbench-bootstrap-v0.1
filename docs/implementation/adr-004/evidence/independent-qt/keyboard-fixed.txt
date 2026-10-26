@@ -1,0 +1,10 @@
+********* Start testing of UiConformance *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+INFO   : UiConformance::initTestCase() entering
+PASS   : UiConformance::initTestCase()
+INFO   : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme() entering
+PASS   : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme()
+INFO   : UiConformance::cleanupTestCase() entering
+PASS   : UiConformance::cleanupTestCase()
+Totals: 3 passed, 0 failed, 0 skipped, 0 blacklisted, 9774ms
+********* Finished testing of UiConformance *********

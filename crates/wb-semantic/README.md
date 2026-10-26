@@ -19,3 +19,10 @@ stable codes and bounded package-relative locations, never parser diagnostics.
 
 `bash examples/wasm-components/validate-registry.sh` exercises this path through
 REG-001..020 plus accepted ABI and IPC regression tests.
+
+ADR-004 adds pure `ui` validation over admitted bytes and actual expanded local
+port schemas. It enforces the restricted canonical UI schema, literal labels,
+unique IDs, fixed directions/kinds, single RFC6901 member bindings and complete
+aggregate input coverage. `CheckedMetadata.ui` is optional and omitted for None,
+so historical headless record bytes remain stable. It carries raw/schema hashes,
+manifest UI path and a typed document; it grants no runtime authority.

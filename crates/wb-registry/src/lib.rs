@@ -102,6 +102,8 @@ pub struct Policy {
     pub max_store_bytes: u64,
     pub max_releases: usize,
     pub seconds: u64,
+    /// ADR-004 opt-in; default ADR-003 admission still rejects UI packages.
+    pub semantic_ui_v01: bool,
 }
 impl Policy {
     pub fn local(
@@ -122,6 +124,7 @@ impl Policy {
             max_store_bytes: 128 * 1024 * 1024,
             max_releases: 128,
             seconds: 30,
+            semantic_ui_v01: false,
         }
     }
 }
@@ -272,7 +275,8 @@ impl Registry {
     fn path(&self) -> PathBuf {
         fd_path(&self.root)
     }
-    fn identity(&self) -> Result<(u64, u64)> {
+    /// Native host identity check for separately opened adjacent storage. No path or grants.
+    pub fn identity(&self) -> Result<(u64, u64)> {
         let m = io(self.root.metadata())?;
         Ok((m.dev(), m.ino()))
     }
@@ -395,12 +399,13 @@ impl Registry {
         ))
         .join(".staging")
         .join(stage.0.file_name().unwrap());
-        let output = bounded_worker(
-            &self.policy.python,
-            &[&self.policy.semantic_worker, &worker_stage.join("payload")],
-            self.policy.seconds,
-        )
-        .map_err(|code| err(code, "metadata-worker"))?;
+        let payload = worker_stage.join("payload");
+        let mut arguments = vec![self.policy.semantic_worker.as_path(), payload.as_path()];
+        if self.policy.semantic_ui_v01 {
+            arguments.push(Path::new("--semantic-ui-v0.1"));
+        }
+        let output = bounded_worker(&self.policy.python, &arguments, self.policy.seconds)
+            .map_err(|code| err(code, "metadata-worker"))?;
         let reply: serde_json::Value = serde_json::from_slice(&output)
             .map_err(|_| err("INVALID_MANIFEST", "metadata-worker"))?;
         if let Some(error) = reply.get("error") {
@@ -409,6 +414,7 @@ impl Registry {
         }
         let checked: CheckedMetadata = serde_json::from_value(reply["ok"].clone())
             .map_err(|_| err("INVALID_MANIFEST", "metadata-worker"))?;
+        self.check_ui(&checked, &stage.0.join("payload"), &state.files)?;
         if checked.trust != "unreviewed" {
             return Err(err("CAPABILITY_DENIED", "trust"));
         }
@@ -675,7 +681,59 @@ impl Registry {
         if record.files.get(module) != Some(&pin.sha256) {
             return Err(integrity());
         }
+        self.check_ui(&record.checked, &object.join("payload"), &record.files)?;
         Ok((receipt, record))
+    }
+    fn check_ui(
+        &self,
+        checked: &CheckedMetadata,
+        payload: &Path,
+        files: &BTreeMap<String, String>,
+    ) -> Result<()> {
+        match (checked.manifest.get("ui"), &checked.ui) {
+            (None, None) => Ok(()),
+            (Some(path), Some(ui))
+                if path.as_str() == Some(&ui.path)
+                    && Path::new(&ui.path).file_name().and_then(|v| v.to_str())
+                        == Some("ui.json")
+                    && safe_relative(&ui.path)
+                    && files.get(&ui.path) == Some(&ui.sha256)
+                    && ui.schema_sha256 == wb_semantic::ui::schema_digest() =>
+            {
+                let bytes = regular_read(
+                    &payload.join(&ui.path),
+                    wb_semantic::ui::MAX_UI_BYTES as u64,
+                )?;
+                if hash(&bytes) != ui.sha256 {
+                    return Err(err("INTEGRITY_FAILURE", "ui"));
+                }
+                let validated =
+                    wb_semantic::ui::validate(&bytes, checked).map_err(|code| err(code, "ui"))?;
+                if validated.document != ui.document {
+                    return Err(err("INTEGRITY_FAILURE", "ui"));
+                }
+                Ok(())
+            }
+            _ => Err(err("INTEGRITY_FAILURE", "ui")),
+        }
+    }
+    /// New ADR-004 render access. Generic integrity/resolve remains profile-neutral.
+    pub fn read_verified_ui(
+        &self,
+        handle: &ValidatedHandle,
+    ) -> Result<wb_semantic::ui::ValidatedUi> {
+        if !self.policy.semantic_ui_v01 {
+            return Err(err("UI_POLICY_DISABLED", "ui"));
+        }
+        let (checked, _) = self.read_verified_bundle(handle)?;
+        let ui = checked
+            .ui
+            .as_ref()
+            .ok_or_else(|| err("UI_UNAVAILABLE", "ui"))?;
+        // Raw bytes are already hashed and compared with this descriptor under
+        // the registry lock. Revalidate canonical typed metadata, not source paths.
+        wb_semantic::ui::validate(&serde_json::to_vec(&ui.document).unwrap(), &checked)
+            .map_err(|code| err(code, "ui"))
     }
     pub fn resolve_exact(&self, pin: &ReleasePin) -> Result<ValidatedHandle> {
         let _lock = self.lock()?;

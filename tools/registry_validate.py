@@ -49,7 +49,7 @@ def path_ref(text):
         fail('INVALID_PATH', 'component.json')
     return text
 
-def validate(stage):
+def validate(stage, semantic_ui=False):
     m = load(stage / 'component.json')
     def dependencies(obj):
         if isinstance(obj, dict):
@@ -82,7 +82,7 @@ def validate(stage):
     if m['permissions']:
         fail('CAPABILITY_DENIED', 'component.json/permissions')
     # UI structure exists; portable ownership/rebinding contract is still provisional.
-    if 'ui' in m:
+    if 'ui' in m and not semantic_ui:
         fail('SCHEMA_VIOLATION', 'component.json/ui')
     used = {'component.json'}
     roles = {'component.json': 'manifest'}
@@ -102,6 +102,10 @@ def validate(stage):
         load(stage / ref)
     if hashlib.sha256(module.read_bytes()).hexdigest() != m['runtime']['sha256']:
         fail('DIGEST_MISMATCH', m['runtime']['module'])
+    if 'ui' in m:
+        if Path(m['ui']).name != 'ui.json':
+            fail('UI_BINDING_MISMATCH', 'component.json/ui')
+        use(m['ui'], 'ui')
     schemas, raw = {}, {}
     nodes = 0
     def expand(value, file, stack, depth=0):
@@ -189,6 +193,13 @@ def validate(stage):
                 raise
             except Exception:
                 fail('SCHEMA_VIOLATION', file)
+    checked_ui = None
+    if 'ui' in m:
+        from ui_contract import validate as validate_ui, UiInvalid
+        try:
+            checked_ui=validate_ui((stage/m['ui']).read_bytes(),m,schemas,m['ui'])
+        except UiInvalid as error:
+            fail(error.code,m['ui'])
     if {str(p.relative_to(stage)) for p in stage.rglob('*') if p.is_file()} != used:
         fail('INVALID_PATH', 'package')
     g = Graph()
@@ -240,7 +251,15 @@ def validate(stage):
     a = next(iter(arts))
     exact(a, WB.artifactPath, [Literal(m['runtime']['module'])])
     exact(a, WB.sha256, [Literal(m['runtime']['sha256'])])
-    if any(g.triples((None, WB.hasInterface, None))) or any(g.subjects(RDF.type, WB.AbstractInterface)):
+    interfaces=set(g.objects(c,WB.hasInterface))
+    if 'ui' in m:
+        if len(interfaces)!=1 or interfaces!=set(g.subjects(RDF.type,WB.AbstractInterface)):
+            fail('SEMANTIC_MISMATCH',m['metadata']+'#ui')
+        interface=next(iter(interfaces))
+        exact(interface,WB.uiDefinitionRef,[Literal(m['ui'])])
+        if set(g.subjects(WB.hasInterface,None))!={c} or set(g.subjects(WB.uiDefinitionRef,None))!={interface}:
+            fail('SEMANTIC_MISMATCH',m['metadata']+'#ui')
+    elif any(g.triples((None,WB.hasInterface,None))) or any(g.subjects(RDF.type,WB.AbstractInterface)) or any(g.triples((None,WB.uiDefinitionRef,None))):
         fail('SEMANTIC_MISMATCH', m['metadata'] + '#ui')
     claims = set(g.objects(c, WB.hasAssuranceClaim))
     if claims != set(g.subjects(RDF.type, WB.AssuranceClaim)):
@@ -252,11 +271,13 @@ def validate(stage):
     capabilities = sorted(str(v) for v in g.objects(c, WB.providesCapability))
     if any(not isinstance(v, URIRef) for v in g.objects(c, WB.providesCapability)):
         fail('SEMANTIC_MISMATCH', m['metadata'] + '#capability')
-    return {'manifest': m, 'schemas': schemas, 'capabilities': capabilities, 'trust': 'unreviewed'}
+    result={'manifest': m, 'schemas': schemas, 'capabilities': capabilities, 'trust': 'unreviewed'}
+    if checked_ui is not None:result['ui']=checked_ui
+    return result
 
 if __name__ == '__main__':
     try:
-        print(json.dumps({'ok': validate(Path(sys.argv[1]))}, separators=(',', ':')))
+        print(json.dumps({'ok': validate(Path(sys.argv[1]),len(sys.argv)==3 and sys.argv[2]=='--semantic-ui-v0.1')}, separators=(',', ':')))
     except Invalid as e:
         print(json.dumps({'error': {'code': e.code, 'location': e.location[:240]}}))
     except Exception:

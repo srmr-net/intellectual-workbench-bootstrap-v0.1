@@ -20,6 +20,8 @@ pub struct CheckedMetadata {
     pub schemas: BTreeMap<String, Value>,
     pub capabilities: Vec<String>,
     pub trust: String,
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub ui: Option<ui::CheckedUi>,
 }
 
 /// Trusted executable and arguments only. Child cannot inherit stdin or diagnostics.
@@ -94,3 +96,5 @@ pub fn bounded_worker(
     }
     Ok(bytes)
 }
+
+pub mod ui;

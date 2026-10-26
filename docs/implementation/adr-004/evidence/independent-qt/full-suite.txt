@@ -1,0 +1,18 @@
+********* Start testing of UiConformance *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+INFO   : UiConformance::initTestCase() entering
+PASS   : UiConformance::initTestCase()
+INFO   : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme() entering
+PASS   : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme()
+INFO   : UiConformance::ui_012_014_real_worker_committed_outputs_and_gui_thread() entering
+PASS   : UiConformance::ui_012_014_real_worker_committed_outputs_and_gui_thread()
+INFO   : UiConformance::ui_015_016_017_fences_queue_room_switch_and_teardown() entering
+PASS   : UiConformance::ui_015_016_017_fences_queue_room_switch_and_teardown()
+INFO   : UiConformance::ui_009_010_017_generic_metadata_two_rooms_and_injection() entering
+PASS   : UiConformance::ui_009_010_017_generic_metadata_two_rooms_and_injection()
+INFO   : UiConformance::ui_018_quit_restore_exact_pin_and_values() entering
+PASS   : UiConformance::ui_018_quit_restore_exact_pin_and_values()
+INFO   : UiConformance::cleanupTestCase() entering
+PASS   : UiConformance::cleanupTestCase()
+Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 296240ms
+********* Finished testing of UiConformance *********

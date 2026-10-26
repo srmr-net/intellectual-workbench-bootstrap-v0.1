@@ -8,12 +8,12 @@
 - Versioned upstream reference documents, actual component JSON Schema, provisional RDF ontology and the reference package (metadata-only: **no `logic.wasm`**).
 - A safe deny-by-default capability broker, structural bus validation and a minimal reactive dependency-graph validator as starter code. These are **not** production security enforcement.
 - Agent instructions (`AGENTS.md`), backlog, ADR templates, gates, task templates and CI.
-- Source-only Qt/QML interface sketch; **not wired to Rust**.
+- Separately gated ADR-004 semantic Qt frontend and native worker; [build and validation](apps/desktop-qt/README.md). See ADR status before claiming hosted acceptance.
 - Executable Python package validator and schema fixture smoke test (when `jsonschema` is installed).
 
 ## Prerequisites
 
-Rust stable (cargo/rustfmt/clippy), Python 3.11+, optionally `pip install -r tools/requirements.txt`. Qt 6 and a pinned WASM Component Model runtime will be added only after ADR-001/003.
+Rust stable (cargo/rustfmt/clippy), Python 3.11+, optionally `pip install -r tools/requirements.txt`. Accepted pure Component Model runtime uses pinned Wasmtime49.0.1. The separately gated semantic desktop profile requires system Qt6 development/QML modules.
 
 ## Quick start
 

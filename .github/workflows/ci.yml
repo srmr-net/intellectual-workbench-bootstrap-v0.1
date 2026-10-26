@@ -26,9 +26,9 @@ jobs:
       - run: pip install -r tools/requirements.txt
       - run: python tools/check_contracts.py
   abi-validation:
-    name: headless-vslice-validation (includes REG IPC ABI)
+    name: semantic-ui-validation (includes VSLICE REG IPC ABI)
     runs-on: ubuntu-24.04
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@master
@@ -44,9 +44,11 @@ jobs:
       # The registry wrapper retains ipc-validation via examples/wasm-components/validate-ipc.sh
       # and examples/wasm-components/validate.sh with their full unchanged suites.
       # Headless wrapper retains examples/wasm-components/validate-registry.sh unchanged.
-      - run: bash examples/mortgage-headless/validate.sh
+      # Outer UI wrapper preserves examples/mortgage-headless/validate.sh unchanged.
+      - run: sudo apt-get update && sudo apt-get install -y qt6-base-dev qt6-declarative-dev qt6-tools-dev-tools qmake6 qml6-module-qtquick qml6-module-qtquick-controls qml6-module-qtquick-layouts qml6-module-qtquick-window qml6-module-qtqml-workerscript qml6-module-qtquick-templates libgl1-mesa-dri
+      - run: bash apps/desktop-qt/validate.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: headless-vslice-validation-linux
+          name: semantic-ui-validation-linux
           path: target/abi-evidence/

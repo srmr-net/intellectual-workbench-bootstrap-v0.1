@@ -1,0 +1,51 @@
+{
+  "uiVersion": "0.1",
+  "root": {
+    "type": "form",
+    "title": "Mortgage calculator",
+    "children": [
+      {
+        "type": "decimal-input",
+        "id": "principal",
+        "label": "Principal",
+        "bind": {
+          "direction": "input",
+          "port": "calculate",
+          "field": "/principal"
+        },
+        "unit": "GBP"
+      },
+      {
+        "type": "decimal-input",
+        "id": "rate",
+        "label": "Annual interest rate",
+        "bind": {
+          "direction": "input",
+          "port": "calculate",
+          "field": "/annual_rate_percent"
+        },
+        "unit": "percent"
+      },
+      {
+        "type": "integer-input",
+        "id": "term",
+        "label": "Term (months)",
+        "bind": {
+          "direction": "input",
+          "port": "calculate",
+          "field": "/term_months"
+        }
+      },
+      {
+        "type": "readout",
+        "id": "payment",
+        "label": "Monthly repayment",
+        "bind": {
+          "direction": "input",
+          "port": "payment",
+          "field": "/monthly_payment"
+        }
+      }
+    ]
+  }
+}

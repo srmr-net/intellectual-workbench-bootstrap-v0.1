@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "source": "9f7f2248afa6de469ef5f84cda544a17d56a1445",
+  "recordedHashes": 110,
+  "rustTests": 117,
+  "numericalCases": 33,
+  "pin": {
+    "id": "org.workbench.example.mortgage-headless",
+    "version": "0.1.0",
+    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95"
+  },
+  "uiPin": {
+    "id": "org.workbench.example.mortgage-ui",
+    "version": "0.1.0",
+    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95"
+  },
+  "uiCases": 20,
+  "qtSummary": "Totals: 7 passed, 0 failed, 0 skipped, 0 blacklisted, 57327ms",
+  "qtVersions": "QMake version 3.1\nUsing Qt version 6.11.2 in /usr/lib\n6.11.2\n6.11.2\n6.11.2\n6.11.2\n",
+  "archiveSha256": "dd82fed3c0206b61ed586c5a9e94238151fc69cf68953d69314eafd0d710d849"
+}

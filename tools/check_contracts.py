@@ -27,7 +27,10 @@ def validators(root=ROOT):
     def offline(uri):
         raise NoSuchResource(ref=uri)
 
-    schemas = {name: load(root / f'schemas/{name}.schema.json') for name in CONTRACTS}
+    # Retain the original provisional G0 fixtures against their exact original schema.
+    # Canonical ADR-004 UI admission has a separate strict profile/test matrix.
+    schemas = {name: load(root / ('schemas/ui-bootstrap.schema.json' if name == 'ui'
+                                 else f'schemas/{name}.schema.json')) for name in CONTRACTS}
     registry = Registry(retrieve=offline)
     for schema in schemas.values():
         Draft202012Validator.check_schema(schema)

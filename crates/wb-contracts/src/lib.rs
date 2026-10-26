@@ -47,3 +47,5 @@ mod tests {
 }
 
 pub mod ipc;
+
+pub mod ui;
