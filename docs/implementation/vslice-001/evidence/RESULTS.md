@@ -36,7 +36,7 @@ strict terminal-newline schema rejection; explicit bounded20M product caller
 fuel rather than changing accepted2M Host defaults; typed negative assertions
 respecting early unreferenced-file rejection. Both approved final source hashes,
 with concrete independently executed tests. Review records bind these hashes to
-the implementation commit before hosted validation.
+implementation `570c692106940c69ee4a49ea0a3af3fa5c6349eb`; see [review records](../review/RESULTS.json).
 
 Unsupported/deferred: Qt/Operator/UI packages, native capabilities, remote
 registries, external package resolution, signatures, shared ADR-008 conventions,

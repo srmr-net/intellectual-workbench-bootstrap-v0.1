@@ -1,0 +1,129 @@
+{
+  "status": "APPROVED",
+  "date": "2026-10-26",
+  "reviewedCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+  "baseAdr003Merge": "ae5a0090ad46afa967b5b925b8b8287c1e295a17",
+  "reviews": [
+    {
+      "reviewer": "/root/review_vslice_finance",
+      "scope": "numerical/schema",
+      "status": "APPROVED",
+      "commit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "sourceSha256": {
+        "examples/wasm-components/mortgage-headless/src/lib.rs": "c1c4c652cabcd44b233aaea2f9420cd2e11c229fbde94e997ac2b5fad3be8842",
+        "examples/wasm-components/mortgage-adversary/src/lib.rs": "935d6aeeb709172c72dda7fb1fcba6cfbeea34589e2ba4b192e9b340fa701ccd",
+        "examples/mortgage-headless/schemas/mortgage-input.schema.json": "c2304c2b7d85220af35aae99c1c569053005b718e0a74932aeaf4d4b134ab819",
+        "examples/mortgage-headless/schemas/mortgage-output.schema.json": "7fb23e07158309e1546ab958ef65d882becf333667551499a83250bdcbe99005",
+        "examples/mortgage-headless/reference.py": "81c89556768443a8dc9e9c13825b04dd4b8ebfa0fc015ad91434f358d62754aa",
+        "examples/mortgage-headless/package.py": "075d94c7be94fbbb22b756a0900e506145c6b42b811099d400c9380a3b9a4ac4",
+        "crates/wb-kernel/tests/vslice.rs": "2ba5fdc85db824a530bc6816bde8ec42521543b059e9027f5c725ed0be6ad377"
+      },
+      "independentTests": [
+        "vslice_006: 2 tests passed, 33 actual-WASM oracle cases + budget calibration",
+        "vslice_007: host rollback and actual guest domain rejection passed",
+        "vslice_008: adversarial output atomicity/newline rejection passed",
+        "All33 oracle outputs recomputed via independent exact Fraction forward-balance recurrence; all match",
+        "Python schema validation rejects terminal newlines in input and output"
+      ],
+      "notes": "Exact integer rational cents, zero-rate and half-up publication correct. Default2M stays unchanged; bounded20M caller policy validated with memory8MiB/epoch100."
+    },
+    {
+      "reviewer": "/root/review_vslice_integration",
+      "scope": "security/integration",
+      "status": "APPROVED",
+      "commit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "sourceSha256": {
+        "crates/wb-kernel/src/headless.rs": "686a25201326c73e374df5da210a844c29363a6e966f5f94a58a036123a283e7",
+        "crates/wb-kernel/src/bin/wb-mortgage-headless.rs": "f5c70ce5fd63959db91b563af1f98dc24666b7730e1b49e05acf9a5975ace8d2",
+        "crates/wb-kernel/tests/vslice.rs": "2ba5fdc85db824a530bc6816bde8ec42521543b059e9027f5c725ed0be6ad377",
+        "examples/mortgage-headless/collect_evidence.py": "05f2e9ef544382bd54405d4df321ed313370272a72cdf756ba2f776b49b784c0",
+        "examples/mortgage-headless/validate.sh": "98ff4b475861993582bbc4908e02469354248ebd7befec2a493c6de3f64b6267",
+        "examples/mortgage-headless/build.sh": "bba59248dcebab98bd726d8a69291f77eaf1aac2171df8b2eafea048debfebb1",
+        "examples/mortgage-headless/package.py": "075d94c7be94fbbb22b756a0900e506145c6b42b811099d400c9380a3b9a4ac4",
+        "examples/mortgage-headless/rebuild.py": "4ae94ab39df4b9abdd77594c2ff4366f03b5f492041eb396745ac8bb6223dfc4",
+        "examples/wasm-components/mortgage-adversary/src/lib.rs": "935d6aeeb709172c72dda7fb1fcba6cfbeea34589e2ba4b192e9b340fa701ccd",
+        "examples/wasm-components/mortgage-observer/src/lib.rs": "7fc16e69ac1a0a4c5cb49e4e279b6bf6bd0a5b59c5de034ee789ae2418dad3ae"
+      },
+      "independentTests": [
+        "vslice_005: real CLI and correlated committed projection, 2 passed",
+        "vslice_008: whole candidate output rollback passed",
+        "vslice_009: five typed tamper cases passed (1 test,15.15s)",
+        "vslice_012: actual admitted observer/canonical bus FIFO passed",
+        "vslice_013: generation/revision stale completion fences passed",
+        "vslice_016: fresh-kernel pins/topology/current approvals/tamper passed",
+        "vslice_018: trap/fuel/SIGKILL recovery,2 passed",
+        "rustfmt authored guest entrypoints with skip_children=true passed; all7 authored guest files verified"
+      ],
+      "notes": "No authority/lifecycle/registry/WIT contract blocker. Collector/build/package/rebuild wrappers reviewed; external hosted success and downloaded artifact verification still required."
+    }
+  ],
+  "findings": [
+    {
+      "id": "FIN-001",
+      "issue": "Regex terminal newline accepted by dollar anchor",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "vslice_007",
+        "vslice_008"
+      ],
+      "retest": "Independent Python and actual host/guest checks passed"
+    },
+    {
+      "id": "FIN-002",
+      "issue": "Generic2M spike fuel insufficient for exact maximum tiny-rate calculation",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "vslice_006_budget_calibration_retains_accepted_defaults",
+        "vslice_006_all_vectors_independent_oracle_and_boundaries"
+      ],
+      "retest": "Default probe reports RESOURCE_LIMIT/fuel; bounded product20M passes all33 cases; original Host defaults/source unchanged"
+    },
+    {
+      "id": "INT-001",
+      "issue": "Required room UI reference and UI-named ingress in headless host",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "vslice_004",
+        "vslice_005"
+      ],
+      "retest": "Inert host-only reference; no UI package/rendering. Existing sealed native APIs reused."
+    },
+    {
+      "id": "INT-002",
+      "issue": "Rollback and restore wording versus accepted diagnostic/input semantics",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "vslice_008",
+        "vslice_013",
+        "vslice_016"
+      ],
+      "retest": "Previous output value retained; accepted diagnostic invalidation preserved; snapshots recompute derived output."
+    },
+    {
+      "id": "INT-003",
+      "issue": "Schema mapping mutation rejected earlier by strict unreferenced-file policy",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "vslice_009"
+      ],
+      "retest": "Original INVALID_PATH scenario retained; separate RDF schemaRef SEMANTIC_MISMATCH case added; all5 typed cases pass."
+    },
+    {
+      "id": "INT-004",
+      "issue": "Generator-owned bindings formatting differs from current rustfmt layout",
+      "status": "CLOSED",
+      "fixCommit": "570c692106940c69ee4a49ea0a3af3fa5c6349eb",
+      "tests": [
+        "native cargo fmt --all -- --check",
+        "authored guest rustfmt --check"
+      ],
+      "retest": "All7 authored entrypoints checked; only child modules are ignored generated bindings; native required check unchanged."
+    }
+  ],
+  "acceptance": "Reviews approved. Milestone remains PROPOSED until clean full locked and hosted verification/artifact checks pass."
+}
