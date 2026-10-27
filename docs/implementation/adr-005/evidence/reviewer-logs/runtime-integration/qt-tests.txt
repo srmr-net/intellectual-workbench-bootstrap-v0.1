@@ -1,0 +1,11 @@
+test_op_006_008_014_genuine_clarification_and_decline (__main__.OperatorProcesses.test_op_006_008_014_genuine_clarification_and_decline) ... ok
+test_op_013_014_017_019_genuine_intent_preview_approval_and_edit (__main__.OperatorProcesses.test_op_013_014_017_019_genuine_intent_preview_approval_and_edit) ... ok
+test_op_014_021_confirmation_disables_cancel_and_reconciles_commit (__main__.OperatorProcesses.test_op_014_021_confirmation_disables_cancel_and_reconciles_commit) ... ok
+test_op_018_genuine_partial_initialization_offers_direct_form_repair (__main__.OperatorProcesses.test_op_018_genuine_partial_initialization_offers_direct_form_repair) ... ok
+test_op_020_genuine_offline_cold_restart_no_provider (__main__.OperatorProcesses.test_op_020_genuine_offline_cold_restart_no_provider) ... ok
+test_op_021_cancel_pending_intent_has_no_topology_effect (__main__.OperatorProcesses.test_op_021_cancel_pending_intent_has_no_topology_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 159.865s
+
+OK

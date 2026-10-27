@@ -3,7 +3,7 @@
 ## Upstream baseline
 
 - `references/architecture_interface_v0.1.md` — proposed implementation contract with explicit REQUIRED/CANDIDATE designations.
-- `references/ontology/workbench.ttl` — provisional namespace (ADR-005 open).
+- `references/ontology/workbench.ttl` — provisional namespace (ADR-014 open).
 - `schemas/component.schema.json` — canonical package manifest JSON Schema sourced from Component Package Specification v0.1.
 - `references/component_package/SPECIFICATION.md` — authoritative packaging guidance for this scaffold.
 
@@ -17,11 +17,12 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 - ADR-002 lifecycle, process-local IPC and reactive integration: **Accepted** for the documented pure process-local profile; [IPC-001..015 hosted evidence](adr/evidence/ADR-002-results.md). Durability, privileged worlds and Qt remain separate.
 - ADR-003 local component registry/admission: **Accepted** for the scoped Linux local-directory profile; [REG-001..020, reviews and verified hosted evidence](adr/evidence/ADR-003-results.md). Older ADR-003 Qt references are stale placeholders; the Qt bridge remains separately unresolved.
 - ADR-004 semantic UI/Qt integration: **Accepted** for the scoped Linux Qt6 form profile; [UI-001–020, reviews and verified hosted evidence](implementation/adr-004/evidence/RESULTS.md). The supplied UI kit reassigns the old unresolved storage placeholder; [ADR-012](adr/ADR-012.md) retains that open decision. Accepted ADR001/002/003 histories remain unchanged.
-- ADR-005 permanent namespace, SHACL and compatibility: **OPEN**.
+- ADR-005 bounded Operator: **Accepted** for the scoped Linux offline single-component profile; all OP-001–024 gates, independent reviews and [verified hosted evidence](implementation/adr-005/evidence/RESULTS.md) pass. General planning and remote providers remain deferred.
+- ADR-014 permanent namespace, SHACL and compatibility: **OPEN**; retains the earlier unaccepted ADR-005 placeholder.
 - ADR-006 publication/archive format: **OPEN**; ADR-003 scopes raw-byte SHA-256 and local-directory admission only; existing package schema retained.
 - ADR-007 actual host permission grants: **OPEN**, current capability broker rejects requests.
 - ADR-008 shared decimal arithmetic conventions: **OPEN**; the VSLICE-001 mortgage domain policy is product-specific and does not settle shared numeric contracts.
-- ADR-009 Operator interface: **OPEN**.
+- ADR-009 Operator interface: historical placeholder, superseded within the bounded profile by accepted ADR-005; richer planning remains deferred.
 - ADR-010 development sandbox/merge rights: **OPEN**.
 
 ## Conformance status

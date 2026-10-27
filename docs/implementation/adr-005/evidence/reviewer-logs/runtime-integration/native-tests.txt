@@ -1,0 +1,62 @@
+   Compiling wb-operator v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-operator)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.79s
+     Running unittests src/lib.rs (target/debug/deps/wb_operator-b747a15ab0cd2f0c)
+
+running 5 tests
+test proposal_tests::checkpoint_failure_is_honest_partial_completion ... ok
+test proposal_tests::failed_apply_removes_only_new_execution_consent ... ok
+test proposal_tests::fresh_preview_identity_stale_revision_and_expiry ... ok
+test proposal_tests::op_011_012_invalid_plan_preview_never_grants_or_reserves ... ok
+test proposal_tests::real_admission_preview_approval_ingress_and_replay ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 129.54s
+
+     Running unittests src/bin/wb-operator-worker.rs (target/debug/deps/wb_operator_worker-c811da695c6696a9)
+
+running 3 tests
+test tests::op_007_021_queue_ownership_uses_host_ticket_not_caller_token ... ok
+test tests::op_007_wire_cannot_supply_host_ticket_or_authority ... ok
+test tests::op_018_021_oversized_reply_retains_authoritative_commit_stages ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/boundary.rs (target/debug/deps/boundary-a3cd89b53b7ec881)
+
+running 8 tests
+test ambiguity_cancel_unavailable_and_deadline ... ok
+test cancellation_and_deadline_rechecked_after_ready ... ok
+test cancelled_and_zero_budget_never_invoke_provider_factory ... ok
+test deterministic_fixture_and_explicit_units ... ok
+test no_defaults_or_injected_instructions ... ok
+test op_001_003_007_exact_byte_character_item_and_context_boundaries ... ok
+test positive_and_adversarial_fixture_corpus ... ok
+test strict_untrusted_json ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.08s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-7694e2c39c6fb182)
+
+running 3 tests
+test op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free ... ok
+test op_004_006_semantic_ambiguity_never_selects_arbitrary_release ... ok
+test op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 40.98s
+
+     Running tests/session.rs (target/debug/deps/session-27959ccbdd94f9d0)
+
+running 5 tests
+test committed_guest_then_real_final_write_failure_preserves_topology_checkpoint ... ok
+test op_012_scope_quota_creates_no_guest_or_execution_authority ... ok
+test op_022_concurrent_rooms_keep_intent_approval_and_cancellation_isolated ... ok
+test pending_cancel_queue_release_policy_race_and_room_isolation ... ok
+test private_session_policy_epoch_revoke_before_grant_and_real_commit ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 44.95s
+
+   Doc-tests wb_operator
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

@@ -1,0 +1,17 @@
+{
+  "requestVersion": "0.1",
+  "requestId": "request-fixture-001",
+  "utterance": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+  "candidates": [
+    {
+      "candidateKey": "local-candidate-1",
+      "capability": "Fixed-rate mortgage monthly payment calculator",
+      "inputs": [
+        "principal",
+        "annual_rate_percent",
+        "term_months"
+      ],
+      "hasSemanticUi": true
+    }
+  ]
+}

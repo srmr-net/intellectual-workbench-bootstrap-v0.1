@@ -1,0 +1,34 @@
+{
+  "schemas/component.schema.json": {
+    "sha256": "15f2b7a2b84655e62f14fc521fe06a291fd00bf5fbcc120e509aaa84e9e1dd55",
+    "unchangedFromBase": true
+  },
+  "schemas/composition.schema.json": {
+    "sha256": "e2259779ce2b4daaeba8db15b48e502cd2bcab8aa1c4249eff5caae48525ab48",
+    "unchangedFromBase": true
+  },
+  "schemas/ui.schema.json": {
+    "sha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+    "unchangedFromBase": true
+  },
+  "schemas/room.schema.json": {
+    "sha256": "6e334e9e4e89bd35e39cfe16398e31511fac53553c0fca5ac817d4b7ea941fe7",
+    "unchangedFromBase": true
+  },
+  "ontology/workbench.ttl": {
+    "sha256": "1741a428b7ca8bd9d4a761659c30bc5f914fcac60d201ad5361cc54ca9cc3bda",
+    "unchangedFromBase": true
+  },
+  "crates/wb-kernel/src/room.rs": {
+    "sha256": "2cb67332ac94f8488085062ea99a3443cf21acdde5e3ff8b4ec8cfa3a5a48eef",
+    "unchangedFromBase": true
+  },
+  "crates/wb-kernel/src/runtime.rs": {
+    "sha256": "50c6c283b84ef5a1b6dc9eb839f541fba6d5c2f1a7a3e444787d0d43f76aae77",
+    "unchangedFromBase": true
+  },
+  "wit/component.wit": {
+    "sha256": "cf90e5114153e2737accd1fc7535e1e494e699ac68b4e99e8cc36c8270a204c0",
+    "unchangedFromBase": true
+  }
+}

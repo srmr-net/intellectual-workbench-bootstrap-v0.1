@@ -105,3 +105,11 @@ prints only committed projection plus actual trace metadata. See
 examples/mortgage-headless/README.md and the VSLICE-001 task for reproduction,
 financial bounds, negative tests and evidence. The original metadata-only mortgage
 package is not installed by this path.
+
+Proposed ADR005 adds admission-only `validate_operator_plan(current, plan)` for a
+single component in an existing empty room. It validates the unchanged composition
+schema, revision, pure permissions, cached exact resource and aggregate-input shape.
+It grants nothing and reserves no quota; `Room::apply_plan` remains authoritative.
+`operator_execution_approved` observes existing exact pure-execution consent without
+changing it. These helpers do not solve grant-policy revision fencing or establish
+Kernel/Room provenance. See ADR005 BLOCKERS.md before exposing Operator application.

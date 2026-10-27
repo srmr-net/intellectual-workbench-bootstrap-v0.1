@@ -1,0 +1,13 @@
+********* Start testing of UiConformance *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+PASS   : UiConformance::initTestCase()
+QWARN  : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme() QDir::mkpath: Empty or null file name
+FAIL!  : UiConformance::ui_009_011_generic_form_accessibility_keyboard_and_theme() 'QDir().mkpath(output)' returned FALSE. ()
+   Loc: [../../apps/desktop-qt/tests/UiConformance.cpp(127)]
+PASS   : UiConformance::ui_012_014_real_worker_committed_outputs_and_gui_thread()
+PASS   : UiConformance::ui_015_016_017_fences_queue_room_switch_and_teardown()
+PASS   : UiConformance::ui_009_010_017_generic_metadata_two_rooms_and_injection()
+PASS   : UiConformance::ui_018_quit_restore_exact_pin_and_values()
+PASS   : UiConformance::cleanupTestCase()
+Totals: 6 passed, 1 failed, 0 skipped, 0 blacklisted, 179449ms
+********* Finished testing of UiConformance *********

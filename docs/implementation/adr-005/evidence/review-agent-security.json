@@ -1,0 +1,224 @@
+{
+  "reviewer": "/root/review_op_security",
+  "role": "Independent agent prompt-injection, privacy, provider, consent and Qt authority-boundary reviewer; no implementation authorship",
+  "status": "APPROVED",
+  "implementationCommit": "f7fe86d5e00981d05d4d0fee6288f34ff21e8478",
+  "reviewDate": "2026-10-27",
+  "sourceBinding": "All49 critical_sources() paths independently compared with frozen Git blobs and working bytes atf7fe86d. Collector/log-union delta previously approved at443acbc; packaging-only workflow addition independently reviewed. Runtime/test/schema/UI code remains byte-identical to independently tested188cbba. Changed reviewed bytes require re-review.",
+  "scope": "Offline fixture-only single admitted local pure component in one existing empty room; explicit proposal-bound native consent; trusted Qt preview and accepted desktop handoff. This approval is source/security review, not ADR or hosted acceptance.",
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "4cc261d4a78c4d7c403d3ad9f23eca5c17a5f40b9fb1b809dc7a06e7886a2b61",
+    "Cargo.lock": "e93bdaf7fbaf3f9fa3c8e104788349ef5f37f0093c7b325796c059d5a535875c",
+    "apps/desktop-qt/operator-tests/collect_evidence.py": "50b98fd2a27179a5c15797e9a3cb0233ed9bb2eb309747d232a3ccb4637703cb",
+    "apps/desktop-qt/operator-tests/contract.py": "a648388df40261da5a5a88a53083758cc0c9ffa2060a8f2c33220b1df4f54ae5",
+    "apps/desktop-qt/operator-tests/process_cases.py": "27c7f17ea1615266a4b966ec0de8c761266d2a023b63fb8441cdace00134e0d2",
+    "apps/desktop-qt/operator-tests/worker_cases.py": "1c5e07b92d67287e6c0c7513dfa75178e67fd700d9c3ab176337b1d51354ac97",
+    "apps/desktop-qt/operator/OperatorDriver.cpp": "d72b6485e03152de6b0396f6cfbb0f4c38aaea50f1375ce4c2bae61a2d52c840",
+    "apps/desktop-qt/operator/OperatorDriver.h": "f9d2f0f57682898879631eb5ff7f258e9ab7234d2587497e2d912da2f1fb26d8",
+    "apps/desktop-qt/operator/OperatorPanel.cpp": "72fde2e15d82b358dc84b2367e2fb4a49962f2854dda3f8dad633fa389e1cd45",
+    "apps/desktop-qt/operator/OperatorPanel.h": "4f2862182a5e9152b16a723768774100ae7b819512eef2ba1b467eb081a11ccf",
+    "apps/desktop-qt/operator/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/operator/operator.pro": "e4a9ecb6e26afaf400c8402a4e19abfe728d62b72bbd2ef08ed057e3ce8c91bd",
+    "apps/desktop-qt/qml/Main.qml": "ed1533ed44081806e598b533a4f5f9777ccd65fa838d462ea4059ca7920ab13f",
+    "apps/desktop-qt/validate-operator.sh": "82d0e0a3d4b80c8d1399a4aa8951e061d9c30ea23ccf5f604de3744f2b216753",
+    "crates/wb-kernel/src/lib.rs": "de75e835e70e3c4e98c1af535ef259b3a317d16a190b0e1147f31ca05df7a199",
+    "crates/wb-kernel/src/operator_validation.rs": "a63013b5fff2aaaa3eec431109a63fe981220034606ea73aef153c408cce5e25",
+    "crates/wb-kernel/src/room.rs": "2cb67332ac94f8488085062ea99a3443cf21acdde5e3ff8b4ec8cfa3a5a48eef",
+    "crates/wb-kernel/src/runtime.rs": "50c6c283b84ef5a1b6dc9eb839f541fba6d5c2f1a7a3e444787d0d43f76aae77",
+    "crates/wb-operator/Cargo.toml": "25ae3e7a5fc1b64aa04d1cea2f09ca98c575c6d313ca9f3250cc53e0808422e1",
+    "crates/wb-operator/README.md": "bf713bb39e4f714a77faa50565894b857f9cc5b68ea7df91d70610fb82990b0f",
+    "crates/wb-operator/src/bin/wb-operator-worker.rs": "ab048dabfdcae0d9433b9f2895ad915f389403d22d7c7c9f10a76db556550311",
+    "crates/wb-operator/src/catalog.rs": "1d1ea21f462e8b67ebf4b21c27647d9f44ffb780bcc6b5ab9930e2e1d994ff8d",
+    "crates/wb-operator/src/lib.rs": "4e8231acc0b202731d44fd1f4f37353c21dc962f96c74b477e561cf0fc9ed55b",
+    "crates/wb-operator/src/proposal.rs": "9a5de6788bf37e8eeae0d814b42ecb5f39130dfd96e7a94745bada15804526df",
+    "crates/wb-operator/src/proposal_tests.rs": "6792f4723acbe58ba8e6b5cab874eb17dccc7e829221437798e3f704de12ac4f",
+    "crates/wb-operator/src/provider.rs": "66966aa939f6fc4efe8568ec43b538e76c8e32fc6b7523df38fe68b2f57c9afd",
+    "crates/wb-operator/src/session.rs": "f97a069a67a34ba4c0b032ec5fd14ad2cd585b54b2ea94e963aff53e14cc1b30",
+    "crates/wb-operator/src/suggestion.rs": "586f919795717943e3e131d130f99a9ccce5288b926c802998691875177966a5",
+    "crates/wb-operator/tests/boundary.rs": "e052d9622bf394b3bee1dbbc8e274668a5363c10a75bc2263016f124da3471c0",
+    "crates/wb-operator/tests/catalog.rs": "5a39d1c91fc1ab52fff374106098645a1a3c005cafd921e18adb429f416a43b3",
+    "crates/wb-operator/tests/session.rs": "5ad4dbeacee82a977415859ea68ebe48eb19640d41ca5d9b7560e57d252ad1bd",
+    "docs/implementation/adr-005/evidence/verify.py": "fad68997cda223cd8bf608d8c75cfc591dfe72c1e3cc645ef5653e603ea89269",
+    "docs/implementation/adr-005/schemas/operator-preview.schema.json": "a164419da9836617da57ecd2fc8623df65da34f49dd58e512d7e8713129f4091",
+    "docs/implementation/adr-005/schemas/operator-request.schema.json": "47c9e6ebb0cd632549d26bbd3a1a36115da92c379f750ba2976d994e6662934a",
+    "docs/implementation/adr-005/schemas/operator-suggestion.schema.json": "12b80b2f433ad9dfa672d0ab4bc0fa19a9fd3efab26d2d8528b9abcbd64449c5",
+    "fixtures/operator/authority.json": "8fb93de6a85ad96718c05be7f7e24beda7978eca75c2085aadf745fc1aab8ec7",
+    "fixtures/operator/duplicate.json": "546df32e652276a8696fb70f5963bbec84ccf8002e8631157317e17bb41157f1",
+    "fixtures/operator/escaped-duplicate.json": "a5c748fee79168c8b71b18add3bb624be9832598df44ac099276ae2d2dc97aee",
+    "fixtures/operator/float-lexeme.json": "ba2b0eeb92b1175379be360d4659f71225b1cf5ec4aff172838878ba80b207ba",
+    "fixtures/operator/nested-duplicate.json": "f92b5a335b9cc0282a6bb90966b1c5571544cc8485c3d2f8c3b87af985abe948",
+    "fixtures/operator/non-scalar.json": "85331ed8a8a2154d033cabcb0abca58881dacb341b560d98a4eb40f00f8477c1",
+    "fixtures/operator/positive.json": "784401dc111c13182154f7fb9d1bc4662446e10d3a86208ee44ec74e6dfc8ca1",
+    "fixtures/operator/prototype.json": "c49f1b0ecc6ff88a93314da88f44335cdddbe3419995a2bf081d69de446087ac",
+    "ontology/workbench.ttl": "1741a428b7ca8bd9d4a761659c30bc5f914fcac60d201ad5361cc54ca9cc3bda",
+    "schemas/component.schema.json": "15f2b7a2b84655e62f14fc521fe06a291fd00bf5fbcc120e509aaa84e9e1dd55",
+    "schemas/composition.schema.json": "e2259779ce2b4daaeba8db15b48e502cd2bcab8aa1c4249eff5caae48525ab48",
+    "schemas/room.schema.json": "6e334e9e4e89bd35e39cfe16398e31511fac53553c0fca5ac817d4b7ea941fe7",
+    "schemas/ui.schema.json": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+    "wit/component.wit": "cf90e5114153e2737accd1fc7535e1e494e699ac68b4e99e8cc36c8270a204c0"
+  },
+  "independentTests": [
+    {
+      "command": "cargo test --locked -p wb-operator",
+      "exit": 0,
+      "passed": 24,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-security/final-native.log",
+      "logSha256": "82afe8d23bfd69955fdea370bd04b95454b12cd6235c9304c43cdb26fb43594e",
+      "logText": "    Blocking waiting for file lock on build directory\n    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.47s\n     Running unittests src/lib.rs (target/debug/deps/wb_operator-b747a15ab0cd2f0c)\n\nrunning 5 tests\ntest proposal_tests::op_011_012_invalid_plan_preview_never_grants_or_reserves ... ok\ntest proposal_tests::checkpoint_failure_is_honest_partial_completion ... ok\ntest proposal_tests::real_admission_preview_approval_ingress_and_replay ... ok\ntest proposal_tests::failed_apply_removes_only_new_execution_consent ... ok\ntest proposal_tests::fresh_preview_identity_stale_revision_and_expiry ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 57.68s\n\n     Running unittests src/bin/wb-operator-worker.rs (target/debug/deps/wb_operator_worker-c811da695c6696a9)\n\nrunning 3 tests\ntest tests::op_007_021_queue_ownership_uses_host_ticket_not_caller_token ... ok\ntest tests::op_007_wire_cannot_supply_host_ticket_or_authority ... ok\ntest tests::op_018_021_oversized_reply_retains_authoritative_commit_stages ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s\n\n     Running tests/boundary.rs (target/debug/deps/boundary-a3cd89b53b7ec881)\n\nrunning 8 tests\ntest no_defaults_or_injected_instructions ... ok\ntest positive_and_adversarial_fixture_corpus ... ok\ntest cancelled_and_zero_budget_never_invoke_provider_factory ... ok\ntest cancellation_and_deadline_rechecked_after_ready ... ok\ntest ambiguity_cancel_unavailable_and_deadline ... ok\ntest strict_untrusted_json ... ok\ntest deterministic_fixture_and_explicit_units ... ok\ntest op_001_003_007_exact_byte_character_item_and_context_boundaries ... ok\n\ntest result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.54s\n\n     Running tests/catalog.rs (target/debug/deps/catalog-7694e2c39c6fb182)\n\nrunning 3 tests\ntest op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free ... ok\ntest op_004_006_semantic_ambiguity_never_selects_arbitrary_release ... ok\ntest op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback ... ok\n\ntest result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 28.08s\n\n     Running tests/session.rs (target/debug/deps/session-27959ccbdd94f9d0)\n\nrunning 5 tests\ntest op_012_scope_quota_creates_no_guest_or_execution_authority ... ok\ntest op_022_concurrent_rooms_keep_intent_approval_and_cancellation_isolated ... ok\ntest committed_guest_then_real_final_write_failure_preserves_topology_checkpoint ... ok\ntest private_session_policy_epoch_revoke_before_grant_and_real_commit ... ok\ntest pending_cancel_queue_release_policy_race_and_room_isolation ... ok\n\ntest result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 59.78s\n\n   Doc-tests wb_operator\n\nrunning 0 tests\n\ntest result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s\n\n"
+    },
+    {
+      "command": "REGISTRY_PYTHON=$PWD/target/vs2-venv/bin/python WB_OPERATOR_EVIDENCE_DIR=$PWD/target/review-op-security python3 apps/desktop-qt/operator-tests/worker_cases.py",
+      "exit": 0,
+      "passed": 9,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-security/final-worker.log",
+      "logSha256": "14efe5e5bc724dcddd9eb1893bf070c8533c7025ed5967d858a1ecebbaf36a38",
+      "logText": "test_op_007_021_cancelled_queue_and_bounded_audit_reply (__main__.WorkerCases.test_op_007_021_cancelled_queue_and_bounded_audit_reply) ... ok\ntest_op_009_015_pin_tampering_never_falls_back_or_commits (__main__.WorkerCases.test_op_009_015_pin_tampering_never_falls_back_or_commits) ... ok\ntest_op_014_decline_replay_and_malformed_intent (__main__.WorkerCases.test_op_014_decline_replay_and_malformed_intent) ... ok\ntest_op_015_corrupt_snapshot_during_preview_is_not_overwritten (__main__.WorkerCases.test_op_015_corrupt_snapshot_during_preview_is_not_overwritten) ... ok\ntest_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal (__main__.WorkerCases.test_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal) ... ok\ntest_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore (__main__.WorkerCases.test_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore) ... ok\ntest_op_018_guest_trap_preserves_installed_topology_without_false_result (__main__.WorkerCases.test_op_018_guest_trap_preserves_installed_topology_without_false_result) ... ok\ntest_op_018_host_file_budget_failure_retains_topology_only (__main__.WorkerCases.test_op_018_host_file_budget_failure_retains_topology_only) ... ok\ntest_op_018_real_topology_checkpoint_failure_reports_no_durable_room (__main__.WorkerCases.test_op_018_real_topology_checkpoint_failure_reports_no_durable_room) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 175.406s\n\nOK\n"
+    },
+    {
+      "command": "REGISTRY_PYTHON=$PWD/target/vs2-venv/bin/python WB_OPERATOR_EVIDENCE_DIR=$PWD/target/review-op-security python3 apps/desktop-qt/operator-tests/process_cases.py",
+      "exit": 0,
+      "passed": 6,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-security/final-process.log",
+      "logSha256": "d21c52cada15779f8d5e7b044ffa7795f171ee2c9355847c0b5e8f689101e9f4",
+      "logText": "test_op_006_008_014_genuine_clarification_and_decline (__main__.OperatorProcesses.test_op_006_008_014_genuine_clarification_and_decline) ... ok\ntest_op_013_014_017_019_genuine_intent_preview_approval_and_edit (__main__.OperatorProcesses.test_op_013_014_017_019_genuine_intent_preview_approval_and_edit) ... ok\ntest_op_014_021_confirmation_disables_cancel_and_reconciles_commit (__main__.OperatorProcesses.test_op_014_021_confirmation_disables_cancel_and_reconciles_commit) ... ok\ntest_op_018_genuine_partial_initialization_offers_direct_form_repair (__main__.OperatorProcesses.test_op_018_genuine_partial_initialization_offers_direct_form_repair) ... ok\ntest_op_020_genuine_offline_cold_restart_no_provider (__main__.OperatorProcesses.test_op_020_genuine_offline_cold_restart_no_provider) ... ok\ntest_op_021_cancel_pending_intent_has_no_topology_effect (__main__.OperatorProcesses.test_op_021_cancel_pending_intent_has_no_topology_effect) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 37.865s\n\nOK\n"
+    },
+    {
+      "command": "Python ast.parse on all five Operator wrapper/test/verifier Python files; bash -n apps/desktop-qt/validate-operator.sh",
+      "exit": 0,
+      "passed": 6,
+      "log": "target/review-op-security/final-wrapper-static.log",
+      "logSha256": "003086de04724da57e0350fb843af4b741cc53068b0ee51215ea94ddc0f72ae2",
+      "logText": "Parsed 5 Python sources; bash -n exit 0\n"
+    },
+    {
+      "command": "Independent evidence-only collector and packaging delta/source-byte assertions; inspected explicitly selected hidden evidence paths",
+      "exit": 0,
+      "passed": 5,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-security/final-collector-delta.log",
+      "logSha256": "31d53d18fda143f6d77b8bb4c0957cb5f644f26e36d41f8ca61050e390989553",
+      "logText": "PASS: packaging-only commit f7fe86d5e00981d05d4d0fee6288f34ff21e8478 changes one workflow line: include-hidden-files: true. All49 critical sources match committed/working bytes;48 paths excluding workflow are identical to reviewed443acbc. Runtime/test/schema/UI sources remain identical to independently tested188cbba. Explicit source collector selects the hidden workflow file; enabling hidden uploads closes its omission and changes no runtime privilege. Hidden evidence paths inspected: ['operator/sources/.github/workflows/ci.yml']. Prior443acbc source-union/log-validation approval retained.\n"
+    }
+  ],
+  "findings": [
+    {
+      "id": "A01",
+      "finding": "Provider completion could outlive cancellation/deadline or invoke provider factory before preflight.",
+      "resolution": "Preflight, post-poll and post-parse cancellation/deadline checks; factory-no-call and delayed-ready regression tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A02",
+      "finding": "Equivalent regenerated previews shared consent digest; failed topology application could retain newly issued execution authority.",
+      "resolution": "Fresh random proposal identity/lifetime/action/input/plan/UI/policy digest binding; single-use stored proposal; failure revokes only newly issued execution consent; replay/quota tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A03",
+      "finding": "Revocation/cancellation during discovery or final validation could still dispatch inference or publish preview.",
+      "resolution": "Private Session owns Kernel/Rooms; per-room token-identity lease, pre-dispatch/post-validation fences, retained cancellation token and monotonic policy epoch; concurrent room tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A04",
+      "finding": "Audit omitted early failures, correlation, native errors and partial initialization stages.",
+      "resolution": "Bounded prompt-free audit records unique host correlations, revision, pin, status, native/public codes and topology/initialization stages; privacy and partial-failure tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A05",
+      "finding": "Queued preparation ownership depended on caller-controlled cross-channel token equality.",
+      "resolution": "Cleanup compares host Cancellation identity and only rejected Operator Prepare requests; adversarial queue ownership tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A06",
+      "finding": "Large audit replies could terminate transport or erase committed outcome on overflow.",
+      "resolution": "Audit tail limited to16, metadata caps, bounded serialization strips audit first and retains authoritative stage fields in final fallback; overflow regression passes.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A07",
+      "finding": "Failed initial topology persistence incorrectly offered installed-form recovery; approval cancellation/watchdog could hide committed results.",
+      "resolution": "Separate topologyCheckpointPersisted field and stage-aware native/Qt recovery; approval is documented commit boundary, Cancel disabled after confirmation, watchdog preserves authoritative reply; actual filesystem/trap and genuine Qt repair tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A08",
+      "finding": "Intent edits could leave reusable UI consent and raw Proposal application was externally callable.",
+      "resolution": "Intent edits clear displayed consent; trusted preview uses plain text and explicit unchecked confirmation; raw Proposal/ApplyContext are crate-private and only owned Session applies; genuine consent tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    },
+    {
+      "id": "A09",
+      "finding": "Supplemental length constraints and public error taxonomy differed from ADR005.",
+      "resolution": "UTF-8 byte limits,512-scalar explanation limits, strict duplicate/unknown-field parsing and ADR error wrapping now enforced and adversarial corpus/boundary tests pass.",
+      "status": "RESOLVED",
+      "resolvedBy": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+    }
+  ],
+  "remainingMandatory": [],
+  "limitations": [
+    "No external model adapter, auto-approval, privileged component, multi-component or general natural-language inference approval.",
+    "Provider deadline is cooperative for trusted native adapters; arbitrary blocking native code is not isolated by this interface.",
+    "Checkpoint callbacks are trusted bounded persistence I/O and must not re-enter Session; this precondition is documented and actual worker callback complies.",
+    "Cancellation/revocation after approved apply begins serializes after that commit boundary; no interruption claim.",
+    "Separate runtime review, full retained regressions, successful hosted Linux run and downloaded archive verification remain milestone acceptance gates. ADR005 remains PROPOSED."
+  ],
+  "setupNotes": [
+    {
+      "issue": "Initial reviewer Python launcher resolved venv interpreter symlink to system Python, causing registry fixture setup failure before any tests. Corrected to un-resolved venv path; final9+6 suites passed.",
+      "log": "target/review-op-security/final-worker-initial-interpreter-error.log",
+      "logSha256": "6c055b68a6976bf2e9f301798ebd5fd0fc48505cd03444de72b4eb3db5e47723"
+    }
+  ],
+  "artifacts": {
+    "appSha256": "485c78df7083662ad468dfb0576f47731c33aa343ead4f66cade2f9560ac595a",
+    "workerSha256": "1ff88c55b94a0a6b77a614b66cf62d6df92acc137ec38c59a3c69fe0b1272d69",
+    "processEvidenceDirectory": "target/review-op-security/process"
+  },
+  "runtimeTestCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+  "evidenceDeltaReview": {
+    "fromCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+    "toCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+    "changedPaths": [
+      "apps/desktop-qt/operator-tests/collect_evidence.py",
+      "docs/implementation/adr-005/TASK.md"
+    ],
+    "conclusion": "APPROVED: collector now verifies every reviewed source hash, archives the union of reviewed paths, checks zero independent-test exit/skips and verifies/copies archived independent-test log hashes. Native24, worker9 and Qt6 tests were independently executed on byte-identical runtime/test/schema/UI sources at188cbba; unchanged runtime is not redundantly rerun."
+  },
+  "evidenceDeltaHistory": [
+    {
+      "fromCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+      "toCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+      "changedPaths": [
+        "apps/desktop-qt/operator-tests/collect_evidence.py",
+        "docs/implementation/adr-005/TASK.md"
+      ],
+      "conclusion": "APPROVED: collector now verifies every reviewed source hash, archives the union of reviewed paths, checks zero independent-test exit/skips and verifies/copies archived independent-test log hashes. Native24, worker9 and Qt6 tests were independently executed on byte-identical runtime/test/schema/UI sources at188cbba; unchanged runtime is not redundantly rerun."
+    },
+    {
+      "fromCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+      "toCommit": "f7fe86d5e00981d05d4d0fee6288f34ff21e8478",
+      "change": "Packaging-only include-hidden-files: true in upload-artifact; review/log archival commits also present between443acbc and parent. Explicitly selected operator/sources/.github/workflows/ci.yml is now included.",
+      "status": "APPROVED",
+      "runtimeChanged": false,
+      "runtimeTestCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+      "hostedClaim": "Reported prior hosted run success is not independently asserted by this packaging source review; complete new artifact verification remains separate."
+    }
+  ]
+}

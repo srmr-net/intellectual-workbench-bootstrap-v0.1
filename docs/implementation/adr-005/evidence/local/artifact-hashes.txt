@@ -1,0 +1,4 @@
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/ui-fixtures/mortgage-ui/logic.wasm
+a12f5ae6c6d1fcf98e1f09b6dc6a868f0ba9a7fbfef6bc508c98bb29a9400592  target/ui-fixtures/mortgage-ui/component.json
+b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6  target/ui-fixtures/mortgage-ui/ui.json
+55382eaa345f10f8b3e00522b0beca6b92198e8f8475ad3e9d054d2bf4dade05  target/debug/wb-registry-inspect

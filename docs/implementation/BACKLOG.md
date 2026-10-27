@@ -22,3 +22,6 @@ All tasks require changed-code tests, documented interfaces and agent verificati
 
 VSLICE-002 (Accepted, 2026-10-27): first installed interactive desktop/persistent canvas;
 owner Codex, [task](vslice-002/TASK.md), dependencies accepted ADR001–004/VSLICE001.
+
+OP-001 / ADR005 (Accepted, 2026-10-27): bounded local single-component Operator; owner Codex,
+[task](adr-005/TASK.md), depends accepted ADR001–004 and VS1/VS2.

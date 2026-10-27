@@ -16,3 +16,5 @@ pub mod runtime;
 pub use runtime::Kernel;
 
 pub mod headless;
+
+pub mod operator_validation;
