@@ -1,0 +1,4 @@
+wb-operator-worker {"accepted": false, "diagnostics": [{"code": "STALE_VIEW", "message": "STALE VIEW"}], "epoch": "1"}
+wb-vslice003-review-original {"accepted": true, "diagnostics": [], "epoch": "1"}
+wb-vslice003-worker {"accepted": false, "diagnostics": [{"code": "STALE_VIEW", "message": "STALE VIEW"}], "epoch": "1"}
+PASS: original3de262d accepted malformed lexical counter; accepted and fixed workers reject it.

@@ -1,0 +1,98 @@
+{
+  "qtVersion": "6.11.2",
+  "appPid": 750735,
+  "workerPid": 750738,
+  "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+  "initialProviderCalls": "0",
+  "initialGuestInvocations": "0",
+  "columns": [
+    {
+      "name": "leftPinnedTools",
+      "visible": true,
+      "width": 274,
+      "x": 11
+    },
+    {
+      "name": "activityContext",
+      "visible": true,
+      "width": 313,
+      "x": 291
+    },
+    {
+      "name": "semanticCanvas",
+      "visible": true,
+      "width": 659,
+      "x": 610
+    }
+  ],
+  "accessibleWidgets": [
+    {
+      "enabled": true,
+      "focusable": true,
+      "id": "operatorIntent",
+      "name": "Tool request",
+      "role": 42,
+      "visible": true
+    },
+    {
+      "enabled": true,
+      "focusable": true,
+      "id": "operatorSubmitted",
+      "name": "Submitted user request",
+      "role": 42,
+      "visible": true
+    },
+    {
+      "enabled": true,
+      "focusable": false,
+      "id": "operatorStatus",
+      "name": "Request status",
+      "role": 41,
+      "visible": true
+    },
+    {
+      "enabled": true,
+      "focusable": true,
+      "id": "operatorDecline",
+      "name": "Reject proposal",
+      "role": 43,
+      "visible": true
+    },
+    {
+      "enabled": true,
+      "focusable": true,
+      "id": "operatorPreview",
+      "name": "Composition proposal preview",
+      "role": 42,
+      "visible": true
+    },
+    {
+      "enabled": true,
+      "focusable": true,
+      "id": "operatorConsent",
+      "name": "Approve this exact proposal",
+      "role": 44,
+      "visible": true
+    },
+    {
+      "enabled": false,
+      "focusable": true,
+      "id": "operatorApprove",
+      "name": "Confirm and initialize",
+      "role": 43,
+      "visible": true
+    },
+    {
+      "enabled": false,
+      "focusable": true,
+      "id": "operatorCancel",
+      "name": "Cancel request",
+      "role": 43,
+      "visible": true
+    }
+  ],
+  "renderedCanvasSha256": "c3e8536f32aeef9477104388292099f3c27ab14e60d30edfbf707e3101c77769",
+  "shellSha256": "21eca9f7c3c8bc69a26db96bad2e4998be4e7768ffbe890cb95f1430eccade05",
+  "observedCommittedPayment": "1461.48",
+  "note": "Actual native Qt intentKeyboard/approveKeyboard; shell and embedded Quick canvas captured separately on offscreen backend."
+}

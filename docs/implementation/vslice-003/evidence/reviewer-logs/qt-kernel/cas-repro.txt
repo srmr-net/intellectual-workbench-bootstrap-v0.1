@@ -1,0 +1,2 @@
+APPROVAL {"code": "STATE_CONFLICT", "kind": "reply", "ok": false, "protocol": "operator.1", "providerCalls": "2", "token": "op-5"}
+SELECT RESYNC True

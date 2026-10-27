@@ -1,0 +1,10 @@
+agent-security accepted source bytes unchanged: 49
+runtime-integration accepted source bytes unchanged: 60
+Accepted contract/runtime unchanged: wit/component.wit
+Accepted contract/runtime unchanged: schemas/component.schema.json
+Accepted contract/runtime unchanged: schemas/composition.schema.json
+Accepted contract/runtime unchanged: schemas/ui.schema.json
+Accepted contract/runtime unchanged: schemas/room.schema.json
+Accepted contract/runtime unchanged: ontology/workbench.ttl
+Accepted contract/runtime unchanged: crates/wb-kernel/src/room.rs
+Accepted contract/runtime unchanged: crates/wb-kernel/src/runtime.rs

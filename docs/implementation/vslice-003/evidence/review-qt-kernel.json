@@ -1,0 +1,262 @@
+{
+  "reviewer": "/root/review_vs3_qt_kernel",
+  "role": "Independent Qt, trusted renderer, kernel/registry/state and persistence integration reviewer B; no implementation authorship",
+  "status": "APPROVED",
+  "reviewDate": "2026-10-27",
+  "implementationCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+  "workerTestsStartedAtCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+  "workerProvenanceNote": "The frozen03 change only adds panel guidance/two Qt assertions. Worker bytes stayed unchanged at fdf20e... throughout the final six native cases. Final24 Qt run began only after frozen03 build completion and app hash confirmation.",
+  "sourceSha256": {
+    ".github/workflows/vslice-003.yml": "54902664265419326ce129b42c55f3177ca1a9190ba0010fb53831ea2af8da58",
+    "apps/desktop-qt/validate-vslice-003.sh": "b864b346c56ead780a1bd7408faa0a938bf4ea907c6c9270a6bf83bbf9d9887a",
+    "apps/desktop-qt/vslice-003-tests/collect_evidence.py": "fdd55bdcb7dc3c9e926dd9bc6b47f999a1cb344e3466a0abdce70ebfc97d7f09",
+    "apps/desktop-qt/vslice-003-tests/contract.py": "eb6a0b977209be21e3ca631e0a7e301271d7f470b53916e4e3487a1554cfee3c",
+    "apps/desktop-qt/vslice-003-tests/evidence_tests.py": "cb3bbddcb8870cacd9fc1566d1802a3a82e72e7b1fd6d1c1978317256e0eb317",
+    "apps/desktop-qt/vslice-003-tests/process_cases.py": "bffe6babce52b555cb6e83cedb5d2f366934f2c16e30e5c0cf492bb72a734bf1",
+    "apps/desktop-qt/vslice-003-tests/worker_cases.py": "11853dc658b2293715a976abe7aeafb1a2665b8b8cc354d78a7e8b00fdadbb68",
+    "apps/desktop-qt/vslice-003/Main.qml": "c92127bcfe989f6848c968bc737ba606f8a5dd9ad855dcd8592afaf6a0047818",
+    "apps/desktop-qt/vslice-003/OperatorDriver.cpp": "40283d8d894996a86addd8a4326d6387fbd80b19ad2a6eb7061f0e823245cf08",
+    "apps/desktop-qt/vslice-003/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
+    "apps/desktop-qt/vslice-003/OperatorPanel.cpp": "a00d2ac943850fdd6fd409f11ac176ed0cea50d438886af3223baf08bfd9a171",
+    "apps/desktop-qt/vslice-003/OperatorPanel.h": "c01960a4f2ff13071232e1d8fdfa5d110d5bb71deaa3d37f50f7ea17a5dd416a",
+    "apps/desktop-qt/vslice-003/README.md": "448129ad6b22fb0018488882b5ef1d878c4d434740f694bd0decfb5639ad73ca",
+    "apps/desktop-qt/vslice-003/host/Cargo.lock": "8bb42d7fff12d75086686e9871bfead6334a20d7c9ce2ad1d1e191162ecd2d01",
+    "apps/desktop-qt/vslice-003/host/Cargo.toml": "a89401412233b93e988e19df3aca819f373ab4a983c7afed84be58863f90542e",
+    "apps/desktop-qt/vslice-003/host/README.md": "24269ce7ad300a2f9c150babcf5e0fa99572ad7c32faf2061b2a653d0b3fc04a",
+    "apps/desktop-qt/vslice-003/host/src/main.rs": "37dfbaefced6609c5c7ff661796dcec73baea43fa6c43ea1d3f033cc76a67ddf",
+    "apps/desktop-qt/vslice-003/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/vslice-003/operator.pro": "e7be85a1329429604a392bac90e2d3294916524e8eda41ddd2f2b390cdeee611",
+    "apps/desktop-qt/vslice-003/resources.qrc": "52cad172dfcf5d5d6e79a52d7a672cf74e0fde636f98f7e778f9ae564b723098",
+    "docs/implementation/vslice-003/REVIEW_CHECKLISTS.md": "b6ecf99c1f3b8976accd2c5d19b8b72fdb48e36a3213f7eaf30f79c24c098db1",
+    "docs/implementation/vslice-003/TEST_MATRIX.md": "ab3dd2f697a3a07e3ffe240427ba29e9e6c1eedca77980670d466f718a2c1086",
+    "docs/implementation/vslice-003/VALIDATION_TASK.md": "4d96d1cb871d29e97cab17ee878ccd942e28b5d53b02e28da334bbff1a24decf",
+    "docs/implementation/vslice-003/evidence/verify.py": "90e3c6992673fef54673db92b6307e864a0137138ea689af75fb7a3b6971faab"
+  },
+  "independentTests": [
+    {
+      "command": "REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_VS3_EVIDENCE_DIR=\"$PWD/target/review-vs3-qt-kernel/final-artifacts\" target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/worker_cases.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 6,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/qt-kernel/final-worker.txt",
+      "logSha256": "5c9280e6e13bfb408fee1dd55677281bf85a8ff3fd90119d93d5aeb264a47375"
+    },
+    {
+      "command": "REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_VS3_EVIDENCE_DIR=\"$PWD/target/review-vs3-qt-kernel/frozen03-artifacts\" target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/process_cases.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 24,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/qt-kernel/frozen03-journey.txt",
+      "logSha256": "e0416db1e4e4825521d14be9c0ff951ffee255284adacc96bfbbc066e25f9d01"
+    },
+    {
+      "command": "target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/evidence_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 6,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/qt-kernel/final-provenance.txt",
+      "logSha256": "22c2a6f9be3c505b4ccaabe1a9eeb68ee591f2e43a864b7b5aa3839b0cdc880e"
+    },
+    {
+      "command": "python3 docs/implementation/vslice-003/evidence/reviewer-logs/qt-kernel/final-static.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 0,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/qt-kernel/final-static.txt",
+      "logSha256": "672ae0a59b8c483528f1b2a5238315f6af822e8bb99fe6faca75179ab0feade4"
+    }
+  ],
+  "checklist": {
+    "actualDesktopAcceptedOperatorPath": "PASS: native Qt request/consent to powerless suggestion/canonical Session plan and immutable registry pin; no fixture-only screen",
+    "qtThreadFocusAccessibility": "PASS: finalQt6.11.2 native keyboard intent/confirm, focusable Reject and QAccessible names/status,25 genuine app/worker pairs",
+    "previewReadOnlyCanonicalFences": "PASS: no saved topology before consent; room/policy/pin/proposal/expiry fences retained; workspace revision/hash drift also checked",
+    "typedIngressRealWasm": "PASS: actual1461.48; no math in QML/Operator; renamed admitted identity/version executes via semantic selection",
+    "truthfulPartialStages": "PASS: native topology append before typed ingress/final checkpoint; trap and real second topology-write failure retain truthful stage booleans and prior checkpoint; explicit form repair",
+    "modelFreeEditsAndStaleViews": "PASS:1753.77 after actual edit/provider stays1; identicalUI rooms recreate owned editors; actual pending Apply then switch cannot cross-project; stale/future/noncanonical counters fail closed",
+    "offlineColdPinnedRestore": "PASS:two exact pinned rooms in separate app/workerPIDs with provider disabled and IPv4/IPv6 socket denial; display/navigation0provider/0guest",
+    "evidenceAndRegressions": "PASS review scope:24 source hashes and app/worker hashes; both accepted49/60 source maps unchanged. Full retained wrapper and successful hosted/download acceptance remain separate mandatory gates"
+  },
+  "findings": [
+    {
+      "id": "VS3-B-001",
+      "severity": "medium",
+      "finding": "Valid external durable snapshot replacement during approval handoff reopens Desktop and changes view counters, but the CAS-conflict reply lacked refreshDesktop. Qt would retain an old view until an explicit resynchronizing selection.",
+      "reproduction": "target/review-vs3-qt-kernel/cas-repro.py writes a valid revised/pinned checkpoint with canonical checksum after second preview. Before fix, reply was STATE_CONFLICT without refreshDesktop; manual Select resynced. Archived cas-repro.txt.",
+      "resolutionCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+      "resolution": "CAS reload branch returns refreshDesktop=true and topologyCommitted=false. Final independent native test_vs3_014_external_durable_replacement_requires_refresh passed; no target topology/state overwrite."
+    }
+  ],
+  "remainingMandatory": [],
+  "observed": {
+    "journeyCases": 24,
+    "genuineQtContainingCases": 22,
+    "nativeBoundaryOnlyCases": 2,
+    "appWorkerPairs": 25,
+    "nativeWorkerCases": 6,
+    "provenanceNegativePositiveCases": 6,
+    "qtVersion": "6.11.2",
+    "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+    "workerSha256": "fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16",
+    "postEditPayment": "1753.77",
+    "postEditProviderCalls": 1,
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "coldAppPids": [
+      754895,
+      754946
+    ],
+    "coldWorkerPids": [
+      754899,
+      754949
+    ],
+    "coldRoomPins": [
+      {
+        "component": {
+          "id": "org.workbench.example.mortgage-ui",
+          "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+          "version": "0.1.0"
+        },
+        "id": "intent-room",
+        "label": "Intent room",
+        "pinned": true,
+        "ui": {
+          "path": "ui.json",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+        }
+      },
+      {
+        "component": {
+          "id": "org.workbench.example.mortgage-ui",
+          "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+          "version": "0.1.0"
+        },
+        "id": "intent-room-2",
+        "label": "Intent room",
+        "pinned": true,
+        "ui": {
+          "path": "ui.json",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+        }
+      }
+    ]
+  },
+  "visualEvidence": {
+    "qtVersion": "6.11.2",
+    "appPid": 750735,
+    "workerPid": 750738,
+    "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+    "initialProviderCalls": "0",
+    "initialGuestInvocations": "0",
+    "columns": [
+      {
+        "name": "leftPinnedTools",
+        "visible": true,
+        "width": 274,
+        "x": 11
+      },
+      {
+        "name": "activityContext",
+        "visible": true,
+        "width": 313,
+        "x": 291
+      },
+      {
+        "name": "semanticCanvas",
+        "visible": true,
+        "width": 659,
+        "x": 610
+      }
+    ],
+    "accessibleWidgets": [
+      {
+        "enabled": true,
+        "focusable": true,
+        "id": "operatorIntent",
+        "name": "Tool request",
+        "role": 42,
+        "visible": true
+      },
+      {
+        "enabled": true,
+        "focusable": true,
+        "id": "operatorSubmitted",
+        "name": "Submitted user request",
+        "role": 42,
+        "visible": true
+      },
+      {
+        "enabled": true,
+        "focusable": false,
+        "id": "operatorStatus",
+        "name": "Request status",
+        "role": 41,
+        "visible": true
+      },
+      {
+        "enabled": true,
+        "focusable": true,
+        "id": "operatorDecline",
+        "name": "Reject proposal",
+        "role": 43,
+        "visible": true
+      },
+      {
+        "enabled": true,
+        "focusable": true,
+        "id": "operatorPreview",
+        "name": "Composition proposal preview",
+        "role": 42,
+        "visible": true
+      },
+      {
+        "enabled": true,
+        "focusable": true,
+        "id": "operatorConsent",
+        "name": "Approve this exact proposal",
+        "role": 44,
+        "visible": true
+      },
+      {
+        "enabled": false,
+        "focusable": true,
+        "id": "operatorApprove",
+        "name": "Confirm and initialize",
+        "role": 43,
+        "visible": true
+      },
+      {
+        "enabled": false,
+        "focusable": true,
+        "id": "operatorCancel",
+        "name": "Cancel request",
+        "role": 43,
+        "visible": true
+      }
+    ],
+    "renderedCanvasSha256": "c3e8536f32aeef9477104388292099f3c27ab14e60d30edfbf707e3101c77769",
+    "shellSha256": "21eca9f7c3c8bc69a26db96bad2e4998be4e7768ffbe890cb95f1430eccade05",
+    "observedCommittedPayment": "1461.48",
+    "note": "Actual native Qt intentKeyboard/approveKeyboard; shell and embedded Quick canvas captured separately on offscreen backend."
+  },
+  "reviewHistory": [
+    {
+      "commit": "3de262d",
+      "outcome": "Preliminary native5 passed; initial Qt24 run had6 PermissionError launches while primary rebuilt/replaced executable, preserved journey.txt; not counted as a passing final run."
+    },
+    {
+      "commit": "0ec4200",
+      "outcome": "Superseded own Qt run intentionally terminated before final03; partial final-journey.txt preserved, not counted. Final worker6/provenance6 subsequently passed on unchanged final worker/provenance code."
+    },
+    {
+      "commit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+      "outcome": "Final frozen source/binaries: complete independently executed Qt24, native6, provenance6 and static/source/binary checks all pass. No source mutation during final Qt run."
+    }
+  ],
+  "limitations": [
+    "This approval covers reviewed source and independent local execution, not VS3 acceptance or a hosted run. Proposed status must remain until full retained local wrapper, both reviews and downloaded successful hosted Linux evidence pass.",
+    "Scope is sequential fresh empty-room single-component assembly; concurrent native Sessions are tested, while the Qt composer intentionally bounds to one pending intent. No populated-room or multi-component planning.",
+    "No optional external provider trial; no new guest privileges, WIT/schema/ontology fields or executable package QML. Database/power-loss recovery remains deferred."
+  ]
+}

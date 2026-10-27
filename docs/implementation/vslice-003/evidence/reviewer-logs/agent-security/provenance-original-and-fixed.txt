@@ -1,0 +1,2 @@
+Original3de262d hosted metadata condition accepts substituted successful run43/workflow ci.yml against archive run42.
+PASS: fixed validator rejects substituted workflow/run metadata.

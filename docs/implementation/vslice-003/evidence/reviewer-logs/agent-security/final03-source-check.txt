@@ -1,0 +1,29 @@
+{
+  "implementationCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+  "sourceSha256": {
+    ".github/workflows/vslice-003.yml": "54902664265419326ce129b42c55f3177ca1a9190ba0010fb53831ea2af8da58",
+    "apps/desktop-qt/validate-vslice-003.sh": "b864b346c56ead780a1bd7408faa0a938bf4ea907c6c9270a6bf83bbf9d9887a",
+    "apps/desktop-qt/vslice-003-tests/collect_evidence.py": "fdd55bdcb7dc3c9e926dd9bc6b47f999a1cb344e3466a0abdce70ebfc97d7f09",
+    "apps/desktop-qt/vslice-003-tests/contract.py": "eb6a0b977209be21e3ca631e0a7e301271d7f470b53916e4e3487a1554cfee3c",
+    "apps/desktop-qt/vslice-003-tests/evidence_tests.py": "cb3bbddcb8870cacd9fc1566d1802a3a82e72e7b1fd6d1c1978317256e0eb317",
+    "apps/desktop-qt/vslice-003-tests/process_cases.py": "bffe6babce52b555cb6e83cedb5d2f366934f2c16e30e5c0cf492bb72a734bf1",
+    "apps/desktop-qt/vslice-003-tests/worker_cases.py": "11853dc658b2293715a976abe7aeafb1a2665b8b8cc354d78a7e8b00fdadbb68",
+    "apps/desktop-qt/vslice-003/Main.qml": "c92127bcfe989f6848c968bc737ba606f8a5dd9ad855dcd8592afaf6a0047818",
+    "apps/desktop-qt/vslice-003/OperatorDriver.cpp": "40283d8d894996a86addd8a4326d6387fbd80b19ad2a6eb7061f0e823245cf08",
+    "apps/desktop-qt/vslice-003/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
+    "apps/desktop-qt/vslice-003/OperatorPanel.cpp": "a00d2ac943850fdd6fd409f11ac176ed0cea50d438886af3223baf08bfd9a171",
+    "apps/desktop-qt/vslice-003/OperatorPanel.h": "c01960a4f2ff13071232e1d8fdfa5d110d5bb71deaa3d37f50f7ea17a5dd416a",
+    "apps/desktop-qt/vslice-003/README.md": "448129ad6b22fb0018488882b5ef1d878c4d434740f694bd0decfb5639ad73ca",
+    "apps/desktop-qt/vslice-003/host/Cargo.lock": "8bb42d7fff12d75086686e9871bfead6334a20d7c9ce2ad1d1e191162ecd2d01",
+    "apps/desktop-qt/vslice-003/host/Cargo.toml": "a89401412233b93e988e19df3aca819f373ab4a983c7afed84be58863f90542e",
+    "apps/desktop-qt/vslice-003/host/README.md": "24269ce7ad300a2f9c150babcf5e0fa99572ad7c32faf2061b2a653d0b3fc04a",
+    "apps/desktop-qt/vslice-003/host/src/main.rs": "37dfbaefced6609c5c7ff661796dcec73baea43fa6c43ea1d3f033cc76a67ddf",
+    "apps/desktop-qt/vslice-003/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/vslice-003/operator.pro": "e7be85a1329429604a392bac90e2d3294916524e8eda41ddd2f2b390cdeee611",
+    "apps/desktop-qt/vslice-003/resources.qrc": "52cad172dfcf5d5d6e79a52d7a672cf74e0fde636f98f7e778f9ae564b723098",
+    "docs/implementation/vslice-003/REVIEW_CHECKLISTS.md": "b6ecf99c1f3b8976accd2c5d19b8b72fdb48e36a3213f7eaf30f79c24c098db1",
+    "docs/implementation/vslice-003/TEST_MATRIX.md": "ab3dd2f697a3a07e3ffe240427ba29e9e6c1eedca77980670d466f718a2c1086",
+    "docs/implementation/vslice-003/VALIDATION_TASK.md": "4d96d1cb871d29e97cab17ee878ccd942e28b5d53b02e28da334bbff1a24decf",
+    "docs/implementation/vslice-003/evidence/verify.py": "90e3c6992673fef54673db92b6307e864a0137138ea689af75fb7a3b6971faab"
+  }
+}
