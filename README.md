@@ -45,3 +45,9 @@ The accepted [interactive Linux desktop and persistent canvas](apps/desktop-qt/d
 adds installed-component selection, pinning and zero-compute cold display of exact
 committed snapshots. Build/test with `bash apps/desktop-qt/validate-vslice-002.sh`;
 see [VSLICE-002 evidence](docs/implementation/vslice-002/evidence/RESULTS.md).
+
+The opt-in bounded local Operator adds explicit request, exact-pin preview and fresh
+consent to the existing shell. Build/check with
+`bash apps/desktop-qt/validate-operator.sh`; see the [Operator entry](apps/desktop-qt/operator/README.md)
+and [ADR005 gates](docs/implementation/adr-005/CONFORMANCE_MAP.md). Its ADR status
+requires independent review and successful archived hosted evidence.

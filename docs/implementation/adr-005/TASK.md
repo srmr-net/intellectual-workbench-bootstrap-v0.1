@@ -10,6 +10,11 @@
   CI/API/evidence docs. Old accepted source/test/collector hashes remain intact.
 - Non-goals: new ABI/imports/permissions, remote registries/providers, generated
   QML, multi-component plans, automatic apply, changes to accepted snapshots.
-- Checks: bash apps/desktop-qt/validate-operator.sh; full accepted VS2 wrapper;
-  OP001–024 native/genuine Qt/process tests, both independent reviews, hosted Linux
-  success and downloaded artifact verification. Status PROPOSED until all pass.
+- Available checks: cargo test --locked --workspace; cargo fmt --all -- --check;
+  cargo clippy --locked --workspace --all-targets -- -D warnings; Python contract
+  checks; bash apps/desktop-qt/validate-vslice-002.sh for accepted Qt/process gates.
+- Pending acceptance: dedicated Operator validation wrapper, OP001–024 native and
+  genuine Qt/process tests, final independent reviews and hosted evidence.
+  No validate-operator.sh exists yet. Status PROPOSED until all gates pass.
+- Current work is a draft foundation; see BLOCKERS.md, evidence/local/RESULTS.md
+  and draft PR9. No product Operator UI is shipped.

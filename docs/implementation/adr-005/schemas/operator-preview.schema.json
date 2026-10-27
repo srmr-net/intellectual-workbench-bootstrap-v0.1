@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OperatorHostPreviewV0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "proposalDigest",
+    "initialInputDigest",
+    "proposalId",
+    "policyRevision",
+    "plan",
+    "initialInputs",
+    "untrustedExplanation",
+    "effect",
+    "requiresApproval",
+    "expiresInSeconds",
+    "validation"
+  ],
+  "properties": {
+    "proposalDigest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "initialInputDigest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "proposalId": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "policyRevision": {
+      "type": "string",
+      "maxLength": 20,
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "plan": {
+      "$ref": "https://workbench.example/schemas/0.1/composition.schema.json"
+    },
+    "initialInputs": {
+      "type": "object",
+      "maxProperties": 8,
+      "propertyNames": {
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string",
+            "maxLength": 128
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    "untrustedExplanation": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "effect": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "requiresApproval": {
+      "const": true
+    },
+    "expiresInSeconds": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 300
+    },
+    "validation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "profile",
+        "canonicalPlan",
+        "exactPin",
+        "admittedUiBindings",
+        "initialInputSchema",
+        "purePermissions"
+      ],
+      "properties": {
+        "profile": {
+          "const": "single-component-empty-room"
+        },
+        "canonicalPlan": {
+          "const": true
+        },
+        "exactPin": {
+          "const": true
+        },
+        "admittedUiBindings": {
+          "const": true
+        },
+        "initialInputSchema": {
+          "const": true
+        },
+        "purePermissions": {
+          "const": true
+        }
+      }
+    }
+  }
+}

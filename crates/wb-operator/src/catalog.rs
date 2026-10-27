@@ -36,7 +36,7 @@ impl Catalog {
         let mut selections = BTreeMap::new();
         for summary in registry
             .discover(Some(CAPABILITY))
-            .map_err(|_| OperatorError::Unavailable)?
+            .map_err(|e| OperatorError::PinUnavailable(e.code))?
         {
             let Ok(handle) = registry.resolve_exact(&summary.pin) else {
                 continue;
@@ -50,6 +50,12 @@ impl Catalog {
             let Some(checked) = metadata.ui.as_ref() else {
                 continue;
             };
+            if summary.pin.id.len() > 200
+                || summary.pin.version.len() > 64
+                || checked.path.len() > 240
+            {
+                continue;
+            }
             if metadata.manifest["permissions"] != serde_json::json!([]) {
                 continue;
             }
@@ -140,28 +146,28 @@ impl Catalog {
         let selection = self
             .selections
             .get(&suggestion.candidate_key)
-            .ok_or(OperatorError::InvalidSuggestion)?;
+            .ok_or(OperatorError::CatalogChanged)?;
         if suggestion.input_values.keys().cloned().collect::<Vec<_>>() != selection.fields {
-            return Err(OperatorError::InvalidSuggestion);
+            return Err(OperatorError::InvalidField);
         }
         let value = serde_json::to_value(&suggestion.input_values)
             .map_err(|_| OperatorError::InvalidSuggestion)?;
         if !jsonschema::is_valid(&selection.schema, &value) {
-            return Err(OperatorError::InvalidSuggestion);
+            return Err(OperatorError::InvalidField);
         }
         let handle = registry
             .resolve_exact(&selection.pin)
-            .map_err(|_| OperatorError::Unavailable)?;
+            .map_err(|e| OperatorError::PinUnavailable(e.code))?;
         let (metadata, _) = registry
             .read_verified_bundle(&handle)
-            .map_err(|_| OperatorError::Unavailable)?;
+            .map_err(|e| OperatorError::PinUnavailable(e.code))?;
         let checked = metadata.ui.ok_or(OperatorError::Unavailable)?;
         if checked.path != selection.ui_path
             || checked.sha256 != selection.ui_sha256
             || checked.schema_sha256 != selection.ui_schema_sha256
             || metadata.manifest["permissions"] != serde_json::json!([])
         {
-            return Err(OperatorError::Unavailable);
+            return Err(OperatorError::CatalogChanged);
         }
         Ok(selection.clone())
     }

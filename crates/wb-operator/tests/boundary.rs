@@ -172,3 +172,83 @@ fn cancellation_and_deadline_rechecked_after_ready() {
         Err(OperatorError::Cancelled)
     );
 }
+#[test]
+fn positive_and_adversarial_fixture_corpus() {
+    let root = std::path::Path::new(env!("CARGO_MANIFEST_DIR")).join("../../fixtures/operator");
+    for entry in std::fs::read_dir(root).unwrap() {
+        let path = entry.unwrap().path();
+        let expected = path.file_name().unwrap() == "positive.json";
+        assert_eq!(
+            Suggestion::parse(&std::fs::read(&path).unwrap()).is_ok(),
+            expected,
+            "{}",
+            path.display()
+        );
+    }
+    assert!(Suggestion::parse(&[0xff]).is_err());
+}
+#[test]
+fn cancelled_and_zero_budget_never_invoke_provider_factory() {
+    use std::sync::{
+        atomic::{AtomicU64, Ordering},
+        Arc,
+    };
+    let calls = Arc::new(AtomicU64::new(0));
+    let provider = CountedProvider {
+        inner: Arc::new(OfflineFixture),
+        calls: calls.clone(),
+    };
+    let cancel = Cancellation::default();
+    cancel.cancel();
+    assert!(await_provider(&provider, request(), cancel, Duration::from_secs(1)).is_err());
+    assert!(await_provider(
+        &provider,
+        request(),
+        Cancellation::default(),
+        Duration::ZERO
+    )
+    .is_err());
+    assert_eq!(calls.load(Ordering::SeqCst), 0);
+}
+#[test]
+fn op_001_003_007_exact_byte_character_item_and_context_boundaries() {
+    let mut r = request();
+    r.utterance = "£".repeat(2048);
+    assert!(r.validate().is_ok());
+    r.utterance.push('£');
+    assert!(r.validate().is_err());
+    let mut r = request();
+    r.candidates = vec![r.candidates[0].clone(); 13];
+    assert!(r.validate().is_err());
+    let mut r = request();
+    let mut c = r.candidates[0].clone();
+    c.inputs = (0..32)
+        .map(|n| format!("{n:02}{}", "x".repeat(126)))
+        .collect();
+    r.candidates = vec![c; 12];
+    assert!(r.validate().is_err());
+    let mut value = serde_json::json!({"suggestionVersion":"0.1","candidateKey":"k","inputValues":{},"explanation":"x"});
+    value["explanation"] = serde_json::Value::String("😀".repeat(512));
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_ok());
+    value["explanation"] = serde_json::Value::String("😀".repeat(513));
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_err());
+    value["explanation"] = serde_json::json!("x");
+    value["inputValues"] = serde_json::Value::Object(
+        (0..8)
+            .map(|n| (format!("field{n}"), serde_json::json!(true)))
+            .collect(),
+    );
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_ok());
+    value["inputValues"]["field9"] = serde_json::json!(true);
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_err());
+    value["inputValues"] = serde_json::json!({"field":"x".repeat(128)});
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_ok());
+    value["inputValues"]["field"] = serde_json::json!("x".repeat(129));
+    assert!(Suggestion::parse(&serde_json::to_vec(&value).unwrap()).is_err());
+    value["inputValues"] = serde_json::json!({});
+    let mut bytes = serde_json::to_vec(&value).unwrap();
+    bytes.resize(16384, b' ');
+    assert!(Suggestion::parse(&bytes).is_ok());
+    bytes.push(b' ');
+    assert!(Suggestion::parse(&bytes).is_err());
+}

@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "OperatorSuggestionV0.1",
+  "$comment": "The Rust parser additionally rejects duplicate keys, non-UTF8, replies over 16384 bytes and noncanonical floating-point/exponent integer lexemes. JSON Schema alone cannot express these byte/lexical requirements.",
   "type": "object",
   "additionalProperties": false,
   "required": [

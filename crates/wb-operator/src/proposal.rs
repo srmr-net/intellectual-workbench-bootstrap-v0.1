@@ -46,14 +46,26 @@ pub struct Preview {
     pub requires_approval: bool,
     pub expires_in_seconds: u64,
     pub proposal_id: String,
+    pub policy_revision: String,
+    pub validation: ValidationEvidence,
 }
-pub struct ApplyContext<'a> {
+#[derive(Clone, Debug, Serialize)]
+#[serde(rename_all = "camelCase")]
+pub struct ValidationEvidence {
+    pub profile: &'static str,
+    pub canonical_plan: bool,
+    pub exact_pin: bool,
+    pub admitted_ui_bindings: bool,
+    pub initial_input_schema: bool,
+    pub pure_permissions: bool,
+}
+pub(crate) struct ApplyContext<'a> {
     pub kernel: &'a Kernel,
     pub registry: &'a Registry,
     pub catalog: &'a Catalog,
     pub correlation: &'a str,
 }
-pub struct Proposal {
+pub(crate) struct Proposal {
     preview: Preview,
     selection: Selection,
     suggestion: Suggestion,
@@ -88,7 +100,7 @@ impl Proposal {
         let selection = catalog.validate(registry, &suggestion)?;
         let handle = registry
             .resolve_exact(&selection.pin)
-            .map_err(|_| OperatorError::Unavailable)?;
+            .map_err(|e| OperatorError::PinUnavailable(e.code))?;
         let component = kernel.cache_registry_release(registry, &handle)?;
         let plan = CompositionPlan {
             plan_version: "0.1".into(),
@@ -125,13 +137,16 @@ impl Proposal {
             &selection.ui_sha256,
             &selection.ui_schema_sha256,
         ))?;
-        Ok(Self { preview: Preview { proposal_digest, initial_input_digest: digest(&inputs)?, plan, initial_inputs: inputs, untrusted_explanation: suggestion.explanation.clone(), effect: "Add one installed component to this empty room, then initialize through typed UI ingress.".into(), requires_approval: true, expires_in_seconds: lifetime.as_secs(), proposal_id }, selection, suggestion, deadline: Instant::now() + lifetime, spent: false })
+        Ok(Self { preview: Preview { proposal_digest, initial_input_digest: digest(&inputs)?, plan, initial_inputs: inputs, untrusted_explanation: suggestion.explanation.clone(), effect: "Add one installed component to this empty room, then initialize through typed UI ingress.".into(), requires_approval: true, expires_in_seconds: lifetime.as_secs(), proposal_id, policy_revision: "0".into(), validation: ValidationEvidence { profile: "single-component-empty-room", canonical_plan: true, exact_pin: true, admitted_ui_bindings: true, initial_input_schema: true, pure_permissions: true } }, selection, suggestion, deadline: Instant::now() + lifetime, spent: false })
+    }
+    pub(crate) fn bind_policy_revision(&mut self, epoch: u64) -> Result<()> {
+        self.preview.policy_revision = epoch.to_string();
+        self.preview.proposal_digest =
+            digest(&(&self.preview.proposal_digest, &self.preview.policy_revision))?;
+        Ok(())
     }
     pub fn preview(&self) -> &Preview {
         &self.preview
-    }
-    pub fn decline(&mut self) {
-        self.spent = true;
     }
     /// Only an explicit trusted UI confirmation may invoke this method. The
     /// digest is comparison data, never an execution credential from a provider.

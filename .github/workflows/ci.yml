@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.99.1
@@ -20,17 +22,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - run: pip install -r tools/requirements.txt
       - run: python tools/check_contracts.py
   abi-validation:
-    name: interactive-desktop-validation (includes UI VSLICE REG IPC ABI)
+    name: bounded-operator-validation (includes desktop UI VSLICE REG IPC ABI)
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.99.1
@@ -47,9 +53,9 @@ jobs:
       # Outer UI wrapper preserves examples/mortgage-headless/validate.sh unchanged.
       - run: sudo apt-get update && sudo apt-get install -y qt6-base-dev qt6-declarative-dev qt6-tools-dev-tools qmake6 qml6-module-qtquick qml6-module-qtquick-controls qml6-module-qtquick-layouts qml6-module-qtquick-window qml6-module-qtqml-workerscript qml6-module-qtquick-templates libgl1-mesa-dri
       # VSLICE002 retains bash apps/desktop-qt/validate.sh unchanged.
-      - run: bash apps/desktop-qt/validate-vslice-002.sh
+      - run: bash apps/desktop-qt/validate-operator.sh
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: vslice-002-validation-linux
+          name: operator-validation-linux
           path: target/abi-evidence/

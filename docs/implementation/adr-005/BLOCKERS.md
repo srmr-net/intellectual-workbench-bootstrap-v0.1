@@ -1,24 +1,16 @@
-# ADR005 unresolved integration requirements
+# ADR005 validation status
 
-Status: PROPOSED; no acceptance or complete OP gate claims.
+Status remains PROPOSED pending the final full wrapper, source-bound independent
+reviews and successful downloaded hosted evidence. No mandatory gate is waived.
 
-The accepted kernel exposes `approve_execution` and `revoke_execution` but no
-observable policy revision or transactional/scoped grant. Revoking an absent
-approval leaves no observable state. A preview prepared before that revocation
-cannot distinguish it from unchanged policy. Unconditionally reapproving at apply
-would fail OP015's explicit grant-drift fence. Failed `apply_plan` cleanup now observes preexisting exact approval and removes only a newly issued approval on failure; concurrency/provenance review is still required. Independent runtime
-and security reviewers both identified this issue. A policy revision/scoped consent
-extension needs explicit design and tests; do not silently reinterpret revocation.
+The initial policy/provenance gap is resolved by private Session ownership and a
+host policy epoch; accepted Kernel/Room source remains unchanged. Earlier findings
+about canonical UI ref, consent identity, failed-apply grant cleanup, cancellation,
+auditing, queue ticket ownership, committed reply loss and partial recovery have
+implementations and adversarial regressions. Final reviewer sign-off is still needed.
 
-The foundation API also accepts separate Kernel and Room references; controller
-provenance must be sealed in a host-owned session before public UI exposure.
-Admission-only preview is advisory and does not reserve quota. Actual apply remains
-authoritative; preview resource feasibility remains unresolved. Temporary ingress adapters are now revoked after execution. Initialization now
-checks every admitted output for a valid committed value at the current revision;
-review and adversarial tests remain required.
-
-Still unimplemented: room request coordinator/lease, bounded queue/repair/audit,
-Qt request/preview/approval UI, cancellation product path, durable checkpoint handoff,
-full OP001–024 mapping and adversarial fixtures, final independent reviews, full
-regression/Qt checks and hosted Linux evidence. Existing accepted contracts and
-historical evidence have not been amended to hide these missing gates.
+Remaining scope exclusions are deliberate: general natural-language interpretation,
+external providers, schema repair/retry, auto-approval, populated-room planning,
+multi-component graphs, remote stores and full database/power-loss recovery. The
+first UI profile starts in an empty workspace and targets one empty existing native
+room. No accepted ABI/manifest/ontology/lifecycle or snapshot format change is needed.

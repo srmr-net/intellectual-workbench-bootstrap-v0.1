@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use serde_json::Value;
 use std::collections::BTreeMap;
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+#[derive(Debug, Clone, PartialEq, Eq)]
 pub enum OperatorError {
     InvalidSuggestion,
     RequestTooLarge,
@@ -12,6 +12,28 @@ pub enum OperatorError {
     Cancelled,
     Timeout,
     QueueFull,
+    NoMatch,
+    PinUnavailable(String),
+    CatalogChanged,
+    InvalidField,
+}
+impl OperatorError {
+    pub fn code(&self) -> &'static str {
+        match self {
+            Self::InvalidSuggestion => "PROVIDER_INVALID_OUTPUT",
+            Self::RequestTooLarge => "UNSUPPORTED_REQUEST",
+            Self::ClarificationRequired => "MISSING_PARAMETER",
+            Self::Ambiguous => "AMBIGUOUS_INTENT",
+            Self::Unavailable => "PROVIDER_UNAVAILABLE",
+            Self::Cancelled => "CANCELLED",
+            Self::Timeout => "PROVIDER_TIMEOUT",
+            Self::QueueFull => "QUEUE_FULL",
+            Self::NoMatch => "NO_MATCH",
+            Self::PinUnavailable(_) => "PIN_UNAVAILABLE",
+            Self::CatalogChanged => "CATALOG_CHANGED",
+            Self::InvalidField => "INVALID_FIELD",
+        }
+    }
 }
 pub type Result<T> = std::result::Result<T, OperatorError>;
 
@@ -95,7 +117,13 @@ impl Suggestion {
         if !jsonschema::is_valid(&schema, &value) {
             return Err(invalid());
         }
-        serde_json::from_value(value).map_err(|_| invalid())
+        let suggestion: Self = serde_json::from_value(value).map_err(|_| invalid())?;
+        if suggestion.input_values.values().any(|v| {
+            !(v.is_string() || v.is_boolean() || v.as_i64().is_some() || v.as_u64().is_some())
+        }) {
+            return Err(invalid());
+        }
+        Ok(suggestion)
     }
 }
 

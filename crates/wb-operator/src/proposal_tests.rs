@@ -1,10 +1,10 @@
+use crate::{catalog::Catalog, proposal::*, provider::*, suggestion::Suggestion};
 use std::{
     path::{Path, PathBuf},
     time::Duration,
 };
 use wb_contracts::ipc::UiReference;
 use wb_kernel::Kernel;
-use wb_operator::{catalog::Catalog, proposal::*, provider::*, suggestion::Suggestion};
 use wb_registry::{Policy, Registry};
 fn root() -> PathBuf {
     Path::new(env!("CARGO_MANIFEST_DIR"))
@@ -313,4 +313,71 @@ fn failed_apply_removes_only_new_execution_consent() {
     let dc = pc.preview().proposal_digest.clone();
     assert!(pc.approve(&dc, &mut b, context(), |_, _| Ok(())).is_err());
     assert!(kernel.operator_execution_approved(b.id(), "component", &pin));
+}
+#[test]
+fn op_011_012_invalid_plan_preview_never_grants_or_reserves() {
+    use wb_contracts::ipc::{Connection, Endpoint, PermissionRequest};
+    let (_tmp, registry, kernel) = setup();
+    let catalog = Catalog::discover(&registry).unwrap();
+    let room = kernel
+        .create_room(
+            "validation-room",
+            "Validation",
+            UiReference {
+                definition_ref: "host.operator/room/ui.json".into(),
+            },
+            32,
+        )
+        .unwrap();
+    let proposal = Proposal::prepare(
+        &kernel,
+        &room,
+        &registry,
+        &catalog,
+        INTENT,
+        suggestion(&catalog),
+        Duration::from_secs(60),
+    )
+    .unwrap();
+    let original = proposal.preview().plan.clone();
+    let mut plans = vec![];
+    let mut p = original.clone();
+    p.ui.definition_ref = "ui.json".into();
+    plans.push(p);
+    let mut p = original.clone();
+    p.expected_room_revision = 99;
+    plans.push(p);
+    let mut p = original.clone();
+    p.instances[0].component.version = "99.0.0".into();
+    plans.push(p);
+    let mut p = original.clone();
+    p.connections = vec![Connection {
+        from: Endpoint::new("component", "payment"),
+        to: Endpoint::new("component", "calculate"),
+    }];
+    plans.push(p);
+    let mut p = original.clone();
+    p.requested_permissions = vec![PermissionRequest {
+        component_instance: "component".into(),
+        capability: "filesystem.read".into(),
+        scope: serde_json::json!({}),
+        duration: "session".into(),
+        reason: None,
+    }];
+    plans.push(p);
+    let mut p = original.clone();
+    p.instances.push(p.instances[0].clone());
+    plans.push(p);
+    for plan in plans {
+        assert!(kernel
+            .validate_operator_plan(&room.snapshot(), &plan)
+            .is_err());
+        assert_eq!(kernel.reserved_instances(), 0);
+        assert_eq!(room.revision(), 0);
+        assert!(!kernel.operator_execution_approved(
+            room.id(),
+            "component",
+            &original.instances[0].component
+        ));
+    }
 }

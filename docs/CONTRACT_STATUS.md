@@ -17,7 +17,7 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 - ADR-002 lifecycle, process-local IPC and reactive integration: **Accepted** for the documented pure process-local profile; [IPC-001..015 hosted evidence](adr/evidence/ADR-002-results.md). Durability, privileged worlds and Qt remain separate.
 - ADR-003 local component registry/admission: **Accepted** for the scoped Linux local-directory profile; [REG-001..020, reviews and verified hosted evidence](adr/evidence/ADR-003-results.md). Older ADR-003 Qt references are stale placeholders; the Qt bridge remains separately unresolved.
 - ADR-004 semantic UI/Qt integration: **Accepted** for the scoped Linux Qt6 form profile; [UI-001–020, reviews and verified hosted evidence](implementation/adr-004/evidence/RESULTS.md). The supplied UI kit reassigns the old unresolved storage placeholder; [ADR-012](adr/ADR-012.md) retains that open decision. Accepted ADR001/002/003 histories remain unchanged.
-- ADR-005 bounded Operator: **PROPOSED**, incomplete foundation and [unresolved integration requirements](implementation/adr-005/BLOCKERS.md). No OP acceptance is claimed.
+- ADR-005 bounded Operator: **PROPOSED**; bounded host/Qt implementation and [executable gate map](implementation/adr-005/CONFORMANCE_MAP.md), pending final independent reviews and hosted evidence. No OP acceptance is claimed.
 - ADR-014 permanent namespace, SHACL and compatibility: **OPEN**; retains the earlier unaccepted ADR-005 placeholder.
 - ADR-006 publication/archive format: **OPEN**; ADR-003 scopes raw-byte SHA-256 and local-directory admission only; existing package schema retained.
 - ADR-007 actual host permission grants: **OPEN**, current capability broker rejects requests.

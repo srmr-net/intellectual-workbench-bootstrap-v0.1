@@ -52,6 +52,9 @@ impl ProviderRequest {
 #[derive(Clone, Default)]
 pub struct Cancellation(Arc<AtomicBool>);
 impl Cancellation {
+    pub fn same_request(&self, other: &Self) -> bool {
+        Arc::ptr_eq(&self.0, &other.0)
+    }
     pub fn cancel(&self) {
         self.0.store(true, Ordering::Release);
     }
@@ -88,7 +91,7 @@ impl OperatorProvider for OfflineFixture {
                 .collect();
             let candidate = match candidates.as_slice() {
                 [one] => one,
-                [] => return Err(OperatorError::ClarificationRequired),
+                [] => return Err(OperatorError::NoMatch),
                 _ => return Err(OperatorError::Ambiguous),
             };
             serde_json::to_vec(&Suggestion { suggestion_version: "0.1".into(), candidate_key: candidate.candidate_key.clone(), input_values: inputs, explanation: "Explicit GBP amount, annual percentage and years converted to months. Host validation and approval are required.".into() }).map_err(|_| OperatorError::InvalidSuggestion)
@@ -120,6 +123,12 @@ pub fn await_provider(
 ) -> Result<Vec<u8>> {
     request.validate()?;
     let deadline = Instant::now() + budget.min(Duration::from_secs(30));
+    if cancel.is_cancelled() {
+        return Err(OperatorError::Cancelled);
+    }
+    if Instant::now() >= deadline {
+        return Err(OperatorError::Timeout);
+    }
     let mut future = provider.suggest(request, cancel.clone());
     let waker = Waker::from(Arc::new(ThreadWake(std::thread::current())));
     let mut context = Context::from_waker(&waker);
@@ -139,8 +148,29 @@ pub fn await_provider(
             }
             let bytes = result?;
             Suggestion::parse(&bytes)?;
+            if cancel.is_cancelled() {
+                return Err(OperatorError::Cancelled);
+            }
+            if Instant::now() >= deadline {
+                return Err(OperatorError::Timeout);
+            }
             return Ok(bytes);
         }
         std::thread::park_timeout(Duration::from_millis(2));
+    }
+}
+
+/// Host-owned physical provider-call instrumentation, never serialized authority.
+pub struct CountedProvider {
+    pub inner: Arc<dyn OperatorProvider>,
+    pub calls: Arc<std::sync::atomic::AtomicU64>,
+}
+impl OperatorProvider for CountedProvider {
+    fn kind(&self) -> &'static str {
+        self.inner.kind()
+    }
+    fn suggest<'a>(&'a self, request: ProviderRequest, cancel: Cancellation) -> ProviderFuture<'a> {
+        self.calls.fetch_add(1, Ordering::SeqCst);
+        self.inner.suggest(request, cancel)
     }
 }
