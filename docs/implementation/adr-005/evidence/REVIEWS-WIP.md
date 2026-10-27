@@ -1,3 +1,6 @@
+Historical intermediate review notes. Final source-bound approvals are recorded in
+`review-agent-security.json` and `review-runtime-integration.json`; see `RESULTS.md`.
+
 # Independent foundation review — not acceptance
 
 Source: working tree on adr-005-bounded-operator, base

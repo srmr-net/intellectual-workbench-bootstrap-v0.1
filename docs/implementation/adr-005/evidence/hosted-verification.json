@@ -1,0 +1,22 @@
+{
+  "verified": true,
+  "hosted": true,
+  "source": "117160896c285b2895127d6c2f55c374b2a2329a",
+  "head": "04f0e986a9add82db5081f17796a6c46cefeb052",
+  "archiveSha256": "f86453e7d8181fbe4642a9cc23856a1b9e1460c620610c0d93be2c95c46b5c61",
+  "operatorCases": 24,
+  "rustTests": 162,
+  "newNativeTests": 24,
+  "workerTests": 9,
+  "qtProcessTests": 6,
+  "desktopProcesses": 7,
+  "coldProviderCalls": 0,
+  "coldGuestInvocations": 0,
+  "appSha256": "20f378c8ac5896bada3c9cfc40c57819f4e7e97c0a3125d910721e67ac9272f3",
+  "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+  "reviewers": [
+    "/root/review_op_security",
+    "independent agent /root/review_op_runtime; no implementation authorship"
+  ],
+  "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+}

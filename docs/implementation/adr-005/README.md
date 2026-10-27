@@ -1,6 +1,6 @@
 # Workbench ADR-005 validation kit v0.1
 
-**Status:** PROPOSED. This is an architecture decision, implementation brief, and test/evidence kit — **not** an implemented Operator or passing CI result.
+**Status:** Accepted for the bounded Linux offline profile. The bounded implementation, executable gate map and independent reviews are present; see [acceptance evidence](evidence/RESULTS.md).
 
 ## Contents
 
@@ -18,4 +18,4 @@
 
 Put ADR in `docs/adr/ADR-005.md`, remaining files in `docs/implementation/adr-005/` (schemas may be copied to canonical contracts directory following review). **Do not overwrite an accepted composition-plan schema:** the schema files here describe the *agent boundary only*. Check actual accepted mortgage fields and pinned package identity before implementation. Do not infer success from illustrative JSON fixtures.
 
-All evidence is pending. The ZIP validates as an archive; JSON example/schema self-check can be executed with Python `jsonschema` if installed. Actual ABI/IPC/REG/UI, desktop, review and hosted CI evidence is mandatory for acceptance.
+Run `bash apps/desktop-qt/validate-operator.sh` for the full locked validation chain. See [executable conformance](CONFORMANCE_MAP.md), [implementation boundaries](IMPLEMENTATION_MAP.md), and [acceptance evidence](evidence/RESULTS.md). Illustrative kit examples remain non-executable; the product tests build and admit real compiled packages.

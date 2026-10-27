@@ -16,8 +16,10 @@
 - Implementation frozen for independent review at
   188cbba2c69e72f6800b7239b9068fe99d02c34f: bounded controller, real worker handoff,
   explicit native Qt consent and adversarial/process tests are implemented.
-- Final command: bash apps/desktop-qt/validate-operator.sh. Pending acceptance:
-  source-bound independent sign-offs, complete local wrapper and successful hosted
-  run/download verification. Status PROPOSED until every gate passes.
-- See CONFORMANCE_MAP.md, IMPLEMENTATION_MAP.md and evidence. PR9 remains draft
-  while mandatory acceptance evidence is incomplete.
+- Final command: bash apps/desktop-qt/validate-operator.sh. Complete local and
+  hosted checks, both source-bound independent reviews and downloaded artifact
+  verification passed. Status Accepted for the documented bounded Linux profile.
+- Reviewed final packaging f7fe86d; receipts04f0e98; hosted merge1171608.
+  See evidence/RESULTS.md for full SHAs, commands, logs and hashes.
+- See CONFORMANCE_MAP.md and IMPLEMENTATION_MAP.md. PR9 contains the implementation
+  and acceptance evidence; merging is a separate repository action.

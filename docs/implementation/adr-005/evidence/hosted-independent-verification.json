@@ -1,0 +1,47 @@
+{
+  "reviewer": "independent agent /root/review_op_runtime; no implementation authorship",
+  "role": "Independent final downloaded hosted-artifact verification",
+  "status": "PASS",
+  "command": [
+    "python3",
+    "docs/implementation/adr-005/evidence/verify.py",
+    "docs/implementation/adr-005/evidence/hosted.zip",
+    "--sha256",
+    "f86453e7d8181fbe4642a9cc23856a1b9e1460c620610c0d93be2c95c46b5c61",
+    "--source",
+    "117160896c285b2895127d6c2f55c374b2a2329a",
+    "--hosted",
+    "--run-metadata",
+    "docs/implementation/adr-005/evidence/hosted-run.json",
+    "--head",
+    "04f0e986a9add82db5081f17796a6c46cefeb052"
+  ],
+  "exitCode": 0,
+  "hostedRunId": 40592650858,
+  "hostedRunUrl": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40592650858",
+  "verifierSha256": "fad68997cda223cd8bf608d8c75cfc591dfe72c1e3cc645ef5653e603ea89269",
+  "runMetadataSha256": "882b2663b95e74b05025d351d0d1907a276a12ba984aa46311f485fc771f0cd3",
+  "result": {
+    "verified": true,
+    "hosted": true,
+    "source": "117160896c285b2895127d6c2f55c374b2a2329a",
+    "head": "04f0e986a9add82db5081f17796a6c46cefeb052",
+    "archiveSha256": "f86453e7d8181fbe4642a9cc23856a1b9e1460c620610c0d93be2c95c46b5c61",
+    "operatorCases": 24,
+    "rustTests": 162,
+    "newNativeTests": 24,
+    "workerTests": 9,
+    "qtProcessTests": 6,
+    "desktopProcesses": 7,
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "appSha256": "20f378c8ac5896bada3c9cfc40c57819f4e7e97c0a3125d910721e67ac9272f3",
+    "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+    "reviewers": [
+      "/root/review_op_security",
+      "independent agent /root/review_op_runtime; no implementation authorship"
+    ],
+    "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+  },
+  "conclusion": "Final hosted evidence gate independently reproduced successfully using unchanged verifier: complete archive hashes, retained ABI/IPC/REG/UI/VS1/VS2 regressions,24 Operator gates,162 Rust tests,9 worker tests,6 genuine Qt tests,7 distinct app/worker pairs,2 source-bound reviews and provider-free cold restore. Source-bound review receipts were not modified."
+}

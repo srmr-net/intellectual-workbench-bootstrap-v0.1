@@ -1,0 +1,1086 @@
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.09s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/registry-fixtures/pure-echo/logic.wasm
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.04s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+UI fixture: target/ui-fixtures/mortgage-ui WASM: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95 UI: b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6
+TEST adversary UI: org.workbench.example.vs2-adversary-ui 0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556
+   Compiling wb-desktop-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-desktop-host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.48s
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o main.o ../../apps/desktop-qt/desktop/main.cpp
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o DesktopShell.o ../../apps/desktop-qt/desktop/DesktopShell.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from ../../apps/desktop-qt/desktop/ConformanceDriver.h:2,
+                 from ../../apps/desktop-qt/desktop/main.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o DesktopBridge.o ../../apps/desktop-qt/desktop/DesktopBridge.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o ConformanceDriver.o ../../apps/desktop-qt/desktop/ConformanceDriver.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from ../../apps/desktop-qt/desktop/ConformanceDriver.h:2,
+                 from ../../apps/desktop-qt/desktop/ConformanceDriver.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+/usr/lib/qt6/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' --include /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/16 -I/usr/include/c++/16/x86_64-pc-linux-gnu -I/usr/include/c++/16/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/16/include -I/usr/local/include -I/usr/include ../../apps/desktop-qt/desktop/DesktopShell.h -o moc_DesktopShell.cpp
+In file included from /usr/include/qt6/QtCore/QtCore:46,
+                 from /usr/include/qt6/QtTest/QtTestDepends:3,
+                 from /usr/include/qt6/QtTest/QtTest:3,
+                 from ../../apps/desktop-qt/desktop/ConformanceDriver.cpp:14:
+/usr/include/qt6/QtCore/qbitarray.h:13:21: warning: defining ‘QBitArray’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   13 | class Q_CORE_EXPORT QBitArray
+      |                     ^~~~~~~~~
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+/usr/lib/qt6/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' --include /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/16 -I/usr/include/c++/16/x86_64-pc-linux-gnu -I/usr/include/c++/16/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/16/include -I/usr/local/include -I/usr/include ../../apps/desktop-qt/desktop/DesktopBridge.h -o moc_DesktopBridge.cpp
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o moc_DesktopShell.o moc_DesktopShell.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from moc_DesktopShell.cpp:9:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-build"' -I../../apps/desktop-qt/desktop -I. -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o moc_DesktopBridge.o moc_DesktopBridge.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from moc_DesktopBridge.cpp:9:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -Wl,-O1 -Wl,-rpath,/usr/lib -Wl,-rpath-link,/usr/lib -o workbench-desktop  main.o DesktopShell.o DesktopBridge.o ConformanceDriver.o qrc_resources.o moc_DesktopShell.o moc_DesktopBridge.o   /usr/lib/libQt6Widgets.so /usr/lib/libQt6QuickControls2.so /usr/lib/libQt6Quick.so /usr/lib/libQt6OpenGL.so /usr/lib/libQt6Gui.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so /usr/lib/libQt6Qml.so /usr/lib/libQt6Network.so /usr/lib/libQt6Test.so /usr/lib/libQt6Core.so -lpthread -lGLX -lOpenGL   
+/usr/lib/qt6/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' --include /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop-tests -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/16 -I/usr/include/c++/16/x86_64-pc-linux-gnu -I/usr/include/c++/16/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/16/include -I/usr/local/include -I/usr/include ../../apps/desktop-qt/desktop-tests/Vs2Conformance.cpp -o Vs2Conformance.moc
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' -I../../apps/desktop-qt/desktop-tests -I. -I../../apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o DesktopShell.o ../../apps/desktop-qt/desktop/DesktopShell.cpp
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' -I../../apps/desktop-qt/desktop-tests -I. -I../../apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o DesktopBridge.o ../../apps/desktop-qt/desktop/DesktopBridge.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+/usr/lib/qt6/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' --include /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop-tests -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/16 -I/usr/include/c++/16/x86_64-pc-linux-gnu -I/usr/include/c++/16/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/16/include -I/usr/local/include -I/usr/include ../../apps/desktop-qt/desktop/DesktopShell.h -o moc_DesktopShell.cpp
+/usr/lib/qt6/moc -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' --include /home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests/moc_predefs.h -I/usr/lib/qt6/mkspecs/linux-g++ -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop-tests -I/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/include/c++/16 -I/usr/include/c++/16/x86_64-pc-linux-gnu -I/usr/include/c++/16/backward -I/usr/lib/gcc/x86_64-pc-linux-gnu/16/include -I/usr/local/include -I/usr/include ../../apps/desktop-qt/desktop/DesktopBridge.h -o moc_DesktopBridge.cpp
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' -I../../apps/desktop-qt/desktop-tests -I. -I../../apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o Vs2Conformance.o ../../apps/desktop-qt/desktop-tests/Vs2Conformance.cpp
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' -I../../apps/desktop-qt/desktop-tests -I. -I../../apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o moc_DesktopShell.o moc_DesktopShell.cpp
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from moc_DesktopShell.cpp:9:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from ../../apps/desktop-qt/desktop/DesktopShell.h:2,
+                 from ../../apps/desktop-qt/desktop-tests/Vs2Conformance.cpp:1:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -c -pipe -O2 -std=gnu++1z -Wall -Wextra -mno-direct-extern-access -D_REENTRANT -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_QUICKCONTROLS2_LIB -DQT_QUICK_LIB -DQT_OPENGL_LIB -DQT_GUI_LIB -DQT_QML_LIB -DQT_QMLINTEGRATION_LIB -DQT_NETWORK_LIB -DQT_TESTLIB_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR='"/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/desktop-tests"' -I../../apps/desktop-qt/desktop-tests -I. -I../../apps/desktop-qt/desktop -I/usr/include/qt6 -I/usr/include/qt6/QtWidgets -I/usr/include/qt6/QtQuickControls2 -I/usr/include/qt6/QtQuick -I/usr/include/qt6/QtOpenGL -I/usr/include/qt6/QtGui -I/usr/include/qt6/QtQml -I/usr/include/qt6/QtQmlIntegration -I/usr/include/qt6/QtNetwork -I/usr/include/qt6/QtTest -I/usr/include/qt6/QtCore -I. -I/usr/lib/qt6/mkspecs/linux-g++ -o moc_DesktopBridge.o moc_DesktopBridge.cpp
+In file included from /usr/include/qt6/QtCore/QtCore:46,
+                 from /usr/include/qt6/QtTest/QtTestDepends:3,
+                 from /usr/include/qt6/QtTest/QtTest:3,
+                 from ../../apps/desktop-qt/desktop-tests/Vs2Conformance.cpp:13:
+/usr/include/qt6/QtCore/qbitarray.h:13:21: warning: defining ‘QBitArray’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   13 | class Q_CORE_EXPORT QBitArray
+      |                     ^~~~~~~~~
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+In file included from /usr/include/qt6/QtCore/qdatastream.h:9,
+                 from /usr/include/qt6/QtCore/qmetatype.h:14,
+                 from /usr/include/qt6/QtCore/qcborcommon.h:9,
+                 from /usr/include/qt6/QtCore/qcborvalue.h:9,
+                 from /usr/include/qt6/QtCore/qjsonvalue.h:8,
+                 from /usr/include/qt6/QtCore/qjsonobject.h:8,
+                 from /usr/include/qt6/QtCore/QJsonObject:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:3,
+                 from moc_DesktopBridge.cpp:9:
+/usr/include/qt6/QtCore/qchar.h:48:31: warning: defining ‘QChar’, which previously failed to be complete in a SFINAE context [-Wsfinae-incomplete=]
+   48 | class QT6_ONLY(Q_CORE_EXPORT) QChar {
+      |                               ^~~~~
+In file included from /usr/include/c++/16/unordered_map:44,
+                 from /usr/include/c++/16/functional:80,
+                 from /usr/include/qt6/QtCore/qcomparehelpers.h:29,
+                 from /usr/include/qt6/QtCore/qcompare.h:661,
+                 from /usr/include/qt6/QtCore/qelapsedtimer.h:8,
+                 from /usr/include/qt6/QtCore/QElapsedTimer:1,
+                 from ../../apps/desktop-qt/desktop/DesktopBridge.h:2:
+/usr/include/c++/16/bits/range_access.h:325:24: note: here.  Use ‘-Wsfinae-incomplete=2’ for a diagnostic at that point
+  325 |     -> decltype(__cont.data())
+      |                 ~~~~~~~^~~~
+g++ -Wl,-O1 -Wl,-rpath,/usr/lib -Wl,-rpath-link,/usr/lib -o vs2-qt-conformance  Vs2Conformance.o DesktopShell.o DesktopBridge.o qrc_resources.o moc_DesktopShell.o moc_DesktopBridge.o   /usr/lib/libQt6Widgets.so /usr/lib/libQt6QuickControls2.so /usr/lib/libQt6Quick.so /usr/lib/libQt6OpenGL.so /usr/lib/libQt6Gui.so /usr/lib/libGLX.so /usr/lib/libOpenGL.so /usr/lib/libQt6Qml.so /usr/lib/libQt6Network.so /usr/lib/libQt6Test.so /usr/lib/libQt6Core.so -lpthread -lGLX -lOpenGL   
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+UI fixture: target/ui-fixtures/mortgage-ui WASM: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95 UI: b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6
+   Compiling wb-ui-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-ui-host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.29s
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+PASS: eight original vectors, nine boundaries and sixteen independent reference cases: target/mortgage-reference.json
+PASS: same-machine clean mortgage rebuild SHA-256: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95
+   Compiling wb-kernel v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-kernel)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.09s
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/registry-fixtures/pure-echo/logic.wasm
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.01s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+   Compiling wb-operator v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-operator)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 15.65s
+     Running unittests src/lib.rs (target/debug/deps/wb_bus-8c3777a71ffa0a02)
+
+running 1 test
+test tests::wrong_protocol_is_rejected ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_capabilities-ae221739fad678dc)
+
+running 1 test
+test tests::deny_by_default ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_contracts-648645455fca5575)
+
+running 1 test
+test tests::envelope_roundtrip ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_desktop_host-110b46c37849b3ca)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-install.rs (target/debug/deps/wb_desktop_install-f36f4e77c06377bc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-offline.rs (target/debug/deps/wb_desktop_offline-9d46cb8868fc1877)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-worker.rs (target/debug/deps/wb_desktop_worker-9acbf663d3c8b5dd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vs2.rs (target/debug/deps/vs2-c32f21ade0723854)
+
+running 15 tests
+test vs2_006_declared_bindings_and_readonly_output ... ok
+test vs2_009_invalid_incomplete_and_negative_edits_never_execute ... ok
+test vs2_008_actual_host_ingress_audit_and_committed_projection ... ok
+test vs2_007_real_wasm_two_accepted_financial_scenarios ... ok
+test vs2_012_conflict_preserves_draft_until_explicit_reapply ... ok
+test vs2_004_exact_pins_and_tampered_release_fail_closed ... ok
+test vs2_010_cancellation_and_revision_generation_fences ... ok
+test vs2_024_frozen_accepted_contracts_and_regressions ... ok
+test vs2_017_pin_unpin_and_selection_are_durable ... ok
+test vs2_021_wire_rejects_extra_identity_and_nested_duplicate_keys ... ok
+VS2 maximum valid workspace state: 73421 bytes,16rooms,32controls,510-digit actual echoed aggregate, transport limit 1048576
+test vs2_011_large_valid_workspace_response_exceeds_legacy_frame_safely ... ok
+test vs2_011_bounded_framing_trace_and_live_audit_recycling has been running for over 60 seconds
+test vs2_020_invalid_snapshot_latches_readonly_recovery ... ok
+test vs2_016_rooms_and_forged_edit_ownership_are_isolated ... ok
+test vs2_013_guest_trap_invalid_output_and_partial_batches_preserve_checkpoint ... ok
+test vs2_011_bounded_framing_trace_and_live_audit_recycling ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 79.34s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_kernel-fbbd371a3342310f)
+
+running 1 test
+test tests::refuses_unvalidated ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-mortgage-headless.rs (target/debug/deps/wb_mortgage_headless-4dc7610170dc1aac)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vslice.rs (target/debug/deps/vslice-801fd1212dfe463b)
+
+running 23 tests
+test vslice_003_exact_pin_and_boundary_integrity ... ok
+test vslice_001_real_pure_component_and_unchanged_wit ... ok
+test vslice_002_complete_package_actual_admission ... ok
+test vslice_005_real_cli_checks_committed_room_projection ... ok
+test vslice_006_budget_calibration_retains_accepted_defaults ... ok
+test vslice_005_actual_full_path_and_correlated_projection ... ok
+test vslice_008_adversarial_output_atomic_rollback ... ok
+test vslice_006_all_vectors_independent_oracle_and_boundaries ... ok
+test vslice_004_real_lifecycle_and_explicit_policy has been running for over 60 seconds
+test vslice_009_tamper_never_registers_candidate ... ok
+test vslice_007_schema_and_guest_domain_rejection has been running for over 60 seconds
+test vslice_010_admission_discovery_resolution_never_execute_guest ... ok
+test vslice_004_real_lifecycle_and_explicit_policy ... ok
+test vslice_014_bounded_ingress_no_silent_drop ... ok
+test vslice_018_crash_child ... ok
+test vslice_007_schema_and_guest_domain_rejection ... ok
+test vslice_019_independent_review_protocol_is_enforced ... ok
+test vslice_020_all_accepted_regression_sources_unchanged ... ok
+test vslice_017_rebuild_evidence_and_repeated_invocation_stability ... ok
+test vslice_015_interleaved_and_concurrent_room_isolation ... ok
+test vslice_013_generation_and_revision_fence_real_completions ... ok
+test vslice_012_real_bus_output_correlation_and_fifo_waves ... ok
+test vslice_011_empty_grants_and_forbidden_imports_permissions ... ok
+test vslice_016_restore_exact_registry_pins_inputs_and_topology ... ok
+test vslice_018_trap_budget_and_interrupted_install_recover ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 120.80s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_operator-115375326adfdca4)
+
+running 5 tests
+test proposal_tests::op_011_012_invalid_plan_preview_never_grants_or_reserves ... ok
+test proposal_tests::checkpoint_failure_is_honest_partial_completion ... ok
+test proposal_tests::real_admission_preview_approval_ingress_and_replay ... ok
+test proposal_tests::failed_apply_removes_only_new_execution_consent ... ok
+test proposal_tests::fresh_preview_identity_stale_revision_and_expiry ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 25.13s
+
+     Running unittests src/bin/wb-operator-worker.rs (target/debug/deps/wb_operator_worker-b8c4c729a7e978ba)
+
+running 3 tests
+test tests::op_007_021_queue_ownership_uses_host_ticket_not_caller_token ... ok
+test tests::op_007_wire_cannot_supply_host_ticket_or_authority ... ok
+test tests::op_018_021_oversized_reply_retains_authoritative_commit_stages ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/boundary.rs (target/debug/deps/boundary-706a8ea4ec1303c5)
+
+running 8 tests
+test no_defaults_or_injected_instructions ... ok
+test cancelled_and_zero_budget_never_invoke_provider_factory ... ok
+test positive_and_adversarial_fixture_corpus ... ok
+test ambiguity_cancel_unavailable_and_deadline ... ok
+test strict_untrusted_json ... ok
+test deterministic_fixture_and_explicit_units ... ok
+test cancellation_and_deadline_rechecked_after_ready ... ok
+test op_001_003_007_exact_byte_character_item_and_context_boundaries ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.16s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-a80a6d002560a228)
+
+running 3 tests
+test op_004_006_semantic_ambiguity_never_selects_arbitrary_release ... ok
+test op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free ... ok
+test op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.26s
+
+     Running tests/session.rs (target/debug/deps/session-aa94a091606317c0)
+
+running 5 tests
+test op_012_scope_quota_creates_no_guest_or_execution_authority ... ok
+test committed_guest_then_real_final_write_failure_preserves_topology_checkpoint ... ok
+test op_022_concurrent_rooms_keep_intent_approval_and_cancellation_isolated ... ok
+test private_session_policy_epoch_revoke_before_grant_and_real_commit ... ok
+test pending_cancel_queue_release_policy_race_and_room_isolation ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 25.58s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_reactive-bfbc52f7c00dab9c)
+
+running 3 tests
+test tests::accepts_dag ... ok
+test tests::rejects_cycles ... ok
+test tests::rejects_stale ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_registry-34b35e0609bd9f68)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-registry-inspect.rs (target/debug/deps/wb_registry_inspect-0470794040ffb20b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/registry.rs (target/debug/deps/registry-9adcd6a596bd2aa1)
+
+running 31 tests
+test reg_004_referenced_dialect_and_custom_vocabulary_rejected ... ok
+test reg_006_turtle_and_shacl ... ok
+test reg_003_paths_links_and_nonregular ... ok
+test reg_005_corrupt_record_after_restart_stays_unavailable ... ok
+test reg_006_unknown_semantic_vocabulary_rejected ... ok
+test reg_005_digest_and_post_install_integrity ... ok
+test reg_009_permissions_never_granted ... ok
+test reg_002_strict_manifest ... ok
+test reg_001_compiled_pure_bundle_and_kernel_handle ... ok
+test reg_008_ui_explicitly_blocked ... ok
+test reg_010_trapping_initializer_is_not_executed ... ok
+test reg_014_child ... ok
+test reg_007_each_semantic_mismatch ... ok
+test reg_011_idempotent ... ok
+test reg_012_conflict_original_intact ... ok
+test reg_004_schemas_missing_malformed_local_refs_and_literal_preservation ... ok
+test reg_015_process_installer_child ... ok
+test reg_014_corrupt_marker_preserves_possible_pinned_object ... ok
+test reg_010_abi_encoding_exports_type_and_imports ... ok
+test reg_011_idempotent_at_release_quota_and_after_reopen ... ok
+test reg_013_exact_pins_no_fallback ... ok
+test reg_019_worker_dies_with_parent ... ok
+test reg_019_worker_parent_child ... ok
+test reg_020_frozen_abi_and_ipc_regression_workflow ... ok
+test reg_018_forged_evidence_cannot_elevate ... ok
+test reg_016_discovery_only_committed_host_metadata ... ok
+test reg_017_dependencies_and_remote_refs_rejected ... ok
+test reg_019_quotas_collisions_and_live_race ... ok
+test reg_015_independent_process_installers ... ok
+test reg_015_concurrent_installers_and_readers ... ok
+test reg_014_real_sigkill_all_commit_boundaries ... ok
+
+test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 50.99s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_semantic-a004757455abfdbc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_storage-34d6464a1d77cfdc)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vs2.rs (target/debug/deps/vs2-12b9282532e3368a)
+
+running 6 tests
+test vs2_021_fifo_and_world_readable_paths_fail_without_blocking ... ok
+test vs2_021_size_duplicate_unknown_and_symlink_limits ... ok
+test vs2_020_corruption_is_non_destructive ... ok
+test vs2_019_exclusive_writer_and_anchored_directory ... ok
+test vs2_019_atomic_versioned_snapshot_and_cas ... ok
+test vs2_021_runtime_snapshot_positive_and_negative_fixture_corpus ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.33s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_testkit-6e25efe03dc1dccd)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ipc.rs (target/debug/deps/ipc-2a99fbfa2c4684be)
+
+running 24 tests
+test ipc_005_concurrent_producers_monotonic_sequences_and_lexical_order ... ok
+test ipc_003_approvals_and_adapters_rechecked_at_time_of_use ... ok
+test ipc_001_lifecycle_happy_path_no_guest_at_install ... ok
+test ipc_002_invalid_transitions_and_duplicate_identity ... ok
+test ipc_006_ingress_and_entire_output_batch_atomicity ... ok
+test ipc_004_host_provenance_and_declared_routes ... ok
+test ipc_003_admission_pins_world_and_execution_approval ... ok
+test ipc_001_transition_table_and_resource_release ... ok
+test ipc_008_stale_revision_generation_cancel_and_at_most_once ... ok
+test ipc_009_queue_saturation_preserves_commits_and_stop_liveness ... ok
+test ipc_005_kernel_waves_preserve_ui_fifo_and_all_committed_updates ... ok
+test ipc_008_new_pending_ui_and_unrelated_stop_do_not_lose_active_work ... ok
+test ipc_008_stopping_upstream_quarantines_active_descendant ... ok
+test ipc_011_quota_failure_releases_staged_reservations ... ok
+test ipc_011_atomic_plans_and_reservation_rollback ... ok
+test ipc_014_accepted_wit_and_canonical_dto_regression ... ok
+test ipc_015_ci_declarations_are_not_a_hosted_success_claim ... ok
+test ipc_009_output_fanout_full_rejects_whole_batch ... ok
+test ipc_010_rooms_execute_concurrently_with_isolated_stores ... ok
+test ipc_010_trap_isolation_across_instances_and_rooms ... ok
+test ipc_013_correlated_error_classes_and_redacted_audit ... ok
+test ipc_012_shared_direction_port_name_preserves_authoritative_input ... ok
+test ipc_007_aggregate_two_components_and_descendants_without_operator ... ok
+test ipc_012_restore_pins_host_state_no_queue_or_grant_replay ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 50.83s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_ui_host-87481477e5c4dfa3)
+
+running 1 test
+test tests::ui_005_integer_text_and_projection_are_lossless ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-ui-worker.rs (target/debug/deps/wb_ui_worker-47ec1f219d0f427c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/ui.rs (target/debug/deps/ui-c0a677a8cddb1b12)
+
+running 17 tests
+test ui_006_ui_basename_matches_accepted_room_reference ... ok
+test ui_004_direction_and_manifest_port_authority ... ok
+test ui_006_rdf_interface_exact_reconciliation ... ok
+test ui_005_fields_scalar_kinds_escapes_and_schema_refs ... ok
+test ui_003_ids_labels_and_bounded_form ... ok
+test ui_002_010_unknown_executable_and_remote_metadata_rejected ... ok
+test ui_016_bounded_transport_and_no_projection_loss ... ok
+test ui_001_strict_json_schema_and_version ... ok
+test ui_007_opt_in_immutable_ui_and_tamper ... ok
+test ui_019_020_external_review_and_hosted_wiring_not_self_acceptance ... ok
+test ui_008_headless_none_and_mixed_store_legacy_policy ... ok
+test ui_012_017_worker_rejects_forged_shutdown_and_remains_usable ... ok
+test ui_017_key_and_readout_ownership_no_forged_routes ... ok
+test ui_013_drafts_invalid_and_incomplete_never_compute ... ok
+test ui_015_revision_generation_and_exact_wire_counters ... ok
+test ui_014_real_installed_wasm_committed_projection ... ok
+test ui_018_restore_exact_ui_reference_and_pin ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 57.67s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_wasm_host-c86c2b3601820422)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/abi.rs (target/debug/deps/abi-dacb43699e1fc99c)
+
+running 12 tests
+test abi_002_basic_typed_call ... ok
+test abi_004_world_mismatch_and_core_module_rejected ... ok
+test abi_010_reproducibility_pins_and_workflow ... ok
+test abi_007_schema_validation_and_registered_ports ... ok
+test cross_engine_artifact_and_invalid_configuration_are_rejected ... ok
+test abi_006_guest_error_trap_and_isolation ... ok
+test abi_001_wit_bindings_and_real_component_encoding ... ok
+test abi_005_compiled_wasi_guest_is_denied ... ok
+test abi_003_independent_integer_guest_same_host ... ok
+test abi_009_manifest_identity_and_digest ... ok
+test abi_008_memory_fuel_epoch_and_oversize_recover ... ok
+test count_caps_are_budget_failures_and_host_recovers ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 14.84s
+
+   Doc-tests wb_bus
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_capabilities
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_contracts
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_desktop_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_kernel
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_operator
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_reactive
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_registry
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_semantic
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_storage
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_testkit
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_ui_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_wasm_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+    Checking wb-operator v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-operator)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.32s
+CHECK: 30 fixtures across 4 schemas
+PASS: RDF parses: ontology/workbench.ttl
+PASS: RDF parses: examples/mortgage-calc.wbc/capabilities.ttl
+PASS: all schema fixtures and reference JSON
+.....
+----------------------------------------------------------------------
+Ran 5 tests in 0.125s
+
+OK
+PASS: evidence archived for 443acbc6fdd78767b0df9b456565752b6f4f7e23
+PASS: IPC-001..015 executable checks; final hosted acceptance requires a successful workflow run.
+PASS: REG-001..020, unchanged ABI/IPC suites and registry evidence archived
+PASS: VSLICE-001..020 executable gates, both independent reviews and 33 numerical cases archived for 443acbc6fdd78767b0df9b456565752b6f4f7e23; hosted acceptance still requires external verification.
+test_duplicate_json_keys_rejected (test_check_contracts.ContractChecks.test_duplicate_json_keys_rejected) ... ok
+test_fixture_matrix (test_check_contracts.ContractChecks.test_fixture_matrix) ... ok
+test_missing_fixtures_fail (test_check_contracts.ContractChecks.test_missing_fixtures_fail) ... ok
+test_nested_room_connections_resolve_offline (test_check_contracts.ContractChecks.test_nested_room_connections_resolve_offline) ... ok
+test_positive_and_malicious_fixtures (test_ui_contract.UiFixtures.test_positive_and_malicious_fixtures) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.129s
+
+OK
+make: Nothing to be done for 'first'.
+make: Nothing to be done for 'first'.
+PASS UI-001..020 executable, independent review and artifact gates; hosted decision remains external
+test_vs2_001_documented_real_desktop_launch_and_clean_exit (__main__.DesktopProcesses.test_vs2_001_documented_real_desktop_launch_and_clean_exit) ... ok
+test_vs2_002_real_three_column_shell (__main__.DesktopProcesses.test_vs2_002_real_three_column_shell) ... ok
+test_vs2_003_installed_exact_pin_picker (__main__.DesktopProcesses.test_vs2_003_installed_exact_pin_picker) ... ok
+test_vs2_005_unchanged_generic_renderer_alternate_metadata (__main__.DesktopProcesses.test_vs2_005_unchanged_generic_renderer_alternate_metadata) ... ok
+test_vs2_009_field_diagnostics_without_compute_or_revision (__main__.DesktopProcesses.test_vs2_009_field_diagnostics_without_compute_or_revision) ... ok
+test_vs2_013_real_guest_failure_retains_committed_readout (__main__.DesktopProcesses.test_vs2_013_real_guest_failure_retains_committed_readout) ... ok
+test_vs2_014_rapid_room_switch_and_teardown (__main__.DesktopProcesses.test_vs2_014_rapid_room_switch_and_teardown) ... ok
+test_vs2_015_keyboard_tab_accessibility_and_focus_retention (__main__.DesktopProcesses.test_vs2_015_keyboard_tab_accessibility_and_focus_retention) ... ok
+test_vs2_017_pin_unpin_and_canvas_selection_persist (__main__.DesktopProcesses.test_vs2_017_pin_unpin_and_canvas_selection_persist) ... ok
+test_vs2_018_cold_process_restart_exact_pins_no_compute (__main__.DesktopProcesses.test_vs2_018_cold_process_restart_exact_pins_no_compute) ... ok
+test_vs2_019_repeated_clean_restart_snapshot_bytes_stable (__main__.DesktopProcesses.test_vs2_019_repeated_clean_restart_snapshot_bytes_stable) ... ok
+test_vs2_020_recovery_is_visible_and_non_destructive (__main__.DesktopProcesses.test_vs2_020_recovery_is_visible_and_non_destructive) ... ok
+test_vs2_021_snapshot_symlink_and_oversize_recovery (__main__.DesktopProcesses.test_vs2_021_snapshot_symlink_and_oversize_recovery) ... ok
+test_vs2_022_actual_offline_process_restore (__main__.DesktopProcesses.test_vs2_022_actual_offline_process_restore) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 69.894s
+
+OK
+PASS valid committed.json
+PASS valid empty.json
+PASS invalid checksum-tamper.json
+PASS invalid duplicate-keys.json
+PASS invalid nested-duplicate-same-value.json
+PASS invalid selected-missing-room.json
+PASS invalid truncated.json
+PASS invalid unknown-field.json
+PASS invalid unsupported-version.json
+PASS invalid wrong-type.json
+PASS VS2-001..024 executed, real25-process boundaries, source-bound reviews and archive inventory; hosted acceptance remains external
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.29s
+make: Nothing to be done for 'first'.
+test_op_007_021_cancelled_queue_and_bounded_audit_reply (__main__.WorkerCases.test_op_007_021_cancelled_queue_and_bounded_audit_reply) ... ok
+test_op_009_015_pin_tampering_never_falls_back_or_commits (__main__.WorkerCases.test_op_009_015_pin_tampering_never_falls_back_or_commits) ... ok
+test_op_014_decline_replay_and_malformed_intent (__main__.WorkerCases.test_op_014_decline_replay_and_malformed_intent) ... ok
+test_op_015_corrupt_snapshot_during_preview_is_not_overwritten (__main__.WorkerCases.test_op_015_corrupt_snapshot_during_preview_is_not_overwritten) ... ok
+test_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal (__main__.WorkerCases.test_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal) ... ok
+test_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore (__main__.WorkerCases.test_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore) ... ok
+test_op_018_guest_trap_preserves_installed_topology_without_false_result (__main__.WorkerCases.test_op_018_guest_trap_preserves_installed_topology_without_false_result) ... ok
+test_op_018_host_file_budget_failure_retains_topology_only (__main__.WorkerCases.test_op_018_host_file_budget_failure_retains_topology_only) ... ok
+test_op_018_real_topology_checkpoint_failure_reports_no_durable_room (__main__.WorkerCases.test_op_018_real_topology_checkpoint_failure_reports_no_durable_room) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 49.515s
+
+OK
+test_op_006_008_014_genuine_clarification_and_decline (__main__.OperatorProcesses.test_op_006_008_014_genuine_clarification_and_decline) ... ok
+test_op_013_014_017_019_genuine_intent_preview_approval_and_edit (__main__.OperatorProcesses.test_op_013_014_017_019_genuine_intent_preview_approval_and_edit) ... ok
+test_op_014_021_confirmation_disables_cancel_and_reconciles_commit (__main__.OperatorProcesses.test_op_014_021_confirmation_disables_cancel_and_reconciles_commit) ... ok
+test_op_018_genuine_partial_initialization_offers_direct_form_repair (__main__.OperatorProcesses.test_op_018_genuine_partial_initialization_offers_direct_form_repair) ... ok
+test_op_020_genuine_offline_cold_restart_no_provider (__main__.OperatorProcesses.test_op_020_genuine_offline_cold_restart_no_provider) ... ok
+test_op_021_cancel_pending_intent_has_no_topology_effect (__main__.OperatorProcesses.test_op_021_cancel_pending_intent_has_no_topology_effect) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 31.715s
+
+OK
+{
+  "headSha": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+  "trackedChanges": false,
+  "cases": {
+    "OP-001": {
+      "nativeTests": [
+        "deterministic_fixture_and_explicit_units",
+        "positive_and_adversarial_fixture_corpus",
+        "op_001_003_007_exact_byte_character_item_and_context_boundaries"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-002": {
+      "nativeTests": [
+        "op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-003": {
+      "nativeTests": [
+        "op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free",
+        "op_001_003_007_exact_byte_character_item_and_context_boundaries"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-004": {
+      "nativeTests": [
+        "deterministic_fixture_and_explicit_units",
+        "op_004_006_semantic_ambiguity_never_selects_arbitrary_release"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-005": {
+      "nativeTests": [
+        "deterministic_fixture_and_explicit_units",
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-006": {
+      "nativeTests": [
+        "no_defaults_or_injected_instructions",
+        "op_004_006_semantic_ambiguity_never_selects_arbitrary_release"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-007": {
+      "nativeTests": [
+        "strict_untrusted_json",
+        "positive_and_adversarial_fixture_corpus",
+        "op_001_003_007_exact_byte_character_item_and_context_boundaries",
+        "op_007_wire_cannot_supply_host_ticket_or_authority"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-008": {
+      "nativeTests": [
+        "op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free",
+        "no_defaults_or_injected_instructions",
+        "op_007_wire_cannot_supply_host_ticket_or_authority"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-009": {
+      "nativeTests": [
+        "op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-010": {
+      "nativeTests": [
+        "op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-011": {
+      "nativeTests": [
+        "op_011_012_invalid_plan_preview_never_grants_or_reserves",
+        "private_session_policy_epoch_revoke_before_grant_and_real_commit"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-012": {
+      "nativeTests": [
+        "op_011_012_invalid_plan_preview_never_grants_or_reserves",
+        "failed_apply_removes_only_new_execution_consent",
+        "op_012_scope_quota_creates_no_guest_or_execution_authority"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-013": {
+      "nativeTests": [
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-014": {
+      "nativeTests": [
+        "fresh_preview_identity_stale_revision_and_expiry",
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-015": {
+      "nativeTests": [
+        "private_session_policy_epoch_revoke_before_grant_and_real_commit",
+        "fresh_preview_identity_stale_revision_and_expiry",
+        "op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-016": {
+      "nativeTests": [
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-017": {
+      "nativeTests": [
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-018": {
+      "nativeTests": [
+        "checkpoint_failure_is_honest_partial_completion",
+        "committed_guest_then_real_final_write_failure_preserves_topology_checkpoint",
+        "op_018_021_oversized_reply_retains_authoritative_commit_stages"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-019": {
+      "nativeTests": [
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-020": {
+      "nativeTests": [
+        "real_admission_preview_approval_ingress_and_replay"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-021": {
+      "nativeTests": [
+        "ambiguity_cancel_unavailable_and_deadline",
+        "cancellation_and_deadline_rechecked_after_ready",
+        "cancelled_and_zero_budget_never_invoke_provider_factory",
+        "pending_cancel_queue_release_policy_race_and_room_isolation",
+        "op_007_021_queue_ownership_uses_host_ticket_not_caller_token",
+        "op_018_021_oversized_reply_retains_authoritative_commit_stages"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-022": {
+      "nativeTests": [
+        "op_022_concurrent_rooms_keep_intent_approval_and_cancellation_isolated",
+        "pending_cancel_queue_release_policy_race_and_room_isolation"
+      ],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-023": {
+      "nativeTests": [],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    },
+    "OP-024": {
+      "nativeTests": [],
+      "processEvidence": "worker-tests.txt/process-tests.txt",
+      "status": "executed; external hosted/review verification required"
+    }
+  },
+  "rustTestsPassed": 162,
+  "newNativeTests": 24,
+  "workerTests": 9,
+  "qtProcessTests": 6,
+  "desktopProcesses": 7,
+  "workerProcesses": 7,
+  "providerCallsAfterDirectEdit": 1,
+  "coldProviderCalls": 0,
+  "coldGuestInvocations": 0,
+  "reviewers": [
+    "/root/review_op_security",
+    "independent agent /root/review_op_runtime; no implementation authorship"
+  ],
+  "appSha256": "485c78df7083662ad468dfb0576f47731c33aa343ead4f66cade2f9560ac595a",
+  "workerSha256": "1ff88c55b94a0a6b77a614b66cf62d6df92acc137ec38c59a3c69fe0b1272d69",
+  "hostedExecution": false,
+  "acceptance": "PROPOSED until final successful hosted run and downloaded archive verification",
+  "limitations": [
+    "one installed component in an empty existing room; initial empty workspace UI profile",
+    "explicit MortgageTerms/GBP adapter and deterministic fixture, not general NL understanding",
+    "no external provider adapter, auto-approval or schema-repair retry",
+    "single-writer accepted snapshot1 handoff; database/power-loss recovery remains deferred",
+    "approval is commit boundary; later cancel/revoke serializes after apply"
+  ]
+}
