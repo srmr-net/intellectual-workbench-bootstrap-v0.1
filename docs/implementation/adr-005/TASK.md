@@ -13,8 +13,11 @@
 - Available checks: cargo test --locked --workspace; cargo fmt --all -- --check;
   cargo clippy --locked --workspace --all-targets -- -D warnings; Python contract
   checks; bash apps/desktop-qt/validate-vslice-002.sh for accepted Qt/process gates.
-- Pending acceptance: dedicated Operator validation wrapper, OP001–024 native and
-  genuine Qt/process tests, final independent reviews and hosted evidence.
-  No validate-operator.sh exists yet. Status PROPOSED until all gates pass.
-- Current work is a draft foundation; see BLOCKERS.md, evidence/local/RESULTS.md
-  and draft PR9. No product Operator UI is shipped.
+- Implementation frozen for independent review at
+  188cbba2c69e72f6800b7239b9068fe99d02c34f: bounded controller, real worker handoff,
+  explicit native Qt consent and adversarial/process tests are implemented.
+- Final command: bash apps/desktop-qt/validate-operator.sh. Pending acceptance:
+  source-bound independent sign-offs, complete local wrapper and successful hosted
+  run/download verification. Status PROPOSED until every gate passes.
+- See CONFORMANCE_MAP.md, IMPLEMENTATION_MAP.md and evidence. PR9 remains draft
+  while mandatory acceptance evidence is incomplete.

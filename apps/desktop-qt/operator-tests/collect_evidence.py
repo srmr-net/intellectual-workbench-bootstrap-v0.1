@@ -14,11 +14,19 @@ for name in ['agent-security','runtime-integration']:
  review_path=ROOT/f'docs/implementation/adr-005/evidence/review-{name}.json';review=json.loads(review_path.read_text())
  assert review['status']=='APPROVED' and review['independentTests'] and not review['remainingMandatory']
  assert review['reviewer']!='/root'
+ for test in review['independentTests']:
+  assert test.get('exitCode',test.get('exit'))==0 and test.get('ignoredOrSkipped',0)==0
+  if 'logSha256' in test:
+   archived=ROOT/'docs/implementation/adr-005/evidence/reviewer-logs'/name/Path(test['log']).name
+   assert sha(archived)==test['logSha256'],str(archived)
+   dest=OUT/'reviewer-logs'/name/archived.name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(archived,dest)
  subprocess.run(['git','merge-base','--is-ancestor',review['implementationCommit'],'HEAD'],cwd=ROOT,check=True)
  for path in source:assert review['sourceSha256'].get(path)==sha(ROOT/path),(name,path)
+ for path,digest in review['sourceSha256'].items():assert sha(ROOT/path)==digest,(name,path)
  shutil.copyfile(review_path,OUT/f'review-{name}.json')
  reviews.append(review)
 assert reviews[0]['reviewer']!=reviews[1]['reviewer']
+source=sorted(set(source).union(*(set(r['sourceSha256']) for r in reviews)))
 for path in source:
  dest=OUT/'sources'/path;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(ROOT/path,dest)
 shutil.copyfile(ROOT/'target/operator-build/workbench-operator',OUT/'workbench-operator')
