@@ -8,7 +8,7 @@ through the subprocess/Qt boundaries, not fabricated Rust unit-test counts.
 
 The journey suite contains24 independently named cases:22 include genuine Qt product
 processes, two directly exercise accepted native adversarial provider boundaries.
-Cases019/022/023 have second processes; total25 app/worker pairs. Five additional
+Cases019/022/023 have second processes; total25 app/worker pairs. Six additional
 native product-worker tests cover exact prior checkpoint preservation, second-room
 write failure, CAS drift, stale/future counters and pending cancellation.
 
@@ -50,3 +50,10 @@ separate captures. Optional external-model trial: NOT RUN (optional, no adapter)
 No gate is self-accepted by the collector or a workflow file. Reviews and successful
 hosted execution/download verification are separately required. Keep Proposed until
 those gates pass; record exact observed totals rather than predicting success.
+
+Review-driven negative evidence: non-canonical outer epoch lexemes are rejected
+before and after handoff; valid externally replaced workspace CAS triggers explicit
+refresh with no apply. Six provenance unit tests reject mismatched successful run,
+attempt, workflow, PR reference and failed/head-drifted metadata. Final hosted
+verification binds its API run id/attempt to archived GITHUB_RUN_ID/ATTEMPT as well
+as the VS3 workflow path, repository, PR reference, source/head and successful status.

@@ -3,7 +3,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
 RUST_TESTS=162
 PROCESS_TESTS=24
-WORKER_TESTS=5
+WORKER_TESTS=6
 
 def sources():
  paths=[]

@@ -4,8 +4,17 @@ import argparse,hashlib,json,re,subprocess,sys
 from pathlib import Path
 from zipfile import ZipFile
 ROOT=Path(__file__).resolve().parents[4]
-p=argparse.ArgumentParser(description=__doc__);p.add_argument('archive',type=Path);p.add_argument('--sha256',required=True);p.add_argument('--source',required=True);p.add_argument('--hosted',action='store_true');p.add_argument('--run-metadata',type=Path);p.add_argument('--head');a=p.parse_args()
-def test_vs3_026_complete_downloaded_hosted_evidence():
+p=argparse.ArgumentParser(description=__doc__);p.add_argument('archive',type=Path);p.add_argument('--sha256',required=True);p.add_argument('--source',required=True);p.add_argument('--hosted',action='store_true');p.add_argument('--run-metadata',type=Path);p.add_argument('--head')
+def validate_hosted_run(api,run,report,source,head):
+ assert api['status']=='completed' and api['conclusion']=='success' and api['event']=='pull_request' and api['head_sha']==head
+ assert api['path']=='.github/workflows/vslice-003.yml'
+ github=run['github']
+ assert str(api['id'])==github['GITHUB_RUN_ID'] and str(api['run_attempt'])==github['GITHUB_RUN_ATTEMPT']
+ assert github['GITHUB_REPOSITORY']==api['repository']['full_name']=='srmr-net/intellectual-workbench-bootstrap-v0.1'
+ assert github['GITHUB_SHA']==run['headSha']==report['source']==source and github['RUNNER_OS']=='Linux' and report['hostedExecution']
+ assert github['GITHUB_REF'] in {f"refs/pull/{pr['number']}/merge" for pr in api['pull_requests']}
+
+def test_vs3_026_complete_downloaded_hosted_evidence(a):
  sha=lambda b:hashlib.sha256(b).hexdigest()
  assert sha(a.archive.read_bytes())==a.sha256
  command=[sys.executable,str(ROOT/'docs/implementation/adr-005/evidence/verify.py'),str(a.archive),'--sha256',a.sha256,'--source',a.source]
@@ -16,7 +25,7 @@ def test_vs3_026_complete_downloaded_hosted_evidence():
   r=load('vs3/report.json');assert r['source']==a.source and not r['trackedChanges']
   assert len(r['cases'])==26 and set(r['cases'])=={f'VS3-{n:03d}' for n in range(1,27)}
   for name,digest in r['sha256'].items():assert sha(z.read('vs3/'+name))==digest,name
-  for name,n in [('process-tests.txt',24),('worker-tests.txt',5)]:
+  for name,n in [('process-tests.txt',24),('worker-tests.txt',6),('metadata-tests.txt',6)]:
    text=z.read('vs3/'+name).decode();assert f'Ran {n} tests' in text and '\nOK\n' in text and not re.search(r'FAILED|skipped|ERROR:',text)
   process=z.read('vs3/process-tests.txt').decode()
   for n in range(1,25):assert re.search(r'^test_vs3_'+f'{n:03d}'+r'_\w+ .*? \.\.\. ok$',process,re.M),n
@@ -40,7 +49,7 @@ def test_vs3_026_complete_downloaded_hosted_evidence():
   happy=case(18)[0][1];assert happy['finalState']['projection']['values']['payment']=='1753.77' and next(s for s in happy['samples'] if s['action']=='operatorStatus')['operatorReply']['providerCalls']=='1'
   for name,v in case(6):assert v['finalState']['projection']['values']['payment']=='1461.48'
   if a.hosted:
-   api=json.loads(a.run_metadata.read_text());assert api['conclusion']=='success' and api['status']=='completed' and api['event']=='pull_request' and api['head_sha']==a.head and r['hostedExecution']
-  print(json.dumps({'verified':True,'hosted':a.hosted,'source':a.source,'head':a.head,'archiveSha256':a.sha256,'test':'test_vs3_026_complete_downloaded_hosted_evidence','vs3Gates':26,'namedJourneyTests':24,'nativeWorkerTests':5,'appWorkerPairs':25,'retained':retained,'appSha256':app,'workerSha256':r['workerSha256'],'coldProviderCalls':0,'coldGuestInvocations':0,'qt':z.read('vs3/qt-version.txt').decode()},indent=2))
+   api=json.loads(a.run_metadata.read_text());validate_hosted_run(api,load('run.json'),r,a.source,a.head)
+  print(json.dumps({'verified':True,'hosted':a.hosted,'source':a.source,'head':a.head,'archiveSha256':a.sha256,'test':'test_vs3_026_complete_downloaded_hosted_evidence','vs3Gates':26,'namedJourneyTests':24,'nativeWorkerTests':6,'metadataTests':6,'appWorkerPairs':25,'retained':retained,'appSha256':app,'workerSha256':r['workerSha256'],'coldProviderCalls':0,'coldGuestInvocations':0,'qt':z.read('vs3/qt-version.txt').decode()},indent=2))
 
-if __name__=="__main__":test_vs3_026_complete_downloaded_hosted_evidence()
+if __name__=="__main__":test_vs3_026_complete_downloaded_hosted_evidence(p.parse_args())

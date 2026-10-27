@@ -363,7 +363,11 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                 }
                 // Desktop is rematerialized after durable handoff. Keep its private
                 // counter separate from the monotonic counter already seen by Qt.
-                let wire_epoch = request.epoch.parse::<u64>().ok();
+                let wire_epoch = request
+                    .epoch
+                    .parse::<u64>()
+                    .ok()
+                    .filter(|n| request.epoch == n.to_string());
                 let resync = handoff_from.is_some()
                     && wire_epoch == handoff_from
                     && matches!(request.command, Command::Select { .. } | Command::Quit);
@@ -376,13 +380,12 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                     .and_then(|s| s.parse::<u64>().ok())
                     .ok_or("invalid counter")?;
                 request.epoch = if resync {
-                    internal_epoch
+                    Some(internal_epoch)
                 } else {
-                    wire_epoch
-                        .and_then(|n| n.checked_sub(epoch_offset))
-                        .unwrap_or(u64::MAX)
+                    wire_epoch.and_then(|n| n.checked_sub(epoch_offset))
                 }
-                .to_string();
+                .map(|n| n.to_string())
+                .unwrap_or_else(|| "invalid-counter".into());
                 if let Command::Ui { request: ui } = &mut request.command {
                     ui.expected_generation = ui
                         .expected_generation
@@ -638,10 +641,11 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                             desktop = Some(Desktop::open(registry.clone(), store));
                             epoch_offset = visible_epoch;
                             handoff_from = Some(visible_epoch);
-                            send_operator(
-                                &out_tx,
-                                op_reply(&request.token, false, "STATE_CONFLICT", provider_calls),
-                            );
+                            let mut reply =
+                                op_reply(&request.token, false, "STATE_CONFLICT", provider_calls);
+                            reply["refreshDesktop"] = json!(true);
+                            reply["topologyCommitted"] = json!(false);
+                            send_operator(&out_tx, reply);
                             continue;
                         }
                         let mut workspace = loaded;

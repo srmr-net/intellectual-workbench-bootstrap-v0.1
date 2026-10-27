@@ -18,4 +18,5 @@ mkdir -p target/vs3-build
 qmake6 -v > "$WB_VS3_EVIDENCE_DIR/qt-version.txt"
 python3 apps/desktop-qt/vslice-003-tests/worker_cases.py 2>&1 | tee "$WB_VS3_EVIDENCE_DIR/worker-tests.txt"
 python3 apps/desktop-qt/vslice-003-tests/process_cases.py 2>&1 | tee "$WB_VS3_EVIDENCE_DIR/process-tests.txt"
+python3 apps/desktop-qt/vslice-003-tests/evidence_tests.py 2>&1 | tee "$WB_VS3_EVIDENCE_DIR/metadata-tests.txt"
 python3 apps/desktop-qt/vslice-003-tests/collect_evidence.py

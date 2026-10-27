@@ -22,7 +22,7 @@ def test_vs3_025_source_bound_independent_reviews():
  return reviews
 
 def main():
- for path,n in [('process-tests.txt',PROCESS_TESTS),('worker-tests.txt',WORKER_TESTS)]:
+ for path,n in [('process-tests.txt',PROCESS_TESTS),('worker-tests.txt',WORKER_TESTS),('metadata-tests.txt',6)]:
   text=(OUT/path).read_text();assert f'Ran {n} tests' in text and '\nOK\n' in text and not re.search(r'FAILED|skipped|ERROR:',text),path
  tests=re.findall(r'^(test_vs3_\d{3}_\w+) .*? \.\.\. ok$',(OUT/'process-tests.txt').read_text(),re.M)
  assert len(tests)==24 and {t[9:12] for t in tests}=={f'{n:03d}' for n in range(1,25)}
@@ -45,7 +45,7 @@ def main():
  two=case(21)[0][1];assert len(two['finalState']['rooms'])==2
  assert next(s for s in two['samples'] if s['action']=='operatorStatus')['operatorReply']['providerCalls']=='2'
  run=json.loads((OUT.parent/'run.json').read_text())
- result={'source':run['headSha'],'trackedChanges':run['trackedChanges'],'hostedExecution':os.environ.get('GITHUB_ACTIONS')=='true','cases':{f'VS3-{n:03d}':{'test':next(t for t in tests if t.startswith(f'test_vs3_{n:03d}_')),'status':'executed'} for n in range(1,25)},'reviewers':[r['reviewer'] for r in reviews],'processTests':24,'workerTests':WORKER_TESTS,'appWorkerPairs':25,'appSha256':sha(app),'workerSha256':sha(worker),'rustRegressionTests':162,'coldProviderCalls':0,'coldGuestInvocations':0,'acceptance':'Proposed until successful hosted run and separate downloaded verification'}
+ result={'source':run['headSha'],'trackedChanges':run['trackedChanges'],'hostedExecution':os.environ.get('GITHUB_ACTIONS')=='true','cases':{f'VS3-{n:03d}':{'test':next(t for t in tests if t.startswith(f'test_vs3_{n:03d}_')),'status':'executed'} for n in range(1,25)},'reviewers':[r['reviewer'] for r in reviews],'processTests':24,'workerTests':WORKER_TESTS,'metadataTests':6,'appWorkerPairs':25,'appSha256':sha(app),'workerSha256':sha(worker),'rustRegressionTests':162,'coldProviderCalls':0,'coldGuestInvocations':0,'acceptance':'Proposed until successful hosted run and separate downloaded verification'}
  result['cases']['VS3-025']={'test':'test_vs3_025_source_bound_independent_reviews','status':'executed'}
  result['cases']['VS3-026']={'test':'test_vs3_026_complete_downloaded_hosted_evidence','status':'requires separate completed hosted run verification'}
  result['sha256']={str(p.relative_to(OUT)):sha(p) for p in sorted(OUT.rglob('*')) if p.is_file() and p!=OUT/'report.json'}

@@ -22,3 +22,11 @@ The included fixture is a **scenario description**, not a substitute for tests a
 - Accepted ADR-004: trusted semantic Qt rendering and UI binding.
 - Accepted ADR-005: bounded Operator provider/discovery/suggestion/approval policy.
 - Accepted VSLICE-001 and VSLICE-002: mortgage computation and durable desktop canvas.
+
+## Implementation and current validation
+
+The separate [desktop entry](../../../apps/desktop-qt/vslice-003/README.md) reuses
+accepted libraries/renderer contracts and supports a fresh empty room beside existing
+canvases. See [boundaries](IMPLEMENTATION_MAP.md) and [executable test map](CONFORMANCE_MAP.md).
+All gates remain Proposed until independent reviews and full local/hosted archive
+verification finish. Optional external-model trial: NOT RUN (optional; no adapter).
