@@ -1,0 +1,26 @@
+{
+  "status": "Accepted",
+  "date": "2026-10-27",
+  "implementationCommit": "615d76b54ac415bc1d9dd85b7237bfba3f035c68",
+  "validatedBranchCommit": "e16d6bc670eeb88fd879b67df325fb43590c1cbe",
+  "testedHostedCheckout": "0034953273c6da21b7c39807a5b2858f0716e7b6",
+  "identicalTree": "374d12e83058b384b08031ba1b9bb96c3df8d769",
+  "hostedRun": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40516418294",
+  "allMandatoryGatesPassed": true,
+  "sourceChangesAfterValidation": "acceptance documentation/evidence only",
+  "sha256": {
+    "local.zip": "5c913e04a0f62b81410558e53c717ea52828aedbf461aeb3a4d5d432afd8431c",
+    "hosted.zip": "7a8bb230d57912459c884f96f87a9a752e9216dc86cc4e2c265644fd50ddca89",
+    "hosted-logs.zip": "6fe878d6bfd14b9f7d70299be7df49607698c67644524ddf3ee050e324b60455",
+    "hosted-run.json": "9161f046de303d8360c5a225c7721c216b621ff490e7b74603917238e7acdd5d",
+    "hosted-jobs.json": "cdcf71160d84148621e423128a43b202a52515e1d6de3b268f04608e3987e5ff",
+    "hosted-artifacts.json": "253e80c7e723a0aaf7daf9349d5cc12a8782694774c4a68bb114187b14e3f390",
+    "hosted-checkout.json": "8a74f6c9c1b11b447a29e2b5800983ed5bf012810a2ed3fbbcab0df54a9b45f7",
+    "local-verification.json": "52d3b0463506973a4b3997993f65d7efcc061c65dd795578b45e079dd43d75a7",
+    "hosted-verification.json": "979e3c7d1cd2b0fc2c8a54aff2477eb6651fed4a490c0f1bcdda07ee1c120495",
+    "review-qt.json": "c6b165fbf5e58779ebf76ca2e70bfd8cd9ffbf3f583592ee06be38c0c17aa5de",
+    "review-b.json": "1c893edacb8177dc9c9bbef2251ae6652609a30e327a82f42bd8176b60f473a3",
+    "independent-qt.zip": "64f9e0504b985f04164f9effc6dd3e7bc6f38b43beda32df1b3b6d083f248f4b",
+    "verify.py": "397a201608152ec1e56efd0287005afdc4c76a4ccc125f8e69129e3965cc48fc"
+  }
+}

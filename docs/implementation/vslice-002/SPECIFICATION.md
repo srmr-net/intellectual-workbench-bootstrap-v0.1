@@ -1,6 +1,6 @@
 # VSLICE-002 — Interactive Mortgage Calculator and Persistent Canvas
 
-**Status:** PROPOSED · **Version:** 0.1 · **Type:** product-level integration milestone
+**Status:** ACCEPTED — 2026-10-27 · **Version:** 0.1 · **Type:** product-level integration milestone
 
 ## 1. Goal and user-visible outcome
 

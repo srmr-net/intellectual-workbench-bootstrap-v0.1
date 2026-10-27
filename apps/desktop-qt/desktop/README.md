@@ -1,6 +1,6 @@
 # Linux Workbench desktop — VSLICE002
 
-Status PROPOSED until all mandatory reviews and local/hosted gates pass.
+Accepted VSLICE002 Linux profile; [verified evidence](../../../docs/implementation/vslice-002/evidence/RESULTS.md).
 This three-column shell embeds the byte-preserved accepted Main.qml renderer:
 installed components/pinned rooms at left, local status/context in the centre,
 semantic form at right. No mortgage-specific QML or view calculation exists.

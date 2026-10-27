@@ -1,6 +1,6 @@
 # VSLICE-002 — Interactive Mortgage Calculator and Persistent Canvas
 
-**Status:** PROPOSED. This package is a specification and validation kit, not implementation evidence.
+**Status:** ACCEPTED — 2026-10-27. [Verified implementation/evidence](evidence/RESULTS.md); [Linux launch command](../../../apps/desktop-qt/desktop/README.md).
 
 ## Repository integration
 

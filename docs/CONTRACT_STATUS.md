@@ -31,3 +31,6 @@ No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffoldin
 ## Product vertical slices
 
 - VSLICE-001 headless installable mortgage: **Accepted** for the documented headless profile; all20 gates,99 Rust tests, reviews and [verified hosted evidence](implementation/vslice-001/evidence/RESULTS.md) pass. See [task and gates](implementation/vslice-001/README.md). No Qt/Operator or privileged guest profile is introduced.
+
+- ADR-013 committed desktop checkpoint/internal coordination: **Accepted** for scoped Linux clean-quit persistence; [decision](adr/ADR-013.md). ADR012 full database recovery remains open.
+- VSLICE-002 interactive mortgage/persistent canvas: **Accepted**; all24 gates, independent reviews, genuine25-process evidence and [verified hosted artifacts](implementation/vslice-002/evidence/RESULTS.md).

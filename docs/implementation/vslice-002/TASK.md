@@ -13,4 +13,4 @@
 - Checks: bash apps/desktop-qt/validate-vslice-002.sh; retained entire accepted UI
   wrapper; named VS2-001–024 native/genuine Qt/process tests; two independent source
   reviews; clean locked local and actual hosted Linux CI/download verification.
-- Status: PROPOSED until every mandatory gate/review/archive check passes.
+- Status: COMPLETE / Accepted — all24 gates, independent reviews, clean local and hosted Linux checks and downloaded artifacts verified; see evidence/RESULTS.md.
