@@ -72,7 +72,7 @@ class Journey(unittest.TestCase):
   r=self.launch([QUIT]);self.assertEqual(r['finalState']['rooms'],[]);self.assertEqual(r['finalState']['invocations'],'0')
  def test_vs3_002_keyboard_accessible_three_columns(self):
   r=self.launch([{'type':'intentKeyboard','text':INTENT},{'type':'approveKeyboard'},expect(values={'payment':'1461.48'}),QUIT]);s=r['samples'][0]
-  self.assertEqual(len(s['columns']),3);self.assertTrue(all(c['visible'] and c['width']>0 for c in s['columns']));w={v['id']:v for v in s['operatorWidgets']};self.assertTrue(w['operatorIntent']['focusable']);self.assertEqual(w['operatorDecline']['name'],'Reject proposal');self.assertTrue(w['operatorStatus']['visible']);self.assertEqual(s['submittedText'],INTENT)
+  self.assertEqual(len(s['columns']),3);self.assertTrue(all(c['visible'] and c['width']>0 for c in s['columns']));w={v['id']:v for v in s['operatorWidgets']};self.assertTrue(w['operatorIntent']['focusable']);self.assertEqual(w['operatorDecline']['name'],'Reject proposal');self.assertTrue(w['operatorDecline']['focusable']);self.assertTrue(w['operatorStatus']['visible']);self.assertEqual(s['submittedText'],INTENT)
  def test_vs3_003_actual_boundary_provider(self):
   r=self.launch([self.intent(),{'type':'decline'},{'type':'operatorStatus'},QUIT]);self.assertEqual(r['samples'][0]['operatorReply']['providerCalls'],'1');self.assertEqual(r['finalState']['rooms'],[])
  def test_vs3_004_admitted_readonly_discovery(self):
@@ -86,7 +86,7 @@ class Journey(unittest.TestCase):
   r=self.launch(self.assemble()+[QUIT]);p=self.proposal(r);self.assertEqual(p['initialInputs'],{'principal':'250000','annual_rate_percent':'5','term_months':300});self.assertEqual(r['finalState']['projection']['values']['payment'],'1461.48');self.assertEqual(next(s for s in r['samples'] if s['action']=='approve')['operatorReply']['initialInvocations'],'1')
  def test_vs3_007_clarification_no_defaults(self):
   texts=['mortgage £250000 over 25 years','mortgage over 25 years at 5%','mortgage £250000 at 5%','mortgage $250000 over 25 years at 5%']
-  r=self.launch([self.intent(t) for t in texts]+[QUIT]);self.assertTrue(all(not s['operatorReply']['ok'] for s in r['samples'] if s['action']=='intent'));self.assertEqual(r['finalState']['rooms'],[])
+  r=self.launch([self.intent(t) for t in texts]+[QUIT]);self.assertTrue(all(not s['operatorReply']['ok'] for s in r['samples'] if s['action']=='intent'));self.assertEqual(r['finalState']['rooms'],[]);self.assertTrue(all(('No values were guessed' in s['operatorStatus'] or 'Use GBP' in s['operatorStatus']) for s in r['samples'] if s['action']=='intent'))
   self.native('no_defaults_or_injected_instructions')
  def test_vs3_008_strict_suggestion_boundaries(self):self.native('strict_untrusted_json','op_001_003_007_exact_byte_character_item_and_context_boundaries','positive_and_adversarial_fixture_corpus')
  def test_vs3_009_instruction_injection_powerless(self):

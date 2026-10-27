@@ -12,6 +12,21 @@
 #include <QVBoxLayout>
 #include <QtEndian>
 namespace {
+QString statusText(const QString &code) {
+  if (code == "MISSING_PARAMETER")
+    return code + ": Include a loan amount in GBP (£), an annual percentage rate and a term in years or months. No values were guessed.";
+  if (code == "INVALID_UNIT")
+    return code + ": Use GBP, an annual rate in percent and a whole term in months or years.";
+  if (code == "AMBIGUOUS_INTENT")
+    return code + ": More than one installed candidate matches. Choose an exact component with the installed picker.";
+  if (code == "STATE_CONFLICT" || code == "APPROVAL_EXPIRED")
+    return code + ": The workspace or approval changed. Preview the request again before confirming.";
+  if (code == "PIN_UNAVAILABLE" || code == "CATALOG_CHANGED")
+    return code + ": The exact proposed package is unavailable or changed. Inspect installed components and preview again.";
+  if (code == "PROVIDER_UNAVAILABLE")
+    return code + ": The configured provider is disabled or unavailable. Existing forms and saved canvases still work offline.";
+  return code;
+}
 QPushButton *button(const QString &text, const QString &name, QWidget *parent) {
   auto *b = new QPushButton(text, parent);
   b->setObjectName(name);
@@ -172,7 +187,7 @@ void OperatorPanel::refresh() {
   }
 }
 void OperatorPanel::fail(const QString &code) {
-  m_status->setText(code);
+  m_status->setText(statusText(code));
   refresh();
 }
 void OperatorPanel::send(const QJsonObject &command) {
@@ -282,7 +297,7 @@ void OperatorPanel::accept(const QJsonObject &reply) {
     m_status->setText(
         "Review the exact pin, inputs and effects. Approval is required.");
   } else {
-    m_status->setText(reply.value("code").toString());
+    m_status->setText(statusText(reply.value("code").toString()));
     if (reply.value("topologyCommitted").toBool()) {
       if (reply.value("topologyCheckpointPersisted").toBool()) {
         if (!reply.value("initializationSucceeded").toBool() ||
