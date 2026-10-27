@@ -1,0 +1,1 @@
+PASS: evidence-only delta comprises collector and TASK docs. Collector parses; all49 critical source bytes match 443acbc6fdd78767b0df9b456565752b6f4f7e23;48 non-collector critical paths match prior reviewed 188cbba2c69e72f6800b7239b9068fe99d02c34f. Reviewed source union contains 60 existing paths. Agent independent test exit/skipped checks pass. No runtime/test/schema/UI changes.

@@ -1,0 +1,14 @@
+test_op_007_021_cancelled_queue_and_bounded_audit_reply (__main__.WorkerCases.test_op_007_021_cancelled_queue_and_bounded_audit_reply) ... ok
+test_op_009_015_pin_tampering_never_falls_back_or_commits (__main__.WorkerCases.test_op_009_015_pin_tampering_never_falls_back_or_commits) ... ok
+test_op_014_decline_replay_and_malformed_intent (__main__.WorkerCases.test_op_014_decline_replay_and_malformed_intent) ... ok
+test_op_015_corrupt_snapshot_during_preview_is_not_overwritten (__main__.WorkerCases.test_op_015_corrupt_snapshot_during_preview_is_not_overwritten) ... ok
+test_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal (__main__.WorkerCases.test_op_015_handoff_lock_conflict_delivers_typed_outcome_before_fatal) ... ok
+test_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore (__main__.WorkerCases.test_op_016_017_019_020_real_worker_handoff_edit_and_cold_restore) ... ok
+test_op_018_guest_trap_preserves_installed_topology_without_false_result (__main__.WorkerCases.test_op_018_guest_trap_preserves_installed_topology_without_false_result) ... ok
+test_op_018_host_file_budget_failure_retains_topology_only (__main__.WorkerCases.test_op_018_host_file_budget_failure_retains_topology_only) ... ok
+test_op_018_real_topology_checkpoint_failure_reports_no_durable_room (__main__.WorkerCases.test_op_018_real_topology_checkpoint_failure_reports_no_durable_room) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 175.406s
+
+OK

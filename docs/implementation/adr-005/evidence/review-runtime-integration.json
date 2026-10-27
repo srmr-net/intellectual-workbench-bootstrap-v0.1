@@ -1,0 +1,162 @@
+{
+  "reviewer": "independent agent /root/review_op_runtime; no implementation authorship",
+  "role": "B: registry, kernel, lifecycle, revision, persistence and native Qt integration",
+  "status": "APPROVED",
+  "reviewDate": "2026-10-27",
+  "implementationCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+  "sourceBinding": "Approval applies only to these exact committed bytes. Every contract.py critical_sources() path is included, plus accepted integration dependencies. Changed source requires renewed review.",
+  "scope": "Bounded local Operator: one exact installed pure component in an existing empty native room and initially empty desktop workspace; source-bound wrapper, collector and downloaded-artifact verifier.",
+  "sourceSha256": {
+    ".github/workflows/ci.yml": "d34c625522a759b05e8162d2bcb036379abab7851ed7ca848f90b88ef9b529ac",
+    "Cargo.lock": "e93bdaf7fbaf3f9fa3c8e104788349ef5f37f0093c7b325796c059d5a535875c",
+    "apps/desktop-qt/collect_evidence.py": "b43dc3d76aa9bcf39388487526a075c8b60aae9cbb90b19f8df5e52ff97a748f",
+    "apps/desktop-qt/desktop-tests/collect_evidence.py": "4425259bce4e0a4fab70f7cff37c5b38a3ecfa919d7b46303b6b8bcdfceebd13",
+    "apps/desktop-qt/desktop/DesktopBridge.cpp": "159ab154e0c8e99db65c277faee4fbfb97dd4a4374d3efe832bba136f1ffb08f",
+    "apps/desktop-qt/desktop/DesktopShell.cpp": "1d1c2e0920b2959d32e21a57152e73d13c864c408a1e02ea7ffde95654c2c017",
+    "apps/desktop-qt/operator-tests/collect_evidence.py": "50b98fd2a27179a5c15797e9a3cb0233ed9bb2eb309747d232a3ccb4637703cb",
+    "apps/desktop-qt/operator-tests/contract.py": "a648388df40261da5a5a88a53083758cc0c9ffa2060a8f2c33220b1df4f54ae5",
+    "apps/desktop-qt/operator-tests/process_cases.py": "27c7f17ea1615266a4b966ec0de8c761266d2a023b63fb8441cdace00134e0d2",
+    "apps/desktop-qt/operator-tests/worker_cases.py": "1c5e07b92d67287e6c0c7513dfa75178e67fd700d9c3ab176337b1d51354ac97",
+    "apps/desktop-qt/operator/OperatorDriver.cpp": "d72b6485e03152de6b0396f6cfbb0f4c38aaea50f1375ce4c2bae61a2d52c840",
+    "apps/desktop-qt/operator/OperatorDriver.h": "f9d2f0f57682898879631eb5ff7f258e9ab7234d2587497e2d912da2f1fb26d8",
+    "apps/desktop-qt/operator/OperatorPanel.cpp": "72fde2e15d82b358dc84b2367e2fb4a49962f2854dda3f8dad633fa389e1cd45",
+    "apps/desktop-qt/operator/OperatorPanel.h": "4f2862182a5e9152b16a723768774100ae7b819512eef2ba1b467eb081a11ccf",
+    "apps/desktop-qt/operator/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/operator/operator.pro": "e4a9ecb6e26afaf400c8402a4e19abfe728d62b72bbd2ef08ed057e3ce8c91bd",
+    "apps/desktop-qt/qml/Main.qml": "ed1533ed44081806e598b533a4f5f9777ccd65fa838d462ea4059ca7920ab13f",
+    "apps/desktop-qt/validate-operator.sh": "82d0e0a3d4b80c8d1399a4aa8951e061d9c30ea23ccf5f604de3744f2b216753",
+    "apps/desktop-qt/validate-vslice-002.sh": "30aac654bc96018c904cab1639e52691f3909817c3a1fba0e1cde0f7dd753241",
+    "apps/desktop-qt/validate.sh": "187524951777404322739a12eddc1d3555a62ed9ac5453de5694e3496ff30225",
+    "crates/wb-desktop-host/src/framing.rs": "3ca08243b861d7cdc77aff0d3ba45e77de86d472b9171d7b44f3a364f30aed83",
+    "crates/wb-desktop-host/src/lib.rs": "b2ddc3e9a34b52036950acaf5a4272bb753bf73f3f71ec1d39c8cb7b1a276e07",
+    "crates/wb-kernel/src/lib.rs": "de75e835e70e3c4e98c1af535ef259b3a317d16a190b0e1147f31ca05df7a199",
+    "crates/wb-kernel/src/operator_validation.rs": "a63013b5fff2aaaa3eec431109a63fe981220034606ea73aef153c408cce5e25",
+    "crates/wb-kernel/src/room.rs": "2cb67332ac94f8488085062ea99a3443cf21acdde5e3ff8b4ec8cfa3a5a48eef",
+    "crates/wb-kernel/src/runtime.rs": "50c6c283b84ef5a1b6dc9eb839f541fba6d5c2f1a7a3e444787d0d43f76aae77",
+    "crates/wb-operator/Cargo.toml": "25ae3e7a5fc1b64aa04d1cea2f09ca98c575c6d313ca9f3250cc53e0808422e1",
+    "crates/wb-operator/README.md": "bf713bb39e4f714a77faa50565894b857f9cc5b68ea7df91d70610fb82990b0f",
+    "crates/wb-operator/src/bin/wb-operator-worker.rs": "ab048dabfdcae0d9433b9f2895ad915f389403d22d7c7c9f10a76db556550311",
+    "crates/wb-operator/src/catalog.rs": "1d1ea21f462e8b67ebf4b21c27647d9f44ffb780bcc6b5ab9930e2e1d994ff8d",
+    "crates/wb-operator/src/lib.rs": "4e8231acc0b202731d44fd1f4f37353c21dc962f96c74b477e561cf0fc9ed55b",
+    "crates/wb-operator/src/proposal.rs": "9a5de6788bf37e8eeae0d814b42ecb5f39130dfd96e7a94745bada15804526df",
+    "crates/wb-operator/src/proposal_tests.rs": "6792f4723acbe58ba8e6b5cab874eb17dccc7e829221437798e3f704de12ac4f",
+    "crates/wb-operator/src/provider.rs": "66966aa939f6fc4efe8568ec43b538e76c8e32fc6b7523df38fe68b2f57c9afd",
+    "crates/wb-operator/src/session.rs": "f97a069a67a34ba4c0b032ec5fd14ad2cd585b54b2ea94e963aff53e14cc1b30",
+    "crates/wb-operator/src/suggestion.rs": "586f919795717943e3e131d130f99a9ccce5288b926c802998691875177966a5",
+    "crates/wb-operator/tests/boundary.rs": "e052d9622bf394b3bee1dbbc8e274668a5363c10a75bc2263016f124da3471c0",
+    "crates/wb-operator/tests/catalog.rs": "5a39d1c91fc1ab52fff374106098645a1a3c005cafd921e18adb429f416a43b3",
+    "crates/wb-operator/tests/session.rs": "5ad4dbeacee82a977415859ea68ebe48eb19640d41ca5d9b7560e57d252ad1bd",
+    "crates/wb-registry/src/lib.rs": "4cc72b81102c290c2fa7362833d3dd954d38b2c3b4de5a7539f7ab9d45af3134",
+    "crates/wb-semantic/src/ui.rs": "05afda332babfc5ce36c6d31bd3ce517c27aa4b955f1bc130c483e240329a34e",
+    "crates/wb-storage/src/vs2.rs": "3f1de1d4d7e45b868d51849ddeeca751a3ad300819890b70777505089a645d4a",
+    "docs/implementation/adr-005/evidence/verify.py": "fad68997cda223cd8bf608d8c75cfc591dfe72c1e3cc645ef5653e603ea89269",
+    "docs/implementation/adr-005/schemas/operator-preview.schema.json": "a164419da9836617da57ecd2fc8623df65da34f49dd58e512d7e8713129f4091",
+    "docs/implementation/adr-005/schemas/operator-request.schema.json": "47c9e6ebb0cd632549d26bbd3a1a36115da92c379f750ba2976d994e6662934a",
+    "docs/implementation/adr-005/schemas/operator-suggestion.schema.json": "12b80b2f433ad9dfa672d0ab4bc0fa19a9fd3efab26d2d8528b9abcbd64449c5",
+    "fixtures/operator/authority.json": "8fb93de6a85ad96718c05be7f7e24beda7978eca75c2085aadf745fc1aab8ec7",
+    "fixtures/operator/duplicate.json": "546df32e652276a8696fb70f5963bbec84ccf8002e8631157317e17bb41157f1",
+    "fixtures/operator/escaped-duplicate.json": "a5c748fee79168c8b71b18add3bb624be9832598df44ac099276ae2d2dc97aee",
+    "fixtures/operator/float-lexeme.json": "ba2b0eeb92b1175379be360d4659f71225b1cf5ec4aff172838878ba80b207ba",
+    "fixtures/operator/nested-duplicate.json": "f92b5a335b9cc0282a6bb90966b1c5571544cc8485c3d2f8c3b87af985abe948",
+    "fixtures/operator/non-scalar.json": "85331ed8a8a2154d033cabcb0abca58881dacb341b560d98a4eb40f00f8477c1",
+    "fixtures/operator/positive.json": "784401dc111c13182154f7fb9d1bc4662446e10d3a86208ee44ec74e6dfc8ca1",
+    "fixtures/operator/prototype.json": "c49f1b0ecc6ff88a93314da88f44335cdddbe3419995a2bf081d69de446087ac",
+    "ontology/workbench.ttl": "1741a428b7ca8bd9d4a761659c30bc5f914fcac60d201ad5361cc54ca9cc3bda",
+    "schemas/component.schema.json": "15f2b7a2b84655e62f14fc521fe06a291fd00bf5fbcc120e509aaa84e9e1dd55",
+    "schemas/composition.schema.json": "e2259779ce2b4daaeba8db15b48e502cd2bcab8aa1c4249eff5caae48525ab48",
+    "schemas/room.schema.json": "6e334e9e4e89bd35e39cfe16398e31511fac53553c0fca5ac817d4b7ea941fe7",
+    "schemas/ui.schema.json": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+    "wit/component.wit": "cf90e5114153e2737accd1fc7535e1e494e699ac68b4e99e8cc36c8270a204c0"
+  },
+  "independentTests": [
+    {
+      "command": "cargo test --locked -p wb-operator -- --test-threads=1",
+      "exitCode": 0,
+      "passed": 24,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-runtime/native-tests.txt",
+      "logSha256": "89a31cba6661cde06e668336b0f299d98f1c2b3183136db1fd8d527f58154704"
+    },
+    {
+      "command": "REGISTRY_PYTHON=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python WB_OPERATOR_EVIDENCE_DIR=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/review-op-runtime/worker target/vs2-venv/bin/python apps/desktop-qt/operator-tests/worker_cases.py",
+      "exitCode": 0,
+      "passed": 9,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-runtime/worker-tests.txt",
+      "logSha256": "dca7bad9eedd1558570b77b6c044317643c1265bf174373ee0e807211e6898f4"
+    },
+    {
+      "command": "REGISTRY_PYTHON=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python WB_OPERATOR_EVIDENCE_DIR=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/review-op-runtime/qt target/vs2-venv/bin/python apps/desktop-qt/operator-tests/process_cases.py",
+      "exitCode": 0,
+      "passed": 6,
+      "failed": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-runtime/qt-tests.txt",
+      "logSha256": "9de960203ddbafe43f6d95eb6bdf86fb51159ec68943c0eef0adc45689bc9bc9"
+    },
+    {
+      "command": "Independently verify SHA256 of all sourceSha256 entries in pre-existing docs/**/review-*.json against current accepted files",
+      "exitCode": 0,
+      "sourceHashEntriesMatched": 71,
+      "log": "target/review-op-runtime/accepted-source-check.txt",
+      "logSha256": "64e8d9d37b5e171c3c26b46ad10fbf0a60e75542539de635c63df5b4f09c4e1e"
+    },
+    {
+      "command": "git diff 188cbba2c69e72f6800b7239b9068fe99d02c34f 443acbc6fdd78767b0df9b456565752b6f4f7e23 -- apps/desktop-qt/operator-tests/collect_evidence.py docs/implementation/adr-005/TASK.md; independently parse collector AST, check reviewed-source union, and compare every reviewed runtime/test/schema/UI blob against tested188cbba",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-runtime/evidence-delta-check.txt",
+      "logSha256": "51b05e898148bcbdcd7f9311072beb9e7366ac66b3cad5292fdc5e8d6278e481"
+    }
+  ],
+  "toolchain": {
+    "rustc": "1.99.1 (58cf8f9c3 2026-10-13)",
+    "cargo": "1.99.1 (5f94df478 2026-08-27)",
+    "qt": "6.11.2",
+    "python": "3.14.7"
+  },
+  "findings": [
+    {
+      "finding": "Invalid canonical UI reference and early execution-authority leakage",
+      "resolution": "Canonical component-id/UI-path reference is checked against unchanged composition schema; preparation never grants execution; failed apply revokes newly issued approval and preserves prior consent. Independently passed canonical negatives, real compute and grant-cleanup tests."
+    },
+    {
+      "finding": "Kernel/Room provenance and intervening revocation were not fenced",
+      "resolution": "Session privately constructs and owns Kernel/Room, limits32 rooms/32 instances and exposes no mutable controller. Low-level Proposal/ApplyContext are crate-private. Same-lock policy epoch and room revision checks fence explicit approval; fresh nonce binds every proposal and replacement. Concurrent room/policy/replay tests pass."
+    },
+    {
+      "finding": "Preview cannot be a general side-effect-free staging validator",
+      "resolution": "Documented advisory validation proves only fixed single-instance, no-edge, no-permission, empty-room construction; own Session capacity and fixed instance identifier constrain resource/identifier risks. Accepted apply_plan remains the atomic commit authority and repeats runtime checks. No general populated-room or graph preview claim is approved."
+    },
+    {
+      "finding": "Initialization and durable checkpoint stages could be conflated",
+      "resolution": "Actual accepted typed ingress/WASM completion and current valid output projections are checked. Topology, initialization and final durable checkpoint are distinct; actual FileStore write failure after1461.48 computation and genuine guest-trap/direct-form repair are tested. Reacquisition compares storage revision/hash/empty workspace before mutation. Write/rename/fsync acknowledgement ambiguity is explicitly described conservatively."
+    },
+    {
+      "finding": "Qt cancellation could discard an authoritative successful approval",
+      "resolution": "Cancel is enabled only during prepare. Approval watchdog retains its token/outcome; committed reply triggers accepted Desktop selection. Genuine Qt approve/cancel regression passed; stale preview is invalidated on Desktop drift."
+    },
+    {
+      "finding": "Cancellation queue ownership and oversized replies could lose authority outcomes",
+      "resolution": "Host-issued Cancellation identity owns prepare lease cleanup; wire cannot supply ticket. Audit tail16 and accepted metadata caps bound replies; oversize fallback preserves authoritative commit and storage flags. Queue ownership and oversize regressions independently passed."
+    },
+    {
+      "finding": "Accepted evidence could be silently weakened or rewritten",
+      "resolution": "Accepted runtime/room, storage, Desktop and prior collectors remain unchanged;71 accepted review hash entries independently match. New outer wrapper retains full old chain. New collector requires exact named counts and two source-bound reviews, and verifier keeps separate hosted-success/archive checks."
+    },
+    {
+      "finding": "Collector copied only fixed critical source list while review included accepted integration dependencies",
+      "resolution": "Evidence-only443acbc validates every source in both independent review maps and copies their union, preserving all60 runtime-review sources for offline verification. It also validates zero-exit/no-skip independent-test receipts and archives hash-matching reviewer logs. Independent24/9/6 tests used identical runtime/test/schema/UI bytes at188cbba; static evidence delta independently reviewed without unnecessary runtime rerun."
+    }
+  ],
+  "limitations": [
+    "Approval is a serialized commit boundary: later cancellation/revocation waits for in-progress apply. FileStore-only checkpoint callback must not reenter Session.",
+    "Explicit MortgageTerms/GBP deterministic fixture; no claim of general natural-language planning, populated-room composition or external-provider conformance.",
+    "Snapshot1 single-writer clean-quit profile only; no new power-loss database guarantee.",
+    "This is scoped independent review approval, not ADR acceptance. Full retained wrapper results, successful hosted Linux CI and downloaded archive verification remain separately mandatory."
+  ],
+  "remainingMandatory": [],
+  "testedRuntimeCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+}
