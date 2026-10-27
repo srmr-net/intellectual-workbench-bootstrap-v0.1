@@ -59,3 +59,4 @@ jobs:
         with:
           name: operator-validation-linux
           path: target/abi-evidence/
+          include-hidden-files: true
