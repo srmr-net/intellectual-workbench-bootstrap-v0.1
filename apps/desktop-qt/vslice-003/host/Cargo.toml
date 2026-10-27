@@ -1,0 +1,19 @@
+[package]
+name = "wb-vslice003-worker"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+# Standalone product entry: preserve accepted workspace/lock/evidence bytes.
+[workspace]
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+libc = "0.2"
+wb-contracts = { path = "../../../../crates/wb-contracts" }
+wb-desktop-host = { path = "../../../../crates/wb-desktop-host" }
+wb-operator = { path = "../../../../crates/wb-operator" }
+wb-registry = { path = "../../../../crates/wb-registry" }
+wb-storage = { path = "../../../../crates/wb-storage" }
+wb-wasm-host = { path = "../../../../crates/wb-wasm-host" }
