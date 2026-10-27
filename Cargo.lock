@@ -2142,6 +2142,26 @@ dependencies = [
 ]
 
 [[package]]
+name = "wb-operator"
+version = "0.1.0"
+dependencies = [
+ "jsonschema",
+ "libc",
+ "regex",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "wb-contracts",
+ "wb-desktop-host",
+ "wb-kernel",
+ "wb-registry",
+ "wb-semantic",
+ "wb-storage",
+ "wb-wasm-host",
+]
+
+[[package]]
 name = "wb-reactive"
 version = "0.1.0"
 dependencies = [

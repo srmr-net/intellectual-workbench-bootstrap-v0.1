@@ -1,0 +1,9 @@
+   Compiling wb-registry v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-registry)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 7.66s
+     Running tests/registry.rs (target/debug/deps/registry-0dfd2f01a564ef54)
+
+running 1 test
+test reg_003_paths_links_and_nonregular ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 30 filtered out; finished in 3.01s
+

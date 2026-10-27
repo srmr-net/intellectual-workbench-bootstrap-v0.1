@@ -1,0 +1,23 @@
+[package]
+name = "wb-operator"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+wb-contracts = { path = "../wb-contracts" }
+wb-registry = { path = "../wb-registry" }
+wb-semantic = { path = "../wb-semantic" }
+wb-kernel = { path = "../wb-kernel" }
+wb-wasm-host = { path = "../wb-wasm-host" }
+wb-storage = { path = "../wb-storage" }
+wb-desktop-host = { path = "../wb-desktop-host" }
+jsonschema = { version = "=0.33.0", default-features = false }
+sha2 = "=0.10.9"
+regex = "1"
+libc = "0.2"
+
+[dev-dependencies]
+tempfile = "3"

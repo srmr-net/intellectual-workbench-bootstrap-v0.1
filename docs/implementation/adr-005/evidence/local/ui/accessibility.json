@@ -1,0 +1,20 @@
+[
+    {
+        "focusable": true,
+        "id": "principal",
+        "name": "Principal",
+        "role": 42
+    },
+    {
+        "focusable": true,
+        "id": "rate",
+        "name": "Annual interest rate",
+        "role": 42
+    },
+    {
+        "focusable": true,
+        "id": "term",
+        "name": "Term (months)",
+        "role": 42
+    }
+]

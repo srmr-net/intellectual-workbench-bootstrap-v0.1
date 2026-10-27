@@ -1,0 +1,10 @@
+{
+  "suggestionVersion": "0.1",
+  "candidateKey": "local-candidate-1",
+  "inputValues": {
+    "principal": "250000",
+    "annual_rate_percent": "5",
+    "term_months": 300
+  },
+  "explanation": "Use the installed calculator with the supplied amount, rate and duration."
+}

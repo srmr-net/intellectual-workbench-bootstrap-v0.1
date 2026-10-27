@@ -1,0 +1,7 @@
+# Ready-to-paste Codex assignment
+
+Read `AGENTS.md`, accepted ADR-001–004 and their evidence, accepted VSLICE-001–002 and their evidence, the current committed plan/UI/package contracts, and `docs/adr/ADR-005.md` plus `docs/implementation/adr-005/{TEST_MATRIX,VALIDATION_TASK}.md`.
+
+Implement ADR-005 for a **single locally admitted component**: bounded read-only semantic discovery; replaceable `OperatorProvider` with deterministic offline fixture; strict candidate-key suggestion parsing; trusted host generation/validation of the unchanged `planVersion: "0.1"` composition plan; preview/explicit proposal-bound approval; revision-fenced atomic apply via existing kernel API; initialization through existing typed ingress; and minimal Qt intent/approval UI. Demonstrate the mortgage request via the actual installed component and real WASM execution. Ensure later edits and cold restore invoke no model.
+
+Implement all OP-001–024 gates with adversarial tests, preserve every existing ABI/IPC/REG/UI/VS1/VS2 regression, perform two independent trust-boundary reviews, and archive hosted Linux CI evidence with versions, logs, hashes and run URL. Do not change the accepted WIT, modify immutable registry behavior, add new guest capabilities, generate executable QML, install remote components, or claim general multi-component Operator capability. Keep ADR-005 PROPOSED until all mandatory evidence passes.

@@ -1,0 +1,10 @@
+test_duplicate_json_keys_rejected (test_check_contracts.ContractChecks.test_duplicate_json_keys_rejected) ... ok
+test_fixture_matrix (test_check_contracts.ContractChecks.test_fixture_matrix) ... ok
+test_missing_fixtures_fail (test_check_contracts.ContractChecks.test_missing_fixtures_fail) ... ok
+test_nested_room_connections_resolve_offline (test_check_contracts.ContractChecks.test_nested_room_connections_resolve_offline) ... ok
+test_positive_and_malicious_fixtures (test_ui_contract.UiFixtures.test_positive_and_malicious_fixtures) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 2.584s
+
+OK

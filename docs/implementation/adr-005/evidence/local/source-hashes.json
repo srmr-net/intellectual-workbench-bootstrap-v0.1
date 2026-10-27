@@ -1,0 +1,13 @@
+{
+  "Cargo.lock": "e93bdaf7fbaf3f9fa3c8e104788349ef5f37f0093c7b325796c059d5a535875c",
+  "crates/wb-kernel/src/lib.rs": "de75e835e70e3c4e98c1af535ef259b3a317d16a190b0e1147f31ca05df7a199",
+  "crates/wb-kernel/src/operator_validation.rs": "a63013b5fff2aaaa3eec431109a63fe981220034606ea73aef153c408cce5e25",
+  "crates/wb-operator/Cargo.toml": "25ae3e7a5fc1b64aa04d1cea2f09ca98c575c6d313ca9f3250cc53e0808422e1",
+  "crates/wb-operator/src/catalog.rs": "b1cbcc488d19bbd79b8de0cde32719781150e858076e2a13086fb8eaff6dde20",
+  "crates/wb-operator/src/lib.rs": "4ba46e0638f6386eecff1c47ba70c6470ba466a06a89563a10964a6a73e63e1b",
+  "crates/wb-operator/src/proposal.rs": "8511226656fd1e0e48fa33fdb4f011cb2d6278a381deadbbc90fd555426d4ec0",
+  "crates/wb-operator/src/provider.rs": "f0a9aa4f35004f73ff3967b58f3e9df037971318046308e5ef6bd5e660123e68",
+  "crates/wb-operator/src/suggestion.rs": "a7cc66c72ab3b34e060b73489595189c5b20865226f3b51be13b2e6b822470d6",
+  "crates/wb-operator/tests/boundary.rs": "f7d0e32a7f94209bbe7fb8f4a02fd899b00a4e751b9c1a8452b839ddf61751dc",
+  "crates/wb-operator/tests/integration.rs": "f6957a57f86b940fb47ad247cbee6ecdfe65224b7fc2f0abe0576d3f1fbccb33"
+}

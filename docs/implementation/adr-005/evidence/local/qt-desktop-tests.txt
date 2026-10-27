@@ -1,0 +1,40 @@
+********* Start testing of Vs2Conformance *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+PASS   : Vs2Conformance::initTestCase()
+QWARN  : Vs2Conformance::vs2_010_pending_edit_room_switch_and_stale_callback() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_010_pending_edit_room_switch_and_stale_callback() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_010_pending_edit_room_switch_and_stale_callback() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_010_pending_edit_room_switch_and_stale_callback() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_010_pending_edit_room_switch_and_stale_callback()
+QWARN  : Vs2Conformance::vs2_011_real_bounded_queue_full_and_explicit_apply() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_011_real_bounded_queue_full_and_explicit_apply() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_011_real_bounded_queue_full_and_explicit_apply() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_011_real_bounded_queue_full_and_explicit_apply() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_011_real_bounded_queue_full_and_explicit_apply()
+QWARN  : Vs2Conformance::vs2_012_real_conflict_repair_never_implicitly_retries() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_012_real_conflict_repair_never_implicitly_retries() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_012_real_conflict_repair_never_implicitly_retries() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_012_real_conflict_repair_never_implicitly_retries() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_012_real_conflict_repair_never_implicitly_retries()
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_014_quit_drains_rejected_and_error_replies()
+QWARN  : Vs2Conformance::vs2_015_field_specific_accessible_errors_and_gui_thread() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_015_field_specific_accessible_errors_and_gui_thread() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_015_field_specific_accessible_errors_and_gui_thread() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_015_field_specific_accessible_errors_and_gui_thread() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_015_field_specific_accessible_errors_and_gui_thread()
+QWARN  : Vs2Conformance::vs2_021_stale_frame_does_not_retire_live_request() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_021_stale_frame_does_not_retire_live_request() This plugin does not support setParent!
+QWARN  : Vs2Conformance::vs2_021_stale_frame_does_not_retire_live_request() This plugin does not support propagateSizeHints()
+QWARN  : Vs2Conformance::vs2_021_stale_frame_does_not_retire_live_request() This plugin does not support setParent!
+PASS   : Vs2Conformance::vs2_021_stale_frame_does_not_retire_live_request()
+PASS   : Vs2Conformance::cleanupTestCase()
+Totals: 8 passed, 0 failed, 0 skipped, 0 blacklisted, 76271ms
+********* Finished testing of Vs2Conformance *********

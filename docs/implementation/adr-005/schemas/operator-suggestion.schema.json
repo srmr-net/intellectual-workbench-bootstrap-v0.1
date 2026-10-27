@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OperatorSuggestionV0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "suggestionVersion",
+    "candidateKey",
+    "inputValues",
+    "explanation"
+  ],
+  "properties": {
+    "suggestionVersion": {
+      "const": "0.1"
+    },
+    "candidateKey": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "inputValues": {
+      "type": "object",
+      "maxProperties": 8,
+      "propertyNames": {
+        "pattern": "^[A-Za-z][A-Za-z0-9_]{0,63}$"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string",
+            "maxLength": 128
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    "explanation": {
+      "type": "string",
+      "maxLength": 512
+    }
+  }
+}
