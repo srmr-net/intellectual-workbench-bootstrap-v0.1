@@ -4,8 +4,8 @@
   "role": "A",
   "reviewDate": "2026-10-26",
   "baseCommit": "c117632f7c50ed0cf729fadd814ac8548c22db0d",
-  "implementationCommit": null,
-  "sourceBinding": "Uncommitted implementation snapshot; exact sourceSha256 is authoritative until primary author commits identical bytes. Any implementation source change requires re-review.",
+  "implementationCommit": "615d76b54ac415bc1d9dd85b7237bfba3f035c68",
+  "sourceBinding": "All21 sourceSha256 entries independently verified against this implementation commit and working tree; any reviewed implementation source change requires re-review.",
   "scope": "Qt UX/accessibility/threading, generic trusted rendering, new desktop bridge fences/backpressure and async shutdown",
   "sourceSha256": {
     "apps/desktop-qt/desktop/ConformanceDriver.cpp": "5e89071841cd0cf3b2b36f950f87fef593d98a60f4935afc7d82fbfab9432a6f",

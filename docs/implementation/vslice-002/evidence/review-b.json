@@ -4,8 +4,8 @@
   "role": "B",
   "reviewDate": "2026-10-27",
   "baseCommit": "c117632f7c50ed0cf729fadd814ac8548c22db0d",
-  "implementationCommit": null,
-  "sourceBinding": "Reviewed working-tree bytes. sourceSha256 is authoritative until an implementation commit containing identical bytes is bound; changed implementation requires re-review.",
+  "implementationCommit": "615d76b54ac415bc1d9dd85b7237bfba3f035c68",
+  "sourceBinding": "All22 sourceSha256 entries independently verified against committed Git blobs at 615d76b54ac415bc1d9dd85b7237bfba3f035c68. Approval applies to these exact reviewed bytes; changed implementation requires re-review.",
   "scope": "Room persistence, strict durable snapshots, exact registry/UI pins, committed-state integrity, revision and generation fences, bounded worker transport and offline conformance helper.",
   "sourceSha256": {
     "crates/wb-storage/src/vs2.rs": "3f1de1d4d7e45b868d51849ddeeca751a3ad300819890b70777505089a645d4a",

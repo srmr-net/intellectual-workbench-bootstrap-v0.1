@@ -3,8 +3,10 @@
 Reviewer: Codex `/root/review_vs2_persistence`, distinct from implementation author.
 Date: 2026-10-26. Integration base: `c117632f7c50ed0cf729fadd814ac8548c22db0d`.
 Final test-only follow-up: 2026-10-27.
-Implementation was reviewed as a working tree; the adjacent source hash manifest
-identifies reviewed bytes independently of a later commit/archive.
+Implementation commit: `615d76b54ac415bc1d9dd85b7237bfba3f035c68`. All22 reviewed source/corpus
+hashes were independently verified against this commit's Git blobs and the working
+tree before binding this approval. The adjacent source hash manifest records the
+exact reviewed bytes.
 
 ## Scope and findings
 
