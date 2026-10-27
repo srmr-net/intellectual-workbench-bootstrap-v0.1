@@ -2,12 +2,12 @@
   "reviewer": "/root/review_op_security",
   "role": "Independent agent prompt-injection, privacy, provider, consent and Qt authority-boundary reviewer; no implementation authorship",
   "status": "APPROVED",
-  "implementationCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+  "implementationCommit": "f7fe86d5e00981d05d4d0fee6288f34ff21e8478",
   "reviewDate": "2026-10-27",
-  "sourceBinding": "All49 critical_sources() paths independently compared with frozen Git blobs and working-tree bytes at443acbc. Evidence-only collector delta reviewed separately;48 other critical paths are byte-identical to188cbba. Approval covers these exact bytes; later source changes require re-review.",
+  "sourceBinding": "All49 critical_sources() paths independently compared with frozen Git blobs and working bytes atf7fe86d. Collector/log-union delta previously approved at443acbc; packaging-only workflow addition independently reviewed. Runtime/test/schema/UI code remains byte-identical to independently tested188cbba. Changed reviewed bytes require re-review.",
   "scope": "Offline fixture-only single admitted local pure component in one existing empty room; explicit proposal-bound native consent; trusted Qt preview and accepted desktop handoff. This approval is source/security review, not ADR or hosted acceptance.",
   "sourceSha256": {
-    ".github/workflows/ci.yml": "d34c625522a759b05e8162d2bcb036379abab7851ed7ca848f90b88ef9b529ac",
+    ".github/workflows/ci.yml": "4cc261d4a78c4d7c403d3ad9f23eca5c17a5f40b9fb1b809dc7a06e7886a2b61",
     "Cargo.lock": "e93bdaf7fbaf3f9fa3c8e104788349ef5f37f0093c7b325796c059d5a535875c",
     "apps/desktop-qt/operator-tests/collect_evidence.py": "50b98fd2a27179a5c15797e9a3cb0233ed9bb2eb309747d232a3ccb4637703cb",
     "apps/desktop-qt/operator-tests/contract.py": "a648388df40261da5a5a88a53083758cc0c9ffa2060a8f2c33220b1df4f54ae5",
@@ -97,13 +97,13 @@
       "logText": "Parsed 5 Python sources; bash -n exit 0\n"
     },
     {
-      "command": "Independent evidence-only git-diff/source-byte assertions, collector ast.parse, reviewed-source union existence and review exit/skip checks",
+      "command": "Independent evidence-only collector and packaging delta/source-byte assertions; inspected explicitly selected hidden evidence paths",
       "exit": 0,
       "passed": 5,
       "ignoredOrSkipped": 0,
       "log": "target/review-op-security/final-collector-delta.log",
-      "logSha256": "bfdd5ff6f4c01593662d8462b66cfa34bd13fed373fe3255138df0c79d5b70ca",
-      "logText": "PASS: evidence-only delta comprises collector and TASK docs. Collector parses; all49 critical source bytes match 443acbc6fdd78767b0df9b456565752b6f4f7e23;48 non-collector critical paths match prior reviewed 188cbba2c69e72f6800b7239b9068fe99d02c34f. Reviewed source union contains 60 existing paths. Agent independent test exit/skipped checks pass. No runtime/test/schema/UI changes.\n"
+      "logSha256": "31d53d18fda143f6d77b8bb4c0957cb5f644f26e36d41f8ca61050e390989553",
+      "logText": "PASS: packaging-only commit f7fe86d5e00981d05d4d0fee6288f34ff21e8478 changes one workflow line: include-hidden-files: true. All49 critical sources match committed/working bytes;48 paths excluding workflow are identical to reviewed443acbc. Runtime/test/schema/UI sources remain identical to independently tested188cbba. Explicit source collector selects the hidden workflow file; enabling hidden uploads closes its omission and changes no runtime privilege. Hidden evidence paths inspected: ['operator/sources/.github/workflows/ci.yml']. Prior443acbc source-union/log-validation approval retained.\n"
     }
   ],
   "findings": [
@@ -200,5 +200,25 @@
       "docs/implementation/adr-005/TASK.md"
     ],
     "conclusion": "APPROVED: collector now verifies every reviewed source hash, archives the union of reviewed paths, checks zero independent-test exit/skips and verifies/copies archived independent-test log hashes. Native24, worker9 and Qt6 tests were independently executed on byte-identical runtime/test/schema/UI sources at188cbba; unchanged runtime is not redundantly rerun."
-  }
+  },
+  "evidenceDeltaHistory": [
+    {
+      "fromCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+      "toCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+      "changedPaths": [
+        "apps/desktop-qt/operator-tests/collect_evidence.py",
+        "docs/implementation/adr-005/TASK.md"
+      ],
+      "conclusion": "APPROVED: collector now verifies every reviewed source hash, archives the union of reviewed paths, checks zero independent-test exit/skips and verifies/copies archived independent-test log hashes. Native24, worker9 and Qt6 tests were independently executed on byte-identical runtime/test/schema/UI sources at188cbba; unchanged runtime is not redundantly rerun."
+    },
+    {
+      "fromCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+      "toCommit": "f7fe86d5e00981d05d4d0fee6288f34ff21e8478",
+      "change": "Packaging-only include-hidden-files: true in upload-artifact; review/log archival commits also present between443acbc and parent. Explicitly selected operator/sources/.github/workflows/ci.yml is now included.",
+      "status": "APPROVED",
+      "runtimeChanged": false,
+      "runtimeTestCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+      "hostedClaim": "Reported prior hosted run success is not independently asserted by this packaging source review; complete new artifact verification remains separate."
+    }
+  ]
 }

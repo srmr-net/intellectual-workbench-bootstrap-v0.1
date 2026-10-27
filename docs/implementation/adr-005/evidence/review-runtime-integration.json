@@ -3,11 +3,11 @@
   "role": "B: registry, kernel, lifecycle, revision, persistence and native Qt integration",
   "status": "APPROVED",
   "reviewDate": "2026-10-27",
-  "implementationCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+  "implementationCommit": "f7fe86d5e00981d05d4d0fee6288f34ff21e8478",
   "sourceBinding": "Approval applies only to these exact committed bytes. Every contract.py critical_sources() path is included, plus accepted integration dependencies. Changed source requires renewed review.",
   "scope": "Bounded local Operator: one exact installed pure component in an existing empty native room and initially empty desktop workspace; source-bound wrapper, collector and downloaded-artifact verifier.",
   "sourceSha256": {
-    ".github/workflows/ci.yml": "d34c625522a759b05e8162d2bcb036379abab7851ed7ca848f90b88ef9b529ac",
+    ".github/workflows/ci.yml": "4cc261d4a78c4d7c403d3ad9f23eca5c17a5f40b9fb1b809dc7a06e7886a2b61",
     "Cargo.lock": "e93bdaf7fbaf3f9fa3c8e104788349ef5f37f0093c7b325796c059d5a535875c",
     "apps/desktop-qt/collect_evidence.py": "b43dc3d76aa9bcf39388487526a075c8b60aae9cbb90b19f8df5e52ff97a748f",
     "apps/desktop-qt/desktop-tests/collect_evidence.py": "4425259bce4e0a4fab70f7cff37c5b38a3ecfa919d7b46303b6b8bcdfceebd13",
@@ -108,7 +108,14 @@
       "exitCode": 0,
       "ignoredOrSkipped": 0,
       "log": "target/review-op-runtime/evidence-delta-check.txt",
-      "logSha256": "51b05e898148bcbdcd7f9311072beb9e7366ac66b3cad5292fdc5e8d6278e481"
+      "logSha256": "4b4d843c3fb85c45a70b3f752b937ea4d6c075dd1f7f67e95c29ebf946cef98e"
+    },
+    {
+      "command": "git show --stat f7fe86d5e00981d05d4d0fee6288f34ff21e8478; git diff f7fe86d5e00981d05d4d0fee6288f34ff21e8478^ f7fe86d5e00981d05d4d0fee6288f34ff21e8478 -- .github/workflows/ci.yml; independently compare all reviewed blobs against prior443acbc review hashes",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "target/review-op-runtime/evidence-delta-check.txt",
+      "logSha256": "4b4d843c3fb85c45a70b3f752b937ea4d6c075dd1f7f67e95c29ebf946cef98e"
     }
   ],
   "toolchain": {
@@ -149,6 +156,10 @@
     {
       "finding": "Collector copied only fixed critical source list while review included accepted integration dependencies",
       "resolution": "Evidence-only443acbc validates every source in both independent review maps and copies their union, preserving all60 runtime-review sources for offline verification. It also validates zero-exit/no-skip independent-test receipts and archives hash-matching reviewer logs. Independent24/9/6 tests used identical runtime/test/schema/UI bytes at188cbba; static evidence delta independently reviewed without unnecessary runtime rerun."
+    },
+    {
+      "finding": "Hosted artifact omitted hidden reviewed workflow source",
+      "resolution": "Packaging-onlyf7fe86d adds include-hidden-files:true to existing upload-artifact step. Independently checked sole-line change and all60 current source hashes; runtime/test/schema/UI unchanged from approved443acbc and tested188cbba. Approval covers this packaging fix; successful rerun and downloaded artifact verification remain separate acceptance requirements."
     }
   ],
   "limitations": [
@@ -158,5 +169,12 @@
     "This is scoped independent review approval, not ADR acceptance. Full retained wrapper results, successful hosted Linux CI and downloaded archive verification remain separately mandatory."
   ],
   "remainingMandatory": [],
-  "testedRuntimeCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f"
+  "testedRuntimeCommit": "188cbba2c69e72f6800b7239b9068fe99d02c34f",
+  "evidenceRevisionHistory": [
+    {
+      "implementationCommit": "443acbc6fdd78767b0df9b456565752b6f4f7e23",
+      "reviewOutcome": "APPROVED evidence-only collector union/log-receipt fix; runtime tested at188cbba unchanged",
+      "priorEvidenceDeltaLogSha256": "51b05e898148bcbdcd7f9311072beb9e7366ac66b3cad5292fdc5e8d6278e481"
+    }
+  ]
 }
