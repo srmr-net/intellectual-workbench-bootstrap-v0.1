@@ -1,0 +1,27 @@
+Independent reviewer: /root/review_vs2_persistence
+Date: 2026-10-27
+
+Command: cargo test --locked -p wb-storage --test vs2
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running tests/vs2.rs (target/debug/deps/vs2-7b2bf6bc2a53b34f)
+
+running 6 tests
+test vs2_021_fifo_and_world_readable_paths_fail_without_blocking ... ok
+test vs2_021_size_duplicate_unknown_and_symlink_limits ... ok
+test vs2_020_corruption_is_non_destructive ... ok
+test vs2_019_exclusive_writer_and_anchored_directory ... ok
+test vs2_019_atomic_versioned_snapshot_and_cas ... ok
+test vs2_021_runtime_snapshot_positive_and_negative_fixture_corpus ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
+Process exit: 0
+
+Command: cargo test --locked -p wb-desktop-host --test vs2 vs2_020_invalid_snapshot_latches_readonly_recovery -- --exact
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.12s
+     Running tests/vs2.rs (target/debug/deps/vs2-2f936cb0235c6723)
+
+running 1 test
+test vs2_020_invalid_snapshot_latches_readonly_recovery ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 14 filtered out; finished in 5.67s
+Process exit: 0

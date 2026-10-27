@@ -1,0 +1,82 @@
+Command: cargo test -p wb-storage -p wb-desktop-host -- --test-threads=1
+   Compiling wb-storage v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-storage)
+   Compiling wb-desktop-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-desktop-host)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.03s
+     Running unittests src/lib.rs (target/debug/deps/wb_desktop_host-ec697c13f1993ee8)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-install.rs (target/debug/deps/wb_desktop_install-5af47df344e8f03a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-offline.rs (target/debug/deps/wb_desktop_offline-20c6447392fb3ec1)
+     Running unittests src/bin/wb-desktop-worker.rs (target/debug/deps/wb_desktop_worker-882bcaf7adc75d8d)
+     Running tests/vs2.rs (target/debug/deps/vs2-2f936cb0235c6723)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+running 15 tests
+test vs2_004_exact_pins_and_tampered_release_fail_closed ... ok
+test vs2_006_declared_bindings_and_readonly_output ... ok
+test vs2_007_real_wasm_two_accepted_financial_scenarios ... ok
+test vs2_008_actual_host_ingress_audit_and_committed_projection ... ok
+test vs2_009_invalid_incomplete_and_negative_edits_never_execute ... ok
+test vs2_010_cancellation_and_revision_generation_fences ... ok
+test vs2_011_bounded_framing_trace_and_live_audit_recycling ... ok
+test vs2_011_large_valid_workspace_response_exceeds_legacy_frame_safely ... ok
+test vs2_012_conflict_preserves_draft_until_explicit_reapply ... ok
+test vs2_013_guest_trap_invalid_output_and_partial_batches_preserve_checkpoint ... ok
+test vs2_016_rooms_and_forged_edit_ownership_are_isolated ... ok
+test vs2_017_pin_unpin_and_selection_are_durable ... ok
+test vs2_020_invalid_snapshot_latches_readonly_recovery ... ok
+test vs2_021_wire_rejects_extra_identity_and_nested_duplicate_keys ... ok
+test vs2_024_frozen_accepted_contracts_and_regressions ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 92.13s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_storage-34d6464a1d77cfdc)
+
+running 1 test
+test tests::version_is_declared ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vs2.rs (target/debug/deps/vs2-12b9282532e3368a)
+
+running 5 tests
+test vs2_019_atomic_versioned_snapshot_and_cas ... ok
+test vs2_019_exclusive_writer_and_anchored_directory ... ok
+test vs2_020_corruption_is_non_destructive ... ok
+test vs2_021_fifo_and_world_readable_paths_fail_without_blocking ... ok
+test vs2_021_size_duplicate_unknown_and_symlink_limits ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.23s
+
+   Doc-tests wb_desktop_host
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_storage
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+
+Process exit: 0
+
