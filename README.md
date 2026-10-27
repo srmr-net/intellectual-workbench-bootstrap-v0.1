@@ -40,3 +40,8 @@ The accepted [headless mortgage vertical slice](examples/mortgage-headless/READM
 builds a real local package and exercises accepted registry/lifecycle/WIT/bus APIs.
 Its [task and acceptance matrix](docs/implementation/vslice-001/README.md) track
 product evidence separately from the original metadata-only mortgage reference.
+
+The accepted [interactive Linux desktop and persistent canvas](apps/desktop-qt/desktop/README.md)
+adds installed-component selection, pinning and zero-compute cold display of exact
+committed snapshots. Build/test with `bash apps/desktop-qt/validate-vslice-002.sh`;
+see [VSLICE-002 evidence](docs/implementation/vslice-002/evidence/RESULTS.md).

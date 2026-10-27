@@ -7,3 +7,6 @@ mod tests {
         assert_eq!(super::CONTRACT_VERSION, "0.1");
     }
 }
+
+/// Versioned internal clean-quit workspace persistence; no database recovery claim.
+pub mod vs2;

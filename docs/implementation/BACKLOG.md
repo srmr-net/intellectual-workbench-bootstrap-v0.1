@@ -19,3 +19,6 @@ All tasks require changed-code tests, documented interfaces and agent verificati
 | BOOTSTRAP-001 | B1 | G5, ADR-010 | development components | Generate/test/install new module under approval |
 
 **Suggested parallel lanes after SPEC-001/002:** runtime spike; semantic/registry; UI bridge spike; storage design spike. No concurrent edits to shared schema contract without synchronisation.
+
+VSLICE-002 (Accepted, 2026-10-27): first installed interactive desktop/persistent canvas;
+owner Codex, [task](vslice-002/TASK.md), dependencies accepted ADR001–004/VSLICE001.

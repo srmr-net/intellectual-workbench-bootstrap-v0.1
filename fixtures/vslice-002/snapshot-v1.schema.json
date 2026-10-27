@@ -1,0 +1,153 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://workbench.example/internal/vslice-002/snapshot-v1.schema.json",
+  "title": "Internal single-workspace snapshot v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "formatVersion",
+    "contentSha256",
+    "revision",
+    "selectedRoom",
+    "rooms"
+  ],
+  "properties": {
+    "formatVersion": {
+      "const": 1
+    },
+    "contentSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$(?![\\s\\S])"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 18446744073709551615
+    },
+    "selectedRoom": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 64
+    },
+    "rooms": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "$ref": "#/$defs/checkpoint"
+      }
+    }
+  },
+  "$defs": {
+    "checkpoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "roomId",
+        "label",
+        "pinned",
+        "component",
+        "ui",
+        "room",
+        "outputs"
+      ],
+      "properties": {
+        "roomId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 64,
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]*$(?![\\s\\S])"
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "pinned": {
+          "type": "boolean"
+        },
+        "component": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "version",
+            "sha256"
+          ],
+          "properties": {
+            "id": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$(?![\\s\\S])"
+            }
+          }
+        },
+        "ui": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "sha256",
+            "schemaSha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 7,
+              "maxLength": 240
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$(?![\\s\\S])"
+            },
+            "schemaSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$(?![\\s\\S])"
+            }
+          }
+        },
+        "room": {
+          "allOf": [
+            {
+              "$ref": "https://workbench.example/schemas/0.1/room.schema.json"
+            },
+            {
+              "properties": {
+                "components": {
+                  "minItems": 1,
+                  "maxItems": 1
+                },
+                "connections": {
+                  "maxItems": 0
+                },
+                "state": {
+                  "maxProperties": 1
+                },
+                "revision": {
+                  "minimum": 1
+                }
+              }
+            }
+          ]
+        },
+        "outputs": {
+          "type": "object",
+          "maxProperties": 32,
+          "additionalProperties": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  }
+}

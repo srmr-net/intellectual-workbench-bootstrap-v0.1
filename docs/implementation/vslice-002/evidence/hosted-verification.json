@@ -1,0 +1,21 @@
+{
+  "verified": true,
+  "source": "0034953273c6da21b7c39807a5b2858f0716e7b6",
+  "archiveSha256": "7a8bb230d57912459c884f96f87a9a752e9216dc86cc4e2c265644fd50ddca89",
+  "recordedHashes": 399,
+  "rustTests": 138,
+  "processTests": 14,
+  "desktopProcesses": 25,
+  "qtSummary": "Totals: 8 passed, 0 failed, 0 skipped, 0 blacklisted, 18964ms",
+  "coldProcessIds": [
+    17551,
+    17566
+  ],
+  "coldWorkerIds": [
+    17553,
+    17568
+  ],
+  "coldRestoreInvocations": 0,
+  "appSha256": "06d25cffa1ea208f5d49a8a963e5087e0aa1ff70494e2ce77dd9d66037655ccd",
+  "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n6.4.2\n6.4.2\n6.4.2\n6.4.2\n"
+}

@@ -1,0 +1,8 @@
+{
+  "formatVersion": 1,
+  "revision": 1,
+  "selectedRoom": null,
+  "rooms": [],
+  "contentSha256": "f96fc25984102e0a36c027d6e9653de4602b53d89625ab3c35bdccded5dce334",
+  "onLoad": "Qt.quit()"
+}

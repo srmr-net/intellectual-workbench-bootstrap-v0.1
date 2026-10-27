@@ -1,0 +1,138 @@
+{
+  "status": "APPROVED",
+  "reviewer": "independent agent /root/review_vs2_qt; no implementation authorship",
+  "role": "A",
+  "reviewDate": "2026-10-26",
+  "baseCommit": "c117632f7c50ed0cf729fadd814ac8548c22db0d",
+  "implementationCommit": "615d76b54ac415bc1d9dd85b7237bfba3f035c68",
+  "sourceBinding": "All21 sourceSha256 entries independently verified against this implementation commit and working tree; any reviewed implementation source change requires re-review.",
+  "scope": "Qt UX/accessibility/threading, generic trusted rendering, new desktop bridge fences/backpressure and async shutdown",
+  "sourceSha256": {
+    "apps/desktop-qt/desktop/ConformanceDriver.cpp": "5e89071841cd0cf3b2b36f950f87fef593d98a60f4935afc7d82fbfab9432a6f",
+    "apps/desktop-qt/desktop/ConformanceDriver.h": "75031f3b224ac7394135982055c3f95313940fbd48e7b2ef6aae452a3953c4f9",
+    "apps/desktop-qt/desktop/DesktopBridge.cpp": "159ab154e0c8e99db65c277faee4fbfb97dd4a4374d3efe832bba136f1ffb08f",
+    "apps/desktop-qt/desktop/DesktopBridge.h": "9db2c3da09fe182d487dd318a77d547b064dfcff1eb8ed11236841f50c56af15",
+    "apps/desktop-qt/desktop/DesktopShell.cpp": "1d1c2e0920b2959d32e21a57152e73d13c864c408a1e02ea7ffde95654c2c017",
+    "apps/desktop-qt/desktop/DesktopShell.h": "f0ab0a5f423c19edf3c2c7f64928d684413175eadc4f989ea7a4b912c9078289",
+    "apps/desktop-qt/desktop/desktop.pro": "2a4dce3e049a46abbf10dd1515db9d6c040c658953e1d32e8bc69d80f5d6624b",
+    "apps/desktop-qt/desktop/main.cpp": "404b6d609d4bd7844a257ded4302e3ecd9929e2ea5af5a0f6adcf8b9cd174d67",
+    "apps/desktop-qt/desktop-tests/Vs2Conformance.cpp": "1090d4baa88f9ce9a5b8256664ff0de197336b076bac75a6de5e50e93912acb1",
+    "apps/desktop-qt/desktop-tests/desktop_tests.pro": "994ac31851cb4a256c2e41de4eb94ae604212a937bc3fb773319d1880e512b00",
+    "apps/desktop-qt/desktop-tests/prepare_fixtures.py": "2b299f28878c69e807e7524b740aec5e33e3d08e70a8a615e47ca7908cb04b93",
+    "apps/desktop-qt/desktop-tests/process_cases.py": "448c72ace9ee9a24563274a9c83f1227fefde2010bd082d33cbcbd497cb34c8c",
+    "apps/desktop-qt/qml/Main.qml": "ed1533ed44081806e598b533a4f5f9777ccd65fa838d462ea4059ca7920ab13f",
+    "apps/desktop-qt/resources.qrc": "066d6e130b298b1127edfa66d1a7e8f9a9a497292aa0f2b0e6dfb53ac1a3ecc1",
+    "crates/wb-desktop-host/src/bin/wb-desktop-install.rs": "8a8a1c3d4a8adb9389d9dde379a959e37c1dccbe2cc5bc9132020364ca66f496",
+    "crates/wb-desktop-host/src/bin/wb-desktop-offline.rs": "2244fc6046398b7ceb878bbe2bda94fed0328cd70dba8ca3a692e541bac4ec89",
+    "crates/wb-desktop-host/src/bin/wb-desktop-worker.rs": "1ec72bbde46d49918d2baec1c7a5b8cd855f583291f398c9d8c35bc114d3752e",
+    "crates/wb-desktop-host/src/framing.rs": "3ca08243b861d7cdc77aff0d3ba45e77de86d472b9171d7b44f3a364f30aed83",
+    "crates/wb-desktop-host/src/lib.rs": "b2ddc3e9a34b52036950acaf5a4272bb753bf73f3f71ec1d39c8cb7b1a276e07",
+    "crates/wb-desktop-host/tests/vs2.rs": "b8493e8859225ce01d6941aadc47a4af61abd176118f2716e7a330acf9ad7a01",
+    "crates/wb-storage/src/vs2.rs": "3f1de1d4d7e45b868d51849ddeeca751a3ad300819890b70777505089a645d4a"
+  },
+  "independentTests": [
+    {
+      "test": "Independent qmake app and desktop_tests.pro rebuilds",
+      "result": "pass; system Qt6.11.2/GCC16 header warnings only",
+      "logs": [
+        "rebuild-final.txt",
+        "test-build-final.txt"
+      ]
+    },
+    {
+      "test": "real offscreen Vs2Conformance new bridge suite",
+      "result": "8 framework entries passed (6 functional), 0 failed/skipped;83830ms",
+      "logs": [
+        "final-qt-tests.txt",
+        "final-qt-tests.xml"
+      ]
+    },
+    {
+      "test": "real Qt desktop process suite using independently rebuilt app",
+      "result": "14 passed,0 failed/skipped;162.287s;25 distinct Qt PIDs and25 worker PIDs",
+      "logs": [
+        "final-process-tests.txt",
+        "final/process/"
+      ]
+    },
+    {
+      "test": "independent actual readout sample audit",
+      "result": "71 QQuickItem rendered readout samples equal committed projection; includes cold restart",
+      "logs": [
+        "actual-readout-audit.json"
+      ]
+    },
+    {
+      "test": "accepted ADR004 source preservation",
+      "result": "all15 sourceSha256 entries in accepted review-qt.json unchanged"
+    },
+    {
+      "test": "Final-native followup independent real Qt cold-process restore VS2-018",
+      "result": "1 passed,0failed/skipped;10.437s",
+      "logs": [
+        "followup-process-018.txt",
+        "followup/process/"
+      ]
+    },
+    {
+      "test": "Final UX guidance real process009/013 against independent rebuilt app",
+      "result": "2 passed,0failed/skipped;22.711s",
+      "logs": [
+        "ux-process-tests.txt",
+        "ux/process/"
+      ]
+    },
+    {
+      "test": "Final UX guidance real Qt011/012/015 against independent rebuilt suite",
+      "result": "5 framework entries passed,0failed/skipped;21.285s",
+      "logs": [
+        "ux-qt-tests.txt",
+        "ux-rebuild.txt",
+        "ux-test-rebuild.txt"
+      ]
+    },
+    {
+      "test": "New native020 strict loader negative cases",
+      "result": "1 passed,0failed/ignored;4.98s",
+      "logs": [
+        "ux-native020.txt"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "QT2-A01",
+      "severity": "medium",
+      "finding": "Error/backpressure reply while shutdown drains could remove final pending command without scheduling quit.",
+      "disposition": "resolved;central continueQuit plus finite shutdown deadline;independent real-worker error-drain test passes"
+    },
+    {
+      "id": "QT2-A02",
+      "severity": "high",
+      "finding": "Process expected-values check observed bridge state but not actual renderer text.",
+      "disposition": "resolved;actual matched input/output QQuickItem.text now required;complete independent process suite passes"
+    },
+    {
+      "id": "QT2-A03",
+      "severity": "medium",
+      "finding": "Field-specific negative accessibility coverage required actual attached-property context; global error could otherwise appear on unrelated fields.",
+      "disposition": "resolved;QQmlEngine::contextForObject(item), checked fixed property writes;independent actual principal description/non-error rate empty test passes"
+    },
+    {
+      "id": "QT2-A04",
+      "severity": "medium",
+      "finding": "New DesktopBridge needed genuine stale/queue/conflict tests;stale same-token frame must not retire live pending request.",
+      "disposition": "resolved;validation precedes pending retirement;independent six-case Qt suite passes"
+    }
+  ],
+  "limitations": [
+    "Approval is scoped to reviewed source bytes and Qt integration; not milestone acceptance or hosted CI certification.",
+    "Offscreen Qt accessibility instrumentation does not certify platform screen readers or native GPU rendering.",
+    "Separate persistence/security review and full accepted regressions/hosted gates remain mandatory."
+  ],
+  "archive": "docs/implementation/vslice-002/evidence/independent-qt.zip",
+  "archiveSha256": "64f9e0504b985f04164f9effc6dd3e7bc6f38b43beda32df1b3b6d083f248f4b",
+  "followupReview": "Reviewed four native-only changes: bounded response token/control echoes; bounded reader backpressure token; fail-closed getrandom temporary nonce; maximum-valid actual Echo16-room/32-control/510-digit framing case replacing slow72-registry-admission stress. No Qt source changes. Independent focused VS2-018 using unchanged separately built app and final native binaries passed1 test0failed/skipped in10.437s; two genuine Qt/worker process pairs, exact cold committed values and0display invocations. Native/storage final reruns are independently recorded by Review B.",
+  "uxFollowupReview": "2026-10-27 archival verification of focused independent executions performed before interruption: reviewed only two Qt production changes, adding fixed plain-language incomplete/schema/conflict/guest-failure guidance while retaining native code text, and readable queue-full wait/review/explicit-Apply guidance plus accessible description. No protocol, control, execution or accepted ADR004 source changes. Independently rebuilt app and Qt tests; process009/013 passed2 tests0failed/skipped22.711s, Qt011/012/015 passed5 framework entries0failed/skipped21.285s. Archived actual error samples include incomplete/field-format/retained-result guidance. Approval retained for these exact refreshed Qt source hashes. Review B subsequently confirmed new native test/corpus; see negativeFixtureFollowup.",
+  "negativeFixtureFollowup": "Review B independently approved final strict-loader negative fixture/test additions and reran storage6cases0failed/ignored0.27s plus targeted native0201passed0failed/ignored5.67s. Review A independently reran native0201passed0failed/ignored4.98s. Test-only native vs2.rs hash refreshed; no production native changes."
+}

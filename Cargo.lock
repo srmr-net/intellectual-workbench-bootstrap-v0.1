@@ -2104,6 +2104,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "wb-desktop-host"
+version = "0.1.0"
+dependencies = [
+ "jsonschema",
+ "libc",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "wb-contracts",
+ "wb-kernel",
+ "wb-registry",
+ "wb-semantic",
+ "wb-storage",
+ "wb-ui-host",
+ "wb-wasm-host",
+]
+
+[[package]]
 name = "wb-kernel"
 version = "0.1.0"
 dependencies = [
@@ -2165,6 +2184,15 @@ dependencies = [
 [[package]]
 name = "wb-storage"
 version = "0.1.0"
+dependencies = [
+ "jsonschema",
+ "libc",
+ "serde",
+ "serde_json",
+ "sha2",
+ "tempfile",
+ "wb-contracts",
+]
 
 [[package]]
 name = "wb-testkit"
