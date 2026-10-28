@@ -1,0 +1,8 @@
+No dynamic package QML/model tool execution in Main.qml
+No dynamic package QML/model tool execution in OperatorPanel.cpp
+No dynamic package QML/model tool execution in host/src/main.rs
+Accepted private Session API, exact workspaceCAS append, and canonical view-counter preservation inspected.
+Trusted generic QML differs solely in view-lifetime model expression; no calculator-specific branch or math.
+target/vs3-build/workbench-vslice003 99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291
+target/debug/wb-vslice003-worker fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16
+All checks passed; these static checks supplement independent code inspection and actual product tests.

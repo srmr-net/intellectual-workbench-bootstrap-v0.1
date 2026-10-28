@@ -1,0 +1,93 @@
+test_vs3_001_real_isolated_process (__main__.Journey.test_vs3_001_real_isolated_process) ... ok
+test_vs3_002_keyboard_accessible_three_columns (__main__.Journey.test_vs3_002_keyboard_accessible_three_columns) ... ok
+test_vs3_003_actual_boundary_provider (__main__.Journey.test_vs3_003_actual_boundary_provider) ... ok
+test_vs3_004_admitted_readonly_discovery (__main__.Journey.test_vs3_004_admitted_readonly_discovery) ... ok
+test_vs3_005_opaque_selection_independent_identity (__main__.Journey.test_vs3_005_opaque_selection_independent_identity) ... ok
+test_vs3_006_exact_normalization_and_real_payment (__main__.Journey.test_vs3_006_exact_normalization_and_real_payment) ... ok
+test_vs3_007_clarification_no_defaults (__main__.Journey.test_vs3_007_clarification_no_defaults) ... ok
+test_vs3_008_strict_suggestion_boundaries (__main__.Journey.test_vs3_008_strict_suggestion_boundaries) ... ok
+test_vs3_009_instruction_injection_powerless (__main__.Journey.test_vs3_009_instruction_injection_powerless) ... ok
+test_vs3_010_exact_preview_without_mutation (__main__.Journey.test_vs3_010_exact_preview_without_mutation) ... ok
+test_vs3_011_canonical_plan_schema_revision (__main__.Journey.test_vs3_011_canonical_plan_schema_revision) ... ok
+test_vs3_012_reject_and_cancel_preserve_existing_room (__main__.Journey.test_vs3_012_reject_and_cancel_preserve_existing_room) ... ok
+test_vs3_013_confirm_double_click_and_replay_fences (__main__.Journey.test_vs3_013_confirm_double_click_and_replay_fences) ... ok
+test_vs3_014_workspace_drift_revalidation (__main__.Journey.test_vs3_014_workspace_drift_revalidation) ... ok
+test_vs3_015_kernel_apply_revision_and_audit (__main__.Journey.test_vs3_015_kernel_apply_revision_and_audit) ... ERROR
+test_vs3_016_real_installed_wasm_committed_canvas (__main__.Journey.test_vs3_016_real_installed_wasm_committed_canvas) ... ERROR
+test_vs3_017_partial_initialization_truthful_repair (__main__.Journey.test_vs3_017_partial_initialization_truthful_repair) ... ok
+test_vs3_018_reactive_edit_zero_further_provider (__main__.Journey.test_vs3_018_reactive_edit_zero_further_provider) ... ok
+test_vs3_019_invalid_edit_retains_last_commit (__main__.Journey.test_vs3_019_invalid_edit_retains_last_commit) ... ok
+test_vs3_020_room_switch_and_rapid_edits (__main__.Journey.test_vs3_020_room_switch_and_rapid_edits) ... ok
+test_vs3_021_two_operator_rooms_isolated (__main__.Journey.test_vs3_021_two_operator_rooms_isolated) ... ok
+test_vs3_022_pinned_cold_process_zero_compute (__main__.Journey.test_vs3_022_pinned_cold_process_zero_compute) ... ok
+test_vs3_023_missing_pin_non_destructive_recovery (__main__.Journey.test_vs3_023_missing_pin_non_destructive_recovery) ... ok
+test_vs3_024_provider_bounds_cancellation_privacy (__main__.Journey.test_vs3_024_provider_bounds_cancellation_privacy) ... ok
+
+======================================================================
+ERROR: test_vs3_015_kernel_apply_revision_and_audit (__main__.Journey.test_vs3_015_kernel_apply_revision_and_audit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/vslice-003-tests/process_cases.py", line 107, in test_vs3_015_kernel_apply_revision_and_audit
+    r=self.launch(self.assemble()+[QUIT]);s=next(s for s in r['samples'] if s['action']=='approve')['operatorReply'];self.assertTrue(s['topologyCommitted'] and s['topologyCheckpointPersisted']);self.assertGreater(int(s['roomRevision']),0);self.assertTrue(any(e['kind']=='invocation.started' for e in s['nativeAudit']))
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/vslice-003-tests/process_cases.py", line 43, in launch
+    process=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,env=env)
+  File "/usr/lib/python3.14/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1875, in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      p2cread, p2cwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      c2pread, c2pwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      errread, errwrite)
+                      ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1819, in _posix_spawn
+    self.pid = os.posix_spawn(executable, args, env, **kwargs)
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs3-build/workbench-vslice003'
+
+======================================================================
+ERROR: test_vs3_016_real_installed_wasm_committed_canvas (__main__.Journey.test_vs3_016_real_installed_wasm_committed_canvas)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/vslice-003-tests/process_cases.py", line 109, in test_vs3_016_real_installed_wasm_committed_canvas
+    r=self.launch(self.assemble()+[QUIT]);outputs=[c for s in r['samples'] for c in s['controls'] if c['id']=='payment'];self.assertTrue(any(c['text']=='1461.48' for c in outputs));self.assertEqual(r['finalState']['projection']['values']['payment'],'1461.48')
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/vslice-003-tests/process_cases.py", line 43, in launch
+    process=subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,env=env)
+  File "/usr/lib/python3.14/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1875, in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      p2cread, p2cwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      c2pread, c2pwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      errread, errwrite)
+                      ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.14/subprocess.py", line 1819, in _posix_spawn
+    self.pid = os.posix_spawn(executable, args, env, **kwargs)
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs3-build/workbench-vslice003'
+
+----------------------------------------------------------------------
+Ran 24 tests in 502.208s
+
+FAILED (errors=2)

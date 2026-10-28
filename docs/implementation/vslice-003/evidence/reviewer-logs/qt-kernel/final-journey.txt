@@ -1,0 +1,6 @@
+test_vs3_001_real_isolated_process (__main__.Journey.test_vs3_001_real_isolated_process) ... ok
+test_vs3_002_keyboard_accessible_three_columns (__main__.Journey.test_vs3_002_keyboard_accessible_three_columns) ... ok
+test_vs3_003_actual_boundary_provider (__main__.Journey.test_vs3_003_actual_boundary_provider) ... ok
+test_vs3_004_admitted_readonly_discovery (__main__.Journey.test_vs3_004_admitted_readonly_discovery) ... ok
+test_vs3_005_opaque_selection_independent_identity (__main__.Journey.test_vs3_005_opaque_selection_independent_identity) ... ok
+test_vs3_006_exact_normalization_and_real_payment (__main__.Journey.test_vs3_006_exact_normalization_and_real_payment) ... 

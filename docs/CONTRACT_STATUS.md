@@ -35,3 +35,5 @@ No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffoldin
 
 - ADR-013 committed desktop checkpoint/internal coordination: **Accepted** for scoped Linux clean-quit persistence; [decision](adr/ADR-013.md). ADR012 full database recovery remains open.
 - VSLICE-002 interactive mortgage/persistent canvas: **Accepted**; all24 gates, independent reviews, genuine25-process evidence and [verified hosted artifacts](implementation/vslice-002/evidence/RESULTS.md).
+
+- VSLICE-003 complete Linux desktop Operator journey: **Accepted** for the deterministic offline profile; all26 gates, independent reviews and [verified hosted evidence](implementation/vslice-003/evidence/RESULTS.md) pass. Accepted ADR005 boundaries and all earlier contracts remain unchanged.

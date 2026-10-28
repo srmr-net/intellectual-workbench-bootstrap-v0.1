@@ -1,0 +1,40 @@
+{
+  "verified": true,
+  "hosted": false,
+  "source": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+  "head": null,
+  "archiveSha256": "ba86aa3125a24cc00871f598f79369b9f6873feb74774ac9ab3f7acba86b650b",
+  "test": "test_vs3_026_complete_downloaded_hosted_evidence",
+  "vs3Gates": 26,
+  "namedJourneyTests": 24,
+  "nativeWorkerTests": 6,
+  "metadataTests": 6,
+  "appWorkerPairs": 25,
+  "retained": {
+    "verified": true,
+    "hosted": false,
+    "source": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+    "head": null,
+    "archiveSha256": "ba86aa3125a24cc00871f598f79369b9f6873feb74774ac9ab3f7acba86b650b",
+    "operatorCases": 24,
+    "rustTests": 162,
+    "newNativeTests": 24,
+    "workerTests": 9,
+    "qtProcessTests": 6,
+    "desktopProcesses": 7,
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "appSha256": "485c78df7083662ad468dfb0576f47731c33aa343ead4f66cade2f9560ac595a",
+    "workerSha256": "1ff88c55b94a0a6b77a614b66cf62d6df92acc137ec38c59a3c69fe0b1272d69",
+    "reviewers": [
+      "/root/review_op_security",
+      "independent agent /root/review_op_runtime; no implementation authorship"
+    ],
+    "qtVersions": "QMake version 3.1\nUsing Qt version 6.11.2 in /usr/lib\n"
+  },
+  "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+  "workerSha256": "fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16",
+  "coldProviderCalls": 0,
+  "coldGuestInvocations": 0,
+  "qt": "QMake version 3.1\nUsing Qt version 6.11.2 in /usr/lib\n"
+}

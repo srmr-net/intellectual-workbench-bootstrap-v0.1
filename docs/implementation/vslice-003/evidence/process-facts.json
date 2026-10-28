@@ -1,0 +1,590 @@
+{
+  "hosted": {
+    "compiler": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+    "processes": [
+      {
+        "case": "vs3/process/test_vs3_001_real_isolated_process/run-1/report.json",
+        "appPid": 18951,
+        "workerPid": 18953,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_002_keyboard_accessible_three_columns/run-1/report.json",
+        "appPid": 18960,
+        "workerPid": 18962,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_003_actual_boundary_provider/run-1/report.json",
+        "appPid": 18976,
+        "workerPid": 18978,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_004_admitted_readonly_discovery/run-1/report.json",
+        "appPid": 18990,
+        "workerPid": 18992,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_005_opaque_selection_independent_identity/run-1/report.json",
+        "appPid": 19129,
+        "workerPid": 19131,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_006_exact_normalization_and_real_payment/run-1/report.json",
+        "appPid": 19142,
+        "workerPid": 19144,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_007_clarification_no_defaults/run-1/report.json",
+        "appPid": 19157,
+        "workerPid": 19159,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_009_instruction_injection_powerless/run-1/report.json",
+        "appPid": 19219,
+        "workerPid": 19221,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_010_exact_preview_without_mutation/run-1/report.json",
+        "appPid": 19260,
+        "workerPid": 19262,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_011_canonical_plan_schema_revision/run-1/report.json",
+        "appPid": 19275,
+        "workerPid": 19277,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_012_reject_and_cancel_preserve_existing_room/run-1/report.json",
+        "appPid": 19314,
+        "workerPid": 19316,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_013_confirm_double_click_and_replay_fences/run-1/report.json",
+        "appPid": 19329,
+        "workerPid": 19331,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_014_workspace_drift_revalidation/run-1/report.json",
+        "appPid": 19393,
+        "workerPid": 19395,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_015_kernel_apply_revision_and_audit/run-1/report.json",
+        "appPid": 19462,
+        "workerPid": 19464,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_016_real_installed_wasm_committed_canvas/run-1/report.json",
+        "appPid": 19476,
+        "workerPid": 19478,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_017_partial_initialization_truthful_repair/run-1/report.json",
+        "appPid": 19498,
+        "workerPid": 19500,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_018_reactive_edit_zero_further_provider/run-1/report.json",
+        "appPid": 19513,
+        "workerPid": 19515,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_019_invalid_edit_retains_last_commit/run-1/report.json",
+        "appPid": 19529,
+        "workerPid": 19531,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_019_invalid_edit_retains_last_commit/run-2/report.json",
+        "appPid": 19551,
+        "workerPid": 19553,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_020_room_switch_and_rapid_edits/run-1/report.json",
+        "appPid": 19570,
+        "workerPid": 19572,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_021_two_operator_rooms_isolated/run-1/report.json",
+        "appPid": 19586,
+        "workerPid": 19588,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_022_pinned_cold_process_zero_compute/run-1/report.json",
+        "appPid": 19629,
+        "workerPid": 19631,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_022_pinned_cold_process_zero_compute/run-2/report.json",
+        "appPid": 19644,
+        "workerPid": 19646,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_023_missing_pin_non_destructive_recovery/run-1/report.json",
+        "appPid": 19653,
+        "workerPid": 19655,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_023_missing_pin_non_destructive_recovery/run-2/report.json",
+        "appPid": 19668,
+        "workerPid": 19670,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      }
+    ],
+    "coldBefore": {
+      "appPid": 19629,
+      "workerPid": 19631,
+      "rooms": [
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd",
+            "version": "0.1.0"
+          },
+          "id": "intent-room",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        },
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd",
+            "version": "0.1.0"
+          },
+          "id": "intent-room-2",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        }
+      ],
+      "values": {
+        "payment": "1753.77",
+        "principal": "300000",
+        "rate": "5",
+        "term": "300"
+      }
+    },
+    "coldAfter": {
+      "appPid": 19644,
+      "workerPid": 19646,
+      "rooms": [
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd",
+            "version": "0.1.0"
+          },
+          "id": "intent-room",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        },
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd",
+            "version": "0.1.0"
+          },
+          "id": "intent-room-2",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        }
+      ],
+      "values": {
+        "payment": "1753.77",
+        "principal": "300000",
+        "rate": "5",
+        "term": "300"
+      },
+      "guestInvocations": "0",
+      "providerCalls": "0"
+    },
+    "allColdCheckpointsIdentical": true,
+    "coldCheckpointSha256": "0f6cb553a887547c93c12227d2f2736919c8e959fa2f252259f8e565e723f070"
+  },
+  "local": {
+    "compiler": "c++ (GCC) 16.2.1 20260810\nCopyright (C) 2026 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+    "source": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+    "processes": [
+      {
+        "case": "vs3/process/test_vs3_001_real_isolated_process/run-1/report.json",
+        "appPid": 764990,
+        "workerPid": 764993,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_002_keyboard_accessible_three_columns/run-1/report.json",
+        "appPid": 764999,
+        "workerPid": 765002,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_003_actual_boundary_provider/run-1/report.json",
+        "appPid": 765019,
+        "workerPid": 765022,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_004_admitted_readonly_discovery/run-1/report.json",
+        "appPid": 765038,
+        "workerPid": 765041,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_005_opaque_selection_independent_identity/run-1/report.json",
+        "appPid": 765119,
+        "workerPid": 765122,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_006_exact_normalization_and_real_payment/run-1/report.json",
+        "appPid": 765139,
+        "workerPid": 765142,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_007_clarification_no_defaults/run-1/report.json",
+        "appPid": 765161,
+        "workerPid": 765164,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_009_instruction_injection_powerless/run-1/report.json",
+        "appPid": 765236,
+        "workerPid": 765239,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_010_exact_preview_without_mutation/run-1/report.json",
+        "appPid": 765283,
+        "workerPid": 765286,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_011_canonical_plan_schema_revision/run-1/report.json",
+        "appPid": 765302,
+        "workerPid": 765305,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_012_reject_and_cancel_preserve_existing_room/run-1/report.json",
+        "appPid": 765363,
+        "workerPid": 765366,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_013_confirm_double_click_and_replay_fences/run-1/report.json",
+        "appPid": 765399,
+        "workerPid": 765402,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_014_workspace_drift_revalidation/run-1/report.json",
+        "appPid": 765706,
+        "workerPid": 765709,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_015_kernel_apply_revision_and_audit/run-1/report.json",
+        "appPid": 765809,
+        "workerPid": 765812,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_016_real_installed_wasm_committed_canvas/run-1/report.json",
+        "appPid": 765833,
+        "workerPid": 765836,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_017_partial_initialization_truthful_repair/run-1/report.json",
+        "appPid": 765882,
+        "workerPid": 765885,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_018_reactive_edit_zero_further_provider/run-1/report.json",
+        "appPid": 765904,
+        "workerPid": 765907,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_019_invalid_edit_retains_last_commit/run-1/report.json",
+        "appPid": 765932,
+        "workerPid": 765935,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_019_invalid_edit_retains_last_commit/run-2/report.json",
+        "appPid": 765966,
+        "workerPid": 765969,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_020_room_switch_and_rapid_edits/run-1/report.json",
+        "appPid": 765992,
+        "workerPid": 765995,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_021_two_operator_rooms_isolated/run-1/report.json",
+        "appPid": 766017,
+        "workerPid": 766020,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_022_pinned_cold_process_zero_compute/run-1/report.json",
+        "appPid": 766081,
+        "workerPid": 766084,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_022_pinned_cold_process_zero_compute/run-2/report.json",
+        "appPid": 766119,
+        "workerPid": 766122,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_023_missing_pin_non_destructive_recovery/run-1/report.json",
+        "appPid": 766126,
+        "workerPid": 766129,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      },
+      {
+        "case": "vs3/process/test_vs3_023_missing_pin_non_destructive_recovery/run-2/report.json",
+        "appPid": 766152,
+        "workerPid": 766155,
+        "initialProviderCalls": "0",
+        "initialGuestInvocations": "0",
+        "exitCode": 0
+      }
+    ],
+    "coldBefore": {
+      "appPid": 766081,
+      "workerPid": 766084,
+      "rooms": [
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+            "version": "0.1.0"
+          },
+          "id": "intent-room",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        },
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+            "version": "0.1.0"
+          },
+          "id": "intent-room-2",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        }
+      ],
+      "values": {
+        "payment": "1753.77",
+        "principal": "300000",
+        "rate": "5",
+        "term": "300"
+      }
+    },
+    "coldAfter": {
+      "appPid": 766119,
+      "workerPid": 766122,
+      "rooms": [
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+            "version": "0.1.0"
+          },
+          "id": "intent-room",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        },
+        {
+          "component": {
+            "id": "org.workbench.example.mortgage-ui",
+            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+            "version": "0.1.0"
+          },
+          "id": "intent-room-2",
+          "label": "Intent room",
+          "pinned": true,
+          "ui": {
+            "path": "ui.json",
+            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+          }
+        }
+      ],
+      "values": {
+        "payment": "1753.77",
+        "principal": "300000",
+        "rate": "5",
+        "term": "300"
+      },
+      "guestInvocations": "0",
+      "providerCalls": "0"
+    },
+    "allColdCheckpointsIdentical": true,
+    "coldCheckpointSha256": "dad05b4f3eb8e2d74fd7f966563235cd504bfd5df73f968e33c01469cf21ae10"
+  }
+}

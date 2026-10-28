@@ -1,0 +1,190 @@
+{
+  "reviewer": "/root/review_vs3_security",
+  "role": "A: independent agent boundary, prompt injection, privacy, proposal authority and evidence provenance",
+  "status": "APPROVED",
+  "reviewDate": "2026-10-27",
+  "implementationCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+  "sourceBinding": "Exactly the24 paths returned by contract.sources(); every working file matched the reviewed commit before and after final testing. No implementation authorship or source edits by reviewer.",
+  "sourceSha256": {
+    ".github/workflows/vslice-003.yml": "54902664265419326ce129b42c55f3177ca1a9190ba0010fb53831ea2af8da58",
+    "apps/desktop-qt/validate-vslice-003.sh": "b864b346c56ead780a1bd7408faa0a938bf4ea907c6c9270a6bf83bbf9d9887a",
+    "apps/desktop-qt/vslice-003-tests/collect_evidence.py": "fdd55bdcb7dc3c9e926dd9bc6b47f999a1cb344e3466a0abdce70ebfc97d7f09",
+    "apps/desktop-qt/vslice-003-tests/contract.py": "eb6a0b977209be21e3ca631e0a7e301271d7f470b53916e4e3487a1554cfee3c",
+    "apps/desktop-qt/vslice-003-tests/evidence_tests.py": "cb3bbddcb8870cacd9fc1566d1802a3a82e72e7b1fd6d1c1978317256e0eb317",
+    "apps/desktop-qt/vslice-003-tests/process_cases.py": "bffe6babce52b555cb6e83cedb5d2f366934f2c16e30e5c0cf492bb72a734bf1",
+    "apps/desktop-qt/vslice-003-tests/worker_cases.py": "11853dc658b2293715a976abe7aeafb1a2665b8b8cc354d78a7e8b00fdadbb68",
+    "apps/desktop-qt/vslice-003/Main.qml": "c92127bcfe989f6848c968bc737ba606f8a5dd9ad855dcd8592afaf6a0047818",
+    "apps/desktop-qt/vslice-003/OperatorDriver.cpp": "40283d8d894996a86addd8a4326d6387fbd80b19ad2a6eb7061f0e823245cf08",
+    "apps/desktop-qt/vslice-003/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
+    "apps/desktop-qt/vslice-003/OperatorPanel.cpp": "a00d2ac943850fdd6fd409f11ac176ed0cea50d438886af3223baf08bfd9a171",
+    "apps/desktop-qt/vslice-003/OperatorPanel.h": "c01960a4f2ff13071232e1d8fdfa5d110d5bb71deaa3d37f50f7ea17a5dd416a",
+    "apps/desktop-qt/vslice-003/README.md": "448129ad6b22fb0018488882b5ef1d878c4d434740f694bd0decfb5639ad73ca",
+    "apps/desktop-qt/vslice-003/host/Cargo.lock": "8bb42d7fff12d75086686e9871bfead6334a20d7c9ce2ad1d1e191162ecd2d01",
+    "apps/desktop-qt/vslice-003/host/Cargo.toml": "a89401412233b93e988e19df3aca819f373ab4a983c7afed84be58863f90542e",
+    "apps/desktop-qt/vslice-003/host/README.md": "24269ce7ad300a2f9c150babcf5e0fa99572ad7c32faf2061b2a653d0b3fc04a",
+    "apps/desktop-qt/vslice-003/host/src/main.rs": "37dfbaefced6609c5c7ff661796dcec73baea43fa6c43ea1d3f033cc76a67ddf",
+    "apps/desktop-qt/vslice-003/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/vslice-003/operator.pro": "e7be85a1329429604a392bac90e2d3294916524e8eda41ddd2f2b390cdeee611",
+    "apps/desktop-qt/vslice-003/resources.qrc": "52cad172dfcf5d5d6e79a52d7a672cf74e0fde636f98f7e778f9ae564b723098",
+    "docs/implementation/vslice-003/REVIEW_CHECKLISTS.md": "b6ecf99c1f3b8976accd2c5d19b8b72fdb48e36a3213f7eaf30f79c24c098db1",
+    "docs/implementation/vslice-003/TEST_MATRIX.md": "ab3dd2f697a3a07e3ffe240427ba29e9e6c1eedca77980670d466f718a2c1086",
+    "docs/implementation/vslice-003/VALIDATION_TASK.md": "4d96d1cb871d29e97cab17ee878ccd942e28b5d53b02e28da334bbff1a24decf",
+    "docs/implementation/vslice-003/evidence/verify.py": "90e3c6992673fef54673db92b6307e864a0137138ea689af75fb7a3b6971faab"
+  },
+  "independentTests": [
+    {
+      "command": "REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_VS3_EVIDENCE_DIR=\"$PWD/target/review-vs3-security/final-artifacts\" target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/worker_cases.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 6,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final-worker-tests.txt",
+      "logSha256": "bbe6c5533197bf5263afc4265f917b46e3354207de59d627845e2414e9daa904"
+    },
+    {
+      "command": "REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_VS3_EVIDENCE_DIR=\"$PWD/target/review-vs3-security/final03-artifacts\" target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/process_cases.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 24,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final03-journey-tests.txt",
+      "logSha256": "073ad7f3d1749e758e73de04401c4b009a25033aab605014d77b5a9076e050c8"
+    },
+    {
+      "command": "target/vs2-venv/bin/python apps/desktop-qt/vslice-003-tests/evidence_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "testsPassed": 6,
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final-evidence-tests.txt",
+      "logSha256": "22c2a6f9be3c505b4ccaabe1a9eeb68ee591f2e43a864b7b5aa3839b0cdc880e"
+    }
+  ],
+  "testedWorkerAndProvenanceCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+  "testedQtCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+  "testProvenance": "Six worker and six provenance cases ran against0ec4200; all their runtime/test/verifier bytes are identical at03b6ac6. Full24 journey cases were rerun after the final03 Qt executable was frozen. Earlier mixed-binary runs are historical only, not acceptance evidence.",
+  "findings": [
+    {
+      "id": "SEC-001",
+      "severity": "medium",
+      "finding": "The view-counter adapter normalized noncanonical top-level epoch strings such as01 and+1 that accepted Desktop rejects.",
+      "introducedCommit": "3de262d7f58d2bb2b86f979e975fa088a2eb41ec",
+      "fixCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+      "disposition": "Closed: exact canonical lexical equality is required before translation; invalid epochs remain invalid. Independently rebuilt original committed worker and observed01 Quit accepted; accepted and fixed workers reject it withSTALE_VIEW. New native20 rejects noncanonical counters before/after handoff, as well as old/future generations."
+    },
+    {
+      "id": "SEC-002",
+      "severity": "medium",
+      "finding": "Successful API metadata from another workflow/run on the same head could substitute for a failed VS3 run because archived run id/attempt were not bound.",
+      "introducedCommit": "3de262d7f58d2bb2b86f979e975fa088a2eb41ec",
+      "fixCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+      "disposition": "Closed: new verifier binds exact API run id/attempt, VS3 workflow path, repository, PR merge ref, source, head, Linux and completed success. Independently executed original hosted metadata condition showing substituted metadata accepted; fixed validator rejects it. All six provenance positives/negatives pass."
+    },
+    {
+      "id": "INTEGRATION-001",
+      "severity": "medium",
+      "finding": "Qt/kernel reviewer identified that external valid snapshot CAS replacement needed a refresh reply after Desktop reopened.",
+      "fixCommit": "0ec4200656374ccc2df23fd19dabf182ea1e4295",
+      "disposition": "Independently inspected refresh/topologyCommitted:false correction and reran all six native cases, including actual external replacement with saved bytes preserved, updated pin state and zero guest calls."
+    }
+  ],
+  "checklist": {
+    "providerHasNoPrivilegedHostTools": true,
+    "admittedOnlyBoundedReadOnlyDiscovery": true,
+    "strictSuggestionFieldsUnitsAndLimits": true,
+    "exactPinRevalidationOnConfirmation": true,
+    "explicitProposalRoomRevisionExpirySingleUseConsent": true,
+    "perRoomPrivacyCancellationAndTimeoutFences": true,
+    "noNewWitGuestPrivilegesRemoteRegistryOrExecutablePackageQml": true
+  },
+  "observedFacts": {
+    "reviewedCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+    "criticalSources": 24,
+    "genuineAppWorkerPairs": 25,
+    "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+    "workerSha256": "fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16",
+    "coldAppPids": [
+      754888,
+      754939
+    ],
+    "coldWorkerPids": [
+      754891,
+      754942
+    ],
+    "coldRooms": [
+      {
+        "component": {
+          "id": "org.workbench.example.mortgage-ui",
+          "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+          "version": "0.1.0"
+        },
+        "id": "intent-room",
+        "label": "Intent room",
+        "pinned": true,
+        "ui": {
+          "path": "ui.json",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+        }
+      },
+      {
+        "component": {
+          "id": "org.workbench.example.mortgage-ui",
+          "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+          "version": "0.1.0"
+        },
+        "id": "intent-room-2",
+        "label": "Intent room",
+        "pinned": true,
+        "ui": {
+          "path": "ui.json",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+        }
+      }
+    ],
+    "providerCallsAfterReactiveEdit": 1,
+    "coldProviderCalls": 0,
+    "coldGuestCalls": 0,
+    "workerAndProvenanceBytesUnchangedFromTested0ec4200": true
+  },
+  "acceptedContractPreservation": "Independently verified every49 security and60 runtime entries from accepted ADR005 source receipts, plus accepted WIT/manifest/composition/UI/room/ontology/kernel files against basecc42020; detailed separate log. These are not extra sourceSha256 entries because retained OP artifact owns their archive inventory.",
+  "supplementalLogs": [
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final03-source-check.txt",
+      "sha256": "d09000ede1a3c956fc1b0971b6adb1b6bb93c5dad23c3aac2e0862c0ba7f3305"
+    },
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/accepted-boundary-source-check.txt",
+      "sha256": "dffaea52cf70f7c763c4e56a8a89545915a75e76f7c6fdb66c77b1e7bc480f6c"
+    },
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final-static-security-check.txt",
+      "sha256": "72bb0393e051c29de8631f6ec2d19405781bd717620acfb82cd3623f7a442a46"
+    },
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/lexical-counter-original-and-fixed.txt",
+      "sha256": "5cca3320a60c042b54ab819a0f2788aabb0c9899189a943a667872017c86e937"
+    },
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/provenance-original-and-fixed.txt",
+      "sha256": "f0176cc4c3c3a52cd2ed224087ca9221b5353a299dde79f62159fbbf672d7ccf"
+    },
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/final-facts.txt",
+      "sha256": "6a1c516ffe8ffe87a067bb0711b5f210ba289745cf17f6f6df2b52759e9ee872"
+    }
+  ],
+  "historicalAttempts": [
+    {
+      "log": "docs/implementation/vslice-003/evidence/reviewer-logs/agent-security/historical-unfrozen-journey-tests.txt",
+      "sha256": "19142d78664abd5ff633967a1af71c7c82e40a28a9d3f9a48904f8ec59f66646",
+      "exitCode": 1,
+      "reason": "Pre-freeze run had2 process-spawn PermissionError exceptions while primary relinked Qt; no green claim. Superseded by complete frozen03 run24/24 passing."
+    }
+  ],
+  "limitations": [
+    "Scoped Linux deterministic offline profile: one new empty room per request, bounded single composer; populated-room/multi-component planning and external provider trials remain deferred.",
+    "Topology checkpoint append and typed initialization are separate stages; no cross-stage transaction/rollback claim. Existing saved checkpoints were preserved under native filesystem failure and CAS drift tests.",
+    "This source-bound security approval does not independently accept the milestone: full retained local wrapper, second review and successful exact hosted-run/download verification remain mandatory.",
+    "Primary local/hosted full162 Rust regression chain is a separate gate; independent journey tests execute mapped native boundary cases rather than claiming an independent full162 run."
+  ],
+  "remainingMandatory": []
+}

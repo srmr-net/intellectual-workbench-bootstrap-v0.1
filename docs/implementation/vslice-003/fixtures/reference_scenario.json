@@ -1,0 +1,19 @@
+{
+  "scenarioId": "vs3-reference-mortgage",
+  "provider": "deterministic-offline",
+  "intent": "I need a mortgage calculator for a \u00a3250,000 loan over 25 years at 5%.",
+  "expected": {
+    "currency": "GBP",
+    "principal": "250000",
+    "annualRatePercent": "5",
+    "termYears": 25,
+    "monthlyPayment": "1461.48"
+  },
+  "constraints": {
+    "componentPin": "resolve-from-installed-registry",
+    "approval": "explicit",
+    "modelCallsAfterAssembly": 0,
+    "modelCallsDuringRestore": 0,
+    "guestCallsForRestoreDisplay": 0
+  }
+}

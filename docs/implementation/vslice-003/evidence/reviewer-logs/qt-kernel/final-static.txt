@@ -1,0 +1,9 @@
+Review HEAD 03b6ac6fc8f347cf314ab6c8816c0ea34f21b243
+Qt app 99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291
+Native worker fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16
+Accepted ADR005 independent source map unchanged: agent-security 49
+Accepted ADR005 independent source map unchanged: runtime-integration 60
+VS3 source inventory 24 paths includes trusted Main.qml/resources.qrc and provenance tests
+Qt model lifetime expression: model: bridge.ready ? bridge.controls : []
+Independent static review: no package-authored QML, no render math, no WIT/manifest/schema/ontology edits; Session authority and separate ingress preserved
+Review limitation: hosted acceptance remains external; this receipt does not self-accept VS3

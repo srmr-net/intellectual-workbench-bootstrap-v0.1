@@ -1,0 +1,51 @@
+{
+  "reviewedCommit": "03b6ac6fc8f347cf314ab6c8816c0ea34f21b243",
+  "criticalSources": 24,
+  "genuineAppWorkerPairs": 25,
+  "appSha256": "99efbfd782751dbfe3f0224f37045a905cfcd143295aaa847a105c3267a33291",
+  "workerSha256": "fdf20e427cea50daac2a6b162872bcf1a7daf7e4c3eba9ddd21a3df4918ccd16",
+  "coldAppPids": [
+    754888,
+    754939
+  ],
+  "coldWorkerPids": [
+    754891,
+    754942
+  ],
+  "coldRooms": [
+    {
+      "component": {
+        "id": "org.workbench.example.mortgage-ui",
+        "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+        "version": "0.1.0"
+      },
+      "id": "intent-room",
+      "label": "Intent room",
+      "pinned": true,
+      "ui": {
+        "path": "ui.json",
+        "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+        "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+      }
+    },
+    {
+      "component": {
+        "id": "org.workbench.example.mortgage-ui",
+        "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+        "version": "0.1.0"
+      },
+      "id": "intent-room-2",
+      "label": "Intent room",
+      "pinned": true,
+      "ui": {
+        "path": "ui.json",
+        "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+        "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+      }
+    }
+  ],
+  "providerCallsAfterReactiveEdit": 1,
+  "coldProviderCalls": 0,
+  "coldGuestCalls": 0,
+  "workerAndProvenanceBytesUnchangedFromTested0ec4200": true
+}

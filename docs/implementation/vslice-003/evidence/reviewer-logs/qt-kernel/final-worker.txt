@@ -1,0 +1,11 @@
+test_vs3_014_external_durable_replacement_requires_refresh (__main__.Handoff.test_vs3_014_external_durable_replacement_requires_refresh) ... ok
+test_vs3_014_workspace_drift_then_fresh_preview (__main__.Handoff.test_vs3_014_workspace_drift_then_fresh_preview) ... ok
+test_vs3_017_second_topology_write_failure_preserves_first (__main__.Handoff.test_vs3_017_second_topology_write_failure_preserves_first) ... ok
+test_vs3_020_old_and_future_view_counters_fail_closed (__main__.Handoff.test_vs3_020_old_and_future_view_counters_fail_closed) ... ok
+test_vs3_021_append_preserves_full_pinned_checkpoint (__main__.Handoff.test_vs3_021_append_preserves_full_pinned_checkpoint) ... ok
+test_vs3_024_cancel_queued_second_intent_no_persistence (__main__.Handoff.test_vs3_024_cancel_queued_second_intent_no_persistence) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 217.829s
+
+OK

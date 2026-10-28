@@ -51,3 +51,9 @@ consent to the existing shell. Build/check with
 `bash apps/desktop-qt/validate-operator.sh`; see the [Operator entry](apps/desktop-qt/operator/README.md)
 and [ADR005 gates](docs/implementation/adr-005/CONFORMANCE_MAP.md). Its ADR status
 requires independent review and successful archived hosted evidence.
+
+VSLICE-003 extends the bounded Operator journey to fresh empty rooms beside existing
+pinned canvases, with explicit confirmation/rejection and model-free edits/restoration.
+See [milestone status and evidence](docs/implementation/vslice-003/README.md) and
+[build/launch commands](apps/desktop-qt/vslice-003/README.md). Validate using
+`bash apps/desktop-qt/validate-vslice-003.sh`.

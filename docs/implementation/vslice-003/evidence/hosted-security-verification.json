@@ -1,0 +1,268 @@
+{
+  "reviewer": "/root/review_vs3_security",
+  "independent": true,
+  "verified": true,
+  "hostedRunUrl": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40603341850",
+  "hostedRunId": 40603341850,
+  "runAttempt": 1,
+  "workflowPath": ".github/workflows/vslice-003.yml",
+  "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+  "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+  "githubRef": "refs/pull/10/merge",
+  "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+  "runMetadataSha256": "80c753bd4fc4a54f33d01b25e28ea9252875921901e49a95b14cbf29d3e56c8b",
+  "verifierSha256": "90e3c6992673fef54673db92b6307e864a0137138ea689af75fb7a3b6971faab",
+  "positiveVerifierResult": {
+    "verified": true,
+    "hosted": true,
+    "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+    "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+    "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+    "test": "test_vs3_026_complete_downloaded_hosted_evidence",
+    "vs3Gates": 26,
+    "namedJourneyTests": 24,
+    "nativeWorkerTests": 6,
+    "metadataTests": 6,
+    "appWorkerPairs": 25,
+    "retained": {
+      "verified": true,
+      "hosted": true,
+      "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+      "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+      "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+      "operatorCases": 24,
+      "rustTests": 162,
+      "newNativeTests": 24,
+      "workerTests": 9,
+      "qtProcessTests": 6,
+      "desktopProcesses": 7,
+      "coldProviderCalls": 0,
+      "coldGuestInvocations": 0,
+      "appSha256": "0266ae649faedffd8b19cc3d913fc13809da4e2c5d1405e5f91c43e4f6da6fd1",
+      "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+      "reviewers": [
+        "/root/review_op_security",
+        "independent agent /root/review_op_runtime; no implementation authorship"
+      ],
+      "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+    },
+    "appSha256": "9e8edadc7f2761cf6085594278ff3c1525a6cddf6a7fc52812f5e4f4b2dd235a",
+    "workerSha256": "0777622aac7c83168892fda789244ca5ed09aa28a3d985097ebead31db5e13cb",
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "qt": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+  },
+  "negativeMetadataChecks": [
+    {
+      "case": "otherSuccessfulBootstrapRun",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/otherSuccessfulBootstrapRun.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "37f651b7d2b7316f55a72f39e9a32381a271ea12e0a8f3a0d966c2bdbed4a494"
+    },
+    {
+      "case": "wrongRunId",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongRunId.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "3cf046f812e1682b25f1d28c81f422c077b57e5a6705d213e6158e6b4f224196"
+    },
+    {
+      "case": "wrongRunAttempt",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongRunAttempt.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "b75e5577d93b0a9176f300c03265a9cd5011864612dc89f3a51cfeae9ee0004b"
+    },
+    {
+      "case": "wrongWorkflowPath",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongWorkflowPath.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "d4e5fdf064c4dfc52c3014d2a80f5e81a4314ebbee73e7235bc17b0c6bdbc1e6"
+    }
+  ],
+  "allCommands": [
+    {
+      "case": "exactSuccessfulVS3Run",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "docs/implementation/vslice-003/evidence/hosted-run.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 0,
+      "expected": "pass",
+      "passed": true
+    },
+    {
+      "case": "otherSuccessfulBootstrapRun",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/otherSuccessfulBootstrapRun.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "37f651b7d2b7316f55a72f39e9a32381a271ea12e0a8f3a0d966c2bdbed4a494"
+    },
+    {
+      "case": "wrongRunId",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongRunId.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "3cf046f812e1682b25f1d28c81f422c077b57e5a6705d213e6158e6b4f224196"
+    },
+    {
+      "case": "wrongRunAttempt",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongRunAttempt.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "b75e5577d93b0a9176f300c03265a9cd5011864612dc89f3a51cfeae9ee0004b"
+    },
+    {
+      "case": "wrongWorkflowPath",
+      "command": [
+        "python3",
+        "docs/implementation/vslice-003/evidence/verify.py",
+        "docs/implementation/vslice-003/evidence/hosted.zip",
+        "--sha256",
+        "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+        "--source",
+        "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+        "--hosted",
+        "--run-metadata",
+        "target/review-vs3-security/wrongWorkflowPath.json",
+        "--head",
+        "d3379a8a62972d56871249dafc4a66df783a5eb5"
+      ],
+      "exitCode": 1,
+      "expected": "reject",
+      "passed": true,
+      "metadataSha256": "d4e5fdf064c4dfc52c3014d2a80f5e81a4314ebbee73e7235bc17b0c6bdbc1e6"
+    }
+  ],
+  "otherSuccessfulRun": {
+    "url": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40603341608",
+    "id": 40603341608,
+    "path": ".github/workflows/ci.yml",
+    "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+    "status": "completed",
+    "conclusion": "success",
+    "metadata": "docs/implementation/vslice-003/evidence/hosted-security-other-run.json",
+    "metadataSha256": "45707474275254f890ac24b774dfebdb81409ec475a082ae0727e7e5576eee73"
+  },
+  "log": "docs/implementation/vslice-003/evidence/hosted-security-verification.log",
+  "logSha256": "c8c957f2bcf5667809178065f2d498c0854522475f6fef933a4162a93fe0a010",
+  "conclusion": "Exact successful VS3 run and downloaded artifact verified. Successful bootstrap run on identical head, changed run id, attempt and workflow path each independently rejected. Source-bound approval receipts and reviewed implementation remain unchanged.",
+  "independentlyFetchedArtifact": {
+    "id": 12779664042,
+    "name": "vslice003-validation-linux",
+    "digest": "sha256:66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+    "runId": 40603341850,
+    "metadata": "docs/implementation/vslice-003/evidence/hosted-security-artifacts.json",
+    "metadataSha256": "c1d2c6c65c2d8eb473a35db435319f78a975a24dac59dba9cd00a19fe80dba63"
+  }
+}

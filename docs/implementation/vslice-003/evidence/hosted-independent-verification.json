@@ -1,0 +1,134 @@
+{
+  "reviewer": "/root/review_vs3_qt_kernel",
+  "role": "Independent hosted archive and Qt/kernel cold-state verification; no source edits",
+  "verified": true,
+  "command": "python3 docs/implementation/vslice-003/evidence/verify.py docs/implementation/vslice-003/evidence/hosted.zip --sha256 66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb --source 9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9 --hosted --run-metadata docs/implementation/vslice-003/evidence/hosted-run.json --head d3379a8a62972d56871249dafc4a66df783a5eb5",
+  "exitCode": 0,
+  "runUrl": "https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/actions/runs/40603341850",
+  "runId": 40603341850,
+  "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+  "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+  "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+  "apiMetadataSha256": "80c753bd4fc4a54f33d01b25e28ea9252875921901e49a95b14cbf29d3e56c8b",
+  "verifierSha256": "90e3c6992673fef54673db92b6307e864a0137138ea689af75fb7a3b6971faab",
+  "retainedVerifierSha256": "fad68997cda223cd8bf608d8c75cfc591dfe72c1e3cc645ef5653e603ea89269",
+  "verifierResult": {
+    "verified": true,
+    "hosted": true,
+    "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+    "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+    "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+    "test": "test_vs3_026_complete_downloaded_hosted_evidence",
+    "vs3Gates": 26,
+    "namedJourneyTests": 24,
+    "nativeWorkerTests": 6,
+    "metadataTests": 6,
+    "appWorkerPairs": 25,
+    "retained": {
+      "verified": true,
+      "hosted": true,
+      "source": "9bac8f276c5fe6b5d97dbfa0647d9798d8f8f0a9",
+      "head": "d3379a8a62972d56871249dafc4a66df783a5eb5",
+      "archiveSha256": "66f69f1e7660b7ea9424e584233ce953941c1c756b70c5db33b5d631e19bbedb",
+      "operatorCases": 24,
+      "rustTests": 162,
+      "newNativeTests": 24,
+      "workerTests": 9,
+      "qtProcessTests": 6,
+      "desktopProcesses": 7,
+      "coldProviderCalls": 0,
+      "coldGuestInvocations": 0,
+      "appSha256": "0266ae649faedffd8b19cc3d913fc13809da4e2c5d1405e5f91c43e4f6da6fd1",
+      "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+      "reviewers": [
+        "/root/review_op_security",
+        "independent agent /root/review_op_runtime; no implementation authorship"
+      ],
+      "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+    },
+    "appSha256": "9e8edadc7f2761cf6085594278ff3c1525a6cddf6a7fc52812f5e4f4b2dd235a",
+    "workerSha256": "0777622aac7c83168892fda789244ca5ed09aa28a3d985097ebead31db5e13cb",
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "qt": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+  },
+  "facts": {
+    "coldFullProjectionEqual": true,
+    "coldAllRoomPinsInputsOutputsEqual": true,
+    "coldRooms": [
+      {
+        "roomId": "intent-room",
+        "componentPin": {
+          "id": "org.workbench.example.mortgage-ui",
+          "version": "0.1.0",
+          "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd"
+        },
+        "uiPin": {
+          "path": "ui.json",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380"
+        },
+        "committedInputs": {
+          "component.calculate": {
+            "annual_rate_percent": "5",
+            "principal": "250000",
+            "term_months": 300
+          }
+        },
+        "committedOutputs": {
+          "payment": {
+            "monthly_payment": "1461.48"
+          }
+        }
+      },
+      {
+        "roomId": "intent-room-2",
+        "componentPin": {
+          "id": "org.workbench.example.mortgage-ui",
+          "version": "0.1.0",
+          "sha256": "b045130fe32aef76a0bf30cce9072b7b57ea2cb7b6bad37b23dfaf6a6e7573dd"
+        },
+        "uiPin": {
+          "path": "ui.json",
+          "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6",
+          "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380"
+        },
+        "committedInputs": {
+          "component.calculate": {
+            "annual_rate_percent": "5",
+            "principal": "300000",
+            "term_months": 300
+          }
+        },
+        "committedOutputs": {
+          "payment": {
+            "monthly_payment": "1753.77"
+          }
+        }
+      }
+    ],
+    "coldAppPids": [
+      19629,
+      19644
+    ],
+    "coldWorkerPids": [
+      19631,
+      19646
+    ],
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "offlineIpv4Ipv6Denied": true,
+    "inFlightApplyPendingRequests": 2,
+    "rapidSwitchFinalProjection": {
+      "payment": "1753.77",
+      "principal": "300000",
+      "rate": "5",
+      "term": "300"
+    },
+    "retainedQueueGuardNamedTest": "UiConformance::ui_015_016_017_fences_queue_room_switch_and_teardown",
+    "retainedQueueGuardPassed": true,
+    "retainedQueueGuardSourceSha256": "ff0b0c34dead20d0cd3e6f45252a6a15097c8fd77abb2f9264e98401be5d474b",
+    "retainedQueueGuardSourceCommit": "d3379a8a62972d56871249dafc4a66df783a5eb5"
+  },
+  "remainingMandatory": []
+}
