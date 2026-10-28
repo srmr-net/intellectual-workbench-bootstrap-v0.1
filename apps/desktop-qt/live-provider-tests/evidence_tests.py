@@ -11,6 +11,10 @@ class Evidence(unittest.TestCase):
   return api,run,report
  def test_same_run_linux_pr_source_accepts(self):verify.validate_hosted_run(*self.data(),'merge','head')
  def test_wrong_run_attempt_workflow_or_source_rejected(self):
+  expected={'a':'one','b':'two'}
+  verify.validate_source_map(expected,expected)
+  for actual in [{'a':'one'},{'a':'changed','b':'two'},{'a':'one','b':'two','extra':'three'}]:
+   with self.assertRaises(AssertionError):verify.validate_source_map(actual,expected)
   for field,value in [('id',43),('run_attempt',2),('path','.github/workflows/vslice-003.yml'),('head_sha','other'),('conclusion','failure'),('status','in_progress'),('event','workflow_dispatch')]:
    api,run,report=self.data();api[field]=value
    with self.subTest(field=field),self.assertRaises(AssertionError):verify.validate_hosted_run(api,run,report,'merge','head')

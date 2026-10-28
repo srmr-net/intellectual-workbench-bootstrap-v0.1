@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-28T16:00:03Z",
+  "source": "Explicit user reply in this Codex session",
+  "answer": "Consent to this scoped live smoke test",
+  "endpoint": "https://api.openai.com/v1/responses",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "data": "Only synthetic explicit GBP250000/5percent/25years intent and bounded admitted candidate projection; no stored documents or history",
+  "maxRequestsTotal": 3,
+  "maxOutputTokensPerRequest": 512,
+  "timeoutMsPerRequest": 20000,
+  "automaticRetries": false,
+  "tools": false,
+  "credential": "Private host facility, not archived",
+  "disclosure": "Requests may incur charges. Cancellation cannot guarantee remote inference or billing stops.",
+  "compositionApproval": "Separate actual proposal-bound human decision required before apply"
+}

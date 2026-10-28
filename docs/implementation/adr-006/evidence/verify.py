@@ -14,6 +14,15 @@ def validate_hosted_run(api,run,report,source,head):
  assert g['GITHUB_SHA']==source and g['RUNNER_OS']=='Linux' and report['hostedExecution']
  assert g['GITHUB_REF'] in {f"refs/pull/{p['number']}/merge" for p in api['pull_requests']}
 
+def expected_sources(source):
+ assert re.fullmatch(r'[0-9a-f]{40}',source)
+ paths=subprocess.check_output(['git','ls-tree','-r','--name-only',source],cwd=ROOT,text=True).splitlines()
+ explicit={'apps/desktop-qt/validate-live-provider.sh','.github/workflows/adr-006.yml','docs/implementation/adr-006/evidence/verify.py','docs/implementation/adr-006/API_VERIFICATION.md','docs/implementation/adr-006/CONFORMANCE.md'}
+ prefixes=('apps/desktop-qt/live-provider/','apps/desktop-qt/live-provider-tests/','docs/implementation/adr-006/schemas/','docs/implementation/adr-006/fixtures/')
+ names=[p for p in paths if (p in explicit or p.startswith(prefixes)) and not {'target','__pycache__'}.intersection(Path(p).parts)]
+ return {name:digest(subprocess.check_output(['git','show',source+':'+name],cwd=ROOT)) for name in names}
+def validate_source_map(actual,expected):
+ assert actual==expected,'source inventory/hash differs from recorded Git commit'
 def verify(a):
  assert digest(a.archive.read_bytes())==a.sha256
  # Retained verifier stays byte-identical. Its own workflow identity is not
@@ -21,6 +30,7 @@ def verify(a):
  # then independently bind every retained source/run fact to this outer run.
  command=[sys.executable,str(ROOT/'docs/implementation/vslice-003/evidence/verify.py'),str(a.archive),'--sha256',a.sha256,'--source',a.source]
  retained=json.loads(subprocess.check_output(command,text=True,cwd=ROOT))
+ expected=expected_sources(a.source)
  with ZipFile(a.archive) as z:
   load=lambda n:json.loads(z.read(n));report=load('llm/report.json');run=load('run.json')
   assert report['source']==run['headSha']==a.source and not run['trackedChanges']
@@ -33,6 +43,9 @@ def verify(a):
   reviews=[load('llm/review-'+role+'.json') for role in ['security','integration']]
   assert len({r['reviewer'] for r in reviews})==2
   for role,r in zip(['security','integration'],reviews):
+   assert r['role']==role
+   subprocess.run(['git','merge-base','--is-ancestor',r['implementationCommit'],a.source],cwd=ROOT,check=True)
+   validate_source_map(r['sourceSha256'],expected)
    assert r['status']=='APPROVED' and r['reviewer']!='/root' and not r['remainingMandatory']
    for name,h in r['sourceSha256'].items():assert digest(z.read('llm/sources/'+name))==h
    assert r['independentTests']

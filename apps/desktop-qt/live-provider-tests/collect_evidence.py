@@ -7,6 +7,7 @@ def reviews():
  receipts=[]
  for role in ['security','integration']:
   path=ROOT/f'docs/implementation/adr-006/evidence/review-{role}.json';r=json.loads(path.read_text())
+  assert r['role']==role
   assert r['status']=='APPROVED' and not r['remainingMandatory'] and r['reviewer']!='/root'
   subprocess.run(['git','merge-base','--is-ancestor',r['implementationCommit'],'HEAD'],cwd=ROOT,check=True)
   assert r['sourceSha256']=={name:sha(ROOT/name) for name in sources()},role
