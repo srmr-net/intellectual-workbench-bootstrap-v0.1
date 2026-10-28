@@ -408,7 +408,17 @@ fn llm_020_single_use_room_and_switch_fences() {
         .consume_consent(INTENT, Cancellation::default())
         .is_none());
     let h = Harness::new(vec![], true);
+    assert_eq!(h.provider.kind(), "openai-responses");
     h.control.configure(Profile::default()).unwrap();
+    assert_eq!(h.provider.kind(), "openai-responses");
+    assert!(LiveProvider::new(
+        h.control.clone(),
+        h.key.clone(),
+        h.transport.clone(),
+        "room-two".into(),
+        None
+    )
+    .is_err());
     assert!(h.run().is_err());
     assert_eq!(h.transport.attempts.load(Ordering::SeqCst), 0);
     let c = Arc::new(Control::default());
@@ -803,4 +813,6 @@ fn openrouter_same_permit_and_canonical_provider_boundary() {
     assert_eq!(audit["observation"]["provider"], "openrouter-chat");
     assert_eq!(audit["observation"]["model"], OPENROUTER_MODEL);
     assert_eq!(audit["observation"]["outputTokens"], 60);
+    c.configure(Profile::default()).unwrap();
+    assert_eq!(p.kind(), "openrouter-chat");
 }

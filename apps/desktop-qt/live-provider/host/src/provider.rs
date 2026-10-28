@@ -1,5 +1,5 @@
 use crate::{
-    policy::{Budget, CredentialSource, Failure, Profile},
+    policy::{Budget, CredentialSource, Failure, Kind, Profile},
     response,
     transport::{Exchange, Transport},
 };
@@ -248,6 +248,7 @@ impl Control {
 }
 #[derive(Clone)]
 pub struct LiveProvider {
+    kind: Kind,
     control: Arc<Control>,
     credentials: Arc<dyn CredentialSource>,
     transport: Arc<dyn Transport>,
@@ -266,10 +267,15 @@ impl LiveProvider {
         if !wb_storage::vs2::identifier(&room) {
             return Err(Failure::NotConfigured);
         }
+        let kind = control.profile().provider;
+        if !kind.is_remote() {
+            return Err(Failure::NotConfigured);
+        }
         if let Some(p) = &permit {
             p.bind_room(&room)?;
         }
         Ok(Self {
+            kind,
             permit,
             control,
             credentials,
@@ -281,7 +287,7 @@ impl LiveProvider {
 }
 impl OperatorProvider for LiveProvider {
     fn kind(&self) -> &'static str {
-        self.control.profile().provider.label()
+        self.kind.label()
     }
     fn suggest<'a>(&'a self, request: ProviderRequest, cancel: Cancellation) -> ProviderFuture<'a> {
         Box::pin(Invocation::new(self.clone(), request, cancel))
