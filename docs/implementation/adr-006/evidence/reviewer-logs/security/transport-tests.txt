@@ -2,8 +2,9 @@ test_llm_004_private_and_mixed_dns_fail_closed (__main__.Transport.test_llm_004_
 test_llm_004_redirect_and_auth_bodies_unread (__main__.Transport.test_llm_004_redirect_and_auth_bodies_unread) ... ok
 test_llm_004_verified_tls_fixed_origin_no_reresolve (__main__.Transport.test_llm_004_verified_tls_fixed_origin_no_reresolve) ... ok
 test_llm_022_headers_overflow_and_network (__main__.Transport.test_llm_022_headers_overflow_and_network) ... ok
+test_openrouter_separate_fixed_origin_and_no_arbitrary_endpoint (__main__.Transport.test_openrouter_separate_fixed_origin_and_no_arbitrary_endpoint) ... ok
 
 ----------------------------------------------------------------------
-Ran 4 tests in 0.169s
+Ran 5 tests in 0.043s
 
 OK

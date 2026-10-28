@@ -1,0 +1,76 @@
+{
+    "pid": "868645",
+    "preview": {
+        "effect": "Add one installed component to this empty room, then initialize through typed UI ingress.",
+        "expiresInSeconds": 120,
+        "initialInputDigest": "b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b",
+        "initialInputs": {
+            "annual_rate_percent": "5",
+            "principal": "250000",
+            "term_months": 300
+        },
+        "plan": {
+            "connections": [
+            ],
+            "expectedRoomRevision": 0,
+            "instances": [
+                {
+                    "component": {
+                        "id": "org.workbench.example.mortgage-ui",
+                        "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                        "version": "0.1.0"
+                    },
+                    "instanceId": "component"
+                }
+            ],
+            "planVersion": "0.1",
+            "requestedPermissions": [
+            ],
+            "roomId": "intent-room",
+            "ui": {
+                "definitionRef": "org.workbench.example.mortgage-ui/ui.json"
+            }
+        },
+        "policyRevision": "0",
+        "proposalDigest": "38b0c7bbae3810cb3cf1c52ac6e96397e38e2e5e525d99e6bea14d2737c9468b",
+        "proposalId": "f3bc019af66f758e2e4d5b088e090c7ccbb93e663463fde9ea9141edd6fe10d4",
+        "requiresApproval": true,
+        "untrustedExplanation": "User requested mortgage calculation for £250,000 over 25 years at 5% annual rate. Applied formatting rules: removed commas from principal, preserved integer rate without decimal, converted 25 years to 300 months.",
+        "validation": {
+            "admittedUiBindings": true,
+            "canonicalPlan": true,
+            "exactPin": true,
+            "initialInputSchema": true,
+            "profile": "single-component-empty-room",
+            "purePermissions": true
+        }
+    },
+    "providerState": {
+        "code": "OK",
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "kind": "reply",
+        "ok": true,
+        "profile": {
+            "budget": {
+                "maxCalls": 1,
+                "maxCatalogCandidates": 8,
+                "maxOutputTokens": 512,
+                "maxRequestBytes": 4096,
+                "maxResponseBytes": 16384,
+                "timeoutMs": 20000
+            },
+            "enabled": true,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "profileVersion": "0.1",
+            "provider": "openrouter-chat",
+            "remoteConsent": false
+        },
+        "protocol": "provider.1",
+        "providerEnforcedSchema": false,
+        "remoteAttempts": "1",
+        "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "remoteProvider": "openrouter-chat",
+        "token": "",
+        "transport": "https-production"
+    }
+}

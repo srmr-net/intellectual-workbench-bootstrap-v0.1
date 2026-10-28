@@ -1,0 +1,39 @@
+{
+  "reports": 14,
+  "desktopPids": [
+    16,
+    35,
+    46,
+    57,
+    68,
+    79,
+    90,
+    101,
+    112,
+    132,
+    264,
+    284,
+    294,
+    314
+  ],
+  "workerPids": [
+    19,
+    38,
+    49,
+    60,
+    71,
+    82,
+    93,
+    104,
+    115,
+    135,
+    267,
+    287,
+    297,
+    317
+  ],
+  "appSha256": "e465e8534755f546fbb6bec00e9145cdb1f99886c07ff12692e55ef2ba71f2e1",
+  "workerSha256": "529ccdb7b99b5f82ded3f8bda81d14d6e9c48f0b33ae7c5ffdc51213f0290da9",
+  "allReportsPassed": true,
+  "processEvidenceDirectory": "target/review-llm-integration/openrouter-process"
+}

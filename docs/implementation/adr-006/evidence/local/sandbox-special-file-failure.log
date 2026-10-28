@@ -1,0 +1,317 @@
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/registry-fixtures/pure-echo/logic.wasm
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.03s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+UI fixture: target/ui-fixtures/mortgage-ui WASM: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95 UI: b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6
+TEST adversary UI: org.workbench.example.vs2-adversary-ui 0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.22s
+make: Nothing to be done for 'first'.
+make: Nothing to be done for 'first'.
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+UI fixture: target/ui-fixtures/mortgage-ui WASM: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95 UI: b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.03s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+PASS: eight original vectors, nine boundaries and sixteen independent reference cases: target/mortgage-reference.json
+PASS: same-machine clean mortgage rebuild SHA-256: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.20s
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.06s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.08s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.05s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/registry-fixtures/pure-echo/logic.wasm
+  Generating bindings for abi-echo (examples/wasm-components/echo/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.03s
+  Generating bindings for abi-integer (examples/wasm-components/integer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.07s
+  Generating bindings for abi-denied-wasi (examples/wasm-components/denied-wasi/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.05s
+  Generating bindings for ipc-aggregate (examples/wasm-components/ipc-aggregate/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.07s
+d9499a7a60a7dd7c814de67ae7d3da8aaf5e12d054b0f0555e4b67530be2233d  target/abi-guests/wasm32-unknown-unknown/release/abi_echo.wasm
+871d862cd23aef8f746861c42ca01976eca453f09c3600b7efb6292d0f7d54bd  target/abi-guests/wasm32-unknown-unknown/release/abi_integer.wasm
+03f3652468822b9c5439ad7c7b6c47b546f282d621279b0402c6f210587617af  target/abi-guests/wasm32-wasip1/release/abi_denied_wasi.wasm
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.18s
+     Running unittests src/lib.rs (target/debug/deps/wb_bus-8c3777a71ffa0a02)
+
+running 1 test
+test tests::wrong_protocol_is_rejected ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_capabilities-ae221739fad678dc)
+
+running 1 test
+test tests::deny_by_default ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_contracts-648645455fca5575)
+
+running 1 test
+test tests::envelope_roundtrip ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_desktop_host-110b46c37849b3ca)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-install.rs (target/debug/deps/wb_desktop_install-f36f4e77c06377bc)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-offline.rs (target/debug/deps/wb_desktop_offline-9d46cb8868fc1877)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-desktop-worker.rs (target/debug/deps/wb_desktop_worker-9acbf663d3c8b5dd)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vs2.rs (target/debug/deps/vs2-c32f21ade0723854)
+
+running 15 tests
+test vs2_009_invalid_incomplete_and_negative_edits_never_execute ... ok
+test vs2_006_declared_bindings_and_readonly_output ... ok
+test vs2_008_actual_host_ingress_audit_and_committed_projection ... ok
+test vs2_012_conflict_preserves_draft_until_explicit_reapply ... ok
+test vs2_007_real_wasm_two_accepted_financial_scenarios ... ok
+test vs2_010_cancellation_and_revision_generation_fences ... ok
+test vs2_004_exact_pins_and_tampered_release_fail_closed has been running for over 60 seconds
+test vs2_011_bounded_framing_trace_and_live_audit_recycling has been running for over 60 seconds
+test vs2_011_large_valid_workspace_response_exceeds_legacy_frame_safely has been running for over 60 seconds
+test vs2_004_exact_pins_and_tampered_release_fail_closed ... ok
+test vs2_024_frozen_accepted_contracts_and_regressions ... ok
+test vs2_017_pin_unpin_and_selection_are_durable ... ok
+test vs2_021_wire_rejects_extra_identity_and_nested_duplicate_keys ... ok
+VS2 maximum valid workspace state: 73419 bytes,16rooms,32controls,510-digit actual echoed aggregate, transport limit 1048576
+test vs2_011_large_valid_workspace_response_exceeds_legacy_frame_safely ... ok
+test vs2_013_guest_trap_invalid_output_and_partial_batches_preserve_checkpoint has been running for over 60 seconds
+test vs2_020_invalid_snapshot_latches_readonly_recovery ... ok
+test vs2_016_rooms_and_forged_edit_ownership_are_isolated has been running for over 60 seconds
+test vs2_016_rooms_and_forged_edit_ownership_are_isolated ... ok
+test vs2_013_guest_trap_invalid_output_and_partial_batches_preserve_checkpoint ... ok
+test vs2_011_bounded_framing_trace_and_live_audit_recycling ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 149.84s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_kernel-fbbd371a3342310f)
+
+running 1 test
+test tests::refuses_unvalidated ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-mortgage-headless.rs (target/debug/deps/wb_mortgage_headless-4dc7610170dc1aac)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/vslice.rs (target/debug/deps/vslice-801fd1212dfe463b)
+
+running 23 tests
+test vslice_001_real_pure_component_and_unchanged_wit ... ok
+test vslice_003_exact_pin_and_boundary_integrity ... ok
+test vslice_002_complete_package_actual_admission ... ok
+test vslice_005_real_cli_checks_committed_room_projection ... ok
+test vslice_004_real_lifecycle_and_explicit_policy has been running for over 60 seconds
+test vslice_005_actual_full_path_and_correlated_projection has been running for over 60 seconds
+test vslice_006_all_vectors_independent_oracle_and_boundaries has been running for over 60 seconds
+test vslice_006_budget_calibration_retains_accepted_defaults has been running for over 60 seconds
+test vslice_007_schema_and_guest_domain_rejection has been running for over 60 seconds
+test vslice_008_adversarial_output_atomic_rollback has been running for over 60 seconds
+test vslice_009_tamper_never_registers_candidate has been running for over 60 seconds
+test vslice_005_actual_full_path_and_correlated_projection ... ok
+test vslice_008_adversarial_output_atomic_rollback ... ok
+test vslice_006_budget_calibration_retains_accepted_defaults ... ok
+test vslice_006_all_vectors_independent_oracle_and_boundaries ... ok
+test vslice_009_tamper_never_registers_candidate ... ok
+test vslice_010_admission_discovery_resolution_never_execute_guest has been running for over 60 seconds
+test vslice_010_admission_discovery_resolution_never_execute_guest ... ok
+test vslice_004_real_lifecycle_and_explicit_policy ... ok
+test vslice_011_empty_grants_and_forbidden_imports_permissions has been running for over 60 seconds
+test vslice_012_real_bus_output_correlation_and_fifo_waves has been running for over 60 seconds
+test vslice_013_generation_and_revision_fence_real_completions has been running for over 60 seconds
+test vslice_014_bounded_ingress_no_silent_drop has been running for over 60 seconds
+test vslice_014_bounded_ingress_no_silent_drop ... ok
+test vslice_018_crash_child ... ok
+test vslice_007_schema_and_guest_domain_rejection ... ok
+test vslice_019_independent_review_protocol_is_enforced ... ok
+test vslice_020_all_accepted_regression_sources_unchanged ... ok
+test vslice_015_interleaved_and_concurrent_room_isolation has been running for over 60 seconds
+test vslice_017_rebuild_evidence_and_repeated_invocation_stability ... ok
+test vslice_015_interleaved_and_concurrent_room_isolation ... ok
+test vslice_013_generation_and_revision_fence_real_completions ... ok
+test vslice_012_real_bus_output_correlation_and_fifo_waves ... ok
+test vslice_011_empty_grants_and_forbidden_imports_permissions ... ok
+test vslice_016_restore_exact_registry_pins_inputs_and_topology ... ok
+test vslice_018_trap_budget_and_interrupted_install_recover ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 193.07s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_operator-115375326adfdca4)
+
+running 5 tests
+test proposal_tests::op_011_012_invalid_plan_preview_never_grants_or_reserves ... ok
+test proposal_tests::checkpoint_failure_is_honest_partial_completion ... ok
+test proposal_tests::real_admission_preview_approval_ingress_and_replay ... ok
+test proposal_tests::failed_apply_removes_only_new_execution_consent ... ok
+test proposal_tests::fresh_preview_identity_stale_revision_and_expiry ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 45.99s
+
+     Running unittests src/bin/wb-operator-worker.rs (target/debug/deps/wb_operator_worker-b8c4c729a7e978ba)
+
+running 3 tests
+test tests::op_007_021_queue_ownership_uses_host_ticket_not_caller_token ... ok
+test tests::op_007_wire_cannot_supply_host_ticket_or_authority ... ok
+test tests::op_018_021_oversized_reply_retains_authoritative_commit_stages ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/boundary.rs (target/debug/deps/boundary-706a8ea4ec1303c5)
+
+running 8 tests
+test no_defaults_or_injected_instructions ... ok
+test cancelled_and_zero_budget_never_invoke_provider_factory ... ok
+test ambiguity_cancel_unavailable_and_deadline ... ok
+test positive_and_adversarial_fixture_corpus ... ok
+test strict_untrusted_json ... ok
+test deterministic_fixture_and_explicit_units ... ok
+test cancellation_and_deadline_rechecked_after_ready ... ok
+test op_001_003_007_exact_byte_character_item_and_context_boundaries ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/catalog.rs (target/debug/deps/catalog-a80a6d002560a228)
+
+running 3 tests
+test op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free ... ok
+test op_004_006_semantic_ambiguity_never_selects_arbitrary_release ... ok
+test op_009_010_offered_keys_actual_fields_schema_and_pin_drift_no_fallback ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 11.52s
+
+     Running tests/session.rs (target/debug/deps/session-aa94a091606317c0)
+
+running 5 tests
+test op_012_scope_quota_creates_no_guest_or_execution_authority ... ok
+test committed_guest_then_real_final_write_failure_preserves_topology_checkpoint ... ok
+test op_022_concurrent_rooms_keep_intent_approval_and_cancellation_isolated ... ok
+test private_session_policy_epoch_revoke_before_grant_and_real_commit ... ok
+test pending_cancel_queue_release_policy_race_and_room_isolation ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 36.85s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_reactive-bfbc52f7c00dab9c)
+
+running 3 tests
+test tests::accepts_dag ... ok
+test tests::rejects_cycles ... ok
+test tests::rejects_stale ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (target/debug/deps/wb_registry-34b35e0609bd9f68)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/wb-registry-inspect.rs (target/debug/deps/wb_registry_inspect-0470794040ffb20b)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/registry.rs (target/debug/deps/registry-9adcd6a596bd2aa1)
+
+running 31 tests
+test reg_005_corrupt_record_after_restart_stays_unavailable ... ok
+test reg_004_referenced_dialect_and_custom_vocabulary_rejected ... ok
+test reg_006_turtle_and_shacl ... ok
+test reg_005_digest_and_post_install_integrity ... ok
+test reg_006_unknown_semantic_vocabulary_rejected ... ok
+
+thread 'reg_003_paths_links_and_nonregular' (2212) panicked at crates/wb-registry/tests/registry.rs:192:85:
+called `Result::unwrap()` on an `Err` value: Os { code: 1, kind: PermissionDenied, message: "Operation not permitted" }
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test reg_003_paths_links_and_nonregular ... FAILED
+test reg_001_compiled_pure_bundle_and_kernel_handle ... ok
+test reg_009_permissions_never_granted ... ok
+test reg_002_strict_manifest ... ok
+test reg_008_ui_explicitly_blocked ... ok
+test reg_010_trapping_initializer_is_not_executed ... ok
+test reg_014_child ... ok
+test reg_007_each_semantic_mismatch ... ok
+test reg_011_idempotent ... ok
+test reg_012_conflict_original_intact ... ok
+test reg_014_corrupt_marker_preserves_possible_pinned_object ... ok
+test reg_015_process_installer_child ... ok
+test reg_004_schemas_missing_malformed_local_refs_and_literal_preservation ... ok
+test reg_013_exact_pins_no_fallback ... ok
+test reg_011_idempotent_at_release_quota_and_after_reopen ... ok
+test reg_010_abi_encoding_exports_type_and_imports ... ok
+test reg_019_worker_dies_with_parent ... ok
+test reg_019_worker_parent_child ... ok
+test reg_020_frozen_abi_and_ipc_regression_workflow ... ok
+test reg_016_discovery_only_committed_host_metadata ... ok
+test reg_017_dependencies_and_remote_refs_rejected ... ok
+test reg_018_forged_evidence_cannot_elevate ... ok
+test reg_015_independent_process_installers ... ok
+test reg_015_concurrent_installers_and_readers ... ok
+test reg_019_quotas_collisions_and_live_race ... ok
+test reg_014_real_sigkill_all_commit_boundaries has been running for over 60 seconds
+test reg_014_real_sigkill_all_commit_boundaries ... ok
+
+failures:
+
+failures:
+    reg_003_paths_links_and_nonregular
+
+test result: FAILED. 30 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 99.34s
+
+error: test failed, to rerun pass `-p wb-registry --test registry`

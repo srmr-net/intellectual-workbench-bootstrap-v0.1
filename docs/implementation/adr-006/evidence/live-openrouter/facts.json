@@ -1,0 +1,83 @@
+{
+  "source": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "LIVE-001": "PASS: actual OpenRouter/NVIDIA structured suggestion strictly validated locally",
+  "LIVE-002": "PASS: exact host preview approved by human in chat, ordinary Qt confirmation exercised, installed WASM and reactive edit, pinned cold process",
+  "LIVE-003": "PASS: redacted latency/usage/process/hash evidence; no provider refusal/timeout observed on this attempt; negative cases mocked",
+  "consentedRequestsUsed": 1,
+  "maxConsentedRequests": 3,
+  "providerAudit": {
+    "attempts": 1,
+    "budget": {
+      "maxCalls": 1,
+      "maxCatalogCandidates": 8,
+      "maxOutputTokens": 512,
+      "maxRequestBytes": 4096,
+      "maxResponseBytes": 16384,
+      "timeoutMs": 20000
+    },
+    "generation": 2,
+    "observation": {
+      "catalogCount": 1,
+      "correlationId": "operator-1",
+      "durationMs": 5469,
+      "inputTokens": 565,
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "observationVersion": "0.1",
+      "outputTokens": 159,
+      "provider": "openrouter-chat",
+      "status": "OK"
+    },
+    "room": "intent-room",
+    "schemaId": "OperatorSuggestionV0.1",
+    "sequence": 1
+  },
+  "humanApproval": {
+    "source": "Explicit user reply in this Codex session",
+    "answer": "Approve this exact proposal",
+    "proposalDigest": "38b0c7bbae3810cb3cf1c52ac6e96397e38e2e5e525d99e6bea14d2737c9468b",
+    "delivery": "Fresh separate digest-bound decision file then existing Qt confirmation checkbox/button; native host independently validates actual revision/expiry"
+  },
+  "installedPin": {
+    "id": "org.workbench.example.mortgage-ui",
+    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+    "version": "0.1.0"
+  },
+  "initialInputs": {
+    "annual_rate_percent": "5",
+    "principal": "250000",
+    "term_months": 300
+  },
+  "initialPayment": "1461.48",
+  "reactivePayment": "1753.77",
+  "desktopPid": 868645,
+  "workerPid": 868648,
+  "coldDesktopPid": 869276,
+  "coldWorkerPid": 869279,
+  "providerCallsAfterReactiveEdit": "1",
+  "remoteAttemptsAfterReactiveEdit": "1",
+  "coldProviderCalls": "0",
+  "coldRemoteAttempts": "0",
+  "coldGuestInvocations": "0",
+  "networkDeniedCold": true,
+  "cost": "No verified price table configured or billed cost retained in telemetry; exact :free model and prompt/completion/request zero-price routing filters enforced. No exact-spend claim.",
+  "secretScanPassed": true,
+  "rawHttpBodiesArchived": false,
+  "appSha256": "e465e8534755f546fbb6bec00e9145cdb1f99886c07ff12692e55ef2ba71f2e1",
+  "workerSha256": "7e45a333653749b280fd66a74e8008189d726722fa0cf609c590237b5d4d4869",
+  "sha256": {
+    "actions.json": "6a2b6012067b460eaa6dc5ec9eeac30fe1fdedc7fa14f7ad0f5318be4d82a5f1",
+    "report.json": "4c45e36f4f2b670ca0903cfb07ff4a9754f6b06a1d0c1985a2e69f413a04565c",
+    "report.json.preview.json": "e0573cfb2b003cc39b44ad5ed44b29481436839c20d90df1332971545db9d0da",
+    "report.json.approval.json": "9d7f137169e1cbf26d8b9126a59b5d9b2905c7e0787bb663cc1b82e3c44ce137",
+    "launcher.json": "d3396455995480031a6c15c1bcfd21beae4c039295cfe67312b15524da192b3e",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cold-actions.json": "bdfe10802a274f6fa05a9b7530ae9b60bfa5acc3aeb48416c950cc640e2f4313",
+    "cold-report.json": "844f704d555113ea7376feb5e55943152bfb46bed80b1ab0942bb498899dbb87",
+    "cold-stdout.txt": "7db7a2acef7b45f51576b0290dab1c850de580588d9f57bfc4596ba61f10afc8",
+    "cold-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shell.png": "1d2c5fa9df5be54a11e7ae950842b6ad21aebe9f1c2bb033704323b65f4888c8",
+    "production-build.log": "eda1f2e0873778a73614830b02d77f89d09f2c787e7ffceaf0b02c93ab415b7c",
+    "versions.json": "6a56e47e7f0fc21897d7b2aa5fef64f51dbe6c73159d7a00356e843dc0d5e474"
+  }
+}

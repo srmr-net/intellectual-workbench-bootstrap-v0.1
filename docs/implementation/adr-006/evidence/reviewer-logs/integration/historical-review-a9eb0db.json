@@ -1,0 +1,136 @@
+{
+  "reviewer": "/root/review_llm_integration",
+  "role": "integration",
+  "status": "APPROVED",
+  "implementationCommit": "a9eb0db306d193309cac51faf75ec431efbf96fc",
+  "remainingMandatory": [],
+  "sourceSha256": {
+    ".github/workflows/adr-006.yml": "9ce896103eee2c2d107448c6d5d97c751e342c972fad8b232e52b9f6add06039",
+    "apps/desktop-qt/live-provider-tests/collect_evidence.py": "e55b4302dc854b72b4e7c39366e976790e10b4652d23f2aaee832204b34f9569",
+    "apps/desktop-qt/live-provider-tests/contract.py": "009900620c2875beaa773c73f3e6c3970579cd2c8f9ca17dcac80afbedda0f53",
+    "apps/desktop-qt/live-provider-tests/evidence_tests.py": "550098cf97230a4b29e810a92eb8000c2e518fb2dd17eff603e8ff0b9eafcfbc",
+    "apps/desktop-qt/live-provider-tests/live_smoke.py": "f1d1b83ee5e089080dc77b3ca78f9dde1562d4528517a553b09f90e412fcc342",
+    "apps/desktop-qt/live-provider-tests/process_cases.py": "345301596da0c7dcb292c5d871109b39342dfe846778bf1d3dce63e47b7ac146",
+    "apps/desktop-qt/live-provider-tests/transport_tests.py": "b375dfd5b972fc36dfa64dc800e7a513567a0b0700631ccdb69324e8f4869133",
+    "apps/desktop-qt/live-provider/OperatorDriver.cpp": "4e330cef0347333ad0afe819e04de25fe62a988dca3a6494c649066ec8d9fb52",
+    "apps/desktop-qt/live-provider/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
+    "apps/desktop-qt/live-provider/OperatorPanel.cpp": "aca15f170eae1d031b47e8d6da6c1a78ece669469acd44f9c489b4e6279bd607",
+    "apps/desktop-qt/live-provider/OperatorPanel.h": "0a83c28a2077321d6e26c07eb0d32b44e46898fed2acd63a658912b758bc1c5b",
+    "apps/desktop-qt/live-provider/README.md": "e53703aa696cb73d5e750850e2a7eebbe432c261662c15044810b1595807eed8",
+    "apps/desktop-qt/live-provider/host/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "apps/desktop-qt/live-provider/host/Cargo.lock": "5497ec3b9ccf62c9645aca35352cff22ab6f57359372edfedb8213b7de50a249",
+    "apps/desktop-qt/live-provider/host/Cargo.toml": "370bb3a3f914f9ea08d4237a57f2e9a406dc352d491a8e112c69545487ba757a",
+    "apps/desktop-qt/live-provider/host/src/bin/worker.rs": "0f2b41fde34ce30ed896bd64b8a58069c59d379150d8fb188ced524f0a3d04f8",
+    "apps/desktop-qt/live-provider/host/src/host.rs": "93f92f4edfe546c58c5ca5fbff5b010166d8cc0c892b15443a63305246767542",
+    "apps/desktop-qt/live-provider/host/src/lib.rs": "249c4144ed2a1d4720067a147848ec6e916516bbd8bd8f4b8bfa9323e54c6746",
+    "apps/desktop-qt/live-provider/host/src/policy.rs": "3f807424731a11c311f0fd21b02e66d8d4766180c9b8eccccd34887d7b3ea60c",
+    "apps/desktop-qt/live-provider/host/src/provider.rs": "b6e901c45f71d49672d2a9fa6246f8e23b013792813df89403571f1bb15d6bc2",
+    "apps/desktop-qt/live-provider/host/src/response.rs": "7370cfa111c957b0f569dec81ca549574f5f62023d0b0052e4dbad90a3ae19d3",
+    "apps/desktop-qt/live-provider/host/src/slot.rs": "7998885e345e95b7f759b73ff4f21c6c2fc2622a9305444d2acf920820419bef",
+    "apps/desktop-qt/live-provider/host/src/transport.rs": "90fa416ffd40d1b6f16cce13b4c95d97169cc4d94bcb0fc6fa755670c2f5dd8a",
+    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "54d89a8a6b64a867cc8706cfdfb4266196620cbece21b99dd52844c727468523",
+    "apps/desktop-qt/live-provider/host/transport.py": "553a356fbd6f03e02393e3081a96614680e4f40336a550d63d8ad59e3a37bbe3",
+    "apps/desktop-qt/live-provider/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/live-provider/operator.pro": "1a2fffaec30035fe3ef946c9c60e4abf48dee1ce037b811f59b07cb5171e8c06",
+    "apps/desktop-qt/validate-live-provider.sh": "8188efe467541cca342c96a8a9a68fe4d587e37ee7493ca5f4b03961b35864eb",
+    "docs/implementation/adr-006/API_VERIFICATION.md": "c12d8da71dff55a479e77d21bc14e3f9622b8d8338acbfe865839ef1334e2f19",
+    "docs/implementation/adr-006/CONFORMANCE.md": "3b74048895a72a578d70e4c293e5b9e20ed66c81b7fb89d59ccbd5e2e2349c93",
+    "docs/implementation/adr-006/evidence/verify.py": "342f3011187283b8e1b8b1b55658677143b1fc917c96b5a61837a1aa7e125079",
+    "docs/implementation/adr-006/fixtures/offline-profile.json": "ef4aa15bbb9af737292f74b57653bc6cef9208c42d005a8fd1c696b514062ee7",
+    "docs/implementation/adr-006/fixtures/redacted-observation.json": "dd2a7cf15c4469dba5fc1ea3ad05541765125ac57903bdd6ed8fe67a69782b63",
+    "docs/implementation/adr-006/fixtures/remote-opt-in-profile.json": "7b3984582448e7daa6d6284eed59dffa41e1bc2f438a9f1810b80f7f7c38892c",
+    "docs/implementation/adr-006/schemas/provider-observation.schema.json": "397050732538c601d5a328b83455f6c2e7b8739389ef5075779fcc33fff06307",
+    "docs/implementation/adr-006/schemas/provider-profile.schema.json": "43df5fb326af34e2d5e8cc5e84ced016cef25ae55a34f66a21b646e4f03f45af"
+  },
+  "independentTests": [
+    {
+      "command": "cargo test --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --features test-transport --target-dir target/review-llm-integration/build",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/frozen-native.log",
+      "logSha256": "03e7b2ff2518791336875982aff9980ebc5eeb0c3c24124a2a8f887649c34486"
+    },
+    {
+      "command": "cargo test --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --target-dir target/review-llm-integration/build",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/frozen-default-native.log",
+      "logSha256": "ab7753de87f72ba61de6a0c6e54990a8464ca5b84adc491cb18e18bbbba4b995"
+    },
+    {
+      "command": "python3 apps/desktop-qt/live-provider-tests/transport_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/frozen-transport.log",
+      "logSha256": "5060ed009c94625b43cf7c1d629965c5b16ba113d7f91afe14284000140f2664"
+    },
+    {
+      "command": "python3 apps/desktop-qt/live-provider-tests/evidence_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/frozen-metadata.log",
+      "logSha256": "4edbd0e4edc9c3eb44dd24c0626e7ebc8e3e98c1bb08c18da10997ccb18abd58"
+    },
+    {
+      "command": "REGISTRY_PYTHON=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python WB_LLM_EVIDENCE_DIR=target/review-llm-integration/frozen-process python3 apps/desktop-qt/live-provider-tests/process_cases.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/frozen-process.log",
+      "logSha256": "ab7f750dd5aaff248b56ddd4e48c0d9bac65e53977bbbd911a330d7c1301700b"
+    }
+  ],
+  "scope": "Independent provider/runtime integration source review and deterministic native, transport, provenance and real Qt process validation; no live credentials or provider requests used by reviewer. Hosted/live milestone gates remain separate.",
+  "findings": [
+    {
+      "id": "INT-001",
+      "severity": "medium",
+      "finding": "Provider switch could miss unpublished Session and reuse old provider kind.",
+      "resolution": "Atomic slot creation/publication plus provider generation fences.",
+      "fixCommit": "87ff369fbcbf6875dcdd110c94bc9259d532fa15",
+      "retests": [
+        "slot_publication_cannot_escape_invalidation",
+        "llm_020_single_use_room_and_switch_fences",
+        "Qt test_llm_015_020_switch_pending_cancels"
+      ]
+    },
+    {
+      "id": "INT-002",
+      "severity": "medium",
+      "finding": "Generation check before FileStore handoff left switch-versus-approval TOCTOU.",
+      "resolution": "Separate transaction mutex linearizes configure with generation-authorized accepted Session approval, without holding policy-state lock across callbacks.",
+      "fixCommit": "87ff369fbcbf6875dcdd110c94bc9259d532fa15",
+      "retests": [
+        "generation_transaction_switch_before_apply",
+        "generation_transaction_apply_before_switch"
+      ]
+    },
+    {
+      "id": "INT-003",
+      "severity": "low",
+      "finding": "Observation audit lacked fixed suggestion schema identity.",
+      "resolution": "Outer Audit schemaId identifies OperatorSuggestionV0.1 while retaining closed supplemental Observation schema.",
+      "fixCommit": "87ff369fbcbf6875dcdd110c94bc9259d532fa15",
+      "retests": [
+        "llm_021_redacted_observation"
+      ]
+    },
+    {
+      "id": "INT-004",
+      "severity": "validation",
+      "finding": "Initial unfrozen representative Qt run failed edit timeout with absent controls after successful committed output; implementation owner concurrently rebuilt Qt binary during that run.",
+      "resolution": "Retained initial failure evidence; full seven-case frozen-source/binary rerun passed including actual edit and cold process restoration. Initial run is not acceptance evidence.",
+      "retests": [
+        "frozen-process.log"
+      ],
+      "retainedEvidence": [
+        "initial-unfrozen-process-failure.log",
+        "initial-unfrozen-process-failure-report.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "Approval covers deterministic implementation review; ADR-006 must remain Proposed until separately required hosted CI and consented actual LIVE-001\u2013003 validation succeed.",
+    "Client cancellation aborts transport/invalidates late response; no claim of server-side inference cancellation or exact billing.",
+    "Topology apply and initialization retain accepted non-atomic boundary."
+  ]
+}
