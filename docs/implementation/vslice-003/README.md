@@ -1,6 +1,6 @@
 # VSLICE-003 — Operator-Driven Component Discovery and Assembly
 
-**Version 0.1 · Status PROPOSED · 2026-10-27**
+**Version 0.1 · Status ACCEPTED (Linux deterministic offline Operator profile) · 2026-10-28**
 
 This is the product-level acceptance kit for the bounded **Linux offline Operator** implementation from accepted ADR-005. It reuses admitted immutable components, trusted canonical `planVersion: "0.1"` planning, proposal-bound approval, accepted Qt renderer, ingress, WASM, and room persistence. **No new ABI**.
 
@@ -28,5 +28,5 @@ The included fixture is a **scenario description**, not a substitute for tests a
 The separate [desktop entry](../../../apps/desktop-qt/vslice-003/README.md) reuses
 accepted libraries/renderer contracts and supports a fresh empty room beside existing
 canvases. See [boundaries](IMPLEMENTATION_MAP.md) and [executable test map](CONFORMANCE_MAP.md).
-All gates remain Proposed until independent reviews and full local/hosted archive
-verification finish. Optional external-model trial: NOT RUN (optional; no adapter).
+All26 gates, both independent reviews, full local/hosted checks and downloaded
+archive verification pass; see [evidence](evidence/RESULTS.md). Optional external-model trial: NOT RUN (optional; no adapter).

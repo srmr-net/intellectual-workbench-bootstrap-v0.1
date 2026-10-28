@@ -1,6 +1,6 @@
 # VSLICE-003 — Operator-Driven Component Discovery and Assembly
 
-**Status:** PROPOSED (product validation pending)  
+**Status:** ACCEPTED (Linux deterministic offline Operator profile) — 2026-10-28; [verified evidence](evidence/RESULTS.md)
 **Version:** 0.1 · 2026-10-27  
 **Target:** Linux desktop / deterministic offline Operator profile.  
 **Prerequisites:** Accepted ADR-001–005, VSLICE-001–002. Accepted contracts are normative and MUST NOT be modified to pass this slice.

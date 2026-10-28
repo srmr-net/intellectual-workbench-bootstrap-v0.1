@@ -12,4 +12,7 @@
 - Commands: bash apps/desktop-qt/validate-vslice-003.sh; locked workspace fmt/test/
   Clippy; Python contracts; genuine Qt/offscreen process conformance VS3-001–026.
 - Reviews: independent agent-security + Qt/kernel integration, source-bound receipts.
-- Status: Proposed until all local/hosted gates, reviews and download verification pass.
+- Status: Accepted for the Linux deterministic offline profile,2026-10-28. All26
+  gates, independent reviews, full local/hosted checks and downloaded verification
+  pass; see evidence/RESULTS.md. Reviewed source03b6ac6, tested headd3379a8, hosted
+  merge9bac8f2/run40603341850. Acceptance/evidence commit is documentation only.

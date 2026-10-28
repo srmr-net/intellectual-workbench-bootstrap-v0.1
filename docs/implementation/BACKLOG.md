@@ -26,5 +26,5 @@ owner Codex, [task](vslice-002/TASK.md), dependencies accepted ADR001–004/VSLI
 OP-001 / ADR005 (Accepted, 2026-10-27): bounded local single-component Operator; owner Codex,
 [task](adr-005/TASK.md), depends accepted ADR001–004 and VS1/VS2.
 
-VS3-001 (Proposed): complete bounded desktop Operator journey; owner Codex;
+VS3-001 (Accepted, 2026-10-28): complete bounded desktop Operator journey; owner Codex;
 [task](vslice-003/TASK.md); depends accepted ADR001–005 and VS1/VS2.
