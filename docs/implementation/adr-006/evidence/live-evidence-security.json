@@ -1,0 +1,59 @@
+{
+  "reviewer": "/root/review_llm_security",
+  "role": "security",
+  "status": "APPROVED",
+  "reviewType": "Sanitized live evidence security/privacy review; separate from frozen source approval",
+  "implementationCommit": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "evidenceCommit": "fe43089c2f247516db4dd15cd2d02535a225336b",
+  "remainingMandatory": [],
+  "factsSha256": "0de9252edc45c18772a10d70f98500ed090e34d670d1f78e480ce47a9ed77b5e",
+  "manifestEntriesVerified": 14,
+  "consentRecord": {
+    "path": "docs/implementation/adr-006/evidence/openrouter-consent.json",
+    "sha256": "6e04f3d3f3367defb959c549dd3b5c530ed0ec781ea4d905d5acc67fea84db1b",
+    "scope": "Synthetic mortgage request plus bounded admitted catalog; exact OpenRouter/NVIDIA model/origin, no tools/fallback, zero-price routing filters, at most3 user-consented requests with512 output tokens and20s each; actual evidence records1 attempt."
+  },
+  "freshApproval": {
+    "previewSha256": "e0573cfb2b003cc39b44ad5ed44b29481436839c20d90df1332971545db9d0da",
+    "decisionSha256": "9d7f137169e1cbf26d8b9126a59b5d9b2905c7e0787bb663cc1b82e3c44ce137",
+    "proposalDigest": "38b0c7bbae3810cb3cf1c52ac6e96397e38e2e5e525d99e6bea14d2737c9468b",
+    "ordering": "Remote consent is armed before preview; preview consumes consent, with no room or proposal checkbox approval yet; awaitHumanApproval records exact same digest; ordinary Qt approval then records APPLIED/topologyCommitted. Reviewed frozen driver rejects preexisting decision file and mismatched digest and waits for separate decision before ordinary Qt confirmation."
+  },
+  "independentTests": [
+    {
+      "command": "python3 docs/implementation/adr-006/evidence/reviewer-logs/security/live-evidence-check.py",
+      "scriptSha256": "2d8f2784ad968280d3c0254135f19d869d43ae823aa436b6ab71c7e7e5ec7058",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/live-evidence-check.txt",
+      "logSha256": "fdcabd4a7188c3d80cef3b0212aa901ae367f5e657b0defd16e11d2abe6663da"
+    }
+  ],
+  "verifiedFacts": [
+    "Exact inventory and SHA256 of all14 listed live evidence files; actual facts.json hash separately recorded.",
+    "Current production worker and Qt binary hashes match facts, with separate desktop/worker PID pairs on cold restart.",
+    "Installed mortgage WASM bytes match manifest/runtime digest, published canonical exact pin and durable room component pin; UI and schema hashes match local accepted artifacts.",
+    "One successful HTTPS-profile observation with565 input tokens and159 output tokens,5469ms; fixed requested model/provider profile and default1-call/512-token/20s budget.",
+    "Committed payment1461.48 after explicit approval; later reactive payment1753.77 with provider call count remaining1.",
+    "Cold process preserves exact pins and committed1753.77 display under IPv4/IPv6 denial, zero provider/network attempts and zero guest invocations.",
+    "Screenshot inspected visually: scoped installed component/room and provider policy disclosure; no credential, private prompt or raw response envelope visible."
+  ],
+  "privacyAndLimitations": [
+    "UI and scoped consent explicitly disclose NVIDIA request logging for security/product improvement; no ZDR or zero-retention claim.",
+    "No provider-enforced JSON Schema facility is claimed; local canonical validation remains mandatory and providerEnforcedSchema isfalse.",
+    "Validation UI reports retain synthetic intent and short displayed untrusted explanation by design; raw HTTP request/response envelopes are not archived.",
+    "No exact billed cost or current verified pricing table is claimed; zero-price request filters and exact :free model express requested routing policy.",
+    "Client abort cannot unsend requests or guarantee remote inference cancellation or billing cessation.",
+    "Successful live response was observed; refusal/timeout/malformed/tool/error negatives remain deterministic mocked evidence, not live observations.",
+    "Topology application and typed initialization remain separate accepted operations, with no new cross-stage atomicity claim.",
+    "Consent and human approval records are session attestations corroborated by driver/report ordering; this reviewer did not independently witness the parent chat or use authenticated external timestamps.",
+    "Exact-key scan boolean is implementer-attested because reviewer did not read credentials. Independent structural/visual evidence inspection found no credential material or unrelated private data."
+  ],
+  "scopeExclusions": [
+    "Hosted CI completion and downloaded full-chain archive verification",
+    "Independent packet capture or direct provider account/billing verification"
+  ],
+  "realCredentialsRead": false,
+  "networkOrProviderRequestsPerformed": false,
+  "sourceApprovalReceiptUnchanged": "docs/implementation/adr-006/evidence/review-security.json"
+}

@@ -1,0 +1,1 @@
+{"profileVersion":"0.1","provider":"offline-fixture","model":"deterministic-fixture","enabled":true,"remoteConsent":false,"budget":{"timeoutMs":20000,"maxOutputTokens":512,"maxRequestBytes":4096,"maxResponseBytes":16384,"maxCatalogCandidates":8,"maxCalls":1}}

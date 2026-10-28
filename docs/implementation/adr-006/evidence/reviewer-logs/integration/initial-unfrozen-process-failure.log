@@ -1,0 +1,22 @@
+test_llm_001_offline_and_invalid_optional_config (__main__.Journey.test_llm_001_offline_and_invalid_optional_config) ... ok
+test_llm_015_020_switch_pending_cancels (__main__.Journey.test_llm_015_020_switch_pending_cancels) ... ok
+test_llm_018_019_real_execution_edits_and_cold_restore (__main__.Journey.test_llm_018_019_real_execution_edits_and_cold_restore) ... FAIL
+
+======================================================================
+FAIL: test_llm_018_019_real_execution_edits_and_cold_restore (__main__.Journey.test_llm_018_019_real_execution_edits_and_cold_restore)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/live-provider-tests/process_cases.py", line 37, in test_llm_018_019_real_execution_edits_and_cold_restore
+    first=self.launch(self.remote()+[{'type':'approve'},base.expect(values={'payment':'1461.48'}),base.input_('principal','300000'),base.expect(values={'payment':'1753.77'}),{'type':'pin','pinned':True},{'type':'operatorStatus'},base.QUIT]);s=next(s for s in first['samples'] if s['action']=='previewDraft');self.assertEqual(s['operatorReply']['providerAudit']['observation']['status'],'OK');self.assertEqual(first['samples'][-2]['providerState']['remoteAttempts'],'1')
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/live-provider-tests/process_cases.py", line 26, in launch
+    with unittest.mock.patch.object(subprocess,'Popen',popen):return base.Journey.launch(self,actions,offline)
+                                                                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/vslice-003-tests/process_cases.py", line 53, in launch
+    self.assertEqual(process.returncode,0,(result.get('failure'),stderr));self.assertEqual(result['failure'],'');self.assertEqual(result['pid'],process.pid)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 3 != 0 : ('edit timeout', '')
+
+----------------------------------------------------------------------
+Ran 3 tests in 159.570s
+
+FAILED (failures=1)

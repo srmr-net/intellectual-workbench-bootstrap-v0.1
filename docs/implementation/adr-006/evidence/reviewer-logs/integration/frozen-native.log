@@ -1,0 +1,271 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling unicode-ident v1.0.27
+   Compiling serde_core v1.0.229
+   Compiling serde v1.0.229
+   Compiling foldhash v0.2.0
+   Compiling libc v0.2.190
+   Compiling memchr v2.8.3
+   Compiling cfg-if v1.0.5
+   Compiling equivalent v1.0.3
+   Compiling libm v0.2.16
+   Compiling version_check v0.9.5
+   Compiling log v0.4.34
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+   Compiling anyhow v1.0.104
+   Compiling hashbrown v0.17.1
+   Compiling zmij v1.0.23
+   Compiling generic-array v0.14.7
+   Compiling bitflags v2.13.2
+   Compiling serde_json v1.0.154
+   Compiling syn v3.0.9
+   Compiling syn v2.0.119
+   Compiling leb128fmt v0.1.0
+   Compiling wasmtime-internal-core v49.0.1
+   Compiling typenum v1.20.1
+   Compiling itoa v1.0.18
+   Compiling jobserver v0.1.35
+   Compiling stable_deref_trait v1.2.1
+   Compiling cranelift-srcgen v0.136.3
+   Compiling autocfg v1.5.1
+   Compiling cc v1.8.0
+   Compiling thiserror v2.0.21
+   Compiling num-traits v0.2.19
+   Compiling cranelift-assembler-x64-meta v0.136.3
+   Compiling heck v0.5.0
+   Compiling cpufeatures v0.2.17
+   Compiling fnv v1.0.7
+   Compiling target-lexicon v0.13.5
+   Compiling allocator-api2 v0.2.21
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling semver v1.0.28
+   Compiling digest v0.10.7
+   Compiling hashbrown v0.16.1
+   Compiling sha2 v0.10.9
+   Compiling bumpalo v3.20.3
+   Compiling cranelift-bitset v0.136.1
+   Compiling indexmap v2.14.2
+   Compiling crc32fast v1.5.2
+   Compiling cranelift-isle v0.136.1
+   Compiling rustix v1.1.5
+   Compiling writeable v0.6.4
+   Compiling litemap v0.8.3
+   Compiling cranelift-codegen-shared v0.136.3
+   Compiling num-integer v0.1.47
+   Compiling gimli v0.33.0
+   Compiling synstructure v0.14.0
+   Compiling cranelift-assembler-x64 v0.136.3
+   Compiling scopeguard v1.2.0
+   Compiling icu_properties_data v2.3.0
+   Compiling pkg-config v0.3.34
+   Compiling rustc-hash v2.1.3
+   Compiling utf8_iter v1.0.4
+   Compiling cpp_demangle v0.5.1
+   Compiling icu_normalizer_data v2.3.0
+   Compiling linux-raw-sys v0.12.1
+   Compiling zstd-sys v2.1.1+zstd.1.5.7
+   Compiling wasmparser v0.258.3
+   Compiling pulley-macros v49.0.1
+   Compiling wasmtime-internal-versioned-export-macros v49.0.1
+   Compiling object v0.40.0
+   Compiling pulley-interpreter v49.0.1
+   Compiling zerocopy v0.8.63
+   Compiling arbitrary v1.5.0
+   Compiling serde_derive v1.0.229
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.4
+   Compiling zerovec-derive v0.11.6
+   Compiling displaydoc v0.2.7
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling thiserror-impl v2.0.21
+   Compiling zerovec v0.11.8
+   Compiling zerotrie v0.2.5
+   Compiling cranelift-codegen-meta v0.136.1
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling icu_locale_core v2.3.0
+   Compiling icu_collections v2.3.0
+   Compiling cobs v0.3.0
+   Compiling parking_lot_core v0.9.12
+   Compiling uuid v1.28.0
+   Compiling getrandom v0.3.4
+   Compiling crossbeam-utils v0.8.23
+   Compiling icu_provider v2.3.1
+   Compiling once_cell v1.21.4
+   Compiling termcolor v1.4.1
+   Compiling wasmtime-internal-component-util v49.0.1
+   Compiling smallvec v1.16.3
+   Compiling postcard v1.1.3
+   Compiling ref-cast v1.0.27
+   Compiling regalloc2 v0.15.2
+   Compiling cranelift-entity v0.136.1
+   Compiling cranelift-control v0.136.3
+   Compiling ref-cast-impl v1.0.27
+   Compiling cranelift-bforest v0.136.1
+   Compiling cranelift-codegen v0.136.1
+   Compiling num-bigint v0.4.8
+   Compiling ahash v0.8.12
+   Compiling aho-corasick v1.1.5
+   Compiling rustversion v1.0.23
+   Compiling rustc-demangle v0.1.28
+   Compiling regex-syntax v0.8.11
+   Compiling id-arena v2.3.0
+   Compiling crossbeam-epoch v0.9.21
+   Compiling wasm-encoder v0.258.3
+   Compiling wasmprinter v0.258.3
+   Compiling regex-automata v0.4.18
+   Compiling num-rational v0.4.2
+   Compiling icu_normalizer v2.3.0
+   Compiling wasmtime-environ v49.0.1
+   Compiling icu_properties v2.3.0
+   Compiling lock_api v0.4.14
+   Compiling num-iter v0.1.46
+   Compiling num-complex v0.4.6
+   Compiling base64 v0.22.1
+   Compiling zstd-safe v7.3.0
+   Compiling bit-vec v0.8.0
+   Compiling crossbeam-deque v0.8.8
+   Compiling getrandom v0.4.3
+   Compiling borrow-or-share v0.2.4
+   Compiling fluent-uri v0.3.2
+   Compiling bit-set v0.8.0
+   Compiling num v0.4.3
+   Compiling parking_lot v0.12.5
+   Compiling wit-parser v0.258.3
+   Compiling wasm-metadata v0.258.3
+   Compiling idna_adapter v1.2.2
+   Compiling ittapi-sys v0.4.0
+   Compiling wasm-encoder v0.262.0
+   Compiling winnow v1.0.4
+   Compiling futures-core v0.3.34
+   Compiling vsimd v0.8.0
+   Compiling unicode-width v0.2.2
+   Compiling percent-encoding v2.3.2
+   Compiling either v1.19.0
+   Compiling futures-sink v0.3.34
+   Compiling outref v0.5.2
+   Compiling lazy_static v1.5.1
+   Compiling rayon-core v1.13.0
+   Compiling wasmtime-internal-unwinder v49.0.1
+   Compiling fraction v0.15.4
+   Compiling wast v262.0.0
+   Compiling uuid-simd v0.8.0
+   Compiling futures-channel v0.3.34
+   Compiling toml_parser v1.1.5+spec-1.1.0
+   Compiling encoding_rs v0.8.42
+   Compiling idna v1.1.0
+   Compiling wit-component v0.258.3
+   Compiling fancy-regex v0.16.2
+   Compiling regex v1.13.1
+   Compiling referencing v0.33.0
+   Compiling email_address v0.2.9
+   Compiling wb-contracts v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-contracts)
+   Compiling wasmtime-internal-fiber v49.0.1
+   Compiling wasmtime-internal-jit-debug v49.0.1
+   Compiling toml_datetime v1.1.2+spec-1.1.0
+   Compiling serde_spanned v1.1.2
+   Compiling dirs-sys-next v0.1.2
+   Compiling wasmtime-internal-cranelift v49.0.1
+   Compiling fixedbitset v0.4.2
+   Compiling toml_writer v1.1.3+spec-1.1.0
+   Compiling futures-task v0.3.34
+   Compiling num-cmp v0.1.0
+   Compiling wasmtime-internal-cache v49.0.1
+   Compiling slab v0.4.12
+   Compiling bytecount v0.6.9
+   Compiling pin-project-lite v0.2.17
+   Compiling futures-io v0.3.34
+   Compiling fastrand v2.5.0
+   Compiling wasmtime-internal-component-macro v49.0.1
+   Compiling futures-util v0.3.34
+   Compiling jsonschema v0.33.0
+   Compiling tempfile v3.27.0
+   Compiling toml v1.1.8+spec-1.1.0
+   Compiling petgraph v0.6.5
+   Compiling wat v1.262.0
+   Compiling directories-next v2.0.0
+   Compiling wasmtime-internal-wit-bindgen v49.0.1
+   Compiling zstd v0.13.3
+   Compiling itertools v0.14.0
+   Compiling debugid v0.8.0
+   Compiling wasmtime v49.0.1
+   Compiling multiversion_no_op v1.0.0
+   Compiling simdutf8 v0.1.5
+   Compiling core_detect v1.0.0
+   Compiling rayon v1.12.0
+   Compiling fxprof-processed-profile v0.8.1
+   Compiling ittapi v0.4.0
+   Compiling wasm-compose v0.258.3
+   Compiling futures v0.3.34
+   Compiling wasmtime-internal-jit-icache-coherence v49.0.1
+   Compiling memfd v0.6.6
+   Compiling addr2line v0.26.1
+   Compiling async-trait v0.1.92
+   Compiling wb-semantic v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-semantic)
+   Compiling wb-reactive v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-reactive)
+   Compiling wb-bus v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-bus)
+   Compiling wb-capabilities v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-capabilities)
+   Compiling wb-storage v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-storage)
+   Compiling cranelift-frontend v0.136.1
+   Compiling cranelift-native v0.136.1
+   Compiling wb-wasm-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-wasm-host)
+   Compiling wb-registry v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-registry)
+   Compiling wb-kernel v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-kernel)
+   Compiling wb-ui-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-ui-host)
+   Compiling wb-desktop-host v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-desktop-host)
+   Compiling wb-operator v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/crates/wb-operator)
+   Compiling wb-live-provider v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/live-provider/host)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 6m 45s
+     Running unittests src/lib.rs (target/review-llm-integration/build/debug/deps/wb_live_provider-bcd736857e87f251)
+
+running 2 tests
+test transport::tests::dropping_pending_process_exchange_kills_and_reaps_child ... ok
+test provider::tests::llm_014_020_concurrent_room_and_global_leases_are_bounded_and_isolated ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.48s
+
+     Running unittests src/bin/worker.rs (target/review-llm-integration/build/debug/deps/wb_live_worker-08c12bc39d67ee3c)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/conformance.rs (target/review-llm-integration/build/debug/deps/conformance-d74bd19233c4b7ff)
+
+running 24 tests
+test generation_transaction_switch_before_apply ... ok
+test llm_004_closed_host_configuration ... ok
+test generation_transaction_apply_before_switch ... ok
+test llm_008_strict_json_and_size ... ok
+test llm_009_invented_authority ... ok
+test llm_010_refusal ... ok
+test llm_011_incomplete_and_schema_separate ... ok
+test llm_002_consent_before_credential_or_transport ... ok
+test consent_binds_exact_input_and_host_ticket ... ok
+test llm_006_strict_api_schema_and_no_tools ... ok
+test llm_003_minimized_payload ... ok
+test llm_005_credentials_excluded_and_echo_blocked ... ok
+test llm_012_auth_no_retry ... ok
+test llm_015_cancel_before_and_pending ... ok
+test llm_001_offline_without_credentials ... ok
+test private_file_credentials_reject_links_and_permissions ... ok
+test llm_007_valid_canonical_suggestion ... ok
+test llm_021_redacted_observation ... ok
+test llm_020_single_use_room_and_switch_fences ... ok
+test revoke_inside_start_and_ready_poll_cannot_publish ... ok
+test llm_014_budgets ... ok
+test slot_publication_cannot_escape_invalidation ... ok
+test llm_022_transport_failures_and_tools ... ok
+test llm_013_retry_bounds ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+   Doc-tests wb_live_provider
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

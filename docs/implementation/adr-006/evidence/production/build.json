@@ -1,0 +1,15 @@
+{
+  "sourceImplementation": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
+  "command": "cargo build --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --features live-http --target-dir target/llm-manual",
+  "exitCode": 0,
+  "features": [
+    "default (empty)",
+    "live-http"
+  ],
+  "testTransportEnabled": false,
+  "workerSha256": "d60aff418129a88857d57dbd43aaacd814da30b755d9b1a5fcebf8e72961a69f",
+  "actualProviderCallOnThisBinary": false,
+  "interactiveLauncher": "target/run-live-workbench.sh",
+  "manualRegistryAdmission": "Real mortgage UI pin admitted through accepted wb-desktop-install",
+  "manualState": "target/manual-workbench/workspace"
+}

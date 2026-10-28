@@ -1,0 +1,39 @@
+{
+  "reports": 14,
+  "desktopPids": [
+    16,
+    35,
+    46,
+    57,
+    68,
+    79,
+    90,
+    101,
+    112,
+    132,
+    271,
+    291,
+    301,
+    321
+  ],
+  "workerPids": [
+    19,
+    38,
+    49,
+    60,
+    71,
+    82,
+    93,
+    104,
+    115,
+    135,
+    274,
+    294,
+    304,
+    324
+  ],
+  "appSha256": "832a525ac6502650eac3b87514c7b319822f087dd89e25141bf4c8e4483e26fc",
+  "workerSha256": "4921c292b40d942b07ebee070e6e7bcc4199c0f5093832eff73501339b33d05a",
+  "allReportsPassed": true,
+  "processEvidenceDirectory": "target/review-llm-integration/frozen-process"
+}

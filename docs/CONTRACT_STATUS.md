@@ -19,7 +19,7 @@ Trust boundaries; manifest authority over RDF for runtime declarations; no ambie
 - ADR-004 semantic UI/Qt integration: **Accepted** for the scoped Linux Qt6 form profile; [UI-001–020, reviews and verified hosted evidence](implementation/adr-004/evidence/RESULTS.md). The supplied UI kit reassigns the old unresolved storage placeholder; [ADR-012](adr/ADR-012.md) retains that open decision. Accepted ADR001/002/003 histories remain unchanged.
 - ADR-005 bounded Operator: **Accepted** for the scoped Linux offline single-component profile; all OP-001–024 gates, independent reviews and [verified hosted evidence](implementation/adr-005/evidence/RESULTS.md) pass. General planning and remote providers remain deferred.
 - ADR-014 permanent namespace, SHACL and compatibility: **OPEN**; retains the earlier unaccepted ADR-005 placeholder.
-- ADR-006 publication/archive format: **OPEN**; ADR-003 scopes raw-byte SHA-256 and local-directory admission only; existing package schema retained.
+- ADR-015 publication/archive format: **OPEN**; ADR-003 scopes raw-byte SHA-256 and local-directory admission only; existing package schema retained.
 - ADR-007 actual host permission grants: **OPEN**, current capability broker rejects requests.
 - ADR-008 shared decimal arithmetic conventions: **OPEN**; the VSLICE-001 mortgage domain policy is product-specific and does not settle shared numeric contracts.
 - ADR-009 Operator interface: historical placeholder, superseded within the bounded profile by accepted ADR-005; richer planning remains deferred.
@@ -37,3 +37,5 @@ No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffoldin
 - VSLICE-002 interactive mortgage/persistent canvas: **Accepted**; all24 gates, independent reviews, genuine25-process evidence and [verified hosted artifacts](implementation/vslice-002/evidence/RESULTS.md).
 
 - VSLICE-003 complete Linux desktop Operator journey: **Accepted** for the deterministic offline profile; all26 gates, independent reviews and [verified hosted evidence](implementation/vslice-003/evidence/RESULTS.md) pass. Accepted ADR005 boundaries and all earlier contracts remain unchanged.
+
+- ADR-006 live bounded Operator provider: **Accepted (Linux / OpenRouter NVIDIA free profile)**; [evidence](implementation/adr-006/evidence/RESULTS.md). Offline default and accepted contracts remain binding; OpenAI remains deterministic-only.

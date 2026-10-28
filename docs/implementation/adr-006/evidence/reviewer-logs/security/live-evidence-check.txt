@@ -1,0 +1,7 @@
+PASS: all 14 live evidence manifest entries and exact inventory verified
+PASS: scoped consent record, consumed consent, exact digest approval and preview-before-apply report ordering verified
+PASS: actual HTTPS profile evidence, bounded usage, accepted execution, reactive call count and isolated offline cold-process records verified
+PASS: current production binaries, manifest/WASM exact pin, UI/schema hashes and no-exact-cost claim verified
+LIMITATION: consent/human decision are recorded session attestations plus driver ordering, not independently witnessed chat or an authenticated timestamp service.
+LIMITATION: no actual key was read; exact-key scan result is implementer-attested. Structural/privacy review and screenshot inspection found only scoped synthetic UI data, not raw HTTP envelopes.
+LIMITATION: provider error negatives remain mocked; remote cancellation/billing cessation and provider-retention guarantees are not claimed.

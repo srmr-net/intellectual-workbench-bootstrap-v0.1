@@ -1,0 +1,53 @@
+{
+  "verified": true,
+  "gate": "LLM-024",
+  "hosted": true,
+  "source": "ee6c9825659d03be04f62f144872a1c7e84e4eb1",
+  "head": "fdd1ef79b7fd0716465d26331f0e0efabfbb029b",
+  "archiveSha256": "0f5dfe12aefe876bcccc89f63d0f09d0f8cde36112f92606ece8c4614b92f2f4",
+  "nativeConformanceTests": 27,
+  "transportTests": 5,
+  "qtProcessTests": 7,
+  "appWorkerPairs": 14,
+  "retained": {
+    "verified": true,
+    "hosted": false,
+    "source": "ee6c9825659d03be04f62f144872a1c7e84e4eb1",
+    "head": null,
+    "archiveSha256": "0f5dfe12aefe876bcccc89f63d0f09d0f8cde36112f92606ece8c4614b92f2f4",
+    "test": "test_vs3_026_complete_downloaded_hosted_evidence",
+    "vs3Gates": 26,
+    "namedJourneyTests": 24,
+    "nativeWorkerTests": 6,
+    "metadataTests": 6,
+    "appWorkerPairs": 25,
+    "retained": {
+      "verified": true,
+      "hosted": false,
+      "source": "ee6c9825659d03be04f62f144872a1c7e84e4eb1",
+      "head": null,
+      "archiveSha256": "0f5dfe12aefe876bcccc89f63d0f09d0f8cde36112f92606ece8c4614b92f2f4",
+      "operatorCases": 24,
+      "rustTests": 162,
+      "newNativeTests": 24,
+      "workerTests": 9,
+      "qtProcessTests": 6,
+      "desktopProcesses": 7,
+      "coldProviderCalls": 0,
+      "coldGuestInvocations": 0,
+      "appSha256": "77a5ab455e9113dbbe684ecdfea21b416e3aed20a670fdff17a22260eb98de39",
+      "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+      "reviewers": [
+        "/root/review_op_security",
+        "independent agent /root/review_op_runtime; no implementation authorship"
+      ],
+      "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+    },
+    "appSha256": "132df1a32c5f4fa26e9ad26798458290cfa584ef8cd19d9e177dbe9ec8777e11",
+    "workerSha256": "0777622aac7c83168892fda789244ca5ed09aa28a3d985097ebead31db5e13cb",
+    "coldProviderCalls": 0,
+    "coldGuestInvocations": 0,
+    "qt": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+  },
+  "live": "separate required evidence"
+}

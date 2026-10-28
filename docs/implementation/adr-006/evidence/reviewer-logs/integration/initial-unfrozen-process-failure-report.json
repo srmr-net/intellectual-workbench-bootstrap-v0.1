@@ -1,0 +1,2948 @@
+{
+    "binarySha256": "832a525ac6502650eac3b87514c7b319822f087dd89e25141bf4c8e4483e26fc",
+    "exitCode": 3,
+    "failure": "edit timeout",
+    "finalState": {
+        "accepted": true,
+        "diagnostics": [
+        ],
+        "document": {
+            "root": {
+                "children": [
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/principal",
+                            "port": "calculate"
+                        },
+                        "id": "principal",
+                        "label": "Principal",
+                        "type": "decimal-input",
+                        "unit": "GBP"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/annual_rate_percent",
+                            "port": "calculate"
+                        },
+                        "id": "rate",
+                        "label": "Annual interest rate",
+                        "type": "decimal-input",
+                        "unit": "percent"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/term_months",
+                            "port": "calculate"
+                        },
+                        "id": "term",
+                        "label": "Term (months)",
+                        "type": "integer-input"
+                    },
+                    {
+                        "bind": {
+                            "direction": "output",
+                            "field": "/monthly_payment",
+                            "port": "payment"
+                        },
+                        "id": "payment",
+                        "label": "Monthly repayment",
+                        "type": "readout"
+                    }
+                ],
+                "title": "Mortgage calculator",
+                "type": "form"
+            },
+            "uiVersion": "0.1"
+        },
+        "epoch": "3",
+        "installed": [
+            {
+                "label": "org.workbench.example.mortgage-ui",
+                "pin": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 58,
+        "projection": {
+            "diagnostics": [
+            ],
+            "executionGeneration": "3",
+            "key": {
+                "instanceId": "component",
+                "roomId": "intent-room",
+                "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+            },
+            "projectionSequence": "2",
+            "roomRevision": "2",
+            "values": {
+                "payment": "1461.48",
+                "principal": "250000",
+                "rate": "5",
+                "term": "300"
+            }
+        },
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+            "frameBytes": 1048576,
+            "liveAuditEntries": 0,
+            "queueCapacity": 32,
+            "traceEntries": 0
+        },
+        "rooms": [
+            {
+                "component": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                },
+                "id": "intent-room",
+                "label": "Intent room",
+                "pinned": false,
+                "ui": {
+                    "path": "ui.json",
+                    "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                    "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                }
+            }
+        ],
+        "selectedRoom": "intent-room",
+        "token": "1"
+    },
+    "guiThread": true,
+    "initialGuestInvocations": "0",
+    "initialProviderCalls": "0",
+    "pid": 55,
+    "platform": "offscreen",
+    "qtVersion": "6.11.2",
+    "samples": [
+        {
+            "action": "selectProvider",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 314,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 658,
+                    "x": 611
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "0",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-1"
+            },
+            "operatorStatus": "OK",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "0",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-2",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": ""
+            },
+            "submittedText": "",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "draftIntent",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 314,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 658,
+                    "x": 611
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "0",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-1"
+            },
+            "operatorStatus": "OK",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "0",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-2",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": ""
+            },
+            "submittedText": "",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "remoteConsent",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 314,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 658,
+                    "x": 611
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "0",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-1"
+            },
+            "operatorStatus": "OK",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": true
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "0",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-3",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": true,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": ""
+            },
+            "submittedText": "",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "previewDraft",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 314,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 658,
+                    "x": 611
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": true,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "audit": [
+                    {
+                        "correlation": "operator-1",
+                        "errorCode": null,
+                        "initializationSucceeded": null,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 0,
+                        "roomId": "intent-room",
+                        "status": "proposal.prepared",
+                        "topologyCommitted": null
+                    }
+                ],
+                "code": "PREVIEW",
+                "kind": "reply",
+                "ok": true,
+                "preview": {
+                    "effect": "Add one installed component to this empty room, then initialize through typed UI ingress.",
+                    "expiresInSeconds": 120,
+                    "initialInputDigest": "b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b",
+                    "initialInputs": {
+                        "annual_rate_percent": "5",
+                        "principal": "250000",
+                        "term_months": 300
+                    },
+                    "plan": {
+                        "connections": [
+                        ],
+                        "expectedRoomRevision": 0,
+                        "instances": [
+                            {
+                                "component": {
+                                    "id": "org.workbench.example.mortgage-ui",
+                                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                                    "version": "0.1.0"
+                                },
+                                "instanceId": "component"
+                            }
+                        ],
+                        "planVersion": "0.1",
+                        "requestedPermissions": [
+                        ],
+                        "roomId": "intent-room",
+                        "ui": {
+                            "definitionRef": "org.workbench.example.mortgage-ui/ui.json"
+                        }
+                    },
+                    "policyRevision": "0",
+                    "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                    "proposalId": "3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934",
+                    "requiresApproval": true,
+                    "untrustedExplanation": "Mocked transport only. Host validation and user approval are required.",
+                    "validation": {
+                        "admittedUiBindings": true,
+                        "canonicalPlan": true,
+                        "exactPin": true,
+                        "initialInputSchema": true,
+                        "profile": "single-component-empty-room",
+                        "purePermissions": true
+                    }
+                },
+                "protocol": "operator.1",
+                "providerAudit": {
+                    "attempts": 1,
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "generation": 2,
+                    "observation": {
+                        "catalogCount": 1,
+                        "correlationId": "operator-1",
+                        "durationMs": 986,
+                        "inputTokens": 100,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "observationVersion": "0.1",
+                        "outputTokens": 100,
+                        "provider": "openai-responses",
+                        "status": "OK"
+                    },
+                    "room": "intent-room",
+                    "schemaId": "OperatorSuggestionV0.1",
+                    "sequence": 1
+                },
+                "providerCalls": "1",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "profileVersion": "0.1",
+                        "provider": "openai-responses",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "1",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-4"
+            },
+            "operatorStatus": "Review the exact pin, inputs and effects. Approval is required.",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "{\n    \"effect\": \"Add one installed component to this empty room, then initialize through typed UI ingress.\",\n    \"expiresInSeconds\": 120,\n    \"initialInputDigest\": \"b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b\",\n    \"initialInputs\": {\n        \"annual_rate_percent\": \"5\",\n        \"principal\": \"250000\",\n        \"term_months\": 300\n    },\n    \"plan\": {\n        \"connections\": [\n        ],\n        \"expectedRoomRevision\": 0,\n        \"instances\": [\n            {\n                \"component\": {\n                    \"id\": \"org.workbench.example.mortgage-ui\",\n                    \"sha256\": \"64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95\",\n                    \"version\": \"0.1.0\"\n                },\n                \"instanceId\": \"component\"\n            }\n        ],\n        \"planVersion\": \"0.1\",\n        \"requestedPermissions\": [\n        ],\n        \"roomId\": \"intent-room\",\n        \"ui\": {\n            \"definitionRef\": \"org.workbench.example.mortgage-ui/ui.json\"\n        }\n    },\n    \"policyRevision\": \"0\",\n    \"proposalDigest\": \"f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d\",\n    \"proposalId\": \"3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934\",\n    \"requiresApproval\": true,\n    \"validation\": {\n        \"admittedUiBindings\": true,\n        \"canonicalPlan\": true,\n        \"exactPin\": true,\n        \"initialInputSchema\": true,\n        \"profile\": \"single-component-empty-room\",\n        \"purePermissions\": true\n    }\n}\n\nInput values and units follow the admitted component's validated contracts.\nUntrusted provider explanation:\nMocked transport only. Host validation and user approval are required.",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "1",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": ""
+            },
+            "submittedText": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "approve",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 314,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 658,
+                    "x": 611
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "principal",
+                    "name": "Principal",
+                    "role": 42,
+                    "text": "250000"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "rate",
+                    "name": "Annual interest rate",
+                    "role": 42,
+                    "text": "5"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "term",
+                    "name": "Term (months)",
+                    "role": 42,
+                    "text": "300"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "payment",
+                    "name": "Monthly repayment",
+                    "role": 41,
+                    "text": "1461.48"
+                }
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "audit": [
+                    {
+                        "correlation": "operator-1",
+                        "errorCode": null,
+                        "initializationSucceeded": null,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 0,
+                        "roomId": "intent-room",
+                        "status": "proposal.prepared",
+                        "topologyCommitted": null
+                    },
+                    {
+                        "correlation": "operator-2",
+                        "errorCode": null,
+                        "initializationSucceeded": true,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "status": "initialization.committed",
+                        "topologyCommitted": true
+                    }
+                ],
+                "checkpointPersisted": true,
+                "code": "APPLIED",
+                "initialInvocations": "1",
+                "initializationSucceeded": true,
+                "kind": "reply",
+                "nativeAudit": [
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.declared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 1
+                    },
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 2
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.prepared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 3
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.started",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 4
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "dispatch.accepted",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 6
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 7
+                    },
+                    {
+                        "actor": "scheduler",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.started",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 8
+                    },
+                    {
+                        "actor": "host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": 8133,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.completed",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 9
+                    }
+                ],
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "1",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "profileVersion": "0.1",
+                        "provider": "openai-responses",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "1",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "refreshDesktop": true,
+                "roomId": "intent-room",
+                "roomRevision": "2",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-5",
+                "topologyCheckpointPersisted": true,
+                "topologyCommitted": true
+            },
+            "operatorStatus": "APPLIED",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "{\n    \"effect\": \"Add one installed component to this empty room, then initialize through typed UI ingress.\",\n    \"expiresInSeconds\": 120,\n    \"initialInputDigest\": \"b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b\",\n    \"initialInputs\": {\n        \"annual_rate_percent\": \"5\",\n        \"principal\": \"250000\",\n        \"term_months\": 300\n    },\n    \"plan\": {\n        \"connections\": [\n        ],\n        \"expectedRoomRevision\": 0,\n        \"instances\": [\n            {\n                \"component\": {\n                    \"id\": \"org.workbench.example.mortgage-ui\",\n                    \"sha256\": \"64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95\",\n                    \"version\": \"0.1.0\"\n                },\n                \"instanceId\": \"component\"\n            }\n        ],\n        \"planVersion\": \"0.1\",\n        \"requestedPermissions\": [\n        ],\n        \"roomId\": \"intent-room\",\n        \"ui\": {\n            \"definitionRef\": \"org.workbench.example.mortgage-ui/ui.json\"\n        }\n    },\n    \"policyRevision\": \"0\",\n    \"proposalDigest\": \"f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d\",\n    \"proposalId\": \"3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934\",\n    \"requiresApproval\": true,\n    \"validation\": {\n        \"admittedUiBindings\": true,\n        \"canonicalPlan\": true,\n        \"exactPin\": true,\n        \"initialInputSchema\": true,\n        \"profile\": \"single-component-empty-room\",\n        \"purePermissions\": true\n    }\n}\n\nInput values and units follow the admitted component's validated contracts.\nUntrusted provider explanation:\nMocked transport only. Host validation and user approval are required.",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "1",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "",
+                "transport": "deterministic-mock"
+            },
+            "ready": true,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "3",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "3",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "2",
+                    "roomRevision": "2",
+                    "values": {
+                        "payment": "1461.48",
+                        "principal": "250000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": false,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": "1"
+            },
+            "submittedText": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "expect",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "principal",
+                    "name": "Principal",
+                    "role": 42,
+                    "text": "250000"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "rate",
+                    "name": "Annual interest rate",
+                    "role": 42,
+                    "text": "5"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "term",
+                    "name": "Term (months)",
+                    "role": 42,
+                    "text": "300"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "payment",
+                    "name": "Monthly repayment",
+                    "role": 41,
+                    "text": "1461.48"
+                }
+            ],
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "audit": [
+                    {
+                        "correlation": "operator-1",
+                        "errorCode": null,
+                        "initializationSucceeded": null,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 0,
+                        "roomId": "intent-room",
+                        "status": "proposal.prepared",
+                        "topologyCommitted": null
+                    },
+                    {
+                        "correlation": "operator-2",
+                        "errorCode": null,
+                        "initializationSucceeded": true,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "status": "initialization.committed",
+                        "topologyCommitted": true
+                    }
+                ],
+                "checkpointPersisted": true,
+                "code": "APPLIED",
+                "initialInvocations": "1",
+                "initializationSucceeded": true,
+                "kind": "reply",
+                "nativeAudit": [
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.declared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 1
+                    },
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 2
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.prepared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 3
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.started",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 4
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "dispatch.accepted",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 6
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 7
+                    },
+                    {
+                        "actor": "scheduler",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.started",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 8
+                    },
+                    {
+                        "actor": "host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": 8133,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.completed",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 9
+                    }
+                ],
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "1",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "profileVersion": "0.1",
+                        "provider": "openai-responses",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "1",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "refreshDesktop": true,
+                "roomId": "intent-room",
+                "roomRevision": "2",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-5",
+                "topologyCheckpointPersisted": true,
+                "topologyCommitted": true
+            },
+            "operatorStatus": "APPLIED",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 0,
+            "previewText": "{\n    \"effect\": \"Add one installed component to this empty room, then initialize through typed UI ingress.\",\n    \"expiresInSeconds\": 120,\n    \"initialInputDigest\": \"b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b\",\n    \"initialInputs\": {\n        \"annual_rate_percent\": \"5\",\n        \"principal\": \"250000\",\n        \"term_months\": 300\n    },\n    \"plan\": {\n        \"connections\": [\n        ],\n        \"expectedRoomRevision\": 0,\n        \"instances\": [\n            {\n                \"component\": {\n                    \"id\": \"org.workbench.example.mortgage-ui\",\n                    \"sha256\": \"64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95\",\n                    \"version\": \"0.1.0\"\n                },\n                \"instanceId\": \"component\"\n            }\n        ],\n        \"planVersion\": \"0.1\",\n        \"requestedPermissions\": [\n        ],\n        \"roomId\": \"intent-room\",\n        \"ui\": {\n            \"definitionRef\": \"org.workbench.example.mortgage-ui/ui.json\"\n        }\n    },\n    \"policyRevision\": \"0\",\n    \"proposalDigest\": \"f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d\",\n    \"proposalId\": \"3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934\",\n    \"requiresApproval\": true,\n    \"validation\": {\n        \"admittedUiBindings\": true,\n        \"canonicalPlan\": true,\n        \"exactPin\": true,\n        \"initialInputSchema\": true,\n        \"profile\": \"single-component-empty-room\",\n        \"purePermissions\": true\n    }\n}\n\nInput values and units follow the admitted component's validated contracts.\nUntrusted provider explanation:\nMocked transport only. Host validation and user approval are required.",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "1",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "",
+                "transport": "deterministic-mock"
+            },
+            "ready": true,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "3",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "3",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "2",
+                    "roomRevision": "2",
+                    "values": {
+                        "payment": "1461.48",
+                        "principal": "250000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": false,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": "1"
+            },
+            "submittedText": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "FAILED",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "UI_OPERATION_TIMEOUT",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "audit": [
+                    {
+                        "correlation": "operator-1",
+                        "errorCode": null,
+                        "initializationSucceeded": null,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 0,
+                        "roomId": "intent-room",
+                        "status": "proposal.prepared",
+                        "topologyCommitted": null
+                    },
+                    {
+                        "correlation": "operator-2",
+                        "errorCode": null,
+                        "initializationSucceeded": true,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "status": "initialization.committed",
+                        "topologyCommitted": true
+                    }
+                ],
+                "checkpointPersisted": true,
+                "code": "APPLIED",
+                "initialInvocations": "1",
+                "initializationSucceeded": true,
+                "kind": "reply",
+                "nativeAudit": [
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.declared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 1
+                    },
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 2
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.prepared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 3
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.started",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 4
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "dispatch.accepted",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 6
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 7
+                    },
+                    {
+                        "actor": "scheduler",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.started",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 8
+                    },
+                    {
+                        "actor": "host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": 8133,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.completed",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 9
+                    }
+                ],
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "1",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "profileVersion": "0.1",
+                        "provider": "openai-responses",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "1",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "refreshDesktop": true,
+                "roomId": "intent-room",
+                "roomRevision": "2",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-5",
+                "topologyCheckpointPersisted": true,
+                "topologyCommitted": true
+            },
+            "operatorStatus": "APPLIED",
+            "operatorWidgets": [
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 1,
+            "previewText": "{\n    \"effect\": \"Add one installed component to this empty room, then initialize through typed UI ingress.\",\n    \"expiresInSeconds\": 120,\n    \"initialInputDigest\": \"b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b\",\n    \"initialInputs\": {\n        \"annual_rate_percent\": \"5\",\n        \"principal\": \"250000\",\n        \"term_months\": 300\n    },\n    \"plan\": {\n        \"connections\": [\n        ],\n        \"expectedRoomRevision\": 0,\n        \"instances\": [\n            {\n                \"component\": {\n                    \"id\": \"org.workbench.example.mortgage-ui\",\n                    \"sha256\": \"64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95\",\n                    \"version\": \"0.1.0\"\n                },\n                \"instanceId\": \"component\"\n            }\n        ],\n        \"planVersion\": \"0.1\",\n        \"requestedPermissions\": [\n        ],\n        \"roomId\": \"intent-room\",\n        \"ui\": {\n            \"definitionRef\": \"org.workbench.example.mortgage-ui/ui.json\"\n        }\n    },\n    \"policyRevision\": \"0\",\n    \"proposalDigest\": \"f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d\",\n    \"proposalId\": \"3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934\",\n    \"requiresApproval\": true,\n    \"validation\": {\n        \"admittedUiBindings\": true,\n        \"canonicalPlan\": true,\n        \"exactPin\": true,\n        \"initialInputSchema\": true,\n        \"profile\": \"single-component-empty-room\",\n        \"purePermissions\": true\n    }\n}\n\nInput values and units follow the admitted component's validated contracts.\nUntrusted provider explanation:\nMocked transport only. Host validation and user approval are required.",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "1",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "3",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "3",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "2",
+                    "roomRevision": "2",
+                    "values": {
+                        "payment": "1461.48",
+                        "principal": "250000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": false,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": "1"
+            },
+            "submittedText": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "exit",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "error": "UI_OPERATION_TIMEOUT",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "audit": [
+                    {
+                        "correlation": "operator-1",
+                        "errorCode": null,
+                        "initializationSucceeded": null,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 0,
+                        "roomId": "intent-room",
+                        "status": "proposal.prepared",
+                        "topologyCommitted": null
+                    },
+                    {
+                        "correlation": "operator-2",
+                        "errorCode": null,
+                        "initializationSucceeded": true,
+                        "nativeCode": null,
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "proposalDigest": "f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d",
+                        "providerKind": "openai-responses",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "status": "initialization.committed",
+                        "topologyCommitted": true
+                    }
+                ],
+                "checkpointPersisted": true,
+                "code": "APPLIED",
+                "initialInvocations": "1",
+                "initializationSucceeded": true,
+                "kind": "reply",
+                "nativeAudit": [
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.declared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 1
+                    },
+                    {
+                        "actor": "operator.approved",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 2
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.prepared",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 3
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "instance.started",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 4
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "dispatch.accepted",
+                        "revision": 1,
+                        "roomId": "intent-room",
+                        "sequence": 6
+                    },
+                    {
+                        "actor": "operator.host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": null,
+                        "kind": "room.revised",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 7
+                    },
+                    {
+                        "actor": "scheduler",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": null,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.started",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 8
+                    },
+                    {
+                        "actor": "host",
+                        "correlationId": "operator-2",
+                        "elapsedMicros": 8133,
+                        "errorCode": null,
+                        "instanceId": "component",
+                        "kind": "invocation.completed",
+                        "revision": 2,
+                        "roomId": "intent-room",
+                        "sequence": 9
+                    }
+                ],
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "1",
+                "providerState": {
+                    "code": "OK",
+                    "endpoint": "https://api.openai.com/v1/responses",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "gpt-5.4-mini-2026-03-17",
+                        "profileVersion": "0.1",
+                        "provider": "openai-responses",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "remoteAttempts": "1",
+                    "remoteModel": "gpt-5.4-mini-2026-03-17",
+                    "token": "",
+                    "transport": "deterministic-mock"
+                },
+                "refreshDesktop": true,
+                "roomId": "intent-room",
+                "roomRevision": "2",
+                "token": "op-f37d95e5143a44e0b6c0ecb5ef6f9711-5",
+                "topologyCheckpointPersisted": true,
+                "topologyCommitted": true
+            },
+            "operatorStatus": "APPLIED",
+            "operatorWidgets": [
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "providerChoice",
+                    "name": "OpenAI Responses (remote)",
+                    "role": 46,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "remoteConsent",
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "providerInfo",
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorIntent",
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorSubmitted",
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "id": "operatorStatus",
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorDecline",
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "id": "operatorPreview",
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorConsent",
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorApprove",
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "id": "operatorCancel",
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true
+                }
+            ],
+            "pending": 1,
+            "previewText": "{\n    \"effect\": \"Add one installed component to this empty room, then initialize through typed UI ingress.\",\n    \"expiresInSeconds\": 120,\n    \"initialInputDigest\": \"b12b61987747fc8fbf27592605540864e4d281c9de1a5c66cb28d8fe6519142b\",\n    \"initialInputs\": {\n        \"annual_rate_percent\": \"5\",\n        \"principal\": \"250000\",\n        \"term_months\": 300\n    },\n    \"plan\": {\n        \"connections\": [\n        ],\n        \"expectedRoomRevision\": 0,\n        \"instances\": [\n            {\n                \"component\": {\n                    \"id\": \"org.workbench.example.mortgage-ui\",\n                    \"sha256\": \"64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95\",\n                    \"version\": \"0.1.0\"\n                },\n                \"instanceId\": \"component\"\n            }\n        ],\n        \"planVersion\": \"0.1\",\n        \"requestedPermissions\": [\n        ],\n        \"roomId\": \"intent-room\",\n        \"ui\": {\n            \"definitionRef\": \"org.workbench.example.mortgage-ui/ui.json\"\n        }\n    },\n    \"policyRevision\": \"0\",\n    \"proposalDigest\": \"f57e75b8f0d0fe21fc1d30881f63b577946ad7e35d4859ea66fdf973659d294d\",\n    \"proposalId\": \"3fd989d20afd87f9ef3e50d643096e8e93aab732d3707c29851e9d750ad07934\",\n    \"requiresApproval\": true,\n    \"validation\": {\n        \"admittedUiBindings\": true,\n        \"canonicalPlan\": true,\n        \"exactPin\": true,\n        \"initialInputSchema\": true,\n        \"profile\": \"single-component-empty-room\",\n        \"purePermissions\": true\n    }\n}\n\nInput values and units follow the admitted component's validated contracts.\nUntrusted provider explanation:\nMocked transport only. Host validation and user approval are required.",
+            "providerState": {
+                "code": "OK",
+                "endpoint": "https://api.openai.com/v1/responses",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "gpt-5.4-mini-2026-03-17",
+                    "profileVersion": "0.1",
+                    "provider": "openai-responses",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "remoteAttempts": "1",
+                "remoteModel": "gpt-5.4-mini-2026-03-17",
+                "token": "",
+                "transport": "deterministic-mock"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "3",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 58,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "3",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "2",
+                    "roomRevision": "2",
+                    "values": {
+                        "payment": "1461.48",
+                        "principal": "250000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": false,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": "1"
+            },
+            "submittedText": "I need a mortgage calculator for a £250,000 loan over 25 years at 5%.",
+            "windowActive": true,
+            "windowVisible": true
+        }
+    ],
+    "workerProcessPid": 58
+}
