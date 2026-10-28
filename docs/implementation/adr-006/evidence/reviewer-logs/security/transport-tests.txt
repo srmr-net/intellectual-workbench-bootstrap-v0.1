@@ -5,6 +5,6 @@ test_llm_022_headers_overflow_and_network (__main__.Transport.test_llm_022_heade
 test_openrouter_separate_fixed_origin_and_no_arbitrary_endpoint (__main__.Transport.test_openrouter_separate_fixed_origin_and_no_arbitrary_endpoint) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.043s
+Ran 5 tests in 0.041s
 
 OK

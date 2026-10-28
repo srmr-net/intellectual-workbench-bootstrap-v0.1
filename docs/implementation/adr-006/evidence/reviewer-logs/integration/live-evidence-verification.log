@@ -1,0 +1,27 @@
+{
+  "verified": true,
+  "source": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "hashedFiles": 14,
+  "proposalDigest": "38b0c7bbae3810cb3cf1c52ac6e96397e38e2e5e525d99e6bea14d2737c9468b",
+  "recomputedProposalDigest": true,
+  "exactPin": {
+    "id": "org.workbench.example.mortgage-ui",
+    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+    "version": "0.1.0"
+  },
+  "initialPayment": "1461.48",
+  "reactivePayment": "1753.77",
+  "remoteAttempts": 1,
+  "providerCalls": 1,
+  "distinctProcesses": 4,
+  "coldProviderCalls": 0,
+  "coldGuestCalls": 0,
+  "coldNetworkDenied": true,
+  "providerEnforcedSchema": false,
+  "rawProviderBodiesArchived": false,
+  "limitations": [
+    "Artifact consistency verified; user chat consent/approval assertion attributed to archived host record, not independently queried account.",
+    "No exact billing or provider-retention guarantee; no real refusal/timeout observed; mocked negatives remain separate.",
+    "Accepted topology-then-ingress boundary remains non-atomic."
+  ]
+}

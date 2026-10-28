@@ -2,7 +2,7 @@
   "reviewer": "/root/review_llm_security",
   "role": "security",
   "status": "APPROVED",
-  "implementationCommit": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "implementationCommit": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
   "remainingMandatory": [],
   "sourceSha256": {
     ".github/workflows/adr-006.yml": "9ce896103eee2c2d107448c6d5d97c751e342c972fad8b232e52b9f6add06039",
@@ -16,19 +16,19 @@
     "apps/desktop-qt/live-provider/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
     "apps/desktop-qt/live-provider/OperatorPanel.cpp": "bc7171ae6cc9cbb03e0dc842a0a63d9711803f4fa3278c80e771f6416769a67b",
     "apps/desktop-qt/live-provider/OperatorPanel.h": "0a83c28a2077321d6e26c07eb0d32b44e46898fed2acd63a658912b758bc1c5b",
-    "apps/desktop-qt/live-provider/README.md": "ea6ff20990bfc45f6302a2d22b88183c84fdb043da5de4a54d04c7a344ce251c",
+    "apps/desktop-qt/live-provider/README.md": "e9f3352a85cd8b4ebdf9eef45da126bed0b7127bb82fb87d8613d74983ae0358",
     "apps/desktop-qt/live-provider/host/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
     "apps/desktop-qt/live-provider/host/Cargo.lock": "5497ec3b9ccf62c9645aca35352cff22ab6f57359372edfedb8213b7de50a249",
     "apps/desktop-qt/live-provider/host/Cargo.toml": "370bb3a3f914f9ea08d4237a57f2e9a406dc352d491a8e112c69545487ba757a",
     "apps/desktop-qt/live-provider/host/src/bin/worker.rs": "a72363cd288f102621135230ef84edf0a41077836df345c5ec02b70c764a67cc",
-    "apps/desktop-qt/live-provider/host/src/host.rs": "ac21a4f9dcd78d3a259107a5cc646b27bc824f4bded642e7ec19f4358420c603",
+    "apps/desktop-qt/live-provider/host/src/host.rs": "f321c1d28ad01a143f84939f39c17a5e6e007aa9f93d8f77c9c7814757b73986",
     "apps/desktop-qt/live-provider/host/src/lib.rs": "249c4144ed2a1d4720067a147848ec6e916516bbd8bd8f4b8bfa9323e54c6746",
     "apps/desktop-qt/live-provider/host/src/policy.rs": "dfff65bf85bc95f454e88cdfead0f88348cc22cc03d74c5b1e5c7782bae5f7d2",
-    "apps/desktop-qt/live-provider/host/src/provider.rs": "3692aa076c3fc15358f54f7f6b8b974f160e1f134c878c63100537a1e4b76681",
+    "apps/desktop-qt/live-provider/host/src/provider.rs": "e262e458ab7824b77882139c21e23c8c8647ba7329b4e059483015bf4d48f852",
     "apps/desktop-qt/live-provider/host/src/response.rs": "c42f33277e860a43cfb1bf73b5700a9580ee7c9eb31f2e1f607087df75b5f2d9",
     "apps/desktop-qt/live-provider/host/src/slot.rs": "7998885e345e95b7f759b73ff4f21c6c2fc2622a9305444d2acf920820419bef",
     "apps/desktop-qt/live-provider/host/src/transport.rs": "a1f8a643e4c447d756da028c19649cbde4484b87a13b4e3b25952c15ffc4030d",
-    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "02620a32e98b598f841cb211d112c96a17018b5d6a95045a24ba58b09db0ec47",
+    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "141afdb4f926dc8aef3353343c65ac49ff3b6f2841705eb195d4adada632337d",
     "apps/desktop-qt/live-provider/host/transport.py": "3618620681738feaaba9fde78553948c0bfddf62aa8edadc6f0b9866d48be128",
     "apps/desktop-qt/live-provider/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
     "apps/desktop-qt/live-provider/operator.pro": "1a2fffaec30035fe3ef946c9c60e4abf48dee1ce037b811f59b07cb5171e8c06",
@@ -49,14 +49,14 @@
       "exitCode": 0,
       "ignoredOrSkipped": 0,
       "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/rust-tests.txt",
-      "logSha256": "d644a3bc968651247d03334276ad0470cdc6bd0762cedea8858eeef4f9acd61a"
+      "logSha256": "492b65a1b95567830e7d1a77e25612cb9e7a970d3e0b596e35967984eb0a3af0"
     },
     {
       "command": "python3 apps/desktop-qt/live-provider-tests/transport_tests.py",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
       "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/transport-tests.txt",
-      "logSha256": "d294213b387621c99b12937edc9ba55353cf258bed92bb5ecc82c7fd1b7e8bd0"
+      "logSha256": "6155df0e9bfeacf662cd033fc092206574d08d7ed3cce330415c0b3bf4aa24a5"
     },
     {
       "command": "python3 apps/desktop-qt/live-provider-tests/evidence_tests.py",
@@ -66,11 +66,11 @@
       "logSha256": "b315730f0ce5c0837a2fa19997e81e45c4e2c2d9381522084e1943950ea8a9a6"
     },
     {
-      "command": "python3 - <<'PY'\nimport importlib.util,sys\nfrom pathlib import Path\nroot=Path.cwd();sys.path.insert(0,str(root/'apps/desktop-qt/live-provider-tests'))\nimport contract\nspec=importlib.util.spec_from_file_location('review_verify',root/'docs/implementation/adr-006/evidence/verify.py')\nv=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)\ncommit='cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0'\nactual={name:contract.sha(root/name) for name in contract.sources()}\nv.validate_source_map(actual,v.expected_sources(commit))\nprint('PASS: exact',len(actual),'source files match Git objects at',commit)\nprint('No real credentials read and no network/provider requests performed by reviewer.')\nPY",
+      "command": "python3 - <<'PY'\nimport importlib.util,sys\nfrom pathlib import Path\nroot=Path.cwd();sys.path.insert(0,str(root/'apps/desktop-qt/live-provider-tests'))\nimport contract\nspec=importlib.util.spec_from_file_location('review_verify',root/'docs/implementation/adr-006/evidence/verify.py')\nv=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)\ncommit='23fd97d90017eeb50a84781faedac82bf43bf9b5'\nactual={name:contract.sha(root/name) for name in contract.sources()}\nv.validate_source_map(actual,v.expected_sources(commit))\nprint('PASS: exact',len(actual),'source files match Git objects at',commit)\nprint('No real credentials read and no network/provider requests performed by reviewer.')\nPY",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
       "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/source-binding.txt",
-      "logSha256": "ba84e561c260e10a219d01f7f9b2f1c07b100919f7f9cfef80aedd0900fa189e"
+      "logSha256": "f70690ebce9af073b183213e6187dbb4ec5bb7cac4ac06a30700f5bf85cb312d"
     }
   ],
   "approvalScope": "Independent security/privacy review of frozen implementation, deterministic controls, live-smoke instrumentation and evidence verifier. This is not approval of ADR-006 acceptance or certification that hosted CI or actual provider smoke has passed.",
@@ -128,6 +128,15 @@
       "retests": [
         "provider::tests::llm_014_020_concurrent_room_and_global_leases_are_bounded_and_isolated"
       ]
+    },
+    {
+      "id": "SEC-007",
+      "finding": "Caching remote audit identity with a constructor that rereads mutable configuration introduced a switch-to-offline construction failure that could propagate fatally; supplemental observations could also mislabel the old adapter as offline.",
+      "resolution": "Host factory passes immutable configured kind to for_kind without rereading mutable Control. Direct new remains strict; request checks reject mismatched kind/profile and all stale permit/generation work before key loading. Core and supplemental observations use immutable provider kind/model. Public README documents construction invariant.",
+      "retests": [
+        "llm_020_single_use_room_and_switch_fences: captured remote selection then switch offline, for_kind construction succeeds, no key/transport call, offline fixture still works; mismatched immutable/current remote kind returns NOT_CONFIGURED.",
+        "openrouter_same_permit_and_canonical_provider_boundary: OpenRouter identity remains remote after offline reconfiguration."
+      ]
     }
   ],
   "securityAssessment": {
@@ -160,5 +169,24 @@
     "privacy": "data_collection:allow is explicit; UI discloses NVIDIA logging for security/product improvement, no ZDR claim. User remote-data consent is separate from proposal approval.",
     "routingLimit": "Only nvidia, no fallbacks, fixed exact requested model and max_price zero filters; these express routing policy, not independently measured billing or proof of server compliance. Response provider drift is rejected when provider metadata is present.",
     "tests": "29 Rust cases (2 unit + 27 conformance), 5 no-socket transport tests, 2 metadata tests and exact committed source inventory binding passed."
+  },
+  "approvalHistory": [
+    {
+      "implementationCommit": "a9eb0db306d193309cac51faf75ec431efbf96fc",
+      "status": "APPROVED",
+      "note": "Previous OpenAI-only review retained in Git history; current receipt reexecutes tests and refreshes hashes for separate OpenRouter delta."
+    },
+    {
+      "implementationCommit": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+      "status": "APPROVED",
+      "note": "Previous separate OpenRouter review; actual successful live evidence remains honestly bound to this antecedent commit."
+    }
+  ],
+  "finalCancellationAuditReview": {
+    "status": "APPROVED",
+    "commit": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
+    "scope": "Stable construction-time adapter identity, nonfatal provider-switch construction, fail-closed profile mismatch and supplemental audit identity.",
+    "liveEvidenceAntecedent": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+    "liveCompatibilityAssessment": "Reviewed delta affects construction under concurrent reconfiguration, mismatch rejection and cancellation/audit identity. Normal successful same-profile API request, strict parsing, actual proposal approval and accepted runtime path are unchanged. No actual live request on this final source is claimed."
   }
 }

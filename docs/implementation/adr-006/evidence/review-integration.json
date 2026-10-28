@@ -2,7 +2,7 @@
   "reviewer": "/root/review_llm_integration",
   "role": "integration",
   "status": "APPROVED",
-  "implementationCommit": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "implementationCommit": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
   "remainingMandatory": [],
   "sourceSha256": {
     ".github/workflows/adr-006.yml": "9ce896103eee2c2d107448c6d5d97c751e342c972fad8b232e52b9f6add06039",
@@ -16,19 +16,19 @@
     "apps/desktop-qt/live-provider/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
     "apps/desktop-qt/live-provider/OperatorPanel.cpp": "bc7171ae6cc9cbb03e0dc842a0a63d9711803f4fa3278c80e771f6416769a67b",
     "apps/desktop-qt/live-provider/OperatorPanel.h": "0a83c28a2077321d6e26c07eb0d32b44e46898fed2acd63a658912b758bc1c5b",
-    "apps/desktop-qt/live-provider/README.md": "ea6ff20990bfc45f6302a2d22b88183c84fdb043da5de4a54d04c7a344ce251c",
+    "apps/desktop-qt/live-provider/README.md": "e9f3352a85cd8b4ebdf9eef45da126bed0b7127bb82fb87d8613d74983ae0358",
     "apps/desktop-qt/live-provider/host/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
     "apps/desktop-qt/live-provider/host/Cargo.lock": "5497ec3b9ccf62c9645aca35352cff22ab6f57359372edfedb8213b7de50a249",
     "apps/desktop-qt/live-provider/host/Cargo.toml": "370bb3a3f914f9ea08d4237a57f2e9a406dc352d491a8e112c69545487ba757a",
     "apps/desktop-qt/live-provider/host/src/bin/worker.rs": "a72363cd288f102621135230ef84edf0a41077836df345c5ec02b70c764a67cc",
-    "apps/desktop-qt/live-provider/host/src/host.rs": "ac21a4f9dcd78d3a259107a5cc646b27bc824f4bded642e7ec19f4358420c603",
+    "apps/desktop-qt/live-provider/host/src/host.rs": "f321c1d28ad01a143f84939f39c17a5e6e007aa9f93d8f77c9c7814757b73986",
     "apps/desktop-qt/live-provider/host/src/lib.rs": "249c4144ed2a1d4720067a147848ec6e916516bbd8bd8f4b8bfa9323e54c6746",
     "apps/desktop-qt/live-provider/host/src/policy.rs": "dfff65bf85bc95f454e88cdfead0f88348cc22cc03d74c5b1e5c7782bae5f7d2",
-    "apps/desktop-qt/live-provider/host/src/provider.rs": "3692aa076c3fc15358f54f7f6b8b974f160e1f134c878c63100537a1e4b76681",
+    "apps/desktop-qt/live-provider/host/src/provider.rs": "e262e458ab7824b77882139c21e23c8c8647ba7329b4e059483015bf4d48f852",
     "apps/desktop-qt/live-provider/host/src/response.rs": "c42f33277e860a43cfb1bf73b5700a9580ee7c9eb31f2e1f607087df75b5f2d9",
     "apps/desktop-qt/live-provider/host/src/slot.rs": "7998885e345e95b7f759b73ff4f21c6c2fc2622a9305444d2acf920820419bef",
     "apps/desktop-qt/live-provider/host/src/transport.rs": "a1f8a643e4c447d756da028c19649cbde4484b87a13b4e3b25952c15ffc4030d",
-    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "02620a32e98b598f841cb211d112c96a17018b5d6a95045a24ba58b09db0ec47",
+    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "141afdb4f926dc8aef3353343c65ac49ff3b6f2841705eb195d4adada632337d",
     "apps/desktop-qt/live-provider/host/transport.py": "3618620681738feaaba9fde78553948c0bfddf62aa8edadc6f0b9866d48be128",
     "apps/desktop-qt/live-provider/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
     "apps/desktop-qt/live-provider/operator.pro": "1a2fffaec30035fe3ef946c9c60e4abf48dee1ce037b811f59b07cb5171e8c06",
@@ -48,39 +48,39 @@
       "command": "cargo test --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --features test-transport --target-dir target/review-llm-integration/build",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
-      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/openrouter-native.log",
-      "logSha256": "f9fd8fe340a77080d928a7eadec4ea374d2994d1c160932bd08aaa5eded69761"
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/final-native.log",
+      "logSha256": "a64222e5adc5f408d7dcf76ece75eaec075fcab239f43c9a99a9cd7014cda104"
     },
     {
       "command": "cargo test --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --target-dir target/review-llm-integration/build",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
-      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/openrouter-default-native.log",
-      "logSha256": "7a933fd768bee7b0913f8fb37ec998d4f4272d62b2a6765a18fe1e0a6fd47852"
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/final-default-native.log",
+      "logSha256": "361e8a9c0c7a4cc1509cddf7d733bff5e034ca83431b46c728894643a0f2ab4c"
     },
     {
       "command": "python3 apps/desktop-qt/live-provider-tests/transport_tests.py",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
-      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/openrouter-transport.log",
-      "logSha256": "1ac1558b406f4202dae0d2cb2abaf5c1df33c22e0376d890b875c5fc9dd21c28"
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/final-transport.log",
+      "logSha256": "1d01801178f3c0d6cf1ed27102ba75a91710f9adb7f8fccd2833201b7d117047"
     },
     {
       "command": "python3 apps/desktop-qt/live-provider-tests/evidence_tests.py",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
-      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/openrouter-metadata.log",
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/final-metadata.log",
       "logSha256": "454dc3bdf251c6e07eb65df26af3329e406c188b9d3c3b4d7b3bed4813d73a67"
     },
     {
-      "command": "REGISTRY_PYTHON=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python WB_LLM_EVIDENCE_DIR=target/review-llm-integration/openrouter-process python3 apps/desktop-qt/live-provider-tests/process_cases.py",
+      "command": "REGISTRY_PYTHON=/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python WB_LLM_EVIDENCE_DIR=target/review-llm-integration/final-process python3 apps/desktop-qt/live-provider-tests/process_cases.py",
       "exitCode": 0,
       "ignoredOrSkipped": 0,
-      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/openrouter-process.log",
-      "logSha256": "78132947b6bddfbd8821ac7b517ae748135a8aea1a68475a2b7806caf11390cf"
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/final-process.log",
+      "logSha256": "3aabcef26416e74215607b8ad0e028b9b372ce3b2329ac3752d11e56290225ac"
     }
   ],
-  "scope": "Independent provider/runtime integration review including explicit OpenRouter Chat profile delta and retained OpenAI Responses adapter; deterministic default/mock native (27+2 each), transport5, provenance2 and real Qt7/14 process-pair checks. Reviewer used only synthetic credentials, no inference requests or private credential access. Public official model metadata/routing documentation verified separately.",
+  "scope": "Independent provider/runtime integration review including explicit OpenRouter Chat profile delta and retained OpenAI Responses adapter; deterministic default/mock native (27+2 each), transport5, provenance2 and real Qt7/14 process-pair checks. Reviewer used only synthetic credentials, no inference requests or private credential access. Public official model metadata/routing documentation verified separately. Refreshed on final audit-attribution/constructor-race correction; all five independent suites rerun on frozen source, full Qt7 passed in66.927s.",
   "findings": [
     {
       "id": "INT-001",
@@ -143,6 +143,19 @@
       "primarySources": [
         "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b:free/endpoints",
         "https://openrouter.ai/docs/guides/routing/provider-selection"
+      ]
+    },
+    {
+      "id": "INT-006",
+      "severity": "low",
+      "finding": "Dynamic provider.kind mislabeled cancelled remote Session audit after switching offline; strict mutable-profile constructor correction introduced a selection/configuration availability race identified by security review.",
+      "resolution": "Stable immutable remote identity for core and supplemental audit; Host passes validated immutable identity through for_kind; mismatched invocation profile fails before credential/transport; direct new constructor remains strict.",
+      "fixCommit": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
+      "retests": [
+        "llm_020_single_use_room_and_switch_fences",
+        "openrouter_same_permit_and_canonical_provider_boundary",
+        "final-native.log",
+        "final-process.log"
       ]
     }
   ],

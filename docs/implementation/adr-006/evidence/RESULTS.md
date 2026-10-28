@@ -1,6 +1,6 @@
 # ADR-006 validation ledger — Proposed pending hosted CI
 
-Frozen implementation: `cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0`.
+Frozen implementation: `23fd97d90017eeb50a84781faedac82bf43bf9b5`.
 Initial OpenAI implementation87ff369; evidence-source hardening a9eb0db; explicit
 user-selected OpenRouter profile cd7b29b. Accepted runtime/WIT/manifest/plan/UI/
 ontology and existing source bytes remain preserved.
@@ -9,16 +9,18 @@ ontology and existing source bytes remain preserved.
 - HTTPS helper:5 deterministic no-socket DNS/TLS/origin/redirect/header cases pass.
 - Provenance:2 positive/negative tests pass, including exact Git-source inventory.
 - Genuine Qt:7 cases/14 app-worker pairs pass, using OpenRouter-shaped mocks.
-- Two refreshed independent reviews APPROVED for cd7b29b with exact37-file source
-  maps and executed hashed logs. Native, transport, metadata and Qt reruns pass.
+- Two refreshed independent reviews APPROVED for23fd97d with exact37-file source
+  maps and executed hashed logs. Final23fd native, transport, metadata and Qt reruns pass.
   Initial unfrozen/concurrent Qt timing failure remains archived; it is not counted
-  as passing. Reviewer’s frozen OpenRouter full Qt rerun passed58.867s.
+  as passing. Reviewer’s frozen OpenRouter full Qt rerun passed66.927s.
 - Original full accepted local wrapper completed successfully outside sandbox;
   every retained ABI/IPC/REG/UI/OP/VS1/VS2/VS3 regression passed. An earlier sandbox
   attempt failed existing special-file fixture creation with EPERM; no assertion
-  was weakened. Final clean OpenRouter full-wrapper run is pending.
-- Hosted Linux CI: pending for final OpenRouter revision. Mandatory LLM-024 remains
-  pending until completed success and independent downloaded artifact verification.
+  was weakened. The clean fe43089 full wrapper and downloaded local ZIP verifier also passed.
+  Final audit-only source refresh now requires a fresh clean full-wrapper run.
+- Hosted Linux CI: fe43089 completed successfully in run40727027481; final23fd97d
+  audit/factory correction still requires refreshed hosted execution and downloaded
+  verification. LLM-024 is pending for the final source.
 
 ## Separate actual provider validation
 
@@ -56,3 +58,15 @@ non-atomic commits; provider revocation is ordered against approval by host guar
 not retroactive rollback. See API_VERIFICATION, CONFORMANCE and TASK for primary
 capability sources, limits and reproducible commands. ADR-015 artifact/archive
 architecture remains independently Proposed; this task does not resolve it.
+
+
+Final audit correction: each adapter caches its immutable remote identity for
+both accepted Session and supplemental telemetry, including cancelled work. Host
+factories use immutable profile selection so concurrent invalidation is nonfatal;
+profile/identity mismatch fails before credential load or transport. The added
+switch/staged-construction regressions pass. Both source reviews were refreshed.
+The successful actual LIVE evidence remains explicitly bound to cd7b29b and its
+original binary hashes; final23fd binary is not claimed separately live-tested.
+Both reviewers assess this narrow cancellation/construction/audit-only delta as
+not changing the successfully validated API/normalization/approval/runtime path;
+fresh deterministic and hosted validation remain mandatory for final source.

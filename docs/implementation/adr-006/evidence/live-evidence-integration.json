@@ -1,0 +1,58 @@
+{
+  "reviewer": "/root/review_llm_integration",
+  "role": "integration",
+  "status": "VERIFIED",
+  "liveImplementationCommit": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+  "factsSha256": "0de9252edc45c18772a10d70f98500ed090e34d670d1f78e480ce47a9ed77b5e",
+  "verification": {
+    "command": "python3 docs/implementation/adr-006/evidence/reviewer-logs/integration/live-evidence-check.py",
+    "exitCode": 0,
+    "log": "docs/implementation/adr-006/evidence/reviewer-logs/integration/live-evidence-verification.log",
+    "logSha256": "4e1ec46711a413c678eed55fb31319df1762bcbed33d07421fa3ee053e0acb30",
+    "script": "docs/implementation/adr-006/evidence/reviewer-logs/integration/live-evidence-check.py",
+    "scriptSha256": "251ba10de3a96940cee8b3281243bb19f5c9a93c25af936861513669dea3866e"
+  },
+  "verified": {
+    "verified": true,
+    "source": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+    "hashedFiles": 14,
+    "proposalDigest": "38b0c7bbae3810cb3cf1c52ac6e96397e38e2e5e525d99e6bea14d2737c9468b",
+    "recomputedProposalDigest": true,
+    "exactPin": {
+      "id": "org.workbench.example.mortgage-ui",
+      "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+      "version": "0.1.0"
+    },
+    "initialPayment": "1461.48",
+    "reactivePayment": "1753.77",
+    "remoteAttempts": 1,
+    "providerCalls": 1,
+    "distinctProcesses": 4,
+    "coldProviderCalls": 0,
+    "coldGuestCalls": 0,
+    "coldNetworkDenied": true,
+    "providerEnforcedSchema": false,
+    "rawProviderBodiesArchived": false,
+    "limitations": [
+      "Artifact consistency verified; user chat consent/approval assertion attributed to archived host record, not independently queried account.",
+      "No exact billing or provider-retention guarantee; no real refusal/timeout observed; mocked negatives remain separate.",
+      "Accepted topology-then-ingress boundary remains non-atomic."
+    ]
+  },
+  "remainingMandatory": [],
+  "scope": "Independent read-only consistency, cryptographic hash and accepted proposal-digest reconstruction check of archived live evidence. No private credential access, remote inference, account billing lookup or source-bound deterministic receipt modification.",
+  "limitations": [
+    "This verifies archived evidence, not independent observation of remote account traffic or private chat history. Human consent and exact proposal approval are attributed to explicit host evidence record.",
+    "Hosted CI is a separate mandatory acceptance gate.",
+    "Exact billing is not claimed; free-price routing filters are policy, not a measured invoice. Prompt-only JSON and NVIDIA logging remain disclosed.",
+    "Actual refusal/timeout cases were not observed in this successful live attempt; negative coverage remains deterministic mocked tests."
+  ],
+  "antecedentCompatibility": {
+    "liveSource": "cd7b29b31cc5f2ec5f9b4fb2ba9699125dc864d0",
+    "reviewedFinalSource": "23fd97d90017eeb50a84781faedac82bf43bf9b5",
+    "finalBinaryLiveTested": false,
+    "assessment": "Final delta changes only provider audit identity, safe construction across reconfiguration, matching-profile guard, tests and documentation. No accepted contract, outgoing API request, transport, response normalization, canonical plan, approval, ingress or successful reactive path changed. The archived successful live path already used matching remote identity; its source/binary hashes remain antecedent facts. Fresh deterministic and hosted checks must cover final source.",
+    "freshActualSmokeRequiredByReviewer": false,
+    "basis": "Kit requires separately identified real-provider validation and accurate source/hash evidence; it does not require repeating an unchanged successful API/runtime path for audit-only and stale-construction corrections."
+  }
+}
