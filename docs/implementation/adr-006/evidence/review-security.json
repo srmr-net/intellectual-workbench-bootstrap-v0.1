@@ -1,0 +1,146 @@
+{
+  "reviewer": "/root/review_llm_security",
+  "role": "security",
+  "status": "APPROVED",
+  "implementationCommit": "a9eb0db306d193309cac51faf75ec431efbf96fc",
+  "remainingMandatory": [],
+  "sourceSha256": {
+    ".github/workflows/adr-006.yml": "9ce896103eee2c2d107448c6d5d97c751e342c972fad8b232e52b9f6add06039",
+    "apps/desktop-qt/live-provider-tests/collect_evidence.py": "e55b4302dc854b72b4e7c39366e976790e10b4652d23f2aaee832204b34f9569",
+    "apps/desktop-qt/live-provider-tests/contract.py": "009900620c2875beaa773c73f3e6c3970579cd2c8f9ca17dcac80afbedda0f53",
+    "apps/desktop-qt/live-provider-tests/evidence_tests.py": "550098cf97230a4b29e810a92eb8000c2e518fb2dd17eff603e8ff0b9eafcfbc",
+    "apps/desktop-qt/live-provider-tests/live_smoke.py": "f1d1b83ee5e089080dc77b3ca78f9dde1562d4528517a553b09f90e412fcc342",
+    "apps/desktop-qt/live-provider-tests/process_cases.py": "345301596da0c7dcb292c5d871109b39342dfe846778bf1d3dce63e47b7ac146",
+    "apps/desktop-qt/live-provider-tests/transport_tests.py": "b375dfd5b972fc36dfa64dc800e7a513567a0b0700631ccdb69324e8f4869133",
+    "apps/desktop-qt/live-provider/OperatorDriver.cpp": "4e330cef0347333ad0afe819e04de25fe62a988dca3a6494c649066ec8d9fb52",
+    "apps/desktop-qt/live-provider/OperatorDriver.h": "f2604d6d1c21c41801cfccd1149b1062ce4a6eb69e9cbc71ff33da101473e496",
+    "apps/desktop-qt/live-provider/OperatorPanel.cpp": "aca15f170eae1d031b47e8d6da6c1a78ece669469acd44f9c489b4e6279bd607",
+    "apps/desktop-qt/live-provider/OperatorPanel.h": "0a83c28a2077321d6e26c07eb0d32b44e46898fed2acd63a658912b758bc1c5b",
+    "apps/desktop-qt/live-provider/README.md": "e53703aa696cb73d5e750850e2a7eebbe432c261662c15044810b1595807eed8",
+    "apps/desktop-qt/live-provider/host/.gitignore": "306fd52e74fca6746e12acc750f232de15e71da917756a1270d74c91f5eb7368",
+    "apps/desktop-qt/live-provider/host/Cargo.lock": "5497ec3b9ccf62c9645aca35352cff22ab6f57359372edfedb8213b7de50a249",
+    "apps/desktop-qt/live-provider/host/Cargo.toml": "370bb3a3f914f9ea08d4237a57f2e9a406dc352d491a8e112c69545487ba757a",
+    "apps/desktop-qt/live-provider/host/src/bin/worker.rs": "0f2b41fde34ce30ed896bd64b8a58069c59d379150d8fb188ced524f0a3d04f8",
+    "apps/desktop-qt/live-provider/host/src/host.rs": "93f92f4edfe546c58c5ca5fbff5b010166d8cc0c892b15443a63305246767542",
+    "apps/desktop-qt/live-provider/host/src/lib.rs": "249c4144ed2a1d4720067a147848ec6e916516bbd8bd8f4b8bfa9323e54c6746",
+    "apps/desktop-qt/live-provider/host/src/policy.rs": "3f807424731a11c311f0fd21b02e66d8d4766180c9b8eccccd34887d7b3ea60c",
+    "apps/desktop-qt/live-provider/host/src/provider.rs": "b6e901c45f71d49672d2a9fa6246f8e23b013792813df89403571f1bb15d6bc2",
+    "apps/desktop-qt/live-provider/host/src/response.rs": "7370cfa111c957b0f569dec81ca549574f5f62023d0b0052e4dbad90a3ae19d3",
+    "apps/desktop-qt/live-provider/host/src/slot.rs": "7998885e345e95b7f759b73ff4f21c6c2fc2622a9305444d2acf920820419bef",
+    "apps/desktop-qt/live-provider/host/src/transport.rs": "90fa416ffd40d1b6f16cce13b4c95d97169cc4d94bcb0fc6fa755670c2f5dd8a",
+    "apps/desktop-qt/live-provider/host/tests/conformance.rs": "54d89a8a6b64a867cc8706cfdfb4266196620cbece21b99dd52844c727468523",
+    "apps/desktop-qt/live-provider/host/transport.py": "553a356fbd6f03e02393e3081a96614680e4f40336a550d63d8ad59e3a37bbe3",
+    "apps/desktop-qt/live-provider/main.cpp": "e6d0fb24ca20eaa9c6f561cbe72f0292502a8a45dc812d3e8410694aa441cdcd",
+    "apps/desktop-qt/live-provider/operator.pro": "1a2fffaec30035fe3ef946c9c60e4abf48dee1ce037b811f59b07cb5171e8c06",
+    "apps/desktop-qt/validate-live-provider.sh": "8188efe467541cca342c96a8a9a68fe4d587e37ee7493ca5f4b03961b35864eb",
+    "docs/implementation/adr-006/API_VERIFICATION.md": "c12d8da71dff55a479e77d21bc14e3f9622b8d8338acbfe865839ef1334e2f19",
+    "docs/implementation/adr-006/CONFORMANCE.md": "3b74048895a72a578d70e4c293e5b9e20ed66c81b7fb89d59ccbd5e2e2349c93",
+    "docs/implementation/adr-006/evidence/verify.py": "342f3011187283b8e1b8b1b55658677143b1fc917c96b5a61837a1aa7e125079",
+    "docs/implementation/adr-006/fixtures/offline-profile.json": "ef4aa15bbb9af737292f74b57653bc6cef9208c42d005a8fd1c696b514062ee7",
+    "docs/implementation/adr-006/fixtures/redacted-observation.json": "dd2a7cf15c4469dba5fc1ea3ad05541765125ac57903bdd6ed8fe67a69782b63",
+    "docs/implementation/adr-006/fixtures/remote-opt-in-profile.json": "7b3984582448e7daa6d6284eed59dffa41e1bc2f438a9f1810b80f7f7c38892c",
+    "docs/implementation/adr-006/schemas/provider-observation.schema.json": "397050732538c601d5a328b83455f6c2e7b8739389ef5075779fcc33fff06307",
+    "docs/implementation/adr-006/schemas/provider-profile.schema.json": "43df5fb326af34e2d5e8cc5e84ced016cef25ae55a34f66a21b646e4f03f45af"
+  },
+  "independentTests": [
+    {
+      "command": "cargo test --locked --manifest-path apps/desktop-qt/live-provider/host/Cargo.toml --features test-transport --target-dir target/review-llm-security-build",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/rust-tests.txt",
+      "logSha256": "2050e3030b8bf23489dd633c08cb01327776d89e72b403a2f76d8909903ee25e"
+    },
+    {
+      "command": "python3 apps/desktop-qt/live-provider-tests/transport_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/transport-tests.txt",
+      "logSha256": "40470c2f3cbb3ed46db7e56b5eb4ac5389298ca4397136dc8f16b16de60caf48"
+    },
+    {
+      "command": "python3 apps/desktop-qt/live-provider-tests/evidence_tests.py",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/metadata-tests.txt",
+      "logSha256": "454dc3bdf251c6e07eb65df26af3329e406c188b9d3c3b4d7b3bed4813d73a67"
+    },
+    {
+      "command": "python3 - <<'PY'\nimport importlib.util,subprocess,sys\nfrom pathlib import Path\nroot=Path.cwd();sys.path.insert(0,str(root/'apps/desktop-qt/live-provider-tests'))\nimport contract\nspec=importlib.util.spec_from_file_location('review_verify',root/'docs/implementation/adr-006/evidence/verify.py')\nv=importlib.util.module_from_spec(spec);spec.loader.exec_module(v)\ncommit='a9eb0db306d193309cac51faf75ec431efbf96fc'\nactual={name:contract.sha(root/name) for name in contract.sources()}\nv.validate_source_map(actual,v.expected_sources(commit))\nassert subprocess.check_output(['git','diff','87ff369',commit,'--name-only','--','apps/desktop-qt/live-provider'],text=True)==''\nprint('PASS: exact',len(actual),'source files match Git objects at',commit)\nprint('PASS: Rust/Qt implementation unchanged since isolated build started at 87ff369')\nprint('No real credentials read and no network/provider requests performed by reviewer.')\nPY",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/adr-006/evidence/reviewer-logs/security/source-binding.txt",
+      "logSha256": "fb5f40d9080a881850447ea71f1530b4d0f158a592a79ad87bd45753ada844e1"
+    }
+  ],
+  "approvalScope": "Independent security/privacy review of frozen implementation, deterministic controls, live-smoke instrumentation and evidence verifier. This is not approval of ADR-006 acceptance or certification that hosted CI or actual provider smoke has passed.",
+  "findings": [
+    {
+      "id": "SEC-001",
+      "finding": "Global consent could authorize another room/request.",
+      "resolution": "Non-serializable one-shot Permit binds generation, exact input digest, host cancellation ticket, room, request and unique invocation owner; spent permits cannot replay.",
+      "retests": [
+        "llm_002_consent_before_credential_or_transport",
+        "llm_020_single_use_room_and_switch_fences",
+        "consent_binds_exact_input_and_host_ticket"
+      ]
+    },
+    {
+      "id": "SEC-002",
+      "finding": "Provider changes could miss an unpublished Session and leave stale preview/apply authority.",
+      "resolution": "Atomic controller construction/publication under shared slot mutex; generation validation for prepare and approval; transaction lock orders configure against accepted Session.approve.",
+      "retests": [
+        "slot_publication_cannot_escape_invalidation",
+        "generation_transaction_switch_before_apply",
+        "generation_transaction_apply_before_switch",
+        "revoke_inside_start_and_ready_poll_cannot_publish"
+      ]
+    },
+    {
+      "id": "SEC-003",
+      "finding": "Malformed optional live configuration could prevent offline startup/restoration.",
+      "resolution": "Invalid optional budget/model/mock mode disables live selection without disabling offline host. Genuine Qt regression covers invalid configuration and cold restore.",
+      "retests": [
+        "Static host.rs inspection; process_cases.py coverage independently reviewed; actual Qt execution delegated to integration reviewer/full chain"
+      ]
+    },
+    {
+      "id": "SEC-004",
+      "finding": "Oversized transient responses could bypass byte validation through retry.",
+      "resolution": "Byte cap checked before retry; both oversized 429 and 503 return BUDGET_EXCEEDED with exactly one attempt.",
+      "retests": [
+        "llm_022_transport_failures_and_tools"
+      ]
+    },
+    {
+      "id": "SEC-005",
+      "finding": "Downloaded evidence needed exact source inventory/Git-object binding, reviewer roles and review ancestry.",
+      "resolution": "Verifier binds exact committed source names/hashes, archive bytes, role and implementation commit ancestry; collector requires exact source map.",
+      "retests": [
+        "test_wrong_run_attempt_workflow_or_source_rejected",
+        "source-binding.txt"
+      ]
+    },
+    {
+      "id": "SEC-006",
+      "finding": "Same-room concurrency needed isolation from the global cap in its regression.",
+      "resolution": "Duplicate room request is polled immediately after first request, before filling global cap. Separate fifth-room cap and cancellation/audit isolation tests retained.",
+      "retests": [
+        "provider::tests::llm_014_020_concurrent_room_and_global_leases_are_bounded_and_isolated"
+      ]
+    }
+  ],
+  "securityAssessment": {
+    "destination": "Fixed api.openai.com HTTPS endpoint; all resolved IPs validated public, direct address pinning, fixed TLS SNI with default certificate verification; no proxies or redirects.",
+    "credentials": "Host-only lazy private-file/environment source; regular owner-only no-link file checks; embedded trusted Python receives secret solely over private stdin, with cleared environment, no shell and no secret argv.",
+    "bounds": "Strict request/suggestion parsing, minimized catalog, no tools, byte/token/catalog/call/concurrency/deadline bounds, subprocess kill/reap and late-result fences.",
+    "ui": "Untrusted text rendered as plain text; existing proposal-bound approval remains required. Live-only driver waits for fresh actual proposal-digest decision; --consented flag does not independently establish human consent.",
+    "limitations": "Client cancellation cannot unsend admitted requests, guarantee server inference cancellation or stop billing. Rust/Python/OS copies are not claimed cryptographically erased. Topology apply and typed ingress remain separate accepted operations."
+  },
+  "noRealCredentialsRead": true,
+  "networkOrProviderRequestsPerformed": false,
+  "globalGatesNotClaimed": [
+    "Full accepted regression chain",
+    "Successful GitHub-hosted CI/artifact verification",
+    "Consented actual provider LIVE-001\u2013003"
+  ]
+}

@@ -1,0 +1,7 @@
+test_same_run_linux_pr_source_accepts (__main__.Evidence.test_same_run_linux_pr_source_accepts) ... ok
+test_wrong_run_attempt_workflow_or_source_rejected (__main__.Evidence.test_wrong_run_attempt_workflow_or_source_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.012s
+
+OK

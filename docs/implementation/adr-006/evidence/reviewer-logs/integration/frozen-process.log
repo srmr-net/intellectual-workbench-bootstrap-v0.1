@@ -1,0 +1,12 @@
+test_llm_001_offline_and_invalid_optional_config (__main__.Journey.test_llm_001_offline_and_invalid_optional_config) ... ok
+test_llm_002_no_remote_consent (__main__.Journey.test_llm_002_no_remote_consent) ... ok
+test_llm_010_011_012_errors_no_mutation (__main__.Journey.test_llm_010_011_012_errors_no_mutation) ... ok
+test_llm_015_020_switch_pending_cancels (__main__.Journey.test_llm_015_020_switch_pending_cancels) ... ok
+test_llm_016_017_approval_and_drift (__main__.Journey.test_llm_016_017_approval_and_drift) ... ok
+test_llm_018_019_real_execution_edits_and_cold_restore (__main__.Journey.test_llm_018_019_real_execution_edits_and_cold_restore) ... ok
+test_llm_020_consent_consumed_and_edit_revokes (__main__.Journey.test_llm_020_consent_consumed_and_edit_revokes) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 86.048s
+
+OK

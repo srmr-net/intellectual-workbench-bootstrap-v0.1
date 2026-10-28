@@ -1,0 +1,9 @@
+{
+  "pid": 853462,
+  "returncode": 3,
+  "endpoint": "https://api.openai.com/v1/responses",
+  "model": "gpt-5.4-mini-2026-03-17",
+  "maxCalls": 1,
+  "maxOutputTokens": 512,
+  "timeoutMs": 20000
+}

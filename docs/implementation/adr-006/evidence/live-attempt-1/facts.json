@@ -1,0 +1,44 @@
+{
+  "source": "a9eb0db306d193309cac51faf75ec431efbf96fc",
+  "consentedRequest": 1,
+  "desktopPid": 853462,
+  "workerPid": 853475,
+  "providerAudit": {
+    "attempts": 1,
+    "budget": {
+      "maxCalls": 1,
+      "maxCatalogCandidates": 8,
+      "maxOutputTokens": 512,
+      "maxRequestBytes": 4096,
+      "maxResponseBytes": 16384,
+      "timeoutMs": 20000
+    },
+    "generation": 2,
+    "observation": {
+      "catalogCount": 1,
+      "correlationId": "operator-1",
+      "durationMs": 3051,
+      "model": "gpt-5.4-mini-2026-03-17",
+      "observationVersion": "0.1",
+      "provider": "openai-responses",
+      "status": "RATE_LIMITED"
+    },
+    "room": "intent-room",
+    "schemaId": "OperatorSuggestionV0.1",
+    "sequence": 1
+  },
+  "roomCount": 0,
+  "liveGates": "LIVE-001/002 incomplete: HTTP429; no suggestion, preview, approval or guest execution",
+  "secretScanPassed": true,
+  "usageAndCost": "Not exposed on failed429 response; no estimate presented as billed cost",
+  "automaticRetries": 0,
+  "appSha256": "832a525ac6502650eac3b87514c7b319822f087dd89e25141bf4c8e4483e26fc",
+  "workerSha256": "9b3f4e8523d59da2e21f38b329a62da95f7f4879381891ff9eb99b79eeaeb591",
+  "sha256": {
+    "actions.json": "6a2b6012067b460eaa6dc5ec9eeac30fe1fdedc7fa14f7ad0f5318be4d82a5f1",
+    "report.json": "83f201ccdbb36ab868bba4f31361a64b6efdb18be5277c6f159d5b3e1b512458",
+    "launcher.json": "658219faded65003cb43a829dd34f5bb1758a36421e10bba61535275108cb463",
+    "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
