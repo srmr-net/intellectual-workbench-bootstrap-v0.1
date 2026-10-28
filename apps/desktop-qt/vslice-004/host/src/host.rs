@@ -299,7 +299,7 @@ impl Transport for FixtureTransport {
                 delay = std::time::Duration::from_millis(500);
                 failure = Some(Failure::Timeout);
             }
-            "delayed" => delay = std::time::Duration::from_millis(1500),
+            "delayed" => delay = std::time::Duration::from_millis(3000),
             _ => {}
         }
         let response = if mode == "malformed" {

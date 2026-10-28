@@ -219,6 +219,10 @@ OperatorPanel::OperatorPanel(DesktopShell &shell)
   m_status->setAccessibleName("Request status");
   m_status->setTextFormat(Qt::PlainText);
   m_status->setWordWrap(true);
+  // Reserve the bounded progress/error copy so elapsed updates do not push
+  // the progress bar out of the viewport after the initial scroll.
+  m_status->setMinimumHeight(m_status->fontMetrics().lineSpacing() * 6);
+  m_status->setAlignment(Qt::AlignLeft | Qt::AlignTop);
   layout->addWidget(m_status);
   m_progress = new QProgressBar(this);
   m_progress->setObjectName("requestProgress");
