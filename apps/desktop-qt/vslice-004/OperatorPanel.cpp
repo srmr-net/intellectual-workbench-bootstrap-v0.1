@@ -62,6 +62,18 @@ QString statusText(const QString &code) {
                   "inference consent.";
   return code;
 }
+void showSection(QWidget *widget) {
+  // Scroll only; preserve keyboard focus and never activate a consent control.
+  QTimer::singleShot(0, widget, [widget] {
+    // Visibility changes post a layout request; scroll after that layout too.
+    QTimer::singleShot(0, widget, [widget] {
+      for (auto *parent = widget->parentWidget(); parent;
+           parent = parent->parentWidget())
+        if (auto *scroll = qobject_cast<QScrollArea *>(parent))
+          scroll->ensureWidgetVisible(widget, 16, 24);
+    });
+  });
+}
 QPushButton *button(const QString &text, const QString &name, QWidget *parent) {
   auto *b = new QPushButton(text, parent);
   b->setObjectName(name);
@@ -350,6 +362,7 @@ bool OperatorPanel::guiThread() const {
 void OperatorPanel::clearPreview() {
   m_deadline.stop();
   m_digest.clear();
+  m_preview->clear();
   m_consent->setChecked(false);
   if (m_proposalRows)
     m_proposalRows->clear();
@@ -432,6 +445,7 @@ void OperatorPanel::send(const QJsonObject &command, bool provider, bool ux) {
   if (m_action == "send" || m_action == "prepare") {
     m_progressClock.restart();
     m_progressTimer.start();
+    showSection(m_progress);
     publishStatus("REQUESTING: host validation and bounded provider request. "
                   "Cancel is available.");
   } else
@@ -510,6 +524,7 @@ void OperatorPanel::accept(const QJsonObject &reply) {
               QJsonDocument(m_review.value("requestSettings").toObject())
                   .toJson()));
       m_reviewDeadline.start(120000);
+      showSection(m_remoteConsent);
       publishStatus("DISCLOSURE_READY: Review the exact request, catalog "
                     "fields and destination. Inference consent is separate "
                     "from execution approval.");
@@ -574,6 +589,7 @@ void OperatorPanel::accept(const QJsonObject &reply) {
       return;
     }
     m_deadline.start(expires * 1000);
+    showSection(m_consent);
     publishStatus(
         "Review the exact pin, inputs and effects. Approval is required.");
   } else {

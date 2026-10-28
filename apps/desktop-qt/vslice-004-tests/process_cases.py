@@ -21,6 +21,7 @@ class Journey(unittest.TestCase):
   original=subprocess.Popen
   def popen(command,**kw):
    command=[str(ROOT/'target/debug/wb-vslice004-worker') if x==str(ROOT/'target/debug/wb-vslice003-worker') else x for x in command]
+   if getattr(self,'use_launcher',False):command=[str(ROOT/'apps/desktop-qt/vslice-004/run.sh'),'--profile',str(self.path/'launcher-profile'),'--validation-actions',command[-3],'--validation-report',command[-1]]
    env=kw['env']
    for name in list(env):
     if name.startswith(('OPENROUTER_','OPENAI_','WB_LLM_','WB_VS4_')):env.pop(name)
@@ -34,6 +35,7 @@ class Journey(unittest.TestCase):
  def sample(self,r,action):return next(s for s in r['samples'] if s['action']==action)
  def no_mutation(self,r):self.assertEqual(r['finalState']['rooms'],[]);self.assertEqual(r['finalState']['invocations'],'0')
  def test_vs4_001_fresh_installed_desktop(self):
+  self.use_launcher=True;self.workspace=self.path/'launcher-profile/workspace'
   r=self.launch([base.QUIT]);self.no_mutation(r);self.assertTrue(r['finalState']['installed']);self.assertTrue(r['samples'][0]['windowVisible'])
  def test_vs4_002_offline_default_absent_key(self):
   self.key_enabled=False;r=self.launch([{'type':'selectProvider','remote':True},{'type':'intent','text':base.INTENT},base.QUIT]);s=self.sample(r,'intent');self.assertEqual(s['providerState']['remoteAttempts'],'0');self.assertFalse(s['providerState']['source']['available']);self.no_mutation(r)
@@ -51,7 +53,7 @@ class Journey(unittest.TestCase):
  def test_vs4_007_actual_adapter_transport(self):
   r=self.launch(self.remote()+[{'type':'decline'},base.QUIT]);s=self.sample(r,'sendReviewed');self.assertEqual(s['providerState']['transport'],'injected-mock-http');self.assertEqual(s['providerState']['remoteAttempts'],'1');self.assertEqual(s['operatorReply']['providerAudit']['observation']['status'],'OK');self.assertTrue(self.capture.exists());self.no_mutation(r)
  def test_vs4_008_progress_cancel(self):
-  self.mode='delayed';r=self.launch(self.remote(settle=False)+[{'type':'wait','milliseconds':150},{'type':'cancel'},{'type':'wait','milliseconds':1700},base.QUIT]);self.assertTrue(self.sample(r,'sendReviewed')['operatorBusy']);self.assertFalse(r['samples'][-1]['hasPreview']);self.no_mutation(r)
+  self.mode='delayed';r=self.launch(self.remote(settle=False)+[{'type':'wait','milliseconds':150},{'type':'cancel'},{'type':'wait','milliseconds':1700},base.QUIT]);self.assertTrue(self.sample(r,'sendReviewed')['operatorBusy']);w={x['id']:x for x in self.sample(r,'wait')['operatorWidgets']};self.assertTrue(all(w[k]['inViewport'] for k in ['operatorStatus','operatorCancel','requestProgress']));self.assertFalse(r['samples'][-1]['hasPreview']);self.no_mutation(r)
  def test_vs4_009_exact_admitted_selection(self):
   r=self.launch(self.remote()+[{'type':'decline'},base.QUIT]);s=self.sample(r,'sendReviewed');p=s['operatorReply']['preview'];self.assertIn(p['plan']['instances'][0]['component'],[i['pin'] for i in s['state']['installed']]);self.assertEqual(p['plan']['planVersion'],'0.1');self.assertTrue(all(v for k,v in p['validation'].items() if k!='profile'))
  def test_vs4_010_adversarial_suggestions(self):
@@ -61,6 +63,7 @@ class Journey(unittest.TestCase):
   self.mode='injection';r=self.launch(self.remote()+[base.QUIT]);self.assertFalse(self.sample(r,'sendReviewed')['operatorReply']['ok']);self.no_mutation(r);self.native('op_002_003_008_discovery_is_admitted_only_minimal_readonly_and_instruction_free')
  def test_vs4_012_structured_preview(self):
   r=self.launch(self.remote()+[{'type':'decline'},base.QUIT]);s=self.sample(r,'sendReviewed');pin=s['operatorReply']['preview']['plan']['instances'][0]['component'];text=s['previewText']
+  w={x['id']:x for x in s['operatorWidgets']};self.assertTrue(w['operatorConsent']['inViewport']);self.assertTrue(w['proposalDetails']['inViewport'])
   for value in [pin['id'],pin['version'],pin['sha256'],'GBP','months','Affected room','Requested permissions','separate operations','Proposal digest','Expiry']:self.assertIn(value,text)
  def test_vs4_013_separate_genuine_approval(self):
   r=self.launch(self.remote()+[{'type':'approveWithoutConsent'},{'type':'decline'},base.QUIT]);self.no_mutation(r);s=self.sample(r,'sendReviewed');self.assertFalse(s['approveEnabled']);self.assertFalse(s['consentChecked']);self.assertFalse(s['remoteConsent'])

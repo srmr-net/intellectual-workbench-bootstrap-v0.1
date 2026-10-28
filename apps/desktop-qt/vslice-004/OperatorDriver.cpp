@@ -37,6 +37,20 @@ void reveal(QWidget *widget) {
       scroll->ensureWidgetVisible(widget);
 }
 
+bool inViewport(QWidget *widget) {
+  if (!widget || !widget->isVisible())
+    return false;
+  for (auto *parent = widget->parentWidget(); parent;
+       parent = parent->parentWidget())
+    if (auto *scroll = qobject_cast<QScrollArea *>(parent)) {
+      const QRect actual(widget->mapToGlobal(QPoint(0, 0)), widget->size());
+      const QRect viewport(scroll->viewport()->mapToGlobal(QPoint(0, 0)),
+                           scroll->viewport()->size());
+      if (!viewport.contains(actual))
+        return false;
+    }
+  return true;
+}
 QQuickItem *find(QQuickItem *root, const QString &name) {
   if (root->objectName() == name)
     return root;
@@ -92,21 +106,26 @@ void OperatorDriver::sample(const QString &action) {
   for (const QString &name :
        {QString("credentialPath"), QString("credentialApply"),
         QString("operatorSend"), QString("outboundData"),
-        QString("proposalDetails"), QString("providerChoice"),
-        QString("remoteConsent"), QString("providerInfo"),
-        QString("operatorIntent"), QString("operatorSubmitted"),
-        QString("operatorStatus"), QString("operatorDecline"),
-        QString("operatorPreview"), QString("operatorConsent"),
-        QString("operatorApprove"), QString("operatorCancel")}) {
+        QString("proposalDetails"), QString("requestProgress"),
+        QString("providerChoice"), QString("remoteConsent"),
+        QString("providerInfo"), QString("operatorIntent"),
+        QString("operatorSubmitted"), QString("operatorStatus"),
+        QString("operatorDecline"), QString("operatorPreview"),
+        QString("operatorConsent"), QString("operatorApprove"),
+        QString("operatorCancel")}) {
     auto *widget = m_shell.findChild<QWidget *>(name);
     auto *a = widget ? QAccessible::queryAccessibleInterface(widget) : nullptr;
-    operatorWidgets.append(
-        QJsonObject{{"id", name},
-                    {"name", a ? a->text(QAccessible::Name) : QString()},
-                    {"role", a ? int(a->role()) : -1},
-                    {"enabled", widget && widget->isEnabled()},
-                    {"visible", widget && widget->isVisible()},
-                    {"focusable", a ? bool(a->state().focusable) : false}});
+    operatorWidgets.append(QJsonObject{
+        {"id", name},
+        {"name", a ? a->text(QAccessible::Name) : QString()},
+        {"role", a ? int(a->role()) : -1},
+        {"enabled", widget && widget->isEnabled()},
+        {"visible", widget && widget->isVisible()},
+        {"inViewport", inViewport(widget)},
+        {"visibleHeight",
+         widget ? widget->visibleRegion().boundingRect().height() : 0},
+        {"height", widget ? widget->height() : 0},
+        {"focusable", a ? bool(a->state().focusable) : false}});
   }
   QJsonArray columns;
   for (const QString &name :

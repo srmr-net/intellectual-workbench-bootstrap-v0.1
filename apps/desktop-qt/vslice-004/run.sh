@@ -5,11 +5,15 @@ profile="${XDG_STATE_HOME:-$HOME/.local/state}/intellectual-workbench"
 python="${REGISTRY_PYTHON:-$root/target/vs2-venv/bin/python}"
 package="$root/target/ui-fixtures/mortgage-ui"
 credential=''
+actions=''
+report=''
 while (($#)); do
   case "$1" in
     --profile) profile="$2"; shift 2;;
     --credential-file) credential="$2"; shift 2;;
     --package) package="$2"; shift 2;;
+    --validation-actions) actions="$2"; shift 2;;
+    --validation-report) report="$2"; shift 2;;
     *) echo 'Usage: run.sh [--profile /absolute/private/directory] [--credential-file /absolute/private/key-file] [--package /absolute/admitted-package]' >&2; exit 2;;
   esac
 done
@@ -27,4 +31,9 @@ fi
 # No key contents enter this launcher, registry, room snapshot or Qt widgets.
 # Admission reads the actual manifest; no component ID/version/digest is built in.
 "$root/target/debug/wb-desktop-install" "$profile/registry" "$python" "$root/tools/registry_validate.py" "$root/target/debug/wb-registry-inspect" "$package"
-exec "$root/target/vs4-qt-build/workbench-vslice004" "$root/target/debug/wb-vslice004-worker" "$profile/registry" "$profile/workspace" "$python" "$root/tools/registry_validate.py" "$root/target/debug/wb-registry-inspect"
+validation_args=()
+if [[ -n "$actions" || -n "$report" ]]; then
+  [[ -n "$actions" && -n "$report" ]] || { echo 'Validation actions and report must be supplied together' >&2; exit 2; }
+  validation_args=(--validation-actions "$actions" --validation-report "$report")
+fi
+exec "$root/target/vs4-qt-build/workbench-vslice004" "$root/target/debug/wb-vslice004-worker" "$profile/registry" "$profile/workspace" "$python" "$root/tools/registry_validate.py" "$root/target/debug/wb-registry-inspect" "${validation_args[@]}"
