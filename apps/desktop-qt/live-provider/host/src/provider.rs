@@ -264,11 +264,20 @@ impl LiveProvider {
         room: String,
         permit: Option<Permit>,
     ) -> Result<Self, Failure> {
-        if !wb_storage::vs2::identifier(&room) {
-            return Err(Failure::NotConfigured);
-        }
         let kind = control.profile().provider;
-        if !kind.is_remote() {
+        Self::for_kind(kind, control, credentials, transport, room, permit)
+    }
+    /// Host factories pass their immutable configured identity. Reconfiguration
+    /// may invalidate a selected generation, but must not make construction fatal.
+    pub fn for_kind(
+        kind: Kind,
+        control: Arc<Control>,
+        credentials: Arc<dyn CredentialSource>,
+        transport: Arc<dyn Transport>,
+        room: String,
+        permit: Option<Permit>,
+    ) -> Result<Self, Failure> {
+        if !kind.is_remote() || !wb_storage::vs2::identifier(&room) {
             return Err(Failure::NotConfigured);
         }
         if let Some(p) = &permit {
@@ -354,6 +363,9 @@ impl Invocation {
             return Err(Failure::Timeout);
         }
         self.provider.control.authorize(self.generation)?;
+        if self.profile.provider != self.provider.kind {
+            return Err(Failure::NotConfigured);
+        }
         let p = self
             .provider
             .permit
@@ -394,8 +406,8 @@ impl Invocation {
                 } else {
                     self.request.request_id.clone()
                 },
-                provider: self.profile.provider.label(),
-                model: self.profile.model.clone(),
+                provider: self.provider.kind.label(),
+                model: self.provider.kind.tested_model().into(),
                 status,
                 duration_ms: self.started.elapsed().as_millis().min(u64::MAX as u128) as u64,
                 catalog_count: self.request.candidates.len().min(16),

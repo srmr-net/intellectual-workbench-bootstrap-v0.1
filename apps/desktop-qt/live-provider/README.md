@@ -83,3 +83,10 @@ and product improvement. This policy and the lack of provider schema mode are
 shown before remote consent. No provider confidentiality/ZDR guarantee is made.
 The original OpenAI adapter remains explicitly selectable by host configuration,
 but remote consent and provider-specific credentials never cross profiles.
+
+A live adapter's provider/model identity is immutable, including failed or
+cancelled work after configuration changes. Host factories use `for_kind` with
+their immutable allowlisted remote profile; stale construction succeeds without
+rereading mutable configuration, then generation/permit checks reject work before
+credentials or transport. Direct `new` rejects an offline profile. An explicit
+identity/profile mismatch fails closed before any network attempt.

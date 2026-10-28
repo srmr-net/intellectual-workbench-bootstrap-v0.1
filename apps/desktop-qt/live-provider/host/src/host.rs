@@ -147,7 +147,8 @@ impl Host {
                     Arc::new(OfflineFixture)
                 },
             ),
-            Kind::OpenaiResponses | Kind::OpenrouterChat => Ok(Arc::new(LiveProvider::new(
+            Kind::OpenaiResponses | Kind::OpenrouterChat => Ok(Arc::new(LiveProvider::for_kind(
+                self.remote_kind.clone(),
                 self.control.clone(),
                 self.credentials.clone(),
                 self.transport.clone(),

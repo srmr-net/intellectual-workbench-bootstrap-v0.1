@@ -409,6 +409,31 @@ fn llm_020_single_use_room_and_switch_fences() {
         .is_none());
     let h = Harness::new(vec![], true);
     assert_eq!(h.provider.kind(), "openai-responses");
+    let selected_kind = h.control.profile().provider;
+    let mismatched = LiveProvider::for_kind(
+        Kind::OpenrouterChat,
+        h.control.clone(),
+        h.key.clone(),
+        h.transport.clone(),
+        "room-mismatch".into(),
+        None,
+    )
+    .unwrap();
+    assert!(await_provider(
+        &mismatched,
+        request(),
+        Cancellation::default(),
+        Duration::from_secs(1)
+    )
+    .is_err());
+    assert_eq!(
+        h.control
+            .latest("room-mismatch")
+            .unwrap()
+            .observation
+            .status,
+        "NOT_CONFIGURED"
+    );
     h.control.configure(Profile::default()).unwrap();
     assert_eq!(h.provider.kind(), "openai-responses");
     assert!(LiveProvider::new(
@@ -420,6 +445,37 @@ fn llm_020_single_use_room_and_switch_fences() {
     )
     .is_err());
     assert!(h.run().is_err());
+    // Deterministic factory interleaving: remote selected above, configuration
+    // switched offline, then the host constructs that immutable selected kind.
+    // Construction succeeds nonfatally; stale work cannot load keys or send.
+    let stale = LiveProvider::for_kind(
+        selected_kind,
+        h.control.clone(),
+        h.key.clone(),
+        h.transport.clone(),
+        "room-stale".into(),
+        None,
+    )
+    .unwrap();
+    assert_eq!(stale.kind(), "openai-responses");
+    assert!(await_provider(
+        &stale,
+        request(),
+        Cancellation::default(),
+        Duration::from_secs(1)
+    )
+    .is_err());
+    let stale_audit = serde_json::to_value(h.control.latest("room-stale").unwrap()).unwrap();
+    assert_eq!(stale_audit["observation"]["provider"], "openai-responses");
+    assert_eq!(stale_audit["observation"]["model"], TESTED_MODEL);
+    assert!(await_provider(
+        &OfflineFixture,
+        request(),
+        Cancellation::default(),
+        Duration::from_secs(1)
+    )
+    .is_ok());
+    assert_eq!(h.key.0.load(Ordering::SeqCst), 0);
     assert_eq!(h.transport.attempts.load(Ordering::SeqCst), 0);
     let c = Arc::new(Control::default());
     c.configure(profile(true)).unwrap();
