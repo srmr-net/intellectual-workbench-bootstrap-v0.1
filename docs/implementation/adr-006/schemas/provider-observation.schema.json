@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://workbench.example/schema/adr006/provider-observation.v0.1.json",
+  "type":"object","additionalProperties":false,
+  "required":["observationVersion","correlationId","provider","model","status","durationMs"],
+  "properties":{
+    "observationVersion":{"const":"0.1"},
+    "correlationId":{"type":"string","minLength":1,"maxLength":128},
+    "provider":{"type":"string","minLength":1,"maxLength":64},
+    "model":{"type":"string","minLength":1,"maxLength":120},
+    "status":{"enum":["OK","NOT_CONFIGURED","CONSENT_REQUIRED","AUTH_FAILED","RATE_LIMITED","TIMEOUT","CANCELLED","UNAVAILABLE","REFUSED","TRUNCATED","MALFORMED_RESPONSE","SCHEMA_MISMATCH","BUDGET_EXCEEDED","PROVIDER_ERROR"]},
+    "durationMs":{"type":"integer","minimum":0},
+    "inputTokens":{"type":"integer","minimum":0},
+    "outputTokens":{"type":"integer","minimum":0},
+    "catalogCount":{"type":"integer","minimum":0,"maximum":16}
+  }
+}

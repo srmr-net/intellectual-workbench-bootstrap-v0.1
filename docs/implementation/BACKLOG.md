@@ -28,3 +28,6 @@ OP-001 / ADR005 (Accepted, 2026-10-27): bounded local single-component Operator;
 
 VS3-001 (Accepted, 2026-10-28): complete bounded desktop Operator journey; owner Codex;
 [task](vslice-003/TASK.md); depends accepted ADR001–005 and VS1/VS2.
+
+LLM-001 / ADR006 (Proposed): host-controlled opt-in live provider; owner Codex;
+[task](adr-006/TASK.md); depends accepted ADR001–005 and VS1–VS3.
