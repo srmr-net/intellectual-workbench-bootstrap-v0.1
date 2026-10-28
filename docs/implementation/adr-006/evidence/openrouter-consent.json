@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-28",
+  "source": "Explicit user reply in this Codex session",
+  "answer": "Consent to this OpenRouter live smoke",
+  "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "providerOnly": "nvidia",
+  "fallbacks": false,
+  "priceFilter": {"prompt": 0, "completion": 0, "request": 0},
+  "data": "Synthetic GBP250000/5percent/25years intent and bounded admitted-candidate projection only",
+  "disclosedDataUse": "NVIDIA free endpoint logs requests for security and product improvement",
+  "disclosedCapability": "No provider-enforced JSON Schema; mandatory canonical strict host validation",
+  "maxRequestsTotal": 3,
+  "maxOutputTokensPerRequest": 512,
+  "timeoutMsPerRequest": 20000,
+  "automaticRetries": false,
+  "tools": false,
+  "credential": "Separate private host facility, not archived",
+  "compositionApproval": "Separate actual proposal-bound human decision required before apply"
+}

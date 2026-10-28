@@ -663,3 +663,144 @@ fn revoke_inside_start_and_ready_poll_cannot_publish() {
         );
     }
 }
+
+fn chat(s: Value) -> Value {
+    json!({"model":OPENROUTER_MODEL,"provider":"Nvidia","choices":[{"index":0,"finish_reason":"stop","message":{"role":"assistant","content":s.to_string()}}],"usage":{"prompt_tokens":100,"completion_tokens":60}})
+}
+fn parse_chat(v: Value) -> Result<response::Parsed, Failure> {
+    response::parse_for(
+        &Kind::OpenrouterChat,
+        200,
+        &serde_json::to_vec(&v).unwrap(),
+        &Budget::default(),
+        &request(),
+        OPENROUTER_MODEL,
+    )
+}
+#[test]
+fn openrouter_explicit_profile_payload_and_no_schema_facility_claim() {
+    let p = Profile {
+        provider: Kind::OpenrouterChat,
+        model: OPENROUTER_MODEL.into(),
+        ..profile(false)
+    };
+    p.validate().unwrap();
+    let v: Value = serde_json::from_slice(
+        &response::request_body_for(&p.provider, &request(), &p.model, &p.budget).unwrap(),
+    )
+    .unwrap();
+    assert_eq!(v["model"], OPENROUTER_MODEL);
+    assert_eq!(v["provider"]["only"], json!(["nvidia"]));
+    assert_eq!(v["provider"]["allow_fallbacks"], false);
+    assert_eq!(v["provider"]["require_parameters"], true);
+    assert_eq!(
+        v["provider"]["max_price"],
+        json!({"prompt":0,"completion":0,"request":0})
+    );
+    assert_eq!(v["provider"]["data_collection"], "allow");
+    assert!(v.get("response_format").is_none());
+    assert_eq!(v["tools"], json!([]));
+    assert_eq!(v["tool_choice"], "none");
+    assert_eq!(v["max_tokens"], 512);
+    assert_eq!(v["reasoning"]["enabled"], false);
+    assert_eq!(v["reasoning"]["exclude"], true);
+    let user: Value = serde_json::from_str(v["messages"][1]["content"].as_str().unwrap()).unwrap();
+    assert_eq!(user.as_object().unwrap().len(), 2);
+    assert_eq!(user["utterance"], INTENT);
+    assert!(!v.to_string().contains("request-one"));
+    assert!(v["messages"][0]["content"]
+        .as_str()
+        .unwrap()
+        .contains("does not enforce JSON Schema"));
+    assert_eq!(Kind::OpenrouterChat.endpoint(), OPENROUTER_ENDPOINT);
+}
+#[test]
+fn openrouter_strict_canonical_chat_and_failure_taxonomy() {
+    assert_eq!(
+        Suggestion::parse(&parse_chat(chat(suggestion())).unwrap().suggestion)
+            .unwrap()
+            .candidate_key,
+        "opaque-one"
+    );
+    for (field, value, failure) in [
+        ("finish_reason", json!("length"), Failure::Truncated),
+        ("finish_reason", json!("content_filter"), Failure::Refused),
+        ("finish_reason", json!("tool_calls"), Failure::ProviderError),
+    ] {
+        let mut v = chat(suggestion());
+        v["choices"][0][field] = value;
+        assert_eq!(parse_chat(v).err(), Some(failure));
+    }
+    for field in ["tool_calls", "function_call"] {
+        let mut v = chat(suggestion());
+        v["choices"][0]["message"][field] = json!({"name":"execute"});
+        assert_eq!(parse_chat(v).err(), Some(Failure::ProviderError));
+    }
+    let mut v = chat(suggestion());
+    v["choices"][0]["message"]["refusal"] = json!("Never log raw refusal");
+    assert_eq!(parse_chat(v).err(), Some(Failure::Refused));
+    for field in ["model", "provider"] {
+        let mut v = chat(suggestion());
+        v[field] = json!("unexpected");
+        assert!(parse_chat(v).is_err());
+    }
+    let mut v = chat(suggestion());
+    v["choices"][0]["message"]["content"] = json!(format!("```json\n{}\n```", suggestion()));
+    assert_eq!(parse_chat(v).err(), Some(Failure::SchemaMismatch));
+    let mut s = suggestion();
+    s["candidateKey"] = json!("invented");
+    assert_eq!(parse_chat(chat(s)).err(), Some(Failure::SchemaMismatch));
+    let mut s = suggestion();
+    s["inputValues"]["principal"] = json!("42");
+    assert_eq!(parse_chat(chat(s)).err(), Some(Failure::SchemaMismatch));
+    let mut v = chat(suggestion());
+    v["choices"][0]["message"]["content"] =
+        json!("{\"candidateKey\":\"a\",\"candidateKey\":\"b\"}");
+    assert_eq!(parse_chat(v).err(), Some(Failure::SchemaMismatch));
+    for (status, error) in [
+        (402, Failure::BudgetExceeded),
+        (408, Failure::Timeout),
+        (401, Failure::AuthFailed),
+        (429, Failure::RateLimited),
+        (503, Failure::Unavailable),
+    ] {
+        assert_eq!(
+            response::parse_for(
+                &Kind::OpenrouterChat,
+                status,
+                b"{}",
+                &Budget::default(),
+                &request(),
+                OPENROUTER_MODEL
+            )
+            .err(),
+            Some(error)
+        );
+    }
+}
+#[test]
+fn openrouter_same_permit_and_canonical_provider_boundary() {
+    let c = Arc::new(Control::default());
+    c.configure(Profile {
+        provider: Kind::OpenrouterChat,
+        model: OPENROUTER_MODEL.into(),
+        ..profile(true)
+    })
+    .unwrap();
+    let cancel = Cancellation::default();
+    let permit = c.consume_consent(INTENT, cancel.clone());
+    let key = Arc::new(Credential(0.into()));
+    let t = Arc::new(MockTransport::new(vec![reply(200, chat(suggestion()))]));
+    let p = LiveProvider::new(c.clone(), key, t.clone(), "room-router".into(), permit).unwrap();
+    let result = await_provider(&p, request(), cancel.clone(), Duration::from_secs(1)).unwrap();
+    assert_eq!(
+        Suggestion::parse(&result).unwrap().input_values,
+        mortgage_terms(INTENT).unwrap()
+    );
+    assert!(await_provider(&p, request(), cancel, Duration::from_secs(1)).is_err());
+    assert_eq!(t.attempts.load(Ordering::SeqCst), 1);
+    let audit = serde_json::to_value(c.audits("room-router")[0].clone()).unwrap();
+    assert_eq!(audit["observation"]["provider"], "openrouter-chat");
+    assert_eq!(audit["observation"]["model"], OPENROUTER_MODEL);
+    assert_eq!(audit["observation"]["outputTokens"], 60);
+}

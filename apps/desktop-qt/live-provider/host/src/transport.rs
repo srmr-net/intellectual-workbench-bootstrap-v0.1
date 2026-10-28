@@ -1,4 +1,4 @@
-use crate::policy::{Failure, Secret};
+use crate::policy::{Failure, Kind, Secret};
 use serde::Deserialize;
 use std::{
     io::{Read, Write},
@@ -44,13 +44,25 @@ struct Metadata {
 }
 pub struct TlsTransport {
     python: PathBuf,
+    provider: Kind,
 }
 impl TlsTransport {
+    pub fn for_provider(python: PathBuf, provider: Kind) -> Result<Self, Failure> {
+        if !provider.is_remote() {
+            return Err(Failure::NotConfigured);
+        }
+        let mut value = Self::new(python)?;
+        value.provider = provider;
+        Ok(value)
+    }
     pub fn new(python: PathBuf) -> Result<Self, Failure> {
         if !python.is_absolute() || !python.is_file() {
             return Err(Failure::NotConfigured);
         }
-        Ok(Self { python })
+        Ok(Self {
+            python,
+            provider: Kind::OpenaiResponses,
+        })
     }
 }
 struct ProcessExchange {
@@ -177,7 +189,7 @@ impl Transport for TlsTransport {
         if body.len() > 65536 || max_response > 32768 {
             return Err(Failure::BudgetExceeded);
         }
-        let frame=serde_json::to_vec(&serde_json::json!({"body":std::str::from_utf8(body).map_err(|_|Failure::MalformedResponse)?,"maxResponseBytes":max_response,"timeoutMs":timeout_ms})).map_err(|_|Failure::ProviderError)?;
+        let frame=serde_json::to_vec(&serde_json::json!({"provider":self.provider.label(),"body":std::str::from_utf8(body).map_err(|_|Failure::MalformedResponse)?,"maxResponseBytes":max_response,"timeoutMs":timeout_ms})).map_err(|_|Failure::ProviderError)?;
         // Literal embedded trusted code; no shell, script path, proxy or secret argv.
         if frame.len() > 66000 {
             return Err(Failure::BudgetExceeded);

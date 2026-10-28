@@ -13,15 +13,15 @@ def main():
  script=out/'actions.json';script.write_text(json.dumps(actions));report=out/'report.json'
  env=os.environ.copy()
  for key in list(env):
-  if key.startswith(('OPENAI_','WB_LLM_','ANTHROPIC_','AZURE_OPENAI_')) or key in ['DISPLAY','WAYLAND_DISPLAY','QT_QPA_PLATFORMTHEME']:env.pop(key,None)
- env.update(QT_QPA_PLATFORM='offscreen',QT_QUICK_BACKEND='software',WB_LLM_SECRET_FILE=str(a.credential_file.expanduser().resolve()),WB_LLM_MODEL='gpt-5.4-mini-2026-03-17')
+  if key.startswith(('OPENAI_','OPENROUTER_','WB_LLM_','ANTHROPIC_','AZURE_OPENAI_')) or key in ['DISPLAY','WAYLAND_DISPLAY','QT_QPA_PLATFORMTHEME']:env.pop(key,None)
+ env.update(QT_QPA_PLATFORM='offscreen',QT_QUICK_BACKEND='software',WB_LLM_SECRET_FILE=str(a.credential_file.expanduser().resolve()),WB_LLM_MODEL='nvidia/nemotron-3-ultra-550b-a55b:free',WB_LLM_PROVIDER='openrouter-chat')
  command=[str(app),str(worker),str(registry),str(workspace),str(python),str(ROOT/'tools/registry_validate.py'),str(native/'wb-registry-inspect'),'--validation-actions',str(script),'--validation-report',str(report)]
  with (out/'stdout.txt').open('w') as stdout,(out/'stderr.txt').open('w') as stderr:
   process=subprocess.Popen(command,env=env,stdout=stdout,stderr=stderr)
   print(json.dumps({'desktopPid':process.pid,'preview':str(report)+'.preview.json','decision':str(report)+'.approval.json'}),flush=True)
   try:code=process.wait(timeout=150)
   except subprocess.TimeoutExpired:process.kill();process.wait();raise RuntimeError('live desktop deadline expired') from None
- (out/'launcher.json').write_text(json.dumps({'pid':process.pid,'returncode':code,'endpoint':'https://api.openai.com/v1/responses','model':'gpt-5.4-mini-2026-03-17','maxCalls':1,'maxOutputTokens':512,'timeoutMs':20000},indent=2)+'\n')
+ (out/'launcher.json').write_text(json.dumps({'pid':process.pid,'returncode':code,'endpoint':'https://openrouter.ai/api/v1/chat/completions','model':'nvidia/nemotron-3-ultra-550b-a55b:free','maxCalls':1,'maxOutputTokens':512,'timeoutMs':20000},indent=2)+'\n')
  if code:raise SystemExit('Live smoke incomplete; inspect redacted status/report, no automatic retry')
  r=json.loads(report.read_text());assert r['finalState']['projection']['values']['payment']=='1753.77';assert next(s for s in r['samples'] if s['action']=='operatorStatus')['providerState']['remoteAttempts']=='1'
  cold_actions=out/'cold-actions.json';cold_actions.write_text(json.dumps([{'type':'expect','ready':True,'values':{'payment':'1753.77'},'invocations':'0'},{'type':'operatorStatus'},{'type':'quit'}]));cold_report=out/'cold-report.json'

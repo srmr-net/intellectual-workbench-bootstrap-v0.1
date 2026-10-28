@@ -1,5 +1,5 @@
 use crate::{
-    policy::{Budget, CredentialSource, Failure, Kind, Profile},
+    policy::{Budget, CredentialSource, Failure, Profile},
     response,
     transport::{Exchange, Transport},
 };
@@ -168,10 +168,7 @@ impl Control {
     }
     pub fn consume_consent(&self, utterance: &str, cancel: Cancellation) -> Option<Permit> {
         let mut s = self.state.lock().unwrap();
-        if s.profile.provider != Kind::OpenaiResponses
-            || !s.profile.enabled
-            || !s.profile.remote_consent
-        {
+        if !s.profile.provider.is_remote() || !s.profile.enabled || !s.profile.remote_consent {
             return None;
         }
         s.profile.remote_consent = false;
@@ -243,7 +240,7 @@ impl Control {
             return Err(Failure::Cancelled);
         }
         s.profile.validate()?;
-        if s.profile.provider != Kind::OpenaiResponses || !s.profile.enabled {
+        if !s.profile.provider.is_remote() || !s.profile.enabled {
             return Err(Failure::NotConfigured);
         }
         Ok(())
@@ -284,7 +281,7 @@ impl LiveProvider {
 }
 impl OperatorProvider for LiveProvider {
     fn kind(&self) -> &'static str {
-        "openai-responses"
+        self.control.profile().provider.label()
     }
     fn suggest<'a>(&'a self, request: ProviderRequest, cancel: Cancellation) -> ProviderFuture<'a> {
         Box::pin(Invocation::new(self.clone(), request, cancel))
@@ -391,7 +388,7 @@ impl Invocation {
                 } else {
                     self.request.request_id.clone()
                 },
-                provider: "openai-responses",
+                provider: self.profile.provider.label(),
                 model: self.profile.model.clone(),
                 status,
                 duration_ms: self.started.elapsed().as_millis().min(u64::MAX as u128) as u64,
@@ -451,7 +448,12 @@ impl Future for Invocation {
                 }
                 self.claimed = true;
             }
-            match response::request_body(&self.request, &self.profile.model, &self.profile.budget) {
+            match response::request_body_for(
+                &self.profile.provider,
+                &self.request,
+                &self.profile.model,
+                &self.profile.budget,
+            ) {
                 Ok(body) => self.body = body,
                 Err(f) => return self.fail(f),
             }
@@ -543,7 +545,8 @@ impl Future for Invocation {
                 return Poll::Pending;
             }
         }
-        match response::parse(
+        match response::parse_for(
+            &self.profile.provider,
             raw.status,
             &raw.body,
             &self.profile.budget,
@@ -588,7 +591,7 @@ impl Drop for Invocation {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::policy::{Secret, TESTED_MODEL};
+    use crate::policy::{Kind, Secret, TESTED_MODEL};
     use crate::transport::{MockReply, MockTransport};
     use serde_json::json;
     use std::task::Waker;

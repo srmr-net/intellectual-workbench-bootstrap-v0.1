@@ -6,7 +6,7 @@
   "required":["profileVersion","provider","model","enabled","remoteConsent","budget"],
   "properties":{
     "profileVersion":{"const":"0.1"},
-    "provider":{"enum":["offline-fixture","openai-responses"]},
+    "provider":{"enum":["offline-fixture","openai-responses","openrouter-chat"]},
     "model":{"type":"string","minLength":1,"maxLength":120},
     "enabled":{"type":"boolean"},
     "remoteConsent":{"type":"boolean"},

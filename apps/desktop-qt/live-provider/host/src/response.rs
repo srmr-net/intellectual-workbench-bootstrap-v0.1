@@ -154,3 +154,133 @@ pub fn parse(
         output_tokens,
     })
 }
+
+/// Separate provider profile, not an assertion of generic API compatibility.
+/// The selected free NVIDIA endpoint advertises no response_format support.
+/// Request JSON in the prompt and retain the exact same local strict authority.
+pub fn request_body_for(
+    kind: &crate::policy::Kind,
+    request: &ProviderRequest,
+    model: &str,
+    budget: &Budget,
+) -> Result<Vec<u8>, Failure> {
+    use crate::policy::{Kind, OPENROUTER_MODEL};
+    match kind {
+        Kind::OfflineFixture => Err(Failure::NotConfigured),
+        Kind::OpenaiResponses => request_body(request, model, budget),
+        Kind::OpenrouterChat => {
+            if model != OPENROUTER_MODEL {
+                return Err(Failure::NotConfigured);
+            }
+            let base: Value = serde_json::from_slice(&request_body(request, model, budget)?)
+                .map_err(|_| Failure::ProviderError)?;
+            let instructions=format!("{} Return exactly one JSON object, with no markdown, commentary or tool calls. This endpoint does not enforce JSON Schema; the host rejects any deviation. Required JSON Schema: {}",base["instructions"].as_str().unwrap(),base["text"]["format"]["schema"]);
+            let body = json!({"model":model,"messages":[{"role":"system","content":instructions},{"role":"user","content":base["input"][0]["content"]}],"stream":false,"max_tokens":budget.max_output_tokens,"tools":[],"tool_choice":"none","reasoning":{"enabled":false,"exclude":true},"provider":{"only":["nvidia"],"allow_fallbacks":false,"require_parameters":true,"data_collection":"allow","max_price":{"prompt":0,"completion":0,"request":0}}});
+            let bytes = serde_json::to_vec(&body).map_err(|_| Failure::ProviderError)?;
+            if bytes.len() > 65536 {
+                return Err(Failure::BudgetExceeded);
+            }
+            Ok(bytes)
+        }
+    }
+}
+pub fn parse_for(
+    kind: &crate::policy::Kind,
+    status: u16,
+    body: &[u8],
+    budget: &Budget,
+    request: &ProviderRequest,
+    model: &str,
+) -> Result<Parsed, Failure> {
+    use crate::policy::Kind;
+    if *kind != Kind::OpenrouterChat {
+        return parse(status, body, budget, request, model);
+    }
+    if body.len() > budget.max_response_bytes {
+        return Err(Failure::BudgetExceeded);
+    }
+    if status == 402 {
+        return Err(Failure::BudgetExceeded);
+    }
+    if status == 408 {
+        return Err(Failure::Timeout);
+    }
+    if status != 200 {
+        return parse(status, body, budget, request, model);
+    }
+    let root = strict_json(body).map_err(|_| Failure::MalformedResponse)?;
+    if !root["error"].is_null() {
+        return Err(Failure::ProviderError);
+    }
+    if root["model"].as_str() != Some(model) {
+        return Err(Failure::MalformedResponse);
+    }
+    if root
+        .get("provider")
+        .is_some_and(|p| p.as_str().is_none_or(|s| !s.eq_ignore_ascii_case("nvidia")))
+    {
+        return Err(Failure::ProviderError);
+    }
+    if root
+        .get("tools")
+        .is_some_and(|v| v.as_array().is_none_or(|a| !a.is_empty()))
+    {
+        return Err(Failure::ProviderError);
+    }
+    let choices = root["choices"]
+        .as_array()
+        .ok_or(Failure::MalformedResponse)?;
+    if choices.len() != 1 || choices[0]["index"] != 0 {
+        return Err(Failure::MalformedResponse);
+    }
+    let choice = &choices[0];
+    let message = &choice["message"];
+    if !message["function_call"].is_null()
+        || message
+            .get("tool_calls")
+            .is_some_and(|v| v.as_array().is_none_or(|a| !a.is_empty()))
+    {
+        return Err(Failure::ProviderError);
+    }
+    if !message["refusal"].is_null() || choice["finish_reason"] == "content_filter" {
+        return Err(Failure::Refused);
+    }
+    match choice["finish_reason"].as_str() {
+        Some("stop") => {}
+        Some("length") => return Err(Failure::Truncated),
+        Some("tool_calls" | "function_call") => return Err(Failure::ProviderError),
+        _ => return Err(Failure::MalformedResponse),
+    }
+    if message["role"] != "assistant" {
+        return Err(Failure::MalformedResponse);
+    }
+    let text = message["content"]
+        .as_str()
+        .ok_or(Failure::MalformedResponse)?;
+    let mut normalized = json!({"model":model,"status":"completed","output":[{"type":"message","role":"assistant","status":"completed","content":[{"type":"output_text","text":text}]}]});
+    if let Some(usage) = root.get("usage").filter(|u| !u.is_null()) {
+        if !usage.is_object() {
+            return Err(Failure::MalformedResponse);
+        }
+        let mut tokens = serde_json::Map::new();
+        for (from, to) in [
+            ("prompt_tokens", "input_tokens"),
+            ("completion_tokens", "output_tokens"),
+        ] {
+            if let Some(n) = usage.get(from) {
+                if !n.is_u64() {
+                    return Err(Failure::MalformedResponse);
+                }
+                tokens.insert(to.into(), n.clone());
+            }
+        }
+        normalized["usage"] = Value::Object(tokens);
+    }
+    parse(
+        200,
+        &serde_json::to_vec(&normalized).map_err(|_| Failure::ProviderError)?,
+        budget,
+        request,
+        model,
+    )
+}

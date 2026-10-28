@@ -6,7 +6,7 @@ bash apps/desktop-qt/validate-vslice-003.sh
 export WB_LLM_EVIDENCE_DIR="$PWD/target/abi-evidence/llm"
 export REGISTRY_PYTHON="$(python3 -c 'import sys; print(sys.executable)')"
 export QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1
-unset QT_QPA_PLATFORMTHEME DISPLAY WAYLAND_DISPLAY OPENAI_API_KEY WB_LLM_SECRET_FILE WB_LLM_TEST_TRANSPORT WB_LLM_MODEL WB_LLM_BUDGET
+unset QT_QPA_PLATFORMTHEME DISPLAY WAYLAND_DISPLAY OPENAI_API_KEY WB_LLM_SECRET_FILE WB_LLM_TEST_TRANSPORT WB_LLM_MODEL WB_LLM_BUDGET WB_LLM_PROVIDER OPENROUTER_API_KEY
 mkdir -p "$WB_LLM_EVIDENCE_DIR"
 manifest=apps/desktop-qt/live-provider/host/Cargo.toml
 cargo fmt --manifest-path "$manifest" -- --check 2>&1 | tee "$WB_LLM_EVIDENCE_DIR/fmt.txt"

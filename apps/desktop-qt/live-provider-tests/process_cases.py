@@ -20,7 +20,7 @@ class Journey(unittest.TestCase):
   old_popen=subprocess.Popen
   def popen(command,**kw):
    command=[str(ROOT/'target/debug/wb-live-worker') if x==str(ROOT/'target/debug/wb-vslice003-worker') else x for x in command]
-   env=kw['env'];env['WB_LLM_TEST_TRANSPORT']=self.mode;env.pop('WB_LLM_SECRET_FILE',None);env.pop('WB_LLM_BUDGET',None)
+   env=kw['env'];env['WB_LLM_TEST_TRANSPORT']=self.mode;env.pop('WB_LLM_SECRET_FILE',None);env.pop('WB_LLM_BUDGET',None);env.pop('WB_LLM_MODEL',None);env['WB_LLM_PROVIDER']='openrouter-chat';env.pop('OPENROUTER_API_KEY',None)
    if bad_config:env['WB_LLM_BUDGET']='invalid'
    return old_popen(command,**kw)
   with unittest.mock.patch.object(subprocess,'Popen',popen):return base.Journey.launch(self,actions,offline)

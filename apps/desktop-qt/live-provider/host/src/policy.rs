@@ -7,6 +7,8 @@ use std::{
 };
 
 pub const ENDPOINT: &str = "https://api.openai.com/v1/responses";
+pub const OPENROUTER_ENDPOINT: &str = "https://openrouter.ai/api/v1/chat/completions";
+pub const OPENROUTER_MODEL: &str = "nvidia/nemotron-3-ultra-550b-a55b:free";
 pub const TESTED_MODEL: &str = "gpt-5.4-mini-2026-03-17";
 #[derive(Clone, Copy, Debug, Serialize, Deserialize, PartialEq, Eq)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
@@ -85,6 +87,32 @@ impl Budget {
 pub enum Kind {
     OfflineFixture,
     OpenaiResponses,
+    OpenrouterChat,
+}
+impl Kind {
+    pub fn is_remote(&self) -> bool {
+        *self != Self::OfflineFixture
+    }
+    pub fn label(&self) -> &'static str {
+        match self {
+            Self::OfflineFixture => "offline-fixture",
+            Self::OpenaiResponses => "openai-responses",
+            Self::OpenrouterChat => "openrouter-chat",
+        }
+    }
+    pub fn tested_model(&self) -> &'static str {
+        match self {
+            Self::OfflineFixture => "deterministic-fixture",
+            Self::OpenaiResponses => TESTED_MODEL,
+            Self::OpenrouterChat => OPENROUTER_MODEL,
+        }
+    }
+    pub fn endpoint(&self) -> &'static str {
+        match self {
+            Self::OpenrouterChat => OPENROUTER_ENDPOINT,
+            _ => ENDPOINT,
+        }
+    }
 }
 #[derive(Clone, Debug, Serialize, Deserialize)]
 #[serde(rename_all = "camelCase", deny_unknown_fields)]
@@ -114,12 +142,10 @@ impl Profile {
         if self.profile_version != "0.1" || self.model.len() > 120 || self.model.is_empty() {
             return Err(Failure::NotConfigured);
         }
-        match self.provider {
-            Kind::OfflineFixture if self.model != "deterministic-fixture" => {
-                Err(Failure::NotConfigured)
-            }
-            Kind::OpenaiResponses if self.model != TESTED_MODEL => Err(Failure::NotConfigured),
-            _ => Ok(()),
+        if self.model != self.provider.tested_model() {
+            Err(Failure::NotConfigured)
+        } else {
+            Ok(())
         }
     }
 }
@@ -150,6 +176,7 @@ pub trait CredentialSource: Send + Sync {
 }
 pub enum HostCredential {
     Environment,
+    OpenRouterEnvironment,
     PrivateFile(PathBuf),
     Missing,
 }
@@ -157,6 +184,9 @@ impl CredentialSource for HostCredential {
     fn load(&self) -> Result<Secret, Failure> {
         let mut bytes = match self {
             Self::Environment => std::env::var_os("OPENAI_API_KEY")
+                .ok_or(Failure::NotConfigured)?
+                .into_encoded_bytes(),
+            Self::OpenRouterEnvironment => std::env::var_os("OPENROUTER_API_KEY")
                 .ok_or(Failure::NotConfigured)?
                 .into_encoded_bytes(),
             Self::PrivateFile(path) => {

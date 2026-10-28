@@ -2,6 +2,7 @@
 import http.client,ipaddress,json,socket,ssl,struct,sys,time
 HOST='api.openai.com'
 PATH='/v1/responses'
+ORIGINS={'openai-responses':(HOST,PATH),'openrouter-chat':('openrouter.ai','/api/v1/chat/completions')}
 http.client._MAXLINE=4096
 http.client._MAXHEADERS=32
 
@@ -15,9 +16,11 @@ def public_addresses(records):
  if not result or len(result)>8:raise ValueError('DESTINATION')
  return result
 
-def send(body,key,max_bytes,timeout_ms):
+def send(body,key,max_bytes,timeout_ms,provider="openai-responses"):
+ if provider not in ORIGINS:raise ValueError("PROVIDER")
+ host,path=ORIGINS[provider]
  deadline=time.monotonic()+min(timeout_ms,30000)/1000
- addresses=public_addresses(socket.getaddrinfo(HOST,443,type=socket.SOCK_STREAM))
+ addresses=public_addresses(socket.getaddrinfo(host,443,type=socket.SOCK_STREAM))
  context=ssl.create_default_context();context.minimum_version=ssl.TLSVersion.TLSv1_2
  connected=None
  for family,address in addresses:
@@ -27,12 +30,12 @@ def send(body,key,max_bytes,timeout_ms):
    if left<=0:raise TimeoutError()
    raw.settimeout(min(2,left));raw.connect(address)
    raw.settimeout(max(.001,deadline-time.monotonic()))
-   connected=context.wrap_socket(raw,server_hostname=HOST);break
+   connected=context.wrap_socket(raw,server_hostname=host);break
   except (OSError,ssl.SSLError):raw.close()
  if connected is None:raise ConnectionError()
- connection=http.client.HTTPSConnection(HOST,443,context=context);connection.sock=connected;connection.auto_open=False
+ connection=http.client.HTTPSConnection(host,443,context=context);connection.sock=connected;connection.auto_open=False
  try:
-  connection.request('POST',PATH,body=body,headers={'Host':HOST,'Authorization':'Bearer '+key.decode('ascii'),'Content-Type':'application/json','Accept':'application/json','Accept-Encoding':'identity','Connection':'close'})
+  connection.request('POST',path,body=body,headers={'Host':host,'Authorization':'Bearer '+key.decode('ascii'),'Content-Type':'application/json','Accept':'application/json','Accept-Encoding':'identity','Connection':'close'})
   reply=connection.getresponse()
   # Never follow Location. No response header or message is copied into diagnostics.
   status=reply.status
@@ -64,8 +67,8 @@ def main():
  raw=sys.stdin.buffer.read(size)
  if len(raw)!=size or sys.stdin.buffer.read(1):raise ValueError('FRAME')
  request=json.loads(raw)
- if set(request)!={'body','maxResponseBytes','timeoutMs'} or not isinstance(request['body'],str) or not 1<=request['maxResponseBytes']<=32768 or not 1<=request['timeoutMs']<=30000:raise ValueError('FRAME')
- return send(request['body'].encode('utf-8'),key,request['maxResponseBytes'],request['timeoutMs'])
+ if set(request)!={'provider','body','maxResponseBytes','timeoutMs'} or not isinstance(request['body'],str) or not 1<=request['maxResponseBytes']<=32768 or not 1<=request['timeoutMs']<=30000:raise ValueError('FRAME')
+ return send(request['body'].encode('utf-8'),key,request['maxResponseBytes'],request['timeoutMs'],request['provider'])
 if __name__=='__main__':
  try:metadata,body=main()
  except (socket.timeout,TimeoutError):metadata,body={'httpStatus':0,'failure':'TIMEOUT','retryAfterMs':None,'bodyLength':0},b''

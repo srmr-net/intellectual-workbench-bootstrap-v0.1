@@ -1,10 +1,8 @@
 //! Provider selection belongs to the host, not the model or room snapshot.
 #[cfg(feature = "test-transport")]
-use crate::policy::Secret;
+use crate::policy::{Secret, TESTED_MODEL};
 use crate::{
-    policy::{
-        Budget, CredentialSource, Failure, HostCredential, Kind, Profile, ENDPOINT, TESTED_MODEL,
-    },
+    policy::{Budget, CredentialSource, Failure, HostCredential, Kind, Profile},
     provider::{Control, LiveProvider, Permit},
     transport::{TlsTransport, Transport},
 };
@@ -17,14 +15,25 @@ pub struct Host {
     credentials: Arc<dyn CredentialSource>,
     transport: Arc<dyn Transport>,
     model: Option<String>,
+    remote_kind: Kind,
     budget: Option<Budget>,
     pub transport_kind: &'static str,
 }
 impl Host {
     pub fn from_env(python: PathBuf) -> Result<Self, Failure> {
+        let remote_kind = match std::env::var("WB_LLM_PROVIDER").as_deref() {
+            Ok("openai-responses") => Kind::OpenaiResponses,
+            _ => Kind::OpenrouterChat,
+        };
+        let provider_config_valid = matches!(
+            std::env::var("WB_LLM_PROVIDER").as_deref(),
+            Err(std::env::VarError::NotPresent) | Ok("openai-responses" | "openrouter-chat")
+        );
         let model = match std::env::var("WB_LLM_MODEL") {
-            Ok(m) if m == TESTED_MODEL => Some(m),
-            Err(std::env::VarError::NotPresent) => Some(TESTED_MODEL.into()),
+            Ok(m) if provider_config_valid && m == remote_kind.tested_model() => Some(m),
+            Err(std::env::VarError::NotPresent) if provider_config_valid => {
+                Some(remote_kind.tested_model().into())
+            }
             _ => None,
         };
         let budget = match std::env::var("WB_LLM_BUDGET") {
@@ -37,15 +46,23 @@ impl Host {
         let credentials: Arc<dyn CredentialSource> =
             Arc::new(match std::env::var_os("WB_LLM_SECRET_FILE") {
                 Some(p) => HostCredential::PrivateFile(p.into()),
-                None => HostCredential::Environment,
+                None => {
+                    if remote_kind == Kind::OpenrouterChat {
+                        HostCredential::OpenRouterEnvironment
+                    } else {
+                        HostCredential::Environment
+                    }
+                }
             });
         let control = Arc::new(Control::default());
-        let transport: Arc<dyn Transport> = Arc::new(TlsTransport::new(python)?);
+        let transport: Arc<dyn Transport> =
+            Arc::new(TlsTransport::for_provider(python, remote_kind.clone())?);
         let result = Self {
             control,
             credentials,
             transport,
             model,
+            remote_kind,
             budget,
             transport_kind: "https-production",
         };
@@ -91,6 +108,7 @@ impl Host {
             credentials: Arc::new(FixtureCredential),
             transport: Arc::new(FixtureTransport::new(mode.into())?),
             model: Some(TESTED_MODEL.into()),
+            remote_kind: Kind::OpenaiResponses,
             budget: Some(budget),
             transport_kind: "deterministic-mock",
         })
@@ -98,11 +116,14 @@ impl Host {
     pub fn configure(&self, provider: Kind, consent: bool) -> Result<(), Failure> {
         let model = match provider {
             Kind::OfflineFixture => "deterministic-fixture".into(),
-            Kind::OpenaiResponses => self.model.clone().ok_or(Failure::NotConfigured)?,
+            _ if provider == self.remote_kind => {
+                self.model.clone().ok_or(Failure::NotConfigured)?
+            }
+            _ => return Err(Failure::NotConfigured),
         };
         self.control.configure(Profile {
             profile_version: "0.1".into(),
-            remote_consent: provider == Kind::OpenaiResponses && consent,
+            remote_consent: provider.is_remote() && consent,
             enabled: true,
             model,
             budget: if provider == Kind::OfflineFixture {
@@ -126,7 +147,7 @@ impl Host {
                     Arc::new(OfflineFixture)
                 },
             ),
-            Kind::OpenaiResponses => Ok(Arc::new(LiveProvider::new(
+            Kind::OpenaiResponses | Kind::OpenrouterChat => Ok(Arc::new(LiveProvider::new(
                 self.control.clone(),
                 self.credentials.clone(),
                 self.transport.clone(),
@@ -136,7 +157,7 @@ impl Host {
         }
     }
     pub fn status(&self, token: &str, result: Result<(), Failure>) -> Value {
-        json!({"protocol":"provider.1","kind":"reply","token":token,"ok":result.is_ok(),"code":result.err().map_or("OK",Failure::code),"profile":self.control.profile(),"endpoint":ENDPOINT,"remoteModel":self.model.as_deref().unwrap_or("NOT_CONFIGURED"),"remoteAttempts":self.control.network_calls.load(std::sync::atomic::Ordering::SeqCst).to_string(),"transport":self.transport_kind})
+        json!({"protocol":"provider.1","kind":"reply","token":token,"ok":result.is_ok(),"code":result.err().map_or("OK",Failure::code),"profile":self.control.profile(),"endpoint":self.remote_kind.endpoint(),"remoteProvider":self.remote_kind.label(),"providerEnforcedSchema":self.remote_kind==Kind::OpenaiResponses,"remoteModel":self.model.as_deref().unwrap_or("NOT_CONFIGURED"),"remoteAttempts":self.control.network_calls.load(std::sync::atomic::Ordering::SeqCst).to_string(),"transport":self.transport_kind})
     }
 }
 #[cfg(feature = "test-transport")]
@@ -189,9 +210,13 @@ impl Transport for FixtureTransport {
             .fetch_add(1, std::sync::atomic::Ordering::SeqCst);
         let body: Value = serde_json::from_slice(body).map_err(|_| Failure::MalformedResponse)?;
         let input: Value = serde_json::from_str(
-            body["input"][0]["content"]
-                .as_str()
-                .ok_or(Failure::MalformedResponse)?,
+            (if body.get("messages").is_some() {
+                &body["messages"][1]["content"]
+            } else {
+                &body["input"][0]["content"]
+            })
+            .as_str()
+            .ok_or(Failure::MalformedResponse)?,
         )
         .map_err(|_| Failure::MalformedResponse)?;
         let utterance = input["utterance"]
@@ -239,6 +264,10 @@ impl Transport for FixtureTransport {
             "slow" => delay = std::time::Duration::from_secs(5),
             "unavailable" => failure = Some(Failure::Unavailable),
             _ => {}
+        }
+        if body.get("messages").is_some() && status == 200 {
+            let content = response["output"][0]["content"][0]["text"].clone();
+            response = json!({"model":body["model"],"provider":"Nvidia","choices":[{"index":0,"finish_reason":match self.mode.as_str(){"incomplete"=>"length","tool"=>"tool_calls",_=>"stop"},"message":{"role":"assistant","content":content,"refusal":if self.mode=="refused"{json!("Never log this raw text")}else{Value::Null}}}],"usage":{"prompt_tokens":100,"completion_tokens":100}});
         }
         let t = MockTransport::new(vec![MockReply {
             status,

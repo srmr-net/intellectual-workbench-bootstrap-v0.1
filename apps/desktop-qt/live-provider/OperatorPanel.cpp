@@ -51,7 +51,7 @@ OperatorPanel::OperatorPanel(DesktopShell &shell)
   m_providerChoice->setObjectName("providerChoice");
   m_providerChoice->setAccessibleName("Suggestion provider");
   m_providerChoice->addItem("Offline deterministic","offline-fixture");
-  m_providerChoice->addItem("OpenAI Responses (remote)","openai-responses");
+  m_providerChoice->addItem("OpenRouter NVIDIA (remote)","openrouter-chat");
   layout->addWidget(m_providerChoice);
   m_providerInfo=new QLabel("Remote inference is off by default.",this);
   m_providerInfo->setObjectName("providerInfo");m_providerInfo->setAccessibleName("Provider destination and limits");m_providerInfo->setTextFormat(Qt::PlainText);m_providerInfo->setWordWrap(true);layout->addWidget(m_providerInfo);
@@ -59,6 +59,7 @@ OperatorPanel::OperatorPanel(DesktopShell &shell)
   m_remoteConsent->setObjectName("remoteConsent");m_remoteConsent->setAccessibleName("Consent to remote request and catalog transfer");
   layout->addWidget(m_remoteConsent);
   auto *disclosure=new QLabel("Single-use consent: only the next explicit request and admitted catalog are sent; no documents, paths or history. This does not approve a plan. API response storage is disabled; provider retention policies still apply.",this);
+  disclosure->setObjectName("providerDisclosure");
   disclosure->setTextFormat(Qt::PlainText);disclosure->setWordWrap(true);disclosure->setAccessibleName("Remote inference disclosure");layout->addWidget(disclosure);
   connect(m_providerChoice,qOverload<int>(&QComboBox::currentIndexChanged),this,[this]{QSignalBlocker block(m_remoteConsent);m_remoteConsent->setChecked(false);configureProvider();});
   connect(m_remoteConsent,&QCheckBox::toggled,this,[this]{configureProvider();});
@@ -364,7 +365,12 @@ void OperatorPanel::updateProvider(const QJsonObject &state) {
   m_providerState=state;
   const auto profile=state.value("profile").toObject();
   QSignalBlocker choice(m_providerChoice),consent(m_remoteConsent);
-  m_providerChoice->setCurrentIndex(profile.value("provider")=="openai-responses"?1:0);
+  const auto remote=state.value("remoteProvider").toString();
+  m_providerChoice->setItemData(1,remote);
+  m_providerChoice->setItemText(1,remote=="openrouter-chat"?"OpenRouter NVIDIA (remote)":"OpenAI Responses (remote)");
+  m_providerChoice->setCurrentIndex(profile.value("provider")==remote?1:0);
+  auto *disclosure=findChild<QLabel *>("providerDisclosure");
+  disclosure->setText("Single-use consent sends only the next explicit request and admitted catalog, not documents, paths or history. Plan approval is separate. "+QString(remote=="openrouter-chat"?"OpenRouter routes to NVIDIA's free endpoint, which logs requests for security and product improvement. No provider JSON Schema mode; strict local validation remains mandatory.":"API response storage is disabled; provider retention policies still apply. Strict provider schema plus mandatory local validation."));
   m_remoteConsent->setChecked(profile.value("remoteConsent").toBool());
   const auto budget=profile.value("budget").toObject();
   m_providerInfo->setText(state.value("remoteModel").toString()+"\n"+state.value("endpoint").toString()+"\nTransport: "+state.value("transport").toString()+"; attempts: "+state.value("remoteAttempts").toString()+"; max output tokens: "+QString::number(budget.value("maxOutputTokens").toInt())+"; remote consent: "+(m_remoteConsent->isChecked()?"on":"off"));

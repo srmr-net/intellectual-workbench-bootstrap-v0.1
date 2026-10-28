@@ -535,7 +535,7 @@ fn run() -> Result<(), Box<dyn std::error::Error>> {
                             );
                             continue;
                         }
-                        if provider_host.control.profile().provider == Kind::OpenaiResponses {
+                        if provider_host.control.profile().provider.is_remote() {
                             if let Some(old) = controller.lock().unwrap().take() {
                                 old.cancel_own();
                             }

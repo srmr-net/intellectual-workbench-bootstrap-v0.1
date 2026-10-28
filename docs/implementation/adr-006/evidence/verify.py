@@ -36,10 +36,10 @@ def verify(a):
   assert report['source']==run['headSha']==a.source and not run['trackedChanges']
   assert set(report['cases'])=={f'LLM-{n:03d}' for n in range(1,24)}
   for name,h in report['sha256'].items():assert digest(z.read('llm/'+name))==h,name
-  for name,count in [('transport-tests.txt',4),('process-tests.txt',7),('metadata-tests.txt',2)]:
+  for name,count in [('transport-tests.txt',5),('process-tests.txt',7),('metadata-tests.txt',2)]:
    text=z.read('llm/'+name).decode();assert f'Ran {count} tests' in text and '\nOK\n' in text and not re.search(r'FAILED|skipped|ERROR:',text)
   for name in ['default-tests.txt','mock-tests.txt']:
-   text=z.read('llm/'+name).decode();assert '24 passed; 0 failed; 0 ignored' in text and 'dropping_pending_process_exchange_kills_and_reaps_child ... ok' in text and 'FAILED' not in text
+   text=z.read('llm/'+name).decode();assert '27 passed; 0 failed; 0 ignored' in text and 'dropping_pending_process_exchange_kills_and_reaps_child ... ok' in text and 'FAILED' not in text
   reviews=[load('llm/review-'+role+'.json') for role in ['security','integration']]
   assert len({r['reviewer'] for r in reviews})==2
   for role,r in zip(['security','integration'],reviews):
@@ -62,6 +62,6 @@ def verify(a):
   assert 'OFFLINE_IPV4_IPV6_DENIED' in z.read(cold[1][0].replace('report.json','stdout.txt')).decode()
   if a.hosted:
    validate_hosted_run(json.loads(a.run_metadata.read_text()),run,report,a.source,a.head)
-  print(json.dumps({'verified':True,'gate':'LLM-024','hosted':a.hosted,'source':a.source,'head':a.head,'archiveSha256':a.sha256,'nativeConformanceTests':24,'transportTests':4,'qtProcessTests':7,'appWorkerPairs':14,'retained':retained,'live':'separate required evidence'},indent=2))
+  print(json.dumps({'verified':True,'gate':'LLM-024','hosted':a.hosted,'source':a.source,'head':a.head,'archiveSha256':a.sha256,'nativeConformanceTests':27,'transportTests':5,'qtProcessTests':7,'appWorkerPairs':14,'retained':retained,'live':'separate required evidence'},indent=2))
 if __name__=='__main__':
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('archive',type=Path);p.add_argument('--sha256',required=True);p.add_argument('--source',required=True);p.add_argument('--hosted',action='store_true');p.add_argument('--run-metadata',type=Path);p.add_argument('--head');verify(p.parse_args())

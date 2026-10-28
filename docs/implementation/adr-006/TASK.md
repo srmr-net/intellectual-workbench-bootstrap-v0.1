@@ -23,3 +23,10 @@
 - Live: separate LIVE001–003, explicit user data/model/budget consent, host secret;
   no live keys in CI. Credential path supplied privately; never copied into artifacts.
 - Status: Proposed until deterministic/local/hosted, both reviews and actual live pass.
+
+
+User steering after HTTP429: add separate allowlisted OpenRouter Chat adapter for
+exact free NVIDIA model, keep original OpenAI implementation and offline default.
+Only host remote-profile selection defaults to OpenRouter. Capability verification
+and absence of provider JSON Schema mode are explicit in API_VERIFICATION.md.
+New origin/data-policy consent is separate; no OpenAI consent/key is reused.

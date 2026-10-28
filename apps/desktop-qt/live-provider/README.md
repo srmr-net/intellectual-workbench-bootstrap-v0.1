@@ -7,14 +7,16 @@ always the deterministic offline provider. `live-http` enables the actual HTTPS
 transport; `test-transport` enables only synthetic, socket-free UI fixtures. Hosted
 CI builds the latter, with no credentials. Production must build `live-http` only.
 
-The host reads optional `WB_LLM_MODEL` (only the vetted snapshot), strict JSON
+The host reads optional `WB_LLM_PROVIDER` (`openrouter-chat` by default after the
+user-selected provider switch, or explicit `openai-responses`), `WB_LLM_MODEL`
+(only the selected vetted model), strict JSON
 `WB_LLM_BUDGET`, and `WB_LLM_SECRET_FILE` (absolute owner-only regular file, no
-links), or `OPENAI_API_KEY`. Invalid optional remote configuration never disables
+links), or provider-specific `OPENROUTER_API_KEY` / `OPENAI_API_KEY`. Invalid optional remote configuration never disables
 offline assembly or cold restoration. Credentials load only after consent and
 request validation; neither Qt nor guest receives credentials. The isolated TLS
 helper gets a short-lived secret through private stdin, never argv or environment.
 
-Select OpenAI, enter the explicit request, then consent to the next remote request.
+Select the configured remote provider, enter the explicit request, then consent to the next remote request.
 Consent is consumed when that exact input is queued, bound to its host cancellation
 ticket and room, and cannot be reused. Editing revokes armed consent. Provider
 switch/revocation invalidates in-flight results and previews. Separate composition
@@ -25,7 +27,8 @@ redacted observations and admission counts. `LiveProvider` implements unchanged
 `OperatorProvider`. `Transport` is replaceable and has no kernel/registry handles.
 `response` constructs the closed Responses schema and normalizes envelopes through
 the accepted strict Suggestion parser. Profile fields cannot select endpoints.
-Only https://api.openai.com/v1/responses is compiled in; verified TLS/SNI and public
+Only https://api.openai.com/v1/responses and
+https://openrouter.ai/api/v1/chat/completions are compiled in; verified TLS/SNI and public
 DNS-address pinning are required, with no proxies, redirects or tools.
 
 Effective limits intersect ADR-005: 4096 input bytes, 12 candidates (default8),
@@ -37,7 +40,7 @@ within the same total deadline, Retry-After<=2s and call budget; no schema repai
 
 Cancelling kills/reaps the local HTTPS subprocess and fences late results. It
 cannot unsend an admitted request, guarantee server-side inference cancellation,
-or guarantee cessation of billing. `store:false` disables API response storage;
+or guarantee cessation of billing. For OpenAI, `store:false` disables API response storage;
 provider data policies still apply. No hard monetary cap is claimed. The host
 keeps only bounded status/model/correlation/count/usage observations by default,
 never raw prompts, response/error text or credentials. Python/Rust allocator and
@@ -67,3 +70,16 @@ checkbox/button. This is explicit test instrumentation, not normal-mode authorit
 and not a substitute for recording the human decision. The accepted host still
 checks the real digest/revision/expiry at apply. The live script requires separate
 remote consent, refuses CI, does not auto-retry, and validates offline cold display.
+
+
+The user-selected OpenRouter model is exactly
+`nvidia/nemotron-3-ultra-550b-a55b:free`, served only by NVIDIA with routing
+fallbacks disabled and zero-price filters. This endpoint does not advertise
+provider JSON Schema enforcement: a fixed prompt requests the same closed JSON
+shape and the accepted canonical strict parser remains mandatory. Markdown,
+extra/duplicate fields and noncanonical values fail closed; there is no JSON
+repair or automatic fallback. NVIDIA's free endpoint logs requests for security
+and product improvement. This policy and the lack of provider schema mode are
+shown before remote consent. No provider confidentiality/ZDR guarantee is made.
+The original OpenAI adapter remains explicitly selectable by host configuration,
+but remote consent and provider-specific credentials never cross profiles.

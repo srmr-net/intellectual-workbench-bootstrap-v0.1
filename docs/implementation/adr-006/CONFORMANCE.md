@@ -19,8 +19,8 @@ Mock tests have no external credentials and the UI worker lacks `live-http`.
 | LLM-023 | collector validates two distinct approved source-bound independent reviews and hashed executed logs |
 | LLM-024 | complete hosted Linux wrapper, artifact download and independent `evidence/verify.py` checks run identity, workflow, source, hashes and retained accepted evidence |
 
-The native conformance executable has24 cases plus the separate actual subprocess
-unit test. Python transport has4 cases; Qt journey has7 cases/14 distinct app-worker
+The native conformance executable has27 cases plus the separate actual subprocess
+unit test. Python transport has5 cases; Qt journey has7 cases/14 distinct app-worker
 pairs. These counts exclude retained accepted suites. Native domain fixtures are
 synthetic and are never an API credential. The supplied profile schema's generic
 model field is narrowed by host policy to the tested snapshot; the placeholder
@@ -32,3 +32,13 @@ The preview/approval tests retain the non-atomic topology-then-ingress boundary.
 
 LIVE-001–003 must be separately recorded after scoped consent. Mock coverage of
 provider errors is not evidence those errors were observed against the real API.
+
+
+The three additional native OpenRouter cases cover the separate request/routing
+profile without unsupported provider schema parameters, strict Chat normalization
+and failure taxonomy, and the same one-shot consent/canonical provider boundary.
+The fifth transport test proves the second fixed origin and rejects arbitrary
+provider/URL selection before DNS. The genuine Qt seven-case suite now runs the
+OpenRouter-shaped mock profile; original OpenAI conformance cases are retained.
+Only supplemental Proposed agent-plane provider fixtures add `openrouter-chat`;
+accepted suggestion/plan/manifest/UI/ontology and runtime contracts are unchanged.
