@@ -1,0 +1,38 @@
+name: VSLICE004 Linux live UX
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  vs4-validation:
+    name: VSLICE004 full Linux desktop journey
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.1
+          components: rustfmt, clippy
+          targets: wasm32-unknown-unknown, wasm32-wasip1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install -r tools/requirements.txt
+      - run: cargo install cargo-component --version 0.21.1 --locked
+      # The registry wrapper retains ipc-validation via examples/wasm-components/validate-ipc.sh
+      # and examples/wasm-components/validate.sh with their full unchanged suites.
+      # Headless wrapper retains examples/wasm-components/validate-registry.sh unchanged.
+      # Outer UI wrapper preserves examples/mortgage-headless/validate.sh unchanged.
+      - run: sudo apt-get update && sudo apt-get install -y qt6-base-dev qt6-declarative-dev qt6-tools-dev-tools qmake6 qml6-module-qtquick qml6-module-qtquick-controls qml6-module-qtquick-layouts qml6-module-qtquick-window qml6-module-qtqml-workerscript qml6-module-qtquick-templates libgl1-mesa-dri
+      # VSLICE002 retains bash apps/desktop-qt/validate.sh unchanged.
+      - run: bash apps/desktop-qt/validate-vslice-004.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: vslice004-validation-linux
+          path: target/abi-evidence/
+          include-hidden-files: true
