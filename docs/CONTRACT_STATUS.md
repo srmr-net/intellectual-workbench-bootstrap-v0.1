@@ -38,4 +38,4 @@ No CT-01..CT-15 end-to-end passes are claimed. Rust unit tests remain scaffoldin
 
 - VSLICE-003 complete Linux desktop Operator journey: **Accepted** for the deterministic offline profile; all26 gates, independent reviews and [verified hosted evidence](implementation/vslice-003/evidence/RESULTS.md) pass. Accepted ADR005 boundaries and all earlier contracts remain unchanged.
 
-- ADR-006 live bounded Operator provider: **Proposed**; [task](implementation/adr-006/TASK.md). Offline behavior and accepted contracts remain binding.
+- ADR-006 live bounded Operator provider: **Accepted (Linux / OpenRouter NVIDIA free profile)**; [evidence](implementation/adr-006/evidence/RESULTS.md). Offline default and accepted contracts remain binding; OpenAI remains deterministic-only.

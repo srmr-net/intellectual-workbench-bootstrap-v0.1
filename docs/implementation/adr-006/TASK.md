@@ -22,7 +22,8 @@
   regressions plus isolated new manifest fmt/test/Clippy, mock Qt/process/LLM gates.
 - Live: separate LIVE001–003, explicit user data/model/budget consent, host secret;
   no live keys in CI. Credential path supplied privately; never copied into artifacts.
-- Status: Proposed until deterministic/local/hosted, both reviews and actual live pass.
+- Status: Completed; accepted Linux/OpenRouter scope. Final source23fd97d,
+  hosted run40734630115 and separately source-labelled LIVE evidence passed.
 
 
 User steering after HTTP429: add separate allowlisted OpenRouter Chat adapter for
