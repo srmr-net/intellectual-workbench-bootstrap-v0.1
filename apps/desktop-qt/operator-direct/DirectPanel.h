@@ -8,12 +8,20 @@ class QPlainTextEdit;
 class QPushButton;
 class QProcess;
 class QGroupBox;
+class QDialog;
+class QCheckBox;
+class QLineEdit;
+class QProgressBar;
+class WorkspaceView;
 class DirectPanel final : public QWidget {
   Q_OBJECT
 public:
   DirectPanel(DesktopShell &, bool live);
   bool busy() const { return !m_token.isEmpty(); }
   QJsonObject providerState() const { return m_provider; }
+
+signals:
+  void observed(QString phase, QJsonObject reply);
 
 private:
   void send(QString protocol, QJsonObject command);
@@ -24,9 +32,17 @@ private:
   void status(QString);
   void refresh();
   void clearProposal();
+  void providerInformation();
+  void conversation(const QString &, const QString &);
   DesktopShell &m_shell;
   QProcess *m_process;
-  QPlainTextEdit *m_request, *m_details;
+  QPlainTextEdit *m_request, *m_details, *m_conversation;
+  QDialog *m_dialog;
+  QCheckBox *m_enabled;
+  QLineEdit *m_source, *m_model, *m_endpoint;
+  QLabel *m_sourceStatus;
+  QProgressBar *m_progress;
+  WorkspaceView *m_workspace;
   QLabel *m_status, *m_providerLabel, *m_summary;
   QPushButton *m_ask, *m_start, *m_reject, *m_cancel, *m_settings;
   QGroupBox *m_card;
@@ -35,5 +51,6 @@ private:
   quint64 m_sequence = 0;
   bool m_remote = false, m_configured = false, m_sourceThenConfigure = false;
   QJsonObject m_provider, m_preview;
-  QTimer m_expiry, m_watchdog;
+  QTimer m_expiry, m_watchdog, m_progressTimer;
+  QElapsedTimer m_elapsed;
 };
