@@ -1,0 +1,14 @@
+{"appPid":"994061","event":"trace.started","utc":"2026-10-29T16:47:28.282Z","workerPid":"0"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:47:29.574Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:47:29.574Z","workerPid":"994108"}
+{"appPid":"994061","code":"OK","event":"operator.reply","model":"deterministic-fixture","observation":{},"ok":true,"phase":"configure","provider":"offline-fixture","remoteAttempts":"0","utc":"2026-10-29T16:47:29.583Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:47:29.584Z","workerPid":"994108"}
+{"appPid":"994061","code":"OK","event":"operator.reply","model":"nvidia/nemotron-3-ultra-550b-a55b:free","observation":{},"ok":true,"phase":"configure","provider":"openrouter-chat","remoteAttempts":"0","utc":"2026-10-29T16:47:55.587Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:47:55.587Z","workerPid":"994108"}
+{"appPid":"994061","event":"gesture.directAsk","utc":"2026-10-29T16:48:25.628Z","workerPid":"994108"}
+{"appPid":"994061","code":"MISSING_PARAMETER","event":"operator.reply","model":"nvidia/nemotron-3-ultra-550b-a55b:free","observation":{},"ok":false,"phase":"review","provider":"openrouter-chat","remoteAttempts":"0","utc":"2026-10-29T16:48:25.815Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:48:25.815Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:48:54.497Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:48:54.499Z","workerPid":"994108"}
+{"appPid":"994061","event":"workspace.state","invocations":"0","remoteAttempts":"0","rooms":[],"selectedRoom":"","utc":"2026-10-29T16:48:54.500Z","workerPid":"994108"}
+{"accepted":true,"appPid":"994061","event":"trace.closed","utc":"2026-10-29T16:48:54.505Z","workerPid":"994108"}

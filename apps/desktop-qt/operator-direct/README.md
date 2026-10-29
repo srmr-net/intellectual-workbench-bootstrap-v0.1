@@ -1,6 +1,6 @@
-# Direct Operator — development entry
+# Workbench — default Operator workspace
 
-This is the quick exploratory entry requested after the scripted VS4 walkthrough. It reuses the existing native worker and real registry/kernel/WASM/semantic canvas. It does not generate components or code. The installed catalog currently includes the mortgage calculator; broader catalogs/compositions remain future work.
+This is the default product entry (`./workbench`, or `apps/desktop-qt/run.sh`). UX-001 refactors the PR13 exploratory entry around workspaces, Operator conversation and the semantic canvas. It reuses the existing native worker and real registry/kernel/WASM/semantic canvas. It does not generate components or code. The installed catalog currently includes the mortgage calculator; broader catalogs/compositions remain future work.
 
 ```sh
 apps/desktop-qt/operator-direct/build.sh
@@ -12,3 +12,5 @@ apps/desktop-qt/operator-direct/run.sh --live --credential-file "$HOME/openroute
 Type “I need a mortgage calculator for a £250,000 loan over 25 years at 5%.” and click **Ask Operator**. Review the suggested tool and inputs, then click **Start this tool**. Edit the form on the canvas; calculations run in the real installed WASM with no further model calls. Pin the canvas to keep it. The private profile is outside build output under `~/.local/state/intellectual-workbench-operator` (or XDG_STATE_HOME); use `--profile /absolute/private/path` for another workspace.
 
 Start remains an actual proposal-bound user approval, not model execution authority. The host still performs its internal request-body/pin/revision guard automatically after your Ask gesture and session provider opt-in. No accepted ABI, schema, permissions or runtime protocol changes. Topology commit and typed initialization remain separate; partial failures are surfaced. VSLICE004's exhaustive live/UX acceptance is deferred and remains Proposed; this exploratory entry does not claim that milestone passed.
+
+The sidebar is for workspaces, pinned tools and recent session activity. Settings now contains provider/model/source configuration, read-only installed components/versions/exact pins/registry information and diagnostics. Component inspection cannot start a tool; the user-facing start path remains the existing Operator proposal approval. Conversation is bounded process-local presentation, never added to model input or room snapshots. Old conformance/demo binaries remain separate regression entry points.

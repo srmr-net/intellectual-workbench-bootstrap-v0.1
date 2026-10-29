@@ -1,0 +1,100 @@
+{
+  "role": "security",
+  "reviewer": "/root/ux001_security_review",
+  "implementationCommit": "375b200c85b5164d00ca8b0891436bd900f8e16d",
+  "status": "APPROVED",
+  "remainingMandatory": [],
+  "sourceSha256": {
+    ".github/workflows/ux-001.yml": "f02f85d893ccdab7a661d5700dcb8415dfa747b41ac96b49bb5aff93612d76a3",
+    "WORKBENCH.md": "466f5e3c2547bc886d190b5ff6ff4447a5c613798cbb28f1812fe5fa6ad4f7f7",
+    "apps/desktop-qt/build.sh": "ad90f35c35dac124833ae74170802aa23320f40bc099d3f3a84e8e7bbbd9e54d",
+    "apps/desktop-qt/operator-direct/DirectPanel.cpp": "e4f8e811514da90fbd9c2f2d795c2a4be7732ede293ae18884100387812189c9",
+    "apps/desktop-qt/operator-direct/DirectPanel.h": "33c57a3aad349e92a0fdb87b52ffeb459deb08705b9b78caa37a4d53bd0f35fd",
+    "apps/desktop-qt/operator-direct/Main.qml": "b1e22cab9db98d0cfee54d988ea483a92c3564e52cc86e7d38852acef734ce86",
+    "apps/desktop-qt/operator-direct/README.md": "d8f6e1d5858821b708f956c90801e3b316e6ae2046fbbd542996645c03c4cca4",
+    "apps/desktop-qt/operator-direct/TraceRecorder.cpp": "3b8f05d6d80fe90827467f888c41ef1b994670dd40b9a9ebc97ea35f94e8e983",
+    "apps/desktop-qt/operator-direct/TraceRecorder.h": "a2517d15dd50575703f6cd2101ab01d514147e408190cc137caff5931a2b3c72",
+    "apps/desktop-qt/operator-direct/WorkspaceView.cpp": "381802547989f6ddb4e15863749b38dbb64c0e09106ad6ec2d88bd02d6c52ebf",
+    "apps/desktop-qt/operator-direct/WorkspaceView.h": "9a9ed724c355347b9f4495a94b02ab25eb978c350b2ff2af7f6a09953bb75a40",
+    "apps/desktop-qt/operator-direct/build.sh": "f5785d408827fb7f1e73e0d91deb94d86b5192adcfbd2c453da652fd6d888c9c",
+    "apps/desktop-qt/operator-direct/direct_tests.cpp": "664b7df0b731d3eb42b8ef342e10d009bf3d3285a995e63e8ca66d8bf74d9ce9",
+    "apps/desktop-qt/operator-direct/main.cpp": "78b30f9a958cc0389d0b5dbca452d9f4ab630a8af5d66ffa27fd8164797f7451",
+    "apps/desktop-qt/operator-direct/operator.pro": "3328474cb7870a0d94fad09e57148fb3e60a2106a969b2401f66253ad08810be",
+    "apps/desktop-qt/operator-direct/resources.qrc": "52cad172dfcf5d5d6e79a52d7a672cf74e0fde636f98f7e778f9ae564b723098",
+    "apps/desktop-qt/operator-direct/run.sh": "16d30f0432f74ebad745148b679e5e8890f1a984b0574d8cebe07cd1aa5765d1",
+    "apps/desktop-qt/operator-direct/tests.pro": "c1060807934bcfa197a2e65ae00154ad528b54d9c931de0e50ff15383799f969",
+    "apps/desktop-qt/operator-direct/ux_tests.cpp": "3f8762db5bb2de9d42c23f2cb9b7e9e5a019d1402aa667b905231ee49849db90",
+    "apps/desktop-qt/operator-direct/ux_tests.pro": "acc340a2b79dc303a9e5b994c9862f56e2871f69842ae586ef94de2da41deb01",
+    "apps/desktop-qt/run.sh": "9122854a70d470fd6b268c6bfae56218dce230b7fcfcb58237d8e2547a010ca8",
+    "apps/desktop-qt/validate-ux-001.sh": "c09cd31f9d1c1b3db76525443d91ea757b63bfd82526e479ec9a17948c2e47f2",
+    "docs/implementation/ux-001/CONFORMANCE.md": "cdc68f3b3a7659a51f5d2ca54166ae2240569f57ded866751f1ef1a7b20de8f5",
+    "docs/implementation/ux-001/evidence/collect.py": "c369f409e744f7d63daefebef7c9af32ac180cc5fce1ac3c8eeb71ba41ecaa2b",
+    "docs/implementation/ux-001/evidence/source_contract.py": "2f3098c4df73e32388dd06f4e96eed23dacd3c45574f96aa2a777287b266497e",
+    "docs/implementation/ux-001/evidence/test_verify.py": "6010777da5831bd540f0f9bf9b9bc4b97cf9a919734da426bf59d8f4ba82188b",
+    "docs/implementation/ux-001/evidence/verify.py": "85b4c14bf2239301efffedb91d91eb34cee8248165ffce84f217c6d9a5a874f2",
+    "workbench": "710d0a0a6ac8b43754b6391ec648b830d78ab5c96c80656265267cebedf25086"
+  },
+  "findings": [
+    {
+      "id": "SEC-UX-001",
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Topology-committed failures are handled before generic failure text. UI distinguishes in-memory topology, saved topology, failed initialization and unsaved output without claiming the workspace unchanged."
+    },
+    {
+      "id": "SEC-UX-002",
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Workspace status prioritizes recovery, selection, pending operations, unapplied drafts and errors; neutral open status no longer claims every state is saved."
+    },
+    {
+      "id": "SEC-UX-003",
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Stale native approval refreshes durable desktop state without automatic retry. Trusted product renderer submits editingFinished only for actual drafts, preserving epoch/binding ownership checks. Ask/Start also check bridge busy/switching/quitting at click time. Independent stale recovery case passed."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Settings component inspection reuses admitted installed metadata and disconnects direct open shortcut; exact-pin proposal-bound native approval remains the only Operator start path. Remote opt-in is process scoped; accepted ux.1 review/send guard and credential adapter remain authoritative. Conversation is local bounded presentation, not model history or snapshot data."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Optional trace is default-off and observer-only. Exclusive no-follow private file creation, owned private parent, 0600 mode, bounded writes and explicit field allowlist prevent credential/body/source-reference logging. It intentionally records synthetic approved parameters and committed values; use only reviewed private validation telemetry."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Independent final Qt run passed five selected cases plus setup/cleanup: 7 passed, 0 failed, 0 skipped in 51.024s. Metadata identity tests passed 3/3. Accepted baseline implementation/contracts preservation assertion passed, exact source inventory 28. No real credential read or live inference performed."
+    }
+  ],
+  "independentTests": [
+    {
+      "command": "env -u QT_QPA_PLATFORMTHEME -u DISPLAY -u WAYLAND_DISPLAY -u OPENAI_API_KEY -u OPENROUTER_API_KEY -u WB_LLM_SECRET_FILE -u WB_VS4_TEST_MODE -u WB_VS4_TEST_CAPTURE WB_REPOSITORY_ROOT=$PWD REGISTRY_PYTHON=$PWD/target/vs2-venv/bin/python WB_UX_EVIDENCE_DIR=/tmp/ux001-independent-security QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software QT_LINUX_ACCESSIBILITY_ALWAYS_ON=1 target/ux-001-tests/ux-001-tests ux_004_history_never_becomes_model_context ux_005_provider_errors_are_understandable ux_006_partial_initialization_and_draft_truthfulness ux_008_stale_approval_refreshes_without_retry ux_009_optin_trace_is_private_passive_and_allowlisted",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/security/qt-tests.txt",
+      "logSha256": "0e36f01d93ecc4122faf0041afa14ee8322c5dab7e0a18a97c48a509e025315d"
+    },
+    {
+      "command": "python3 -m unittest discover -s docs/implementation/ux-001/evidence -p test_verify.py -v",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/security/provenance-tests.txt",
+      "logSha256": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1"
+    },
+    {
+      "command": "python3 source_contract.compatibility(); assert inventory contains 28 sources",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/security/contract-preservation.txt",
+      "logSha256": "12edc3fb5a9ae80538070685d5508ff8e1dce35d9685255d7464f82beab485c3"
+    }
+  ],
+  "scopeLimits": [
+    "Approves independent security/runtime source-review gate only; full regression suite, successful final-source GitHub-hosted CI and separately human-operated real OpenRouter walkthrough remain separate mandatory gates.",
+    "No live-provider success, model version, usage, latency or formal VSLICE-004 acceptance is inferred from mocked tests.",
+    "Product-owned generic trusted QML copy must remain aligned with future accepted renderer fixes."
+  ]
+}
