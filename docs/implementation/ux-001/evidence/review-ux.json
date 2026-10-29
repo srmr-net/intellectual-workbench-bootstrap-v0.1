@@ -1,0 +1,124 @@
+{
+  "role": "ux",
+  "reviewer": "/root/ux001_ux_review",
+  "status": "APPROVED",
+  "implementationCommit": "375b200c85b5164d00ca8b0891436bd900f8e16d",
+  "scope": "Independent UX/accessibility review of simplified workspace, Settings relocation, request/approval, reactive editing, navigation and cold display. Approval is source-bound and does not mark UX001 or VSLICE004 Accepted.",
+  "sourceSha256": {
+    ".github/workflows/ux-001.yml": "f02f85d893ccdab7a661d5700dcb8415dfa747b41ac96b49bb5aff93612d76a3",
+    "WORKBENCH.md": "466f5e3c2547bc886d190b5ff6ff4447a5c613798cbb28f1812fe5fa6ad4f7f7",
+    "apps/desktop-qt/build.sh": "ad90f35c35dac124833ae74170802aa23320f40bc099d3f3a84e8e7bbbd9e54d",
+    "apps/desktop-qt/operator-direct/DirectPanel.cpp": "e4f8e811514da90fbd9c2f2d795c2a4be7732ede293ae18884100387812189c9",
+    "apps/desktop-qt/operator-direct/DirectPanel.h": "33c57a3aad349e92a0fdb87b52ffeb459deb08705b9b78caa37a4d53bd0f35fd",
+    "apps/desktop-qt/operator-direct/Main.qml": "b1e22cab9db98d0cfee54d988ea483a92c3564e52cc86e7d38852acef734ce86",
+    "apps/desktop-qt/operator-direct/README.md": "d8f6e1d5858821b708f956c90801e3b316e6ae2046fbbd542996645c03c4cca4",
+    "apps/desktop-qt/operator-direct/TraceRecorder.cpp": "3b8f05d6d80fe90827467f888c41ef1b994670dd40b9a9ebc97ea35f94e8e983",
+    "apps/desktop-qt/operator-direct/TraceRecorder.h": "a2517d15dd50575703f6cd2101ab01d514147e408190cc137caff5931a2b3c72",
+    "apps/desktop-qt/operator-direct/WorkspaceView.cpp": "381802547989f6ddb4e15863749b38dbb64c0e09106ad6ec2d88bd02d6c52ebf",
+    "apps/desktop-qt/operator-direct/WorkspaceView.h": "9a9ed724c355347b9f4495a94b02ab25eb978c350b2ff2af7f6a09953bb75a40",
+    "apps/desktop-qt/operator-direct/build.sh": "f5785d408827fb7f1e73e0d91deb94d86b5192adcfbd2c453da652fd6d888c9c",
+    "apps/desktop-qt/operator-direct/direct_tests.cpp": "664b7df0b731d3eb42b8ef342e10d009bf3d3285a995e63e8ca66d8bf74d9ce9",
+    "apps/desktop-qt/operator-direct/main.cpp": "78b30f9a958cc0389d0b5dbca452d9f4ab630a8af5d66ffa27fd8164797f7451",
+    "apps/desktop-qt/operator-direct/operator.pro": "3328474cb7870a0d94fad09e57148fb3e60a2106a969b2401f66253ad08810be",
+    "apps/desktop-qt/operator-direct/resources.qrc": "52cad172dfcf5d5d6e79a52d7a672cf74e0fde636f98f7e778f9ae564b723098",
+    "apps/desktop-qt/operator-direct/run.sh": "16d30f0432f74ebad745148b679e5e8890f1a984b0574d8cebe07cd1aa5765d1",
+    "apps/desktop-qt/operator-direct/tests.pro": "c1060807934bcfa197a2e65ae00154ad528b54d9c931de0e50ff15383799f969",
+    "apps/desktop-qt/operator-direct/ux_tests.cpp": "3f8762db5bb2de9d42c23f2cb9b7e9e5a019d1402aa667b905231ee49849db90",
+    "apps/desktop-qt/operator-direct/ux_tests.pro": "acc340a2b79dc303a9e5b994c9862f56e2871f69842ae586ef94de2da41deb01",
+    "apps/desktop-qt/run.sh": "9122854a70d470fd6b268c6bfae56218dce230b7fcfcb58237d8e2547a010ca8",
+    "apps/desktop-qt/validate-ux-001.sh": "c09cd31f9d1c1b3db76525443d91ea757b63bfd82526e479ec9a17948c2e47f2",
+    "docs/implementation/ux-001/CONFORMANCE.md": "cdc68f3b3a7659a51f5d2ca54166ae2240569f57ded866751f1ef1a7b20de8f5",
+    "docs/implementation/ux-001/evidence/collect.py": "c369f409e744f7d63daefebef7c9af32ac180cc5fce1ac3c8eeb71ba41ecaa2b",
+    "docs/implementation/ux-001/evidence/source_contract.py": "2f3098c4df73e32388dd06f4e96eed23dacd3c45574f96aa2a777287b266497e",
+    "docs/implementation/ux-001/evidence/test_verify.py": "6010777da5831bd540f0f9bf9b9bc4b97cf9a919734da426bf59d8f4ba82188b",
+    "docs/implementation/ux-001/evidence/verify.py": "85b4c14bf2239301efffedb91d91eb34cee8248165ffce84f217c6d9a5a874f2",
+    "workbench": "710d0a0a6ac8b43754b6391ec648b830d78ab5c96c80656265267cebedf25086"
+  },
+  "remainingMandatory": [],
+  "independentTests": [
+    {
+      "command": "env -u QT_QPA_PLATFORMTHEME -u DISPLAY -u WAYLAND_DISPLAY WB_REPOSITORY_ROOT=\"$PWD\" REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_UX_EVIDENCE_DIR=/tmp/ux001-independent-ux QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software target/ux-001-tests/ux-001-tests",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/ux/qt-tests.txt",
+      "logSha256": "b0225540e398f26ee8eca4308a25095148c2545b9d20a3518d67f1b08ef9582c",
+      "observed": "All9 named UX cases passed; totals11 including init/cleanup,75.044s. Actual Qt framework accessibility backend active and delivered alerts asserted."
+    },
+    {
+      "command": "python3 -m unittest discover -s docs/implementation/ux-001/evidence -p test_verify.py -v",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/ux/provenance-tests.txt",
+      "logSha256": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1",
+      "observed": "3 negative/positive provenance tests passed."
+    }
+  ],
+  "findings": [
+    {
+      "id": "UXA-001",
+      "severity": "medium",
+      "finding": "Pinned-list rebuild on every unrelated state event discarded keyboard selection.",
+      "status": "resolved",
+      "fix": "Rebuild only when room summaries change and preserve prior focused selection; sync selected row only on native room selection change.",
+      "retest": "ux_007_pins_focus_and_cold_process passed."
+    },
+    {
+      "id": "UXA-002",
+      "severity": "medium",
+      "finding": "Missing recovery data during startup was interpreted as a recovery error.",
+      "status": "resolved",
+      "fix": "Use explicit recovery string and opening state.",
+      "retest": "ux_001_default_navigation_and_readonly_components passed; default-workspace screenshot inspected."
+    },
+    {
+      "id": "UXA-003",
+      "severity": "medium",
+      "finding": "Saved-state wording could misrepresent pending, unapplied or failed edits.",
+      "status": "resolved",
+      "fix": "Normal workspace status prioritizes busy/draft/error and neutral workspace-open wording. Partial topology/initialization response is handled before generic unchanged-state errors.",
+      "retest": "ux_006_partial_initialization_and_draft_truthfulness passed; actual adversarial guest and retained draft used."
+    },
+    {
+      "id": "UXA-004",
+      "severity": "low",
+      "finding": "Started-workspace screenshot retains legacy Room/short-ID row wording despite the Workspace heading.",
+      "status": "known-nonblocking",
+      "note": "Presentation-only inconsistency; navigation still uses exact persisted room IDs and accepted bridge. Future chat-focused iteration can reapply display labels after legacy refresh."
+    },
+    {
+      "id": "UXA-005",
+      "severity": "low",
+      "finding": "Components Settings still shows legacy choose-component/create-canvas placeholder hints although direct launch is intentionally hidden/disconnected.",
+      "status": "known-nonblocking",
+      "note": "Read-only behavior independently verified by double-click nonmutation test. Wording can be cleaned up in the subsequent iteration."
+    }
+  ],
+  "observations": [
+    "Default screenshot has workspace/pinned/recent navigation, centred Operator conversation and an empty canvas; no component administration controls visible.",
+    "Components Settings screenshot shows actual installed version/full pin/registry information; controls are read-only and no alternate start path is mounted.",
+    "Actual semantic-canvas screenshot shows three mortgage inputs and committed1461.48 output; shell grab cannot capture embedded native canvas, so separate native canvas grab is retained.",
+    "QML source diff from accepted VS3 renderer is limited to hasDraft guard on editingFinished. Focus-only transitions cause no invocation; actual QML keystrokes still traverse accepted draft/edit ingress and recalculate1753.77 with one mocked request.",
+    "Separate offline cold process proved exact restored state, zero model and guest display calls, and denied IPv4/IPv6.",
+    "Provider consent is session scoped and conversation history is local UI only; current-request outbound projection checked independently.",
+    "Private Qt accessibility activation is confined to explicit test client setup; this is event/focus evidence, not human screen-reader certification.",
+    "Legacy Shell/Bridge/worker and accepted contract bytes remain unchanged. New product entry routes through the same DirectPanel/native execution path."
+  ],
+  "limitations": [
+    "Hosted Linux CI and real-provider walkthrough are separate gates; this review does not claim either ran.",
+    "User has redirected the next iteration toward chat-first UI; this approval remains specific to375b200 and cannot be reused for later source changes.",
+    "Recent activity/conversation are session-only presentation and not added to room snapshots."
+  ],
+  "artifactSha256": {
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/cold-process-proof.json": "9296661151b029f16a06e707a262ee2d1c79759de4941baa5868ac1b2acaddd7",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/components-settings.png": "2bdb731d37aa47205f48cb64341daad35038579fb1c28d276ee035288737557a",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/default-canvas.png": "c606631d13ad202181b042ae4a7d22cfe5dad8df2c268cfe63eeb1714666f58e",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/default-workspace.png": "b652e45ade4ce51d80f833a721cd741fc7c0e8790abf6a7d8dccc8f94363b259",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/passive-trace.jsonl": "b6d974f3c6c5e9324585f5a9d5b3a0dba6baa2e696f6795cf09db14c07bf41ae",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/stale-first-trace.jsonl": "2c5c54ea9e9e8008819af8c0f0b05f8051049865d785ca064f618a7d4a97761f",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/stale-trace.jsonl": "84a6f0d33e63edf24707f35876a7281a25f514d00bf87589d26c90588c2ba615",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/started-canvas.png": "4898529eab126e6de430123b779aa37b0bfda0a58ad0631422b51c5af6ff96e7",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/started-workspace.png": "4a0d546168b857d091a1996b3143b1ec61c3750634ff637fdd60f9c0c5edf87d",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/provenance-tests.txt": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/qt-tests.txt": "b0225540e398f26ee8eca4308a25095148c2545b9d20a3518d67f1b08ef9582c"
+  }
+}

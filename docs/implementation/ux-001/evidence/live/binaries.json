@@ -1,0 +1,8 @@
+{
+  "target/operator-direct-build/workbench-operator-direct": "6c8173aef89ec952a2af8bf1c3a943c7d29766f3019126cd900cad2cf3c795fa",
+  "target/operator-direct-native/wb-vslice004-worker": "ec331ddbc57035131f3a5a92b6d0b8b8ae5d360758e62771742cfa15b3ff4cc0",
+  "apps/desktop-qt/operator-direct/DirectPanel.cpp": "e4f8e811514da90fbd9c2f2d795c2a4be7732ede293ae18884100387812189c9",
+  "apps/desktop-qt/operator-direct/Main.qml": "b1e22cab9db98d0cfee54d988ea483a92c3564e52cc86e7d38852acef734ce86",
+  "apps/desktop-qt/operator-direct/WorkspaceView.cpp": "381802547989f6ddb4e15863749b38dbb64c0e09106ad6ec2d88bd02d6c52ebf",
+  "apps/desktop-qt/operator-direct/TraceRecorder.cpp": "3b8f05d6d80fe90827467f888c41ef1b994670dd40b9a9ebc97ea35f94e8e983"
+}

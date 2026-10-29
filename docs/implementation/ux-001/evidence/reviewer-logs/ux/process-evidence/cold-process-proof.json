@@ -1,0 +1,155 @@
+{
+    "appPid": "229",
+    "provider": {
+        "code": "OK",
+        "effectiveDeadlineMs": 20000,
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "kind": "reply",
+        "ok": true,
+        "profile": {
+            "budget": {
+                "maxCalls": 1,
+                "maxCatalogCandidates": 8,
+                "maxOutputTokens": 512,
+                "maxRequestBytes": 4096,
+                "maxResponseBytes": 16384,
+                "timeoutMs": 20000
+            },
+            "enabled": true,
+            "model": "deterministic-fixture",
+            "profileVersion": "0.1",
+            "provider": "offline-fixture",
+            "remoteConsent": false
+        },
+        "protocol": "provider.1",
+        "providerEnforcedSchema": false,
+        "remoteAttempts": "0",
+        "remoteConfigured": true,
+        "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "remoteProvider": "openrouter-chat",
+        "source": {
+            "authenticationChecked": false,
+            "available": false,
+            "kind": "environment"
+        },
+        "token": "direct-d405164aa3bb-1",
+        "transport": "https-production"
+    },
+    "state": {
+        "accepted": true,
+        "diagnostics": [
+        ],
+        "document": {
+            "root": {
+                "children": [
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/principal",
+                            "port": "calculate"
+                        },
+                        "id": "principal",
+                        "label": "Principal",
+                        "type": "decimal-input",
+                        "unit": "GBP"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/annual_rate_percent",
+                            "port": "calculate"
+                        },
+                        "id": "rate",
+                        "label": "Annual interest rate",
+                        "type": "decimal-input",
+                        "unit": "percent"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/term_months",
+                            "port": "calculate"
+                        },
+                        "id": "term",
+                        "label": "Term (months)",
+                        "type": "integer-input"
+                    },
+                    {
+                        "bind": {
+                            "direction": "output",
+                            "field": "/monthly_payment",
+                            "port": "payment"
+                        },
+                        "id": "payment",
+                        "label": "Monthly repayment",
+                        "type": "readout"
+                    }
+                ],
+                "title": "Mortgage calculator",
+                "type": "form"
+            },
+            "uiVersion": "0.1"
+        },
+        "epoch": "1",
+        "installed": [
+            {
+                "label": "org.workbench.example.mortgage-ui",
+                "pin": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 233,
+        "projection": {
+            "diagnostics": [
+            ],
+            "executionGeneration": "1",
+            "key": {
+                "instanceId": "component",
+                "roomId": "intent-room",
+                "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+            },
+            "projectionSequence": "1",
+            "roomRevision": "4",
+            "values": {
+                "payment": "1753.77",
+                "principal": "300000",
+                "rate": "5",
+                "term": "300"
+            }
+        },
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+            "frameBytes": 1048576,
+            "liveAuditEntries": 0,
+            "queueCapacity": 32,
+            "traceEntries": 0
+        },
+        "rooms": [
+            {
+                "component": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                },
+                "id": "intent-room",
+                "label": "Intent room",
+                "pinned": true,
+                "ui": {
+                    "path": "ui.json",
+                    "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                    "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                }
+            }
+        ],
+        "selectedRoom": "intent-room",
+        "token": ""
+    },
+    "workerPid": "233"
+}

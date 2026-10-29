@@ -1,3 +1,1 @@
-Command: git diff --exit-code 9c0b27e -- crates schemas ontology examples apps/desktop-qt/desktop apps/desktop-qt/vslice-004/host
-Exit code: 0
-Observed: accepted runtime/ABI/schema/ontology/guest/legacy desktop/native worker bytes unchanged during independent review.
+PASS: accepted implementation/contracts unchanged from 9c0b27e; source inventory 28

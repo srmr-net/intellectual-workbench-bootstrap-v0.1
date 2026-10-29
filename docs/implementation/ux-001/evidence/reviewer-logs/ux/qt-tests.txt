@@ -1,0 +1,61 @@
+********* Start testing of UxTests *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+PASS   : UxTests::initTestCase()
+QWARN  : UxTests::ux_001_default_navigation_and_readonly_components() This plugin does not support setParent!
+QWARN  : UxTests::ux_001_default_navigation_and_readonly_components() This plugin does not support setParent!
+QWARN  : UxTests::ux_001_default_navigation_and_readonly_components() This plugin does not support propagateSizeHints()
+PASS   : UxTests::ux_001_default_navigation_and_readonly_components()
+QWARN  : UxTests::ux_002_session_settings_and_cancelled_changes() This plugin does not support setParent!
+QWARN  : UxTests::ux_002_session_settings_and_cancelled_changes() This plugin does not support setParent!
+QWARN  : UxTests::ux_002_session_settings_and_cancelled_changes() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_002_session_settings_and_cancelled_changes() This plugin does not support propagateSizeHints()
+PASS   : UxTests::ux_002_session_settings_and_cancelled_changes()
+QWARN  : UxTests::ux_003_keyboard_ask_approval_and_reactive() This plugin does not support setParent!
+QWARN  : UxTests::ux_003_keyboard_ask_approval_and_reactive() This plugin does not support setParent!
+QWARN  : UxTests::ux_003_keyboard_ask_approval_and_reactive() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_003_keyboard_ask_approval_and_reactive() This plugin does not support setParent!
+PASS   : UxTests::ux_003_keyboard_ask_approval_and_reactive()
+QWARN  : UxTests::ux_004_history_never_becomes_model_context() This plugin does not support setParent!
+QWARN  : UxTests::ux_004_history_never_becomes_model_context() This plugin does not support setParent!
+QWARN  : UxTests::ux_004_history_never_becomes_model_context() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_004_history_never_becomes_model_context() This plugin does not support setParent!
+PASS   : UxTests::ux_004_history_never_becomes_model_context()
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support setParent!
+QWARN  : UxTests::ux_005_provider_errors_are_understandable() This plugin does not support propagateSizeHints()
+PASS   : UxTests::ux_005_provider_errors_are_understandable()
+QWARN  : UxTests::ux_006_partial_initialization_and_draft_truthfulness() This plugin does not support setParent!
+QWARN  : UxTests::ux_006_partial_initialization_and_draft_truthfulness() This plugin does not support setParent!
+QWARN  : UxTests::ux_006_partial_initialization_and_draft_truthfulness() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_006_partial_initialization_and_draft_truthfulness() This plugin does not support setParent!
+PASS   : UxTests::ux_006_partial_initialization_and_draft_truthfulness()
+QWARN  : UxTests::ux_007_pins_focus_and_cold_process() This plugin does not support setParent!
+QWARN  : UxTests::ux_007_pins_focus_and_cold_process() This plugin does not support setParent!
+QWARN  : UxTests::ux_007_pins_focus_and_cold_process() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_007_pins_focus_and_cold_process() This plugin does not support setParent!
+PASS   : UxTests::ux_007_pins_focus_and_cold_process()
+QWARN  : UxTests::ux_008_stale_approval_refreshes_without_retry() This plugin does not support setParent!
+QWARN  : UxTests::ux_008_stale_approval_refreshes_without_retry() This plugin does not support setParent!
+QWARN  : UxTests::ux_008_stale_approval_refreshes_without_retry() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_008_stale_approval_refreshes_without_retry() This plugin does not support setParent!
+PASS   : UxTests::ux_008_stale_approval_refreshes_without_retry()
+QWARN  : UxTests::ux_009_optin_trace_is_private_passive_and_allowlisted() This plugin does not support setParent!
+QWARN  : UxTests::ux_009_optin_trace_is_private_passive_and_allowlisted() This plugin does not support setParent!
+QWARN  : UxTests::ux_009_optin_trace_is_private_passive_and_allowlisted() This plugin does not support propagateSizeHints()
+QWARN  : UxTests::ux_009_optin_trace_is_private_passive_and_allowlisted() This plugin does not support setParent!
+PASS   : UxTests::ux_009_optin_trace_is_private_passive_and_allowlisted()
+PASS   : UxTests::cleanupTestCase()
+Totals: 11 passed, 0 failed, 0 skipped, 0 blacklisted, 75044ms
+********* Finished testing of UxTests *********
