@@ -38,3 +38,5 @@ VS4-001 (Proposed): Live Operator Linux product journey; owner Codex;
 - **OP-DIRECT — IMPLEMENTED (exploratory):** exploratory direct Operator entry, owner Codex; user-directed2026-10-29. One provider enablement, typed request, readable suggestion and single Start. Reuse accepted runtime; defer VSLICE004 live/UX acceptance. [Task](operator-direct/TASK.md).
 
 - **UX-001 — IN PROGRESS (Proposed):** default workspace-centred Operator and Settings/components refactor; owner Codex; [task](ux-001/TASK.md). Depends accepted ADR001–006, VS1–3 and merged PR13; no runtime contract changes.
+
+- **CHAT-001 — IN PROGRESS (Proposed):** user-directed chat-first Operator with real contextual OpenRouter conversation, component work secondary; owner Codex; [task](operator-chat/TASK.md). New host-only text protocol ADR016; accepted tool/runtime contracts preserved.

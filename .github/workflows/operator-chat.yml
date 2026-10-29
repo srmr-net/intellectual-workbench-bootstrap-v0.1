@@ -1,0 +1,25 @@
+name: Operator chat Linux
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  chat:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.99.1
+          components: rustfmt, clippy
+      - run: sudo apt-get update && sudo apt-get install -y qt6-base-dev qt6-base-private-dev qmake6
+      - run: bash apps/desktop-qt/operator-chat/validate.sh
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: operator-chat-linux
+          path: target/chat-001-evidence/

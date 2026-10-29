@@ -1,0 +1,22 @@
+{
+  "validation": "supervised manual report; not formal milestone acceptance",
+  "userReport": "Chat and follow-up work",
+  "requestedModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "providerReportedModel": null,
+  "usage": null,
+  "latencyMs": null,
+  "exactCallCount": null,
+  "conversationContentsCollected": false,
+  "processes": [],
+  "binarySha256": {
+    "target/operator-chat-build/workbench-operator-chat": "678b89aa921bab6705a4ae6b85a3ef5b3b9faf10bb4508d29d7e9d006b77935f",
+    "target/operator-chat-native/debug/wb-operator-chat": "9323f4bb0a571f4a40d55dad8ef574671e0b7fabb6c035f6399220376b5d36a4"
+  },
+  "runtimeSourceSha256": {
+    "apps/desktop-qt/operator-chat/ChatWindow.cpp": "3de5423772237aa3d788df439fe09470ed01f717402c6b80d4523a53eb547852",
+    "apps/desktop-qt/operator-chat/ChatWindow.h": "a76e331ba569b932196a43e8bc7583939e971ab670cee54136ea4547b7860b00",
+    "apps/desktop-qt/operator-chat/host/src/lib.rs": "a3f3df2f0792b223dee368e12fe11183f217637b7841f83f7d258ea1e09724c0",
+    "apps/desktop-qt/operator-chat/host/src/main.rs": "e11032ad6548aae313efc847a48a36df7428813c041c90b7c3b7c13985e98f19"
+  },
+  "processObservation": "The user closed the app cleanly before process metadata collection; no process IDs are asserted."
+}
