@@ -36,14 +36,14 @@ Command for executable cases: `REGISTRY_PYTHON=target/vs2-venv/bin/python target
 | VS4-024 | `test_vs4_024_offline_after_live_disabled` | Final-source run pending | `vs4/process-tests.txt`, `vs4/process/test_vs4_024_offline_after_live_disabled/` in archive |
 | VS4-025 | `test_vs4_025_keyboard_focus_accessible_status` | Final-source run pending | `vs4/process-tests.txt`, `vs4/process/test_vs4_025_keyboard_focus_accessible_status/` in archive |
 | VS4-026 | `test_vs4_026_secret_safe_artifacts_and_negative_scan` | Final-source run pending | `vs4/process-tests.txt`, `vs4/process/test_vs4_026_secret_safe_artifacts_and_negative_scan/` in archive |
-| VS4-027 | Independent security/privacy review | Pending source-bound final signoff | `review-security.json` |
-| VS4-028 | Independent desktop/runtime review | Pending source-bound final signoff | `review-desktop.json` |
+| VS4-027 | Independent security/privacy review | PASS — source-bound 8418e64 | `review-security.json` |
+| VS4-028 | Independent desktop/runtime review | PASS — source-bound 8418e64 | `review-desktop.json` |
 | VS4-029 | Full successful hosted Linux run + downloaded archive verification | Pending | Run/API/source/hash ledger to follow |
 | VS4-030 | Separately supervised visible OpenRouter journey | NOT RUN | Requires fresh disclosure consent and separate proposal approval |
 
 ## Actual execution so far
 
-Development native tests: 2 passed; all-feature Clippy passed. First complete Qt sweep: 24/26 passed; rapid-edit test expected serial completion but accepted revision fencing retained a draft, and focus traversal instrumentation needed correction. These are not acceptance passes. The edit test now exercises explicit trusted Apply on conflict; separate-room isolation was strengthened following independent review. Final clean source runs are pending.
+Development native tests: 2 passed; all-feature Clippy passed. First complete Qt sweep: 24/26 passed; rapid-edit test expected serial completion but accepted revision fencing retained a draft, and focus traversal instrumentation needed correction. These are not acceptance passes. The edit test now exercises explicit trusted Apply on conflict; separate-room isolation was strengthened following independent review. The final clean full wrapper is running. Its first sandboxed attempt failed because REG-003 requires creating a local Unix socket; rerun outside the sandbox retains that test unchanged. No waived checks. Final elapsed/viewport, structured preview and keyboard retests passed 3/3.
 
 ## Implementation and privacy
 
@@ -55,7 +55,7 @@ Topology, durable topology checkpoint, typed ingress/calculation and output chec
 
 ## Reviews, versions, logs and hashes
 
-Independent reviewers: `/root/vs4_security_review`, `/root/vs4_desktop_review`. Initial source inspection found no contract blocker. Desktop reviewer requested distinct second-room isolation coverage; implemented, retest pending. Complete findings/signoff and source-bound logs will be recorded before final CI. Local toolchain: Rust1.99.1, Qt6.11.2; definitive full-chain `run.json` and archive hashes pending.
+Independent reviewers: `/root/vs4_security_review`, `/root/vs4_desktop_review`. Initial source inspection found no contract blocker. Both reviews approve implementation `8418e64d78e646841149e61cfecf1fa1bd58d5da` and bind all 25 critical source hashes. Security independently passed 2 native, 2 provenance and 6 Qt tests; desktop independently passed 5 final Qt cases after earlier seven-case coverage. Desktop findings: distinct second-room isolation and automatic visibility of progress/proposal, including elapsed-status reflow, were fixed and independently retested. Receipts retain initial failures/interrupted attempts honestly. Neither review claims hosted or live execution. Local toolchain: Rust1.99.1, Qt6.11.2; definitive full-chain `run.json` and archive hashes pending.
 
 ## Hosted and live evidence
 

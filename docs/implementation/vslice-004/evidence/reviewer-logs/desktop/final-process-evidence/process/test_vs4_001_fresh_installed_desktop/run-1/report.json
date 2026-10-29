@@ -1,0 +1,742 @@
+{
+    "binarySha256": "d86ab2a186826b20b89209acb0aa1e381116b23574761eb5ab516253d1fedc75",
+    "exitCode": 0,
+    "failure": "",
+    "finalState": {
+        "accepted": true,
+        "diagnostics": [
+        ],
+        "document": null,
+        "epoch": "1",
+        "installed": [
+            {
+                "label": "org.workbench.example.mortgage-ui",
+                "pin": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 36,
+        "projection": null,
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+            "frameBytes": 1048576,
+            "liveAuditEntries": 0,
+            "queueCapacity": 32,
+            "traceEntries": 0
+        },
+        "rooms": [
+        ],
+        "selectedRoom": null,
+        "token": "1"
+    },
+    "guiThread": true,
+    "initialGuestInvocations": "0",
+    "initialProviderCalls": "0",
+    "pid": 17,
+    "platform": "offscreen",
+    "qtVersion": "6.11.2",
+    "samples": [
+        {
+            "action": "quit",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 315,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 657,
+                    "x": 612
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-5aede6d1058640a2b05cfd442c8e143e-1"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": true,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": true,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": true,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": true,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 160
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": true,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": true,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 28
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": true,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 70
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": true,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 60
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 9
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 14,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 36,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": ""
+            },
+            "statusAlerts": 2,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "action": "exit",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": false,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": false,
+                    "width": 315,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": false,
+                    "width": 657,
+                    "x": 612
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-5aede6d1058640a2b05cfd442c8e143e-1"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": false,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": false,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": false,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": false,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": false,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": false,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": false,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": false,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 14,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": null,
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 36,
+                "projection": null,
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                ],
+                "selectedRoom": null,
+                "token": "1"
+            },
+            "statusAlerts": 2,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": false,
+            "windowVisible": false
+        }
+    ],
+    "workerProcessPid": 36
+}

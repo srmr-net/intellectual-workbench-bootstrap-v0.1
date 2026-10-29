@@ -1,0 +1,281 @@
+{
+  "pid": 16,
+  "records": [
+    {
+      "channel": "desktop",
+      "reply": {
+        "accepted": true,
+        "diagnostics": [],
+        "document": null,
+        "epoch": "1",
+        "installed": [
+          {
+            "label": "org.workbench.example.mortgage-ui",
+            "pin": {
+              "id": "org.workbench.example.mortgage-ui",
+              "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+              "version": "0.1.0"
+            }
+          }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 16,
+        "projection": null,
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+          "frameBytes": 1048576,
+          "liveAuditEntries": 0,
+          "queueCapacity": 32,
+          "traceEntries": 0
+        },
+        "rooms": [],
+        "selectedRoom": null,
+        "token": ""
+      }
+    },
+    {
+      "channel": "operator",
+      "reply": {
+        "code": "OK",
+        "effectiveDeadlineMs": 20000,
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "kind": "reply",
+        "ok": true,
+        "profile": {
+          "budget": {
+            "maxCalls": 1,
+            "maxCatalogCandidates": 8,
+            "maxOutputTokens": 512,
+            "maxRequestBytes": 4096,
+            "maxResponseBytes": 16384,
+            "timeoutMs": 20000
+          },
+          "enabled": true,
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "profileVersion": "0.1",
+          "provider": "openrouter-chat",
+          "remoteConsent": false
+        },
+        "protocol": "provider.1",
+        "providerEnforcedSchema": false,
+        "remoteAttempts": "0",
+        "remoteConfigured": true,
+        "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "remoteProvider": "openrouter-chat",
+        "source": {
+          "authenticationChecked": false,
+          "available": true,
+          "kind": "private-file"
+        },
+        "token": "native-1",
+        "transport": "injected-mock-http"
+      }
+    },
+    {
+      "channel": "operator",
+      "reply": {
+        "code": "CONSENT_REQUIRED",
+        "effectiveDeadlineMs": 20000,
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "kind": "reply",
+        "ok": false,
+        "profile": {
+          "budget": {
+            "maxCalls": 1,
+            "maxCatalogCandidates": 8,
+            "maxOutputTokens": 512,
+            "maxRequestBytes": 4096,
+            "maxResponseBytes": 16384,
+            "timeoutMs": 20000
+          },
+          "enabled": true,
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "profileVersion": "0.1",
+          "provider": "openrouter-chat",
+          "remoteConsent": false
+        },
+        "protocol": "provider.1",
+        "providerEnforcedSchema": false,
+        "remoteAttempts": "0",
+        "remoteConfigured": true,
+        "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "remoteProvider": "openrouter-chat",
+        "source": {
+          "authenticationChecked": false,
+          "available": true,
+          "kind": "private-file"
+        },
+        "token": "native-2",
+        "transport": "injected-mock-http"
+      }
+    },
+    {
+      "channel": "operator",
+      "reply": {
+        "code": "DISCLOSURE_REQUIRED",
+        "kind": "reply",
+        "ok": false,
+        "protocol": "operator.1",
+        "providerCalls": "0",
+        "providerState": {
+          "code": "OK",
+          "effectiveDeadlineMs": 20000,
+          "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+          "kind": "reply",
+          "ok": true,
+          "profile": {
+            "budget": {
+              "maxCalls": 1,
+              "maxCatalogCandidates": 8,
+              "maxOutputTokens": 512,
+              "maxRequestBytes": 4096,
+              "maxResponseBytes": 16384,
+              "timeoutMs": 20000
+            },
+            "enabled": true,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "profileVersion": "0.1",
+            "provider": "openrouter-chat",
+            "remoteConsent": false
+          },
+          "protocol": "provider.1",
+          "providerEnforcedSchema": false,
+          "remoteAttempts": "0",
+          "remoteConfigured": true,
+          "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "remoteProvider": "openrouter-chat",
+          "source": {
+            "authenticationChecked": false,
+            "available": true,
+            "kind": "private-file"
+          },
+          "token": "",
+          "transport": "injected-mock-http"
+        },
+        "token": "op-3"
+      }
+    },
+    {
+      "channel": "operator",
+      "reply": {
+        "code": "OK",
+        "effectiveDeadlineMs": 20000,
+        "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+        "kind": "reply",
+        "ok": true,
+        "profile": {
+          "budget": {
+            "maxCalls": 1,
+            "maxCatalogCandidates": 8,
+            "maxOutputTokens": 512,
+            "maxRequestBytes": 4096,
+            "maxResponseBytes": 16384,
+            "timeoutMs": 20000
+          },
+          "enabled": true,
+          "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "profileVersion": "0.1",
+          "provider": "openrouter-chat",
+          "remoteConsent": false
+        },
+        "protocol": "provider.1",
+        "providerEnforcedSchema": false,
+        "remoteAttempts": "0",
+        "remoteConfigured": true,
+        "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+        "remoteProvider": "openrouter-chat",
+        "source": {
+          "authenticationChecked": false,
+          "available": true,
+          "kind": "private-file"
+        },
+        "token": "native-4",
+        "transport": "injected-mock-http"
+      }
+    },
+    {
+      "channel": "operator",
+      "reply": {
+        "code": "READY",
+        "kind": "reply",
+        "ok": true,
+        "protocol": "operator.1",
+        "providerCalls": "0",
+        "providerState": {
+          "code": "OK",
+          "effectiveDeadlineMs": 20000,
+          "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+          "kind": "reply",
+          "ok": true,
+          "profile": {
+            "budget": {
+              "maxCalls": 1,
+              "maxCatalogCandidates": 8,
+              "maxOutputTokens": 512,
+              "maxRequestBytes": 4096,
+              "maxResponseBytes": 16384,
+              "timeoutMs": 20000
+            },
+            "enabled": true,
+            "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+            "profileVersion": "0.1",
+            "provider": "openrouter-chat",
+            "remoteConsent": false
+          },
+          "protocol": "provider.1",
+          "providerEnforcedSchema": false,
+          "remoteAttempts": "0",
+          "remoteConfigured": true,
+          "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+          "remoteProvider": "openrouter-chat",
+          "source": {
+            "authenticationChecked": false,
+            "available": true,
+            "kind": "private-file"
+          },
+          "token": "",
+          "transport": "injected-mock-http"
+        },
+        "token": "op-5"
+      }
+    },
+    {
+      "channel": "desktop",
+      "reply": {
+        "accepted": true,
+        "diagnostics": [],
+        "document": null,
+        "epoch": "1",
+        "installed": [
+          {
+            "label": "org.workbench.example.mortgage-ui",
+            "pin": {
+              "id": "org.workbench.example.mortgage-ui",
+              "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+              "version": "0.1.0"
+            }
+          }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 16,
+        "projection": null,
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+          "frameBytes": 1048576,
+          "liveAuditEntries": 0,
+          "queueCapacity": 32,
+          "traceEntries": 0
+        },
+        "rooms": [],
+        "selectedRoom": null,
+        "token": "d-6"
+      }
+    }
+  ]
+}

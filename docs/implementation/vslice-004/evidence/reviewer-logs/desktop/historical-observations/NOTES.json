@@ -1,0 +1,18 @@
+{
+  "initial023": {
+    "status": "FAILED",
+    "source": "uncommitted pre-freeze implementation; not final acceptance evidence",
+    "error": "edit timeout / UI_OPERATION_TIMEOUT",
+    "context": "concurrent compiler contention observed; unchanged stable rerun passed in 14.932 seconds, mechanism not proven"
+  },
+  "fd596b5Subset": {
+    "status": "INTERRUPTED",
+    "exitCode": 143,
+    "completedPassingCases": [
+      "VS4-005",
+      "VS4-017",
+      "VS4-022"
+    ],
+    "note": "Not counted as final passing run. Source superseded by visibility correction."
+  }
+}

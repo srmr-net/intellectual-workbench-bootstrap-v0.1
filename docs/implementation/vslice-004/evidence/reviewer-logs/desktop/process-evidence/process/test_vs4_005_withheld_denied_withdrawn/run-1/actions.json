@@ -1,0 +1,1 @@
+[{"type": "selectProvider", "remote": true}, {"type": "intentKeyboard", "text": "I need a mortgage calculator for a \u00a3250,000 loan over 25 years at 5%."}, {"type": "remoteConsent", "consent": true}, {"type": "remoteConsent", "consent": false}, {"type": "draftIntent", "text": "I need a mortgage calculator for a \u00a3250,000 loan over 25 years at 5%. "}, {"type": "quit"}]
