@@ -1,0 +1,16 @@
+********* Start testing of DirectTests *********
+Config: Using QtTest library 6.11.2, Qt 6.11.2 (x86_64-little_endian-lp64 shared (dynamic) release build; by GCC 16.2.1 20260810), omarchy 4.0.4
+PASS   : DirectTests::initTestCase()
+QWARN  : DirectTests::request_start_and_local_recalculation(actual-adapter-mocked-http) This plugin does not support setParent!
+QWARN  : DirectTests::request_start_and_local_recalculation(actual-adapter-mocked-http) This plugin does not support setParent!
+QWARN  : DirectTests::request_start_and_local_recalculation(actual-adapter-mocked-http) This plugin does not support propagateSizeHints()
+QWARN  : DirectTests::request_start_and_local_recalculation(actual-adapter-mocked-http) This plugin does not support setParent!
+PASS   : DirectTests::request_start_and_local_recalculation(actual-adapter-mocked-http)
+QWARN  : DirectTests::request_start_and_local_recalculation(offline-without-credentials) This plugin does not support setParent!
+QWARN  : DirectTests::request_start_and_local_recalculation(offline-without-credentials) This plugin does not support setParent!
+QWARN  : DirectTests::request_start_and_local_recalculation(offline-without-credentials) This plugin does not support propagateSizeHints()
+QWARN  : DirectTests::request_start_and_local_recalculation(offline-without-credentials) This plugin does not support setParent!
+PASS   : DirectTests::request_start_and_local_recalculation(offline-without-credentials)
+PASS   : DirectTests::cleanupTestCase()
+Totals: 4 passed, 0 failed, 0 skipped, 0 blacklisted, 15867ms
+********* Finished testing of DirectTests *********
