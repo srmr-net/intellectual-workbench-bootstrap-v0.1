@@ -31,3 +31,6 @@ VS3-001 (Accepted, 2026-10-28): complete bounded desktop Operator journey; owner
 
 LLM-001 / ADR006 (Completed; accepted Linux/OpenRouter profile): host-controlled opt-in live provider; owner Codex;
 [task](adr-006/TASK.md); depends accepted ADR001–005 and VS1–VS3.
+
+VS4-001 (Proposed): Live Operator Linux product journey; owner Codex;
+[task](vslice-004/TASK.md); depends accepted ADR001–006 and VS1–VS3.

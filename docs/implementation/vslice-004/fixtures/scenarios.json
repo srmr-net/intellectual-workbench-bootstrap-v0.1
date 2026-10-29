@@ -1,0 +1,33 @@
+{
+  "description": "Reference scenarios only, not executable test results",
+  "scenarios": [
+    {
+      "id": "happy-live",
+      "request": "I need a mortgage calculator for a \u00a3250,000 loan over 25 years at 5%.",
+      "expected_monthly_gbp": "1461.48",
+      "edit_principal_gbp": "300000",
+      "expected_after_edit_gbp": "1753.77",
+      "requires_separate_consent_and_approval": true
+    },
+    {
+      "id": "no-consent",
+      "expected": "no remote request or room mutation"
+    },
+    {
+      "id": "malformed-provider-suggestion",
+      "expected": "host rejects; no mutation"
+    },
+    {
+      "id": "timeout-or-rate-limit",
+      "expected": "typed recoverable error; last committed canvas remains"
+    },
+    {
+      "id": "late-response-after-switch",
+      "expected": "response fenced; no stale preview"
+    },
+    {
+      "id": "cold-offline-restore",
+      "expected": "pinned committed canvas shown with zero provider/guest calls for display"
+    }
+  ]
+}

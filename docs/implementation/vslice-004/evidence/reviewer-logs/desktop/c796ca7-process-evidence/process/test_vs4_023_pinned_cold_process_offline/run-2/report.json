@@ -1,0 +1,1958 @@
+{
+    "binarySha256": "985c57094d4708e9dc3ea53100ceffdfcd865cea3166d1242aeb5c9edbe8e0ad",
+    "exitCode": 0,
+    "failure": "",
+    "finalState": {
+        "accepted": true,
+        "diagnostics": [
+        ],
+        "document": {
+            "root": {
+                "children": [
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/principal",
+                            "port": "calculate"
+                        },
+                        "id": "principal",
+                        "label": "Principal",
+                        "type": "decimal-input",
+                        "unit": "GBP"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/annual_rate_percent",
+                            "port": "calculate"
+                        },
+                        "id": "rate",
+                        "label": "Annual interest rate",
+                        "type": "decimal-input",
+                        "unit": "percent"
+                    },
+                    {
+                        "bind": {
+                            "direction": "input",
+                            "field": "/term_months",
+                            "port": "calculate"
+                        },
+                        "id": "term",
+                        "label": "Term (months)",
+                        "type": "integer-input"
+                    },
+                    {
+                        "bind": {
+                            "direction": "output",
+                            "field": "/monthly_payment",
+                            "port": "payment"
+                        },
+                        "id": "payment",
+                        "label": "Monthly repayment",
+                        "type": "readout"
+                    }
+                ],
+                "title": "Mortgage calculator",
+                "type": "form"
+            },
+            "uiVersion": "0.1"
+        },
+        "epoch": "1",
+        "installed": [
+            {
+                "label": "org.workbench.example.mortgage-ui",
+                "pin": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                }
+            }
+        ],
+        "invocations": "0",
+        "kind": "state",
+        "lastTrace": null,
+        "pid": 70,
+        "projection": {
+            "diagnostics": [
+            ],
+            "executionGeneration": "1",
+            "key": {
+                "instanceId": "component",
+                "roomId": "intent-room",
+                "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+            },
+            "projectionSequence": "3",
+            "roomRevision": "4",
+            "values": {
+                "payment": "1753.77",
+                "principal": "300000",
+                "rate": "5",
+                "term": "300"
+            }
+        },
+        "protocol": "desktop.1",
+        "recovery": null,
+        "resources": {
+            "frameBytes": 1048576,
+            "liveAuditEntries": 0,
+            "queueCapacity": 32,
+            "traceEntries": 0
+        },
+        "rooms": [
+            {
+                "component": {
+                    "id": "org.workbench.example.mortgage-ui",
+                    "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                    "version": "0.1.0"
+                },
+                "id": "intent-room",
+                "label": "Intent room",
+                "pinned": true,
+                "ui": {
+                    "path": "ui.json",
+                    "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                    "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                }
+            }
+        ],
+        "selectedRoom": "intent-room",
+        "token": "1"
+    },
+    "guiThread": true,
+    "initialGuestInvocations": "0",
+    "initialProviderCalls": "0",
+    "pid": 67,
+    "platform": "offscreen",
+    "qtVersion": "6.11.2",
+    "samples": [
+        {
+            "accessibilityActive": true,
+            "action": "expect",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "principal",
+                    "name": "Principal",
+                    "role": 42,
+                    "text": "300000"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "rate",
+                    "name": "Annual interest rate",
+                    "role": 42,
+                    "text": "5"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "term",
+                    "name": "Term (months)",
+                    "role": 42,
+                    "text": "300"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "payment",
+                    "name": "Monthly repayment",
+                    "role": 41,
+                    "text": "1753.77"
+                }
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-121eb3b688e944a0a857e52b9bda0c70-1"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": true,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": true,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": true,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": true,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 160
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": true,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": true,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 28
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": true,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 70
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": false,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 47
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 84,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": true,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 70,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "1",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "1",
+                    "roomRevision": "4",
+                    "values": {
+                        "payment": "1753.77",
+                        "principal": "300000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": true,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": ""
+            },
+            "statusAlerts": 2,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "accessibilityActive": true,
+            "action": "operatorStatus",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "principal",
+                    "name": "Principal",
+                    "role": 42,
+                    "text": "300000"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "rate",
+                    "name": "Annual interest rate",
+                    "role": 42,
+                    "text": "5"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "term",
+                    "name": "Term (months)",
+                    "role": 42,
+                    "text": "300"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "payment",
+                    "name": "Monthly repayment",
+                    "role": 41,
+                    "text": "1753.77"
+                }
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-121eb3b688e944a0a857e52b9bda0c70-2"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": true,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": true,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": true,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": true,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 160
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": true,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": true,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 28
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": true,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 70
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": false,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 47
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 84,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": true,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 70,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "1",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "1",
+                    "roomRevision": "4",
+                    "values": {
+                        "payment": "1753.77",
+                        "principal": "300000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": true,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": ""
+            },
+            "statusAlerts": 4,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "accessibilityActive": true,
+            "action": "quit",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": true,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": true,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": true,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "principal",
+                    "name": "Principal",
+                    "role": 42,
+                    "text": "300000"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "rate",
+                    "name": "Annual interest rate",
+                    "role": 42,
+                    "text": "5"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "term",
+                    "name": "Term (months)",
+                    "role": 42,
+                    "text": "300"
+                },
+                {
+                    "description": "",
+                    "focus": false,
+                    "focusable": true,
+                    "id": "payment",
+                    "name": "Monthly repayment",
+                    "role": 41,
+                    "text": "1753.77"
+                }
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-121eb3b688e944a0a857e52b9bda0c70-2"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": true,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": true,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": true,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": true,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 160
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": true,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": true,
+                    "visibleHeight": 22
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": true,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 28
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": true,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 70
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": false,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 47
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 84,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": true,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": true,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 70,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "1",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "1",
+                    "roomRevision": "4",
+                    "values": {
+                        "payment": "1753.77",
+                        "principal": "300000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": true,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": ""
+            },
+            "statusAlerts": 4,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": true,
+            "windowVisible": true
+        },
+        {
+            "accessibilityActive": true,
+            "action": "exit",
+            "approveEnabled": false,
+            "columns": [
+                {
+                    "name": "leftPinnedTools",
+                    "visible": false,
+                    "width": 274,
+                    "x": 11
+                },
+                {
+                    "name": "activityContext",
+                    "visible": false,
+                    "width": 320,
+                    "x": 291
+                },
+                {
+                    "name": "semanticCanvas",
+                    "visible": false,
+                    "width": 652,
+                    "x": 617
+                }
+            ],
+            "consentChecked": false,
+            "controls": [
+            ],
+            "disclosure": {
+            },
+            "error": "",
+            "guiThread": true,
+            "hasPreview": false,
+            "operatorBusy": false,
+            "operatorGuiThread": true,
+            "operatorReply": {
+                "code": "READY",
+                "kind": "reply",
+                "ok": true,
+                "protocol": "operator.1",
+                "providerCalls": "0",
+                "providerState": {
+                    "code": "OK",
+                    "effectiveDeadlineMs": 20000,
+                    "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                    "kind": "reply",
+                    "ok": true,
+                    "profile": {
+                        "budget": {
+                            "maxCalls": 1,
+                            "maxCatalogCandidates": 8,
+                            "maxOutputTokens": 512,
+                            "maxRequestBytes": 4096,
+                            "maxResponseBytes": 16384,
+                            "timeoutMs": 20000
+                        },
+                        "enabled": true,
+                        "model": "deterministic-fixture",
+                        "profileVersion": "0.1",
+                        "provider": "offline-fixture",
+                        "remoteConsent": false
+                    },
+                    "protocol": "provider.1",
+                    "providerEnforcedSchema": false,
+                    "remoteAttempts": "0",
+                    "remoteConfigured": true,
+                    "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                    "remoteProvider": "openrouter-chat",
+                    "source": {
+                        "authenticationChecked": false,
+                        "available": true,
+                        "kind": "private-file"
+                    },
+                    "token": "",
+                    "transport": "injected-mock-http"
+                },
+                "token": "op-121eb3b688e944a0a857e52b9bda0c70-2"
+            },
+            "operatorStatus": "READY",
+            "operatorWidgets": [
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialPath",
+                    "inViewport": false,
+                    "name": "Private credential file path, not the API key",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "credentialApply",
+                    "inViewport": false,
+                    "name": "Use private credential file",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorSend",
+                    "inViewport": false,
+                    "name": "Send reviewed data to OpenRouter",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 160,
+                    "id": "outboundData",
+                    "inViewport": false,
+                    "name": "Data to send to OpenRouter",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 192,
+                    "id": "proposalDetails",
+                    "inViewport": false,
+                    "name": "Validated proposal details",
+                    "role": 35,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 30,
+                    "id": "requestProgress",
+                    "inViewport": false,
+                    "name": "Remote request progress",
+                    "role": 48,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "providerChoice",
+                    "inViewport": false,
+                    "name": "Offline deterministic",
+                    "role": 46,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "remoteConsent",
+                    "inViewport": false,
+                    "name": "Consent to remote request and catalog transfer",
+                    "role": 44,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 70,
+                    "id": "providerInfo",
+                    "inViewport": false,
+                    "name": "Provider destination and limits",
+                    "role": 41,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 60,
+                    "id": "operatorIntent",
+                    "inViewport": false,
+                    "name": "Tool request",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 45,
+                    "id": "operatorSubmitted",
+                    "inViewport": false,
+                    "name": "Submitted user request",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": false,
+                    "height": 84,
+                    "id": "operatorStatus",
+                    "inViewport": false,
+                    "name": "Request status",
+                    "role": 41,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorDecline",
+                    "inViewport": false,
+                    "name": "Reject proposal",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": true,
+                    "focusable": true,
+                    "height": 140,
+                    "id": "operatorPreview",
+                    "inViewport": false,
+                    "name": "Composition proposal preview",
+                    "role": 42,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 28,
+                    "id": "operatorConsent",
+                    "inViewport": false,
+                    "name": "Approve this exact proposal",
+                    "role": 44,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorApprove",
+                    "inViewport": false,
+                    "name": "Confirm and initialize",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                },
+                {
+                    "enabled": false,
+                    "focusable": true,
+                    "height": 22,
+                    "id": "operatorCancel",
+                    "inViewport": false,
+                    "name": "Cancel request",
+                    "role": 43,
+                    "visible": false,
+                    "visibleHeight": 0
+                }
+            ],
+            "outboundText": "",
+            "pending": 0,
+            "previewText": "",
+            "providerState": {
+                "code": "OK",
+                "effectiveDeadlineMs": 20000,
+                "endpoint": "https://openrouter.ai/api/v1/chat/completions",
+                "kind": "reply",
+                "ok": true,
+                "profile": {
+                    "budget": {
+                        "maxCalls": 1,
+                        "maxCatalogCandidates": 8,
+                        "maxOutputTokens": 512,
+                        "maxRequestBytes": 4096,
+                        "maxResponseBytes": 16384,
+                        "timeoutMs": 20000
+                    },
+                    "enabled": true,
+                    "model": "deterministic-fixture",
+                    "profileVersion": "0.1",
+                    "provider": "offline-fixture",
+                    "remoteConsent": false
+                },
+                "protocol": "provider.1",
+                "providerEnforcedSchema": false,
+                "remoteAttempts": "0",
+                "remoteConfigured": true,
+                "remoteModel": "nvidia/nemotron-3-ultra-550b-a55b:free",
+                "remoteProvider": "openrouter-chat",
+                "source": {
+                    "authenticationChecked": false,
+                    "available": true,
+                    "kind": "private-file"
+                },
+                "token": "",
+                "transport": "injected-mock-http"
+            },
+            "ready": false,
+            "remoteConsent": false,
+            "state": {
+                "accepted": true,
+                "diagnostics": [
+                ],
+                "document": {
+                    "root": {
+                        "children": [
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/principal",
+                                    "port": "calculate"
+                                },
+                                "id": "principal",
+                                "label": "Principal",
+                                "type": "decimal-input",
+                                "unit": "GBP"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/annual_rate_percent",
+                                    "port": "calculate"
+                                },
+                                "id": "rate",
+                                "label": "Annual interest rate",
+                                "type": "decimal-input",
+                                "unit": "percent"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "input",
+                                    "field": "/term_months",
+                                    "port": "calculate"
+                                },
+                                "id": "term",
+                                "label": "Term (months)",
+                                "type": "integer-input"
+                            },
+                            {
+                                "bind": {
+                                    "direction": "output",
+                                    "field": "/monthly_payment",
+                                    "port": "payment"
+                                },
+                                "id": "payment",
+                                "label": "Monthly repayment",
+                                "type": "readout"
+                            }
+                        ],
+                        "title": "Mortgage calculator",
+                        "type": "form"
+                    },
+                    "uiVersion": "0.1"
+                },
+                "epoch": "1",
+                "installed": [
+                    {
+                        "label": "org.workbench.example.mortgage-ui",
+                        "pin": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        }
+                    }
+                ],
+                "invocations": "0",
+                "kind": "state",
+                "lastTrace": null,
+                "pid": 70,
+                "projection": {
+                    "diagnostics": [
+                    ],
+                    "executionGeneration": "1",
+                    "key": {
+                        "instanceId": "component",
+                        "roomId": "intent-room",
+                        "uiId": "ui.json#b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                    },
+                    "projectionSequence": "3",
+                    "roomRevision": "4",
+                    "values": {
+                        "payment": "1753.77",
+                        "principal": "300000",
+                        "rate": "5",
+                        "term": "300"
+                    }
+                },
+                "protocol": "desktop.1",
+                "recovery": null,
+                "resources": {
+                    "frameBytes": 1048576,
+                    "liveAuditEntries": 0,
+                    "queueCapacity": 32,
+                    "traceEntries": 0
+                },
+                "rooms": [
+                    {
+                        "component": {
+                            "id": "org.workbench.example.mortgage-ui",
+                            "sha256": "64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95",
+                            "version": "0.1.0"
+                        },
+                        "id": "intent-room",
+                        "label": "Intent room",
+                        "pinned": true,
+                        "ui": {
+                            "path": "ui.json",
+                            "schemaSha256": "f183fe5d5566d6420fbf6c6ab052a7aa7dc86e41e694a5371551ef51b55c5380",
+                            "sha256": "b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6"
+                        }
+                    }
+                ],
+                "selectedRoom": "intent-room",
+                "token": "1"
+            },
+            "statusAlerts": 4,
+            "submittedText": "",
+            "uxReply": {
+            },
+            "windowActive": false,
+            "windowVisible": false
+        }
+    ],
+    "workerProcessPid": 70
+}

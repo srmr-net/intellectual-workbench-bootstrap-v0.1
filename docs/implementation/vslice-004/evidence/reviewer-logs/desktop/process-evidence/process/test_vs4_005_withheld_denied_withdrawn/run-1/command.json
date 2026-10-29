@@ -1,0 +1,13 @@
+[
+  "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs4-qt-build/workbench-vslice004",
+  "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/debug/wb-vslice003-worker",
+  "/tmp/wb-vs2-process-l17lafpi/registry",
+  "/tmp/wb-vs2-process-l17lafpi/workspace",
+  "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/vs2-venv/bin/python3",
+  "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/tools/registry_validate.py",
+  "/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/target/debug/wb-registry-inspect",
+  "--validation-actions",
+  "/tmp/wb-vs2-process-l17lafpi/run-1/actions.json",
+  "--validation-report",
+  "/tmp/wb-vs2-process-l17lafpi/run-1/report.json"
+]

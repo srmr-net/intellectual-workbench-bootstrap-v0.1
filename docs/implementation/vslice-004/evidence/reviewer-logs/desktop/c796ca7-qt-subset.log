@@ -1,0 +1,9 @@
+test_vs4_008_progress_cancel (__main__.Journey.test_vs4_008_progress_cancel) ... ok
+test_vs4_012_structured_preview (__main__.Journey.test_vs4_012_structured_preview) ... ok
+test_vs4_023_pinned_cold_process_offline (__main__.Journey.test_vs4_023_pinned_cold_process_offline) ... ok
+test_vs4_025_keyboard_focus_accessible_status (__main__.Journey.test_vs4_025_keyboard_focus_accessible_status) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 36.615s
+
+OK

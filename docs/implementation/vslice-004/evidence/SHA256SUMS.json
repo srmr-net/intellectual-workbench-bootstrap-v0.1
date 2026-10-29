@@ -1,0 +1,13 @@
+{
+  "local.zip": "b926aef869a044b5a05f6f6e872adc2174b60e65659e164ad287da8f349bd7ff",
+  "hosted.zip": "9734df51adfa6bc1463a52455c1a040176b98b5bcedd7c02de859e79a9c2f328",
+  "hosted-logs.zip": "9ff3ddfadd4a647ff2d746711512600641a73809b6c7fab8349c5f889dca8dbf",
+  "hosted-run.json": "b475c208aacafe39b1ccd9fce090a96f871fcb823188d46cd9532a5e1a9c8fd3",
+  "hosted-jobs.json": "50df1b84e1464ed62efb2dcd9bfc35b637d5617de2f24e82c68c1b2124b6dd49",
+  "hosted-artifacts.json": "aed88761e30d1d863eaf763b51b8879140ec6986298e5ac0f7cbeb00c985a059",
+  "local-verification.json": "c968b6d44fd7bd9ffdf2e7869fef37cc2ca54ff5b86b31fb93d9e5f8d3e77f00",
+  "hosted-verification.json": "480aece9d56a393c73f436b79adbac313d03a2f86fad077efa3c635cdfaa6d48",
+  "hosted-independent-verification.json": "480aece9d56a393c73f436b79adbac313d03a2f86fad077efa3c635cdfaa6d48",
+  "review-security.json": "15242be38b8a8eaed896787b565a90f1ef896caf5fb22cb71a5ac43b8938dc80",
+  "review-desktop.json": "b6c63aa802da9289fd9b7d470463854c214b294c4d0306d8bd3ff2155352af48"
+}

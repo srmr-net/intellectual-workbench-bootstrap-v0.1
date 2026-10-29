@@ -1,0 +1,11 @@
+test_vs4_003_private_source_control (__main__.Journey.test_vs4_003_private_source_control) ... ok
+test_vs4_004_truthful_outbound_data (__main__.Journey.test_vs4_004_truthful_outbound_data) ... ok
+test_vs4_005_withheld_denied_withdrawn (__main__.Journey.test_vs4_005_withheld_denied_withdrawn) ... ok
+test_vs4_008_progress_cancel (__main__.Journey.test_vs4_008_progress_cancel) ... ok
+test_vs4_012_structured_preview (__main__.Journey.test_vs4_012_structured_preview) ... ok
+test_vs4_026_secret_safe_artifacts_and_negative_scan (__main__.Journey.test_vs4_026_secret_safe_artifacts_and_negative_scan) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 96.278s
+
+OK

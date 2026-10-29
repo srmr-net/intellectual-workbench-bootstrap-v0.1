@@ -1,0 +1,63 @@
+{
+  "verified": true,
+  "gate": "VS4-029",
+  "hosted": true,
+  "source": "84e1ca67fd9a9a922510b2e2f6018bf11f63367a",
+  "head": "92c30471518d86aaffdca5e70a31d59195b12922",
+  "archiveSha256": "9734df51adfa6bc1463a52455c1a040176b98b5bcedd7c02de859e79a9c2f328",
+  "appWorkerPairs": 42,
+  "retained": {
+    "verified": true,
+    "gate": "LLM-024",
+    "hosted": false,
+    "source": "84e1ca67fd9a9a922510b2e2f6018bf11f63367a",
+    "head": null,
+    "archiveSha256": "9734df51adfa6bc1463a52455c1a040176b98b5bcedd7c02de859e79a9c2f328",
+    "nativeConformanceTests": 27,
+    "transportTests": 5,
+    "qtProcessTests": 7,
+    "appWorkerPairs": 14,
+    "retained": {
+      "verified": true,
+      "hosted": false,
+      "source": "84e1ca67fd9a9a922510b2e2f6018bf11f63367a",
+      "head": null,
+      "archiveSha256": "9734df51adfa6bc1463a52455c1a040176b98b5bcedd7c02de859e79a9c2f328",
+      "test": "test_vs3_026_complete_downloaded_hosted_evidence",
+      "vs3Gates": 26,
+      "namedJourneyTests": 24,
+      "nativeWorkerTests": 6,
+      "metadataTests": 6,
+      "appWorkerPairs": 25,
+      "retained": {
+        "verified": true,
+        "hosted": false,
+        "source": "84e1ca67fd9a9a922510b2e2f6018bf11f63367a",
+        "head": null,
+        "archiveSha256": "9734df51adfa6bc1463a52455c1a040176b98b5bcedd7c02de859e79a9c2f328",
+        "operatorCases": 24,
+        "rustTests": 162,
+        "newNativeTests": 24,
+        "workerTests": 9,
+        "qtProcessTests": 6,
+        "desktopProcesses": 7,
+        "coldProviderCalls": 0,
+        "coldGuestInvocations": 0,
+        "appSha256": "4fa6c15831e516664d9afd4ae72d79f58c18e9403c436df9aa1a524f3d5ca047",
+        "workerSha256": "b7567c4a1d74e1fc4794f73d4beb19cfb4310afb8607fc9346ecf50280918ff7",
+        "reviewers": [
+          "/root/review_op_security",
+          "independent agent /root/review_op_runtime; no implementation authorship"
+        ],
+        "qtVersions": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+      },
+      "appSha256": "eb272b67cf07ada4ce0c0cca9a08856b6e23fd1412b60e2a26c78ad22802ed68",
+      "workerSha256": "0777622aac7c83168892fda789244ca5ed09aa28a3d985097ebead31db5e13cb",
+      "coldProviderCalls": 0,
+      "coldGuestInvocations": 0,
+      "qt": "QMake version 3.1\nUsing Qt version 6.4.2 in /usr/lib/x86_64-linux-gnu\n"
+    },
+    "live": "separate required evidence"
+  },
+  "live": "separate required gate"
+}
