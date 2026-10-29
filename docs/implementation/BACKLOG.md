@@ -34,3 +34,5 @@ LLM-001 / ADR006 (Completed; accepted Linux/OpenRouter profile): host-controlled
 
 VS4-001 (Proposed): Live Operator Linux product journey; owner Codex;
 [task](vslice-004/TASK.md); depends accepted ADR001–006 and VS1–VS3.
+
+- **OP-DIRECT — IMPLEMENTED (exploratory):** exploratory direct Operator entry, owner Codex; user-directed2026-10-29. One provider enablement, typed request, readable suggestion and single Start. Reuse accepted runtime; defer VSLICE004 live/UX acceptance. [Task](operator-direct/TASK.md).

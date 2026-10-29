@@ -1,0 +1,12 @@
+  Generating bindings for mortgage-headless (examples/wasm-components/mortgage-headless/src/bindings.rs)
+  Generating bindings for mortgage-adversary (examples/wasm-components/mortgage-adversary/src/bindings.rs)
+  Generating bindings for mortgage-observer (examples/wasm-components/mortgage-observer/src/bindings.rs)
+    Finished `release` profile [optimized] target(s) in 0.02s
+64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95  target/mortgage-packages/mortgage-headless/logic.wasm
+0e843cd728fb379b6a8eae5d4ef0e961c3ec65b96053f41a951a4dec8d5f4556  target/mortgage-packages/mortgage-adversary/logic.wasm
+c3369d6ce952ebb500a9a056b83abab956236fb8e2f274e36b7b18fe1a7675fd  target/mortgage-packages/mortgage-observer/logic.wasm
+UI fixture: target/ui-fixtures/mortgage-ui WASM: 64987f2704fa0d313ec2529e1e0fd9a0a16b8551cc9e42a352c57f950587cb95 UI: b2bfe1b7ed2d83a762ca0bf884b4db6c4cee57af4d6876cf089b487ff428c5c6
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.12s
+make: Nothing to be done for 'first'.
