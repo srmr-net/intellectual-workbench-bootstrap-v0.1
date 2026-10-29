@@ -1,4 +1,4 @@
-QT += core gui widgets qml quick quickcontrols2 testlib
+QT += core gui gui-private widgets qml quick quickcontrols2 testlib
 CONFIG += c++17 warn_on
 TARGET = workbench-vslice004
 SOURCES += main.cpp OperatorPanel.cpp OperatorDriver.cpp ../desktop/DesktopShell.cpp ../desktop/DesktopBridge.cpp

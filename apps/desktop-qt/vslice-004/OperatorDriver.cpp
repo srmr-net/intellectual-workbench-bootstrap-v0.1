@@ -19,6 +19,9 @@
 #include <QScrollArea>
 #include <QTreeWidget>
 #include <QtTest>
+#include <private/qguiapplication_p.h>
+#include <qpa/qplatformaccessibility.h>
+#include <qpa/qplatformintegration.h>
 namespace {
 int statusAlerts = 0;
 QAccessible::UpdateHandler previousHandler = nullptr;
@@ -65,6 +68,15 @@ OperatorDriver::OperatorDriver(DesktopShell &shell, OperatorPanel &panel,
     : m_shell(shell), m_operator(panel), m_actions(std::move(actions)),
       m_report(std::move(report)) {}
 void OperatorDriver::start() {
+  // Qt6.4 setActive only notifies observers; its offscreen platform remains
+  // inactive. The explicit validation driver supplies an accessibility client
+  // by activating the real Qt platform backend, as Qt's own tests do. Alerts
+  // still travel through QAccessible::updateAccessibility; no handler is called
+  // directly and no counter is fabricated. Normal application startup never
+  // enters this validation-only path.
+  if (auto *platform = QGuiApplicationPrivate::platformIntegration())
+    if (auto *accessibility = platform->accessibility())
+      accessibility->setActive(true);
   QAccessible::setActive(true);
   previousHandler = QAccessible::installUpdateHandler(accessibilityEvent);
   m_deadline.start();
@@ -143,6 +155,7 @@ void OperatorDriver::sample(const QString &action) {
       {"disclosure", m_operator.disclosure()},
       {"uxReply", m_operator.uxReply()},
       {"statusAlerts", statusAlerts},
+      {"accessibilityActive", QAccessible::isActive()},
       {"outboundText",
        m_shell.findChild<QPlainTextEdit *>("outboundData")->toPlainText()},
       {"state", bridge.lastState()},
