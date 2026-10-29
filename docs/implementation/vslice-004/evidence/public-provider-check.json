@@ -1,0 +1,10 @@
+{
+  "checkedUtc": "2026-10-29",
+  "source": "https://openrouter.ai/nvidia/nemotron-3-ultra-550b-a55b:free",
+  "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+  "provider": "NVIDIA",
+  "providerEnforcedJsonSchema": false,
+  "privacy": "Free endpoint logs requests for security/product improvement",
+  "isInferenceEvidence": false,
+  "note": "Public metadata only. Actual returned model, usage and latency require separately consented VS4-030; checkpoint/version and cost are not invented."
+}
