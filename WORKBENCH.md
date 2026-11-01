@@ -1,20 +1,18 @@
-# Intellectual Workbench — Linux desktop
+# Intellectual Workbench — Operator chat
 
-The default product entry is the simplified Operator workspace:
+The default Linux Qt entry is a conversation with Operator:
 
 ```sh
 ./workbench --build
 ./workbench
-# Optional explicit session opt-in with an existing private host credential:
-./workbench --live --credential-file "$HOME/openrouter.key"
+# Or supply the private host credential reference explicitly:
+./workbench --credential-file "$HOME/openrouter.key"
 ```
 
-Use Settings → Provider to enable OpenRouter for the current process or change the private file reference. The supported model and approved endpoint are shown there; this profile does not accept arbitrary model/endpoints. Credential contents never enter the UI or saved workspace. No provider is needed for ordinary form edits or reopening saved tools.
+Open Settings, enable OpenRouter for this application session, and start chatting. Enter sends; Shift+Enter adds a new line. Stop cancels the active request. New chat creates an isolated conversation; the sidebar reopens conversations from this process. The private `~/openrouter.key` source supplied for this project is used if present and no other host credential source is set. Its contents never enter the UI.
 
-Ask for a tool and its inputs in the centre column, review the suggestion, then choose **Start this tool**. The host validates the exact installed package and proposal before starting. The current installed example supports “I need a mortgage calculator for a £250,000 loan over 25 years at 5%.” Other applications require corresponding admitted local components; no code generation or multi-component planning is introduced.
+This is real contextual text conversation, not repeated structured tool requests. The scrollable transcript remains for this application session; **chat history is not yet persisted across process restart**. Each request sends the new message plus up to twelve recent successful conversation turns. Settings discloses the fixed OpenRouter/NVIDIA free profile, provider logging and request limits. Remote is off until enabled; replies arrive as complete messages, with progress and cancellation while waiting.
 
-The left sidebar contains workspaces, pinned tools and session activity. The right canvas displays the selected semantic tool. **Pin tool** preserves a shortcut; all committed workspace state uses the existing durable snapshot. The default private profile remains `${XDG_STATE_HOME:-$HOME/.local/state}/intellectual-workbench-operator`; `--profile /absolute/private/directory` selects another profile without altering existing data.
+Components are secondary. Settings → Tools opens the existing validated component workspace; `./workbench --tools` also opens it directly. Existing pinned tools and room snapshots remain in their original private profile and retain their offline restoration behaviour. Chat does not read those snapshots or the registry and cannot execute anything. Creating tools still requires the existing validated suggestion, exact-pin preview and explicit Start approval. No shell agent, code generation, remote registry or additional guest privileges are introduced.
 
-Settings → Components provides read-only installed versions, exact pins and local registry information. Technical diagnostics are under Settings. Legacy conformance/demo entry points remain available for reproducible regression tests, but are not the product launcher.
-
-UX-001 and its parent VSLICE-004 remain Proposed until their required evidence, including a separately documented live walkthrough, is complete. See [UX-001](docs/implementation/ux-001/TASK.md) and [default app](apps/desktop-qt/operator-direct/README.md).
+The prior UX-001 implementation is preserved in [draft PR14](https://github.com/srmr-net/intellectual-workbench-bootstrap-v0.1/pull/14). This chat-first iteration is Proposed under [CHAT-001](docs/implementation/operator-chat/TASK.md) / [ADR016](docs/adr/ADR-016.md); its reviews and validation are separate. See [chat build/API notes](apps/desktop-qt/operator-chat/README.md).

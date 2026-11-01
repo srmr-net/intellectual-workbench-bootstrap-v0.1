@@ -1,0 +1,97 @@
+{
+  "role": "ux",
+  "reviewer": "/root/ux001_ux_review",
+  "status": "APPROVED",
+  "implementationCommit": "cf0c90589fc7faeab30953240c7fc6feccb0357c",
+  "scope": "Independent UX/accessibility review of user-authorized chat-first pivot; source-bound approval only, no milestone acceptance.",
+  "sourceSha256": {
+    ".github/workflows/operator-chat.yml": "66e6d1bcaa2efc2a756c6063376c78cfb8c93c050b6c18d7b8e96ba89a7f91a6",
+    "Cargo.toml": "d2317ca51f18343404d91bc22f3b6cd51d7a407659ac742bc462430f14485723",
+    "WORKBENCH.md": "e38ce7812a7ad0d8507a139f38aacab5732834b49b0ecb60c073371d26456bc5",
+    "apps/desktop-qt/live-provider/host/src/policy.rs": "dfff65bf85bc95f454e88cdfead0f88348cc22cc03d74c5b1e5c7782bae5f7d2",
+    "apps/desktop-qt/live-provider/host/src/transport.rs": "a1f8a643e4c447d756da028c19649cbde4484b87a13b4e3b25952c15ffc4030d",
+    "apps/desktop-qt/live-provider/host/transport.py": "3618620681738feaaba9fde78553948c0bfddf62aa8edadc6f0b9866d48be128",
+    "apps/desktop-qt/operator-chat/ChatWindow.cpp": "3de5423772237aa3d788df439fe09470ed01f717402c6b80d4523a53eb547852",
+    "apps/desktop-qt/operator-chat/ChatWindow.h": "a76e331ba569b932196a43e8bc7583939e971ab670cee54136ea4547b7860b00",
+    "apps/desktop-qt/operator-chat/README.md": "3f618a75f1fbafcb6411648e954d7460d2e3009b419f172a70d4893f3a1f2679",
+    "apps/desktop-qt/operator-chat/build.sh": "f010b9a1b52c36d7632fecf74af72b5eafcb35d929eae49dbed8592f1ccd5008",
+    "apps/desktop-qt/operator-chat/chat.pro": "fae6a5cc83d62c98b6c13d9b6a7e57d445e817215176b1d7d639632814a4b967",
+    "apps/desktop-qt/operator-chat/collect.py": "beb64de35a5ac71dfb766d3d2744fec580f7ed26e2efc462b0afec1957bfdca4",
+    "apps/desktop-qt/operator-chat/host/Cargo.lock": "4e95441e4bdd5d1f288d9d6a97ce0d19e6563eb7f4da2b03d492f0e6356ac3b7",
+    "apps/desktop-qt/operator-chat/host/Cargo.toml": "f96fc8cf8cc14589d21c7852665b77eb65d85dd8aaea27f754dc45437b4e2d70",
+    "apps/desktop-qt/operator-chat/host/src/lib.rs": "a3f3df2f0792b223dee368e12fe11183f217637b7841f83f7d258ea1e09724c0",
+    "apps/desktop-qt/operator-chat/host/src/main.rs": "e11032ad6548aae313efc847a48a36df7428813c041c90b7c3b7c13985e98f19",
+    "apps/desktop-qt/operator-chat/host/src/tests.rs": "5bc43c18e779f7649451b0024a4faaa0162187b003383a03b355f3b8e61766eb",
+    "apps/desktop-qt/operator-chat/main.cpp": "138d39de1a81ef597209e6ae15b1a3dd98ba1ce6bf5bca2f8bb532a27e97d6c9",
+    "apps/desktop-qt/operator-chat/process_tests.py": "0c676e1fb7297b83ddb2d212aa95f216111bf56011dc6d7fe642b69ef8dd183e",
+    "apps/desktop-qt/operator-chat/run.sh": "0be4ffdf6ac3f7bae3694652b3e0e501f525c8d64945cabdc36cdec008862cc2",
+    "apps/desktop-qt/operator-chat/tests.cpp": "eddd9db4fa85e96ce80b215f803101b6e1f990732d4e2afa8cb63e8907719851",
+    "apps/desktop-qt/operator-chat/tests.pro": "a059aa6b21afa33278fa982d59f8577e73482ab2a2d78a091ea70e3445f7537b",
+    "apps/desktop-qt/operator-chat/validate.sh": "55ea0818a199bf15edf6ac151fb3af10c989af2921efab22b3a1a5403f5447ab",
+    "crates/wb-contracts/Cargo.toml": "e5dc8d5b38710ed95638dae178c746d934faa4304346e5dd0ffaf0243a0fee9f",
+    "crates/wb-contracts/src/ipc.rs": "34b86469b6703c7dd2873e4f3a4e64842d206306ffa823bdc60f4b1225db1394",
+    "crates/wb-contracts/src/lib.rs": "678e17a2bda05c77c82c1fd9833991c7138edbf0d55e2a3c289d558e5fd557b2",
+    "crates/wb-contracts/src/ui.rs": "35ff35758ece0187d94c478376b17abc8e3244b80430f01e859dfb4f6dc910ea",
+    "docs/adr/ADR-016.md": "24d86a87439dad76896a03e6ff1f7561878c35a0cd3447c2f49193db6be67252",
+    "docs/implementation/operator-chat/TASK.md": "7a2f8b45804da2a1bdae9db01a412eb6f978f457741ca6a18e5d98b2fefe36e2",
+    "operator-chat": "0857f6fa5a85840b4150add0460b48c4e335b1b75b0f62e609ea7d94fcb6a141",
+    "workbench": "3f2c1dc62d67b4bf9cb4d1e66c46921393b1351b8691b692386928f169a89644"
+  },
+  "remainingMandatory": [],
+  "independentTests": [
+    {
+      "command": "env -u QT_QPA_PLATFORMTHEME -u DISPLAY -u WAYLAND_DISPLAY QT_QPA_PLATFORM=offscreen WB_CHAT_EVIDENCE_DIR=/tmp/chat001-independent-ux WB_CHAT_TEST_WORKER=\"$PWD/target/operator-chat-fixture/debug/wb-operator-chat\" target/operator-chat-tests/operator-chat-tests",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/ux/qt-tests.txt",
+      "logSha256": "623aeccefed89bcc6be9356cb82cd559e612cf104c98626a6bff065aca6f4f10",
+      "observed": "7 substantive Qt cases; totals9 including init/cleanup, 0 failed/skipped. Real native fixture worker; actual Qt accessibility events/interface assertions."
+    }
+  ],
+  "findings": [
+    {
+      "id": "CHAT-UX-001",
+      "status": "resolved",
+      "finding": "Failed-message retry could expose another conversation's text.",
+      "fix": "Retry now derives exclusively from the selected conversation's final failed user message; failed A/new B/return A executable test passes."
+    },
+    {
+      "id": "CHAT-UX-002",
+      "status": "resolved",
+      "finding": "Changing status was not fully exposed through accessibility properties.",
+      "fix": "Actual current status is accessible Name and Description and emits real Qt Alert events; actual platform accessibility handler and interface assertions pass."
+    },
+    {
+      "id": "CHAT-UX-003",
+      "status": "resolved",
+      "finding": "Switching conversations cancelled requests without nearby disclosure.",
+      "fix": "New/list tooltips and accessible description plus active-request status disclose cancellation."
+    },
+    {
+      "id": "CHAT-UX-004",
+      "status": "resolved",
+      "finding": "Typing during pending session-control ACK could assign drafts to the wrong chat.",
+      "fix": "Composer becomes read-only during control ACK and remains editable during model request; executable per-chat draft fence test passes."
+    },
+    {
+      "id": "CHAT-UX-005",
+      "status": "resolved",
+      "finding": "Oversized drafts silently disabled Send.",
+      "fix": "Visible message-size feedback appears with accessibility alert; executable limit test passes."
+    }
+  ],
+  "observations": [
+    "Independent conversation screenshot inspected: dominant transcript and bottom composer; visible session-history and fixture disclosure; markup displayed as inert plain text.",
+    "Enter/Shift+Enter, Settings cancel/focus, contextual followup, cancellation/session switching, selected-chat retry, control-ACK draft fencing and oversize feedback independently passed.",
+    "Existing validated component workspace remains separate secondary Settings Tools launcher / --tools; chat text cannot launch components or acquire runtime authority.",
+    "Current source inventory verified byte-for-byte against frozen Git commit."
+  ],
+  "limitations": [
+    "Offscreen Qt checks are not human screen-reader certification.",
+    "Chat history is session-only and replies arrive whole; these limits are explicitly disclosed.",
+    "No independent live request was made and no real-provider latency/usage/PID claimed. Hosted CI and milestone acceptance remain separate gates; status remains Proposed."
+  ],
+  "artifactSha256": {
+    "docs/implementation/operator-chat/evidence/reviewer-logs/ux/conversation.png": "89edd2743596d63df9a2fb68182a8f2b1a8d9dc3d321b945e90d118482b36f89"
+  }
+}

@@ -1,0 +1,8 @@
+test_duplicate_unknown_and_oversized_frames_are_closed (__main__.ProcessTests.test_duplicate_unknown_and_oversized_frames_are_closed) ... ok
+test_production_starts_off_and_no_mock_flag (__main__.ProcessTests.test_production_starts_off_and_no_mock_flag) ... ok
+test_real_process_multiturn_and_cancel (__main__.ProcessTests.test_real_process_multiturn_and_cancel) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.426s
+
+OK

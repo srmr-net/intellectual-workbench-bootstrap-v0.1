@@ -1,0 +1,4 @@
+CHECK: 30 fixtures across 4 schemas
+PASS: RDF parses: ontology/workbench.ttl
+PASS: RDF parses: examples/mortgage-calc.wbc/capabilities.ttl
+PASS: all schema fixtures and reference JSON

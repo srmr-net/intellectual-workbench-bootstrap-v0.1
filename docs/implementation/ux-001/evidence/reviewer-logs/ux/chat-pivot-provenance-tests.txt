@@ -1,0 +1,8 @@
+test_matching (test_verify.HostedIdentity.test_matching) ... ok
+test_mismatched_api (test_verify.HostedIdentity.test_mismatched_api) ... ok
+test_mismatched_runner (test_verify.HostedIdentity.test_mismatched_runner) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+OK

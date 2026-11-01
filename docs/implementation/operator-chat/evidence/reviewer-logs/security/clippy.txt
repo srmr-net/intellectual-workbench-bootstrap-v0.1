@@ -1,0 +1,2 @@
+    Checking wb-operator-chat v0.1.0 (/home/scot/Projects/intellectual-workbench-bootstrap-v0.1/apps/desktop-qt/operator-chat/host)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.44s

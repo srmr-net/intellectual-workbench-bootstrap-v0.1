@@ -2,11 +2,11 @@
   "role": "ux",
   "reviewer": "/root/ux001_ux_review",
   "status": "APPROVED",
-  "implementationCommit": "375b200c85b5164d00ca8b0891436bd900f8e16d",
-  "scope": "Independent UX/accessibility review of simplified workspace, Settings relocation, request/approval, reactive editing, navigation and cold display. Approval is source-bound and does not mark UX001 or VSLICE004 Accepted.",
+  "implementationCommit": "cf0c90589fc7faeab30953240c7fc6feccb0357c",
+  "scope": "Independent retained UX001 tool-workspace regression review after explicitly user-authorized chat-first default pivot. Default chat source has separate operator-chat/evidence/review-ux.json; this receipt does not assert that component workspace is still default entry.",
   "sourceSha256": {
     ".github/workflows/ux-001.yml": "f02f85d893ccdab7a661d5700dcb8415dfa747b41ac96b49bb5aff93612d76a3",
-    "WORKBENCH.md": "466f5e3c2547bc886d190b5ff6ff4447a5c613798cbb28f1812fe5fa6ad4f7f7",
+    "WORKBENCH.md": "e38ce7812a7ad0d8507a139f38aacab5732834b49b0ecb60c073371d26456bc5",
     "apps/desktop-qt/build.sh": "ad90f35c35dac124833ae74170802aa23320f40bc099d3f3a84e8e7bbbd9e54d",
     "apps/desktop-qt/operator-direct/DirectPanel.cpp": "e4f8e811514da90fbd9c2f2d795c2a4be7732ede293ae18884100387812189c9",
     "apps/desktop-qt/operator-direct/DirectPanel.h": "33c57a3aad349e92a0fdb87b52ffeb459deb08705b9b78caa37a4d53bd0f35fd",
@@ -32,7 +32,7 @@
     "docs/implementation/ux-001/evidence/source_contract.py": "2f3098c4df73e32388dd06f4e96eed23dacd3c45574f96aa2a777287b266497e",
     "docs/implementation/ux-001/evidence/test_verify.py": "6010777da5831bd540f0f9bf9b9bc4b97cf9a919734da426bf59d8f4ba82188b",
     "docs/implementation/ux-001/evidence/verify.py": "85b4c14bf2239301efffedb91d91eb34cee8248165ffce84f217c6d9a5a874f2",
-    "workbench": "710d0a0a6ac8b43754b6391ec648b830d78ab5c96c80656265267cebedf25086"
+    "workbench": "3f2c1dc62d67b4bf9cb4d1e66c46921393b1351b8691b692386928f169a89644"
   },
   "remainingMandatory": [],
   "independentTests": [
@@ -51,6 +51,21 @@
       "log": "docs/implementation/ux-001/evidence/reviewer-logs/ux/provenance-tests.txt",
       "logSha256": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1",
       "observed": "3 negative/positive provenance tests passed."
+    },
+    {
+      "command": "env -u QT_QPA_PLATFORMTHEME -u DISPLAY -u WAYLAND_DISPLAY WB_REPOSITORY_ROOT=\"$PWD\" REGISTRY_PYTHON=\"$PWD/target/vs2-venv/bin/python\" WB_UX_EVIDENCE_DIR=/tmp/ux001-chat-pivot-review QT_QPA_PLATFORM=offscreen QT_QUICK_BACKEND=software target/ux-001-tests/ux-001-tests",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/ux/chat-pivot-qt-tests.txt",
+      "logSha256": "0fda3f7bacc909b4db766e8976a60a5b008ace423ee129b7d76ba8946ec22874",
+      "observed": "Final pivot regression: all9 named cases pass; totals11 including init/cleanup,0failed/0skipped."
+    },
+    {
+      "command": "python3 -m unittest discover -s docs/implementation/ux-001/evidence -p test_verify.py -v",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/ux-001/evidence/reviewer-logs/ux/chat-pivot-provenance-tests.txt",
+      "logSha256": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1"
     }
   ],
   "findings": [
@@ -101,12 +116,13 @@
     "Separate offline cold process proved exact restored state, zero model and guest display calls, and denied IPv4/IPv6.",
     "Provider consent is session scoped and conversation history is local UI only; current-request outbound projection checked independently.",
     "Private Qt accessibility activation is confined to explicit test client setup; this is event/focus evidence, not human screen-reader certification.",
-    "Legacy Shell/Bridge/worker and accepted contract bytes remain unchanged. New product entry routes through the same DirectPanel/native execution path."
+    "Retained tool UI, accepted Shell/Bridge and runtime source unchanged from reviewed375b200. Root workbench and WORKBENCH.md alone in legacy inventory changed for user-authorized chat-first default; --tools retains exact original workspace path.",
+    "Separate independent Chat UX review at docs/implementation/operator-chat/evidence/review-ux.json covers new default. This source-bound refresh preserves known low wording findings and independently reruns retained real-registry/WASM/cold-process tool tests."
   ],
   "limitations": [
     "Hosted Linux CI and real-provider walkthrough are separate gates; this review does not claim either ran.",
-    "User has redirected the next iteration toward chat-first UI; this approval remains specific to375b200 and cannot be reused for later source changes.",
-    "Recent activity/conversation are session-only presentation and not added to room snapshots."
+    "Recent activity/conversation are session-only presentation and not added to room snapshots.",
+    "Original375b200 approval/logs remain historical evidence. Current approval is scoped to retained tool workspace plus reviewed launcher routing; chat approval is separate. UX001/VSLICE004/CHAT001 remain Proposed."
   ],
   "artifactSha256": {
     "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/cold-process-proof.json": "9296661151b029f16a06e707a262ee2d1c79759de4941baa5868ac1b2acaddd7",
@@ -119,6 +135,8 @@
     "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/started-canvas.png": "4898529eab126e6de430123b779aa37b0bfda0a58ad0631422b51c5af6ff96e7",
     "docs/implementation/ux-001/evidence/reviewer-logs/ux/process-evidence/started-workspace.png": "4a0d546168b857d091a1996b3143b1ec61c3750634ff637fdd60f9c0c5edf87d",
     "docs/implementation/ux-001/evidence/reviewer-logs/ux/provenance-tests.txt": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1",
-    "docs/implementation/ux-001/evidence/reviewer-logs/ux/qt-tests.txt": "b0225540e398f26ee8eca4308a25095148c2545b9d20a3518d67f1b08ef9582c"
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/qt-tests.txt": "b0225540e398f26ee8eca4308a25095148c2545b9d20a3518d67f1b08ef9582c",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/chat-pivot-qt-tests.txt": "0fda3f7bacc909b4db766e8976a60a5b008ace423ee129b7d76ba8946ec22874",
+    "docs/implementation/ux-001/evidence/reviewer-logs/ux/chat-pivot-provenance-tests.txt": "351479d533bb97b19b6b6064349b747cc774d203f9f8252fc9cdac4dcb16a1a1"
   }
 }

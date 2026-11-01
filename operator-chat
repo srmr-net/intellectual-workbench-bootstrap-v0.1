@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+root="$(cd "$(dirname "$0")" && pwd)"
+if [[ "${1:-}" = --build ]]; then shift; exec "$root/apps/desktop-qt/operator-chat/build.sh" "$@"; fi
+exec "$root/apps/desktop-qt/operator-chat/run.sh" "$@"

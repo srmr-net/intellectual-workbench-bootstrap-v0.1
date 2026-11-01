@@ -1,0 +1,35 @@
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (target/operator-chat-host/debug/deps/wb_operator_chat-d18243b49f424e07)
+
+running 16 tests
+test tests::caller_cannot_supply_roles_history_or_unknown_commands ... ok
+test tests::disabling_with_invalid_replacement_source_revokes_and_cancels ... ok
+test tests::cancelled_and_failed_messages_never_enter_context ... ok
+test tests::failure_and_disable_do_not_contaminate_future_turns ... ok
+test tests::no_consent_no_calls_and_empty_or_oversized_rejected ... ok
+test tests::genuine_multiturn_context_and_fixed_route ... ok
+test tests::strict_untrusted_responses_and_typed_errors ... ok
+test tests::secrets_are_rejected_before_send_or_display ... ok
+test transport::tests::dropping_pending_process_exchange_kills_and_reaps_child ... ok
+test tests::switching_chats_isolates_context_and_cancels_pending ... ok
+test tests::timeout_and_new_chat_drop_exchange_without_committing_late_answer ... ok
+test tests::new_chat_at_capacity_still_revokes_pending_request ... ok
+test tests::context_bytes_and_response_bounds_are_enforced ... ok
+test tests::context_bounded_without_destroying_transcript ... ok
+test tests::request_serialization_failure_does_not_store_turn_or_spend_call ... ok
+test tests::escaped_transcript_quota_is_recoverable_before_next_network_call ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running unittests src/main.rs (target/operator-chat-host/debug/deps/wb_operator_chat-c0301acd6180c4b4)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests wb_operator_chat
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
