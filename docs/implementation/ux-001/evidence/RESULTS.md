@@ -26,3 +26,5 @@ The user reported that the flow was wrong and requested a pivot toward a long-ru
 ## Remaining gates
 
 Full clean local regression rerun, hosted Linux CI/archive verification and a successful separately supervised live journey remain outstanding. No acceptance status is advanced. Minor review observations about legacy workspace-row wording and read-only Settings hints are documented in the UX review; the new chat iteration must not be treated as covered by these source-bound reviews.
+
+Update after the user-authorized chat pivot: original UX001 implementation hosted run40921750651 succeeded (link in CHAT001 results); archive verification is separate. CHAT001 reran all162 root tests successfully and independently reran all9 retained Qt cases. Refreshed receipts explicitly qualify the default-launcher change and point to the separate chat reviews; these do not make the old live attempt a pass.

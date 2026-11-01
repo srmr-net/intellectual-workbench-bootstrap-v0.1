@@ -1,12 +1,12 @@
 {
   "role": "security",
   "reviewer": "/root/ux001_security_review",
-  "implementationCommit": "375b200c85b5164d00ca8b0891436bd900f8e16d",
+  "implementationCommit": "cf0c90589fc7faeab30953240c7fc6feccb0357c",
   "status": "APPROVED",
   "remainingMandatory": [],
   "sourceSha256": {
     ".github/workflows/ux-001.yml": "f02f85d893ccdab7a661d5700dcb8415dfa747b41ac96b49bb5aff93612d76a3",
-    "WORKBENCH.md": "466f5e3c2547bc886d190b5ff6ff4447a5c613798cbb28f1812fe5fa6ad4f7f7",
+    "WORKBENCH.md": "e38ce7812a7ad0d8507a139f38aacab5732834b49b0ecb60c073371d26456bc5",
     "apps/desktop-qt/build.sh": "ad90f35c35dac124833ae74170802aa23320f40bc099d3f3a84e8e7bbbd9e54d",
     "apps/desktop-qt/operator-direct/DirectPanel.cpp": "e4f8e811514da90fbd9c2f2d795c2a4be7732ede293ae18884100387812189c9",
     "apps/desktop-qt/operator-direct/DirectPanel.h": "33c57a3aad349e92a0fdb87b52ffeb459deb08705b9b78caa37a4d53bd0f35fd",
@@ -32,7 +32,7 @@
     "docs/implementation/ux-001/evidence/source_contract.py": "2f3098c4df73e32388dd06f4e96eed23dacd3c45574f96aa2a777287b266497e",
     "docs/implementation/ux-001/evidence/test_verify.py": "6010777da5831bd540f0f9bf9b9bc4b97cf9a919734da426bf59d8f4ba82188b",
     "docs/implementation/ux-001/evidence/verify.py": "85b4c14bf2239301efffedb91d91eb34cee8248165ffce84f217c6d9a5a874f2",
-    "workbench": "710d0a0a6ac8b43754b6391ec648b830d78ab5c96c80656265267cebedf25086"
+    "workbench": "3f2c1dc62d67b4bf9cb4d1e66c46921393b1351b8691b692386928f169a89644"
   },
   "findings": [
     {
@@ -67,6 +67,11 @@
       "severity": "informational",
       "status": "reviewed",
       "detail": "Independent final Qt run passed five selected cases plus setup/cleanup: 7 passed, 0 failed, 0 skipped in 51.024s. Metadata identity tests passed 3/3. Accepted baseline implementation/contracts preservation assertion passed, exact source inventory 28. No real credential read or live inference performed."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Source-map refresh for user-authorized CHAT001 pivot: only workbench launcher and WORKBENCH.md changed in this 28-file UX001 inventory. Default dispatch now opens separately reviewed host-only chat; --tools preserves existing operator-direct launcher with quoted arguments. Old Operator/native/runtime/renderer source unchanged; original archived UX001 review/test evidence remains PR14/77351e4. Historical independent UX checks were executed on375b200, not rerun or represented as chat/live acceptance. New CHAT001 review-security.json separately covers new scope."
     }
   ],
   "independentTests": [
@@ -95,6 +100,9 @@
   "scopeLimits": [
     "Approves independent security/runtime source-review gate only; full regression suite, successful final-source GitHub-hosted CI and separately human-operated real OpenRouter walkthrough remain separate mandatory gates.",
     "No live-provider success, model version, usage, latency or formal VSLICE-004 acceptance is inferred from mocked tests.",
-    "Product-owned generic trusted QML copy must remain aligned with future accepted renderer fixes."
-  ]
+    "Product-owned generic trusted QML copy must remain aligned with future accepted renderer fixes.",
+    "Updated launcher/source-map approval does not mark UX001 or VSLICE004 live accepted; old supervised tool walkthrough remains incomplete. Historical tests retain their original source binding."
+  ],
+  "independentTestsImplementationCommit": "375b200c85b5164d00ca8b0891436bd900f8e16d",
+  "launcherRefreshCommit": "cf0c90589fc7faeab30953240c7fc6feccb0357c"
 }

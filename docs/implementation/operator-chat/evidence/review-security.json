@@ -1,0 +1,114 @@
+{
+  "role": "security",
+  "reviewer": "/root/ux001_security_review",
+  "status": "APPROVED",
+  "implementationCommit": "cf0c90589fc7faeab30953240c7fc6feccb0357c",
+  "sourceSha256": {
+    ".github/workflows/operator-chat.yml": "66e6d1bcaa2efc2a756c6063376c78cfb8c93c050b6c18d7b8e96ba89a7f91a6",
+    "Cargo.toml": "d2317ca51f18343404d91bc22f3b6cd51d7a407659ac742bc462430f14485723",
+    "WORKBENCH.md": "e38ce7812a7ad0d8507a139f38aacab5732834b49b0ecb60c073371d26456bc5",
+    "apps/desktop-qt/live-provider/host/src/policy.rs": "dfff65bf85bc95f454e88cdfead0f88348cc22cc03d74c5b1e5c7782bae5f7d2",
+    "apps/desktop-qt/live-provider/host/src/transport.rs": "a1f8a643e4c447d756da028c19649cbde4484b87a13b4e3b25952c15ffc4030d",
+    "apps/desktop-qt/live-provider/host/transport.py": "3618620681738feaaba9fde78553948c0bfddf62aa8edadc6f0b9866d48be128",
+    "apps/desktop-qt/operator-chat/ChatWindow.cpp": "3de5423772237aa3d788df439fe09470ed01f717402c6b80d4523a53eb547852",
+    "apps/desktop-qt/operator-chat/ChatWindow.h": "a76e331ba569b932196a43e8bc7583939e971ab670cee54136ea4547b7860b00",
+    "apps/desktop-qt/operator-chat/README.md": "3f618a75f1fbafcb6411648e954d7460d2e3009b419f172a70d4893f3a1f2679",
+    "apps/desktop-qt/operator-chat/build.sh": "f010b9a1b52c36d7632fecf74af72b5eafcb35d929eae49dbed8592f1ccd5008",
+    "apps/desktop-qt/operator-chat/chat.pro": "fae6a5cc83d62c98b6c13d9b6a7e57d445e817215176b1d7d639632814a4b967",
+    "apps/desktop-qt/operator-chat/collect.py": "beb64de35a5ac71dfb766d3d2744fec580f7ed26e2efc462b0afec1957bfdca4",
+    "apps/desktop-qt/operator-chat/host/Cargo.lock": "4e95441e4bdd5d1f288d9d6a97ce0d19e6563eb7f4da2b03d492f0e6356ac3b7",
+    "apps/desktop-qt/operator-chat/host/Cargo.toml": "f96fc8cf8cc14589d21c7852665b77eb65d85dd8aaea27f754dc45437b4e2d70",
+    "apps/desktop-qt/operator-chat/host/src/lib.rs": "a3f3df2f0792b223dee368e12fe11183f217637b7841f83f7d258ea1e09724c0",
+    "apps/desktop-qt/operator-chat/host/src/main.rs": "e11032ad6548aae313efc847a48a36df7428813c041c90b7c3b7c13985e98f19",
+    "apps/desktop-qt/operator-chat/host/src/tests.rs": "5bc43c18e779f7649451b0024a4faaa0162187b003383a03b355f3b8e61766eb",
+    "apps/desktop-qt/operator-chat/main.cpp": "138d39de1a81ef597209e6ae15b1a3dd98ba1ce6bf5bca2f8bb532a27e97d6c9",
+    "apps/desktop-qt/operator-chat/process_tests.py": "0c676e1fb7297b83ddb2d212aa95f216111bf56011dc6d7fe642b69ef8dd183e",
+    "apps/desktop-qt/operator-chat/run.sh": "0be4ffdf6ac3f7bae3694652b3e0e501f525c8d64945cabdc36cdec008862cc2",
+    "apps/desktop-qt/operator-chat/tests.cpp": "eddd9db4fa85e96ce80b215f803101b6e1f990732d4e2afa8cb63e8907719851",
+    "apps/desktop-qt/operator-chat/tests.pro": "a059aa6b21afa33278fa982d59f8577e73482ab2a2d78a091ea70e3445f7537b",
+    "apps/desktop-qt/operator-chat/validate.sh": "55ea0818a199bf15edf6ac151fb3af10c989af2921efab22b3a1a5403f5447ab",
+    "crates/wb-contracts/Cargo.toml": "e5dc8d5b38710ed95638dae178c746d934faa4304346e5dd0ffaf0243a0fee9f",
+    "crates/wb-contracts/src/ipc.rs": "34b86469b6703c7dd2873e4f3a4e64842d206306ffa823bdc60f4b1225db1394",
+    "crates/wb-contracts/src/lib.rs": "678e17a2bda05c77c82c1fd9833991c7138edbf0d55e2a3c289d558e5fd557b2",
+    "crates/wb-contracts/src/ui.rs": "35ff35758ece0187d94c478376b17abc8e3244b80430f01e859dfb4f6dc910ea",
+    "docs/adr/ADR-016.md": "24d86a87439dad76896a03e6ff1f7561878c35a0cd3447c2f49193db6be67252",
+    "docs/implementation/operator-chat/TASK.md": "7a2f8b45804da2a1bdae9db01a412eb6f978f457741ca6a18e5d98b2fefe36e2",
+    "operator-chat": "0857f6fa5a85840b4150add0460b48c4e335b1b75b0f62e609ea7d94fcb6a141",
+    "workbench": "3f2c1dc62d67b4bf9cb4d1e66c46921393b1351b8691b692386928f169a89644"
+  },
+  "remainingMandatory": [],
+  "independentTests": [
+    {
+      "command": "cargo test --locked --manifest-path apps/desktop-qt/operator-chat/host/Cargo.toml --all-features --target-dir target/operator-chat-host",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/security/native-tests.txt",
+      "logSha256": "cac4e5775e24951543e897b0b560eccdf2432cb353456a742387c04ad8ca92a8"
+    },
+    {
+      "command": "python3 apps/desktop-qt/operator-chat/process_tests.py -v",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/security/process-tests.txt",
+      "logSha256": "20f64acc860af315b29cdcc68934286ebd2ba437258726d95a03cf949484b384"
+    },
+    {
+      "command": "cargo fmt --check --manifest-path apps/desktop-qt/operator-chat/host/Cargo.toml",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/security/fmt.txt",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": "cargo clippy --locked --manifest-path apps/desktop-qt/operator-chat/host/Cargo.toml --all-features --all-targets --target-dir target/operator-chat-host -- -D warnings",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/security/clippy.txt",
+      "logSha256": "b25780025d56668e7c45c9e8c4361b3fb50c75b307bc06ac6d6662194d90c08c"
+    },
+    {
+      "command": "git diff --exit-code 77351e46cb0634988f4be37edd5a572c18c7d656 -- crates schemas ontology references apps/desktop-qt/desktop apps/desktop-qt/vslice-003 apps/desktop-qt/vslice-004 apps/desktop-qt/live-provider apps/desktop-qt/operator-direct",
+      "exitCode": 0,
+      "ignoredOrSkipped": 0,
+      "log": "docs/implementation/operator-chat/evidence/reviewer-logs/security/preservation.txt",
+      "logSha256": "8776d2b46737c419b0d8f8bf5b73543ea73a9c2059e78113e68a1d376d734654"
+    }
+  ],
+  "findings": [
+    {
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Serialized transcript growth now reserves worst-case JSON escaped next pair under 1MB before spending request or mutating transcript; escaped quota and request serialization failures return typed errors and preserve state."
+    },
+    {
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Configure revokes enablement and cancels pending transport before validating replacement path. New and Select also cancel before quota/identity errors; capacity cancellation test passed."
+    },
+    {
+      "severity": "medium",
+      "status": "resolved",
+      "detail": "Retry is derived exclusively from selected session last failed user entry; another chat cannot recover prior failed message via global retry state. Source reviewed; independent Qt review covers interaction."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "New host-only chat.1 service has no registry/kernel handles or execution operations. Host owns roles, fixed system text, bounded completed-pair context and session routing. Text is inserted inertly; external links disabled. Accepted credential and HTTPS transport sources are reused unchanged. Session opt-in, explicit sends, one pending exchange, timeout, cancellation/reaping and Qt token fences remain in place."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Strict empty-struct protocol variants reject unknown New/Cancel/Quit fields. Independent real-process invalid duplicate/unknown/oversized frame tests, disabled production startup and fixture-isolated multiturn/cancel passed. Production binary rejects fixture flag."
+    },
+    {
+      "severity": "informational",
+      "status": "reviewed",
+      "detail": "Independent final native suite16/16, process suite3/3, fmt, clippy and accepted-source preservation passed without ignored/skipped tests. No actual key was read or inference initiated. The user-authorized contextual-chat pivot is a separate trust/protocol scope from archived UX001, not an extension of its approval."
+    }
+  ],
+  "scopeLimits": [
+    "Independent security source-review gate only; hosted final-source CI and milestone acceptance remain separate.",
+    "User-reported live success was not independently observed; exact live usage/model-version/process evidence unavailable. No live provider acceptance inferred from fixtures.",
+    "Chat transcripts remain process-local; durable chat persistence, streaming and execution tools are not included."
+  ]
+}
